@@ -35,7 +35,17 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
+    'nuxt-i18n',
   ],
+  i18n: {
+    locales: [
+        { code: 'en', name:'English', iso: 'en-US', file: 'en.js', dir: 'ltr' },
+        { code: 'ar', name:'Arabic', iso: 'ae-AE', file: 'ar.js', dir: 'rtl' },
+    ],
+    langDir: "static/lang",
+    defaultLocale: 'en',
+    strategy: 'no_prefix',
+},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

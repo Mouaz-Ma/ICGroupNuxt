@@ -66,22 +66,18 @@
                             <a class="btn btn-primary" href="./signin.html">Sign in</a>
                         </div>
                         <!-- language -->
-                        <div>
-                            <b-dropdown class="ml-5" id="my-dropdown-toggle" v-model="$i18n.locale" variant="outline-secondary" no-caret>
-                                <template #button-content class="my-dropdown-Btn">
-                                    <img :src="require(`@/assets/icons/`+ $i18n.locale +`.svg`)" style="width: 24px; height: auto" alt="" class="mr-1" />
-                                        <span>{{ $t('lang') }}</span>
-                                </template>
-                                <b-dropdown-item
-                                    v-for="lang in $i18n.locales"
-                                    :key="lang.code"
-                                    :value="lang.code"
-                                    :active="lang.code === activeLang"
-                                    @click="changeLang(lang.code)">
+                        <div class="d-none d-lg-block">
+                            <b-dropdown id="my-dropdown-toggle" class="ml-3 mr-3" variant="outline-secondary" no-caret>
+                            <template #button-content>
+                                <img :src="require(`@/assets/icons/`+ $i18n.locale +`.svg`)" style="width: 24px; height: auto" alt="" class="mr-1" />
+                                    <span>{{ $t('lang') }}</span>
+                            </template>
+                                    <b-dropdown-item
+                                    v-for="lang in $i18n.locales" :key="lang.code" :value="lang.code" :active="lang.code === activeLang" @click="changeLang(lang.code)">
                                     <img :src="require(`@/assets/icons/`+ lang.code +`.svg`)" style="width: 24px; height: auto" alt="" class="mr-1" />
                                     <span>{{ lang.name }}</span>
                                 </b-dropdown-item>
-                            </b-dropdown >
+                            </b-dropdown>
                         </div>
                     </nav>
                 </div>
@@ -91,7 +87,18 @@
 </div>
 </template>
 <script>
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
 export default {
+     mounted() {
+    console.log(this.$dir()); // logs your direction 'ltr' or 'rtl'
+    console.log(this.$i18n.locale);
+    if (this.$i18n.locale == "ar") {
+        let htmlEl=document.querySelector("html");
+        htmlEl.setAttribute('dir','rtl');
+        htmlEl.setAttribute('lang','ar');
+    }
+  },
   computed: {
     languages () {
     return this.$i18n.locales
@@ -103,8 +110,25 @@ export default {
 methods:{
       changeLang: function (language) {
       this.$i18n.setLocale(language);
+      this.restartServices();
       this.$router.push('/')
-    }
+    },
+      restartServices() {
+      console.log("language changed");
+      window.location.reload(true)
+      this.socket.emit('change lang', this.$i18n.locale)
+    },
 }
 }
 </script>
+
+<style>
+
+#my-dropdown-toggle span{
+  color: rgba(255, 255, 255, 0.85);
+}
+#my-dropdown-toggle span :hover{
+  color: #231f20;
+}
+
+</style>

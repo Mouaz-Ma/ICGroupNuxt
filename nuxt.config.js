@@ -23,6 +23,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/direction-control',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -40,10 +41,11 @@ export default {
   ],
   i18n: {
     locales: [
-        { code: 'en', name:'English', iso: 'en-US', file: 'en.js', dir: 'ltr' },
-        { code: 'ar', name:'العربية', iso: 'ae-AE', file: 'ar.js', dir: 'rtl' },
+      { code: 'ar', name:'العربية', iso: 'ae-AE', file: 'ar.js', dir: 'rtl' },
+      { code: 'en', name:'English', iso: 'en-US', file: 'en.js', dir: 'ltr' },
     ],
     langDir: "static/lang",
+    lazy: true,
     defaultLocale: 'en',
     strategy: 'no_prefix',
 },

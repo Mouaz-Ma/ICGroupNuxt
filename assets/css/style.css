@@ -8964,20 +8964,6 @@ strong {
       .notification .dropdown-menu a span.pending {
         background: #FFAB00; }
 
-
-.my-dropdown-Btn{
-  outline: none !important;
-  border: none !important;
-}
-
-.my-dropdown-Btn:hover{
-  background-color: transparent;
-}
-
-#my-dropdown-toggle span{
-  color: rgba(255, 255, 255, 0.85);
-}
-
 .dropdown-toggle::after {
   border-top: 0px;
   margin-left: 10.2px;

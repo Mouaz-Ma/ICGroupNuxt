@@ -40,7 +40,7 @@
                                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Company
                                     </a>
                                     <div class="dropdown-menu">
-                                        <NuxtLink class="dropdown-item" to="/aboutUs">{{$t('About')}}</NuxtLink>
+                                        <NuxtLink class="dropdown-item" to="/aboutUs">{{$t('about')}}</NuxtLink>
                                         <a class="dropdown-item" href="./team.html">Team</a>
                                         <a class="dropdown-item" href="./career.html">Career</a>
                                     </div>
@@ -63,7 +63,7 @@
                         </div>
 
                         <div class="signin-btn">
-                            <a class="btn btn-primary" href="./signin.html">Sign in</a>
+                            <NuxtLink class="btn btn-primary" to="/signIn">Sign in</NuxtLink>
                         </div>
                         <!-- language -->
                         <div class="d-none d-lg-block">

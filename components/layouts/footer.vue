@@ -15,7 +15,7 @@
                 <div class="bottom-widget">
                     <h4 class="widget-title">Company</h4>
                     <ul>
-                        <li><NuxtLink to="/aboutUs">{{$t('About')}}</NuxtLink></li>
+                        <li><NuxtLink to="/aboutUs">{{$t('about')}}</NuxtLink></li>
                         <li><a href="#">Career</a></li>
                         <li><a href="#">Terms & Conditions</a></li>
                         <li><a href="#">Success Story</a></li>

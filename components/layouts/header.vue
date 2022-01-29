@@ -7,10 +7,10 @@
                 <div class="navigation">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <div class="brand-logo">
-                            <a href="index.html">
+                            <NuxtLink class="nav-link" to="/">{{$t('home')}}
                                 <img src="~/assets/images/logo.png" alt="" class="logo-primary">
                                 <img src="~/assets/images/logow.png" alt="" class="logo-white">
-                            </a>
+                            </NuxtLink>
                         </div>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"

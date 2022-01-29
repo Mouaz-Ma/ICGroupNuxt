@@ -1,5 +1,6 @@
 <template>
-<div class="header landing">
+<div class="@@dashboard">
+<div class="header landing headerBorder ">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
@@ -21,7 +22,7 @@
 
                                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="./index.html">{{$t('home')}}</a>
+                                    <NuxtLink class="nav-link" to="/">{{$t('home')}}</NuxtLink>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Analysis</a>
@@ -39,7 +40,7 @@
                                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Company
                                     </a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="./about.html">About us</a>
+                                        <NuxtLink class="dropdown-item" to="/aboutUs">{{$t('About')}}</NuxtLink>
                                         <a class="dropdown-item" href="./team.html">Team</a>
                                         <a class="dropdown-item" href="./career.html">Career</a>
                                     </div>
@@ -83,6 +84,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 </template>
 <script>

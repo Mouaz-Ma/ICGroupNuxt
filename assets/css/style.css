@@ -8834,7 +8834,8 @@ strong {
             z-index: 02;
             background: #fff;
              }
-            
+             .headerBorder {
+              border-bottom: 4px solid rgba(251, 204, 49, 100) !important; }
             .headerprofile.bg-primary {
               border-bottom: 4px solid rgba(251, 204, 49, 100) !important; }
             @media only screen and (max-width: 767px) {

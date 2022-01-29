@@ -7,7 +7,7 @@
                 <div class="navigation">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <div class="brand-logo">
-                            <NuxtLink class="nav-link" to="/">{{$t('home')}}
+                            <NuxtLink class="nav-link" to="/">
                                 <img src="~/assets/images/logo.png" alt="" class="logo-primary">
                                 <img src="~/assets/images/logow.png" alt="" class="logo-white">
                             </NuxtLink>

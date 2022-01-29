@@ -1,6 +1,5 @@
 <template>
-
-      <div class="header landing">
+<div class="header landing">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
@@ -87,8 +86,6 @@
 </div>
 </template>
 <script>
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap-vue/dist/bootstrap-vue.css";
 export default {
      mounted() {
     console.log(this.$dir()); // logs your direction 'ltr' or 'rtl'

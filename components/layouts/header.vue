@@ -1,6 +1,6 @@
 <template>
 <div class="@@dashboard">
-<div class="header landing headerBorder ">
+<div class="header landing headerBorder">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
@@ -129,5 +129,6 @@ methods:{
 #my-dropdown-toggle span :hover{
   color: #231f20;
 }
+
 
 </style>

@@ -1,7 +1,7 @@
 <template>
 
 <div id="main-wrapper show">
-
+    <Banner :title="$t('about')" />
     <div class="about-one section-padding">
         <div class="container">
             <div class="row align-items-center">
@@ -86,7 +86,11 @@
 </div>
 </template>
 <script>
+import Banner from "@/components/pageBanner";
 export default {
   layout: 'index',
+  components: {
+    Banner
+  }
   }
 </script>

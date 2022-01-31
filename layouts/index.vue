@@ -17,6 +17,7 @@
 import Header from '@/components/layouts/header'
 import Footer from "@/components/layouts/footer";
 
+
 export default {
   name: 'defaultLayout',
   components: {

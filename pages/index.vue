@@ -1,10 +1,10 @@
 <template>
 
-
+<div>
 <div id="main-wrapper show">
     <div class="intro bg-primary">
     <div class="container">
-        <div class="row justify-content-between align-items-center">
+        <div class="row justify-content-between align-items-center mt-5">
             <div class="col-xl-6 col-lg-6 col-12">
                 <div class="intro-content">
                     <h1 class="text-white">Trade with <strong class="text-white">ICGroupsFx</strong> <br> Buy and
@@ -88,97 +88,6 @@
                     <p>Once you're approved, you can trade on web and mobile.</p>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-
-    <div class="price-grid section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
-                <div class="price-widget bg-btc">
-                    <a href="price-details.html">
-                        <div class="price-content">
-                            <div class="icon-title">
-                                <i class="cc BTC"></i>
-                                <span>Bitcoin</span>
-                            </div>
-                            <h5>$ 11,785.10</h5>
-                        </div>
-                        <div id="chart"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
-                <div class="price-widget bg-eth">
-                    <a href="price-details.html">
-                        <div class="price-content">
-                            <div class="icon-title">
-                                <i class="cc ETH"></i>
-                                <span>Ethereum</span>
-                            </div>
-                            <h5>$ 11,785.10</h5>
-                        </div>
-                        <div id="chart2"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
-                <div class="price-widget bg-usdt">
-                    <a href="price-details.html">
-                        <div class="price-content">
-                            <div class="icon-title">
-                                <i class="cc USDT"></i>
-                                <span>Tether</span>
-                            </div>
-                            <h5>$ 11,785.10</h5>
-                        </div>
-                        <div id="chart3"></div>
-                    </a>
-                </div>
-            </div>
-            <!-- <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
-                <div class="price-widget bg-dark">
-                    <a href="price-details.html">
-                        <div class="price-content">
-                            <div class="icon-title">
-                                <i class="cc XRP"></i>
-                                <span>Ripple</span>
-                            </div>
-                            <h5>$ 11,785.10</h5>
-                        </div>
-                        <div id="chart4"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
-                <div class="price-widget bg-dark">
-                    <a href="price-details.html">
-                        <div class="price-content">
-                            <div class="icon-title">
-                                <i class="cc LTC"></i>
-                                <span>Litecoin</span>
-                            </div>
-                            <h5>$ 11,785.10</h5>
-                        </div>
-                        <div id="chart5"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
-                <div class="price-widget bg-dark">
-                    <a href="price-details.html">
-                        <div class="price-content">
-                            <div class="icon-title">
-                                <i class="cc ADA"></i>
-                                <span>Cardano</span>
-                            </div>
-                            <h5>$ 11,785.10</h5>
-                        </div>
-                        <div id="chart6"></div>
-                    </a>
-                </div>
-            </div> -->
         </div>
     </div>
 </div>
@@ -497,10 +406,12 @@
     </div>
 </div>
 </div>
-
+</div>
 </template>
 
 <script>
+
+
 export default {
   layout: 'index',
   }

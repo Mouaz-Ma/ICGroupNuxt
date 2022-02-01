@@ -9,7 +9,6 @@ export default {
   layout: 'blogs',
   components: {
     SingleBlog
-
   }
 }
 </script>

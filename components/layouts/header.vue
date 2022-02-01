@@ -12,12 +12,14 @@
                                 <img src="~/assets/images/logow.png" alt="" class="logo-white">
                             </NuxtLink>
                         </div>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+
+                         <b-button class="navbar-toggler" type="button" data-toggle="collapse" v-b-toggle.my-collapse
+                            data-target="#my-collapse" aria-controls="my-collapse" aria-expanded="false"
                             aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        </b-button>
+                        
+                        <b-collapse class="collapse navbar-collapse" id="my-collapse">
                             <ul class="navbar-nav">
 
                                 
@@ -66,7 +68,7 @@
 
 
                             </ul>
-                        </div>
+                        </b-collapse>
 
 
                         <!-- language -->
@@ -92,7 +94,13 @@
 </div>
 </template>
 <script>
+import { BIcon, BIconArrowUp, BIconArrowDown } from 'bootstrap-vue'
 export default {
+      components: {
+    BIcon,
+    BIconArrowUp,
+    BIconArrowDown
+  },
      mounted() {
     console.log(this.$dir()); // logs your direction 'ltr' or 'rtl'
     console.log(this.$i18n.locale);

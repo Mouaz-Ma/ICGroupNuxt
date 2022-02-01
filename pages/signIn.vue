@@ -1,5 +1,5 @@
 <template>
-    <div id="main-wrapper" class="show">
+    <div id="main-wrapper show" class="show">
     <div class="authincation section-padding">
         <div class="container h-100">
             <div class="row justify-content-center h-100 align-items-center">

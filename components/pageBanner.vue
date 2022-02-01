@@ -16,9 +16,11 @@ export default {
 }
 
 #pageBanner{
+    background: url(~/assets/images/banner_1.png);
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
     padding: 20px;
-    height: 100%;
-    width: 100%;
-    background: rgba(251, 204, 49, 100)
 }
+
 </style>

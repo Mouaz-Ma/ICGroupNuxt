@@ -8689,7 +8689,21 @@ strong {
     opacity: 0;
     transform: translate3d(-60px, 0, 0);
     -webkit-transform: translate3d(-60px, 0, 0); } }
-
+.section-margin{
+  margin-top: 115px; }
+  /* @media only screen and (max-width: 1199px) {
+    .section-margin {
+      margin-top: 80px; } }
+  @media only screen and (max-width: 991px) {
+    .section-margin {
+      margin-top: 75px; } }
+  @media only screen and (max-width: 767px) {
+    .section-margin {
+      margin-top: 60px; } }
+  @media only screen and (max-width: 575px) {
+    .section-margin {
+      margin-top: 50px; } } */
+      
 .section-padding {
   padding: 100px 0; }
   @media only screen and (max-width: 1199px) {

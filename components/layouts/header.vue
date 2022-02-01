@@ -56,15 +56,19 @@
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="./blog.html">Blog</a>
+                                    <NuxtLink class="nav-link" to="/blogs">Blogs</NuxtLink>
                                 </li>
+                                <li>
+                                    <div class="signin-btn">
+                                        <NuxtLink class="btn btn-primary" to="/signIn">Sign in</NuxtLink>
+                                    </div>
+                                </li>
+
 
                             </ul>
                         </div>
 
-                        <div class="signin-btn">
-                            <NuxtLink class="btn btn-primary" to="/signIn">Sign in</NuxtLink>
-                        </div>
+
                         <!-- language -->
                         <div class="d-none d-lg-block">
                             <b-dropdown id="my-dropdown-toggle" class="ml-3 mr-3" variant="outline-secondary" no-caret>

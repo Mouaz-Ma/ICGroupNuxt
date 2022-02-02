@@ -20,7 +20,7 @@
                         </b-button>
                         
                         <b-collapse class="collapse navbar-collapse" id="my-collapse"  v-model="showCollapse">
-                            <ul class="navbar-nav">
+                            <ul class="navbar-nav clearfix">
 
                                 
                                 <li class="nav-item">
@@ -45,18 +45,18 @@
                                     <a class="nav-link dropdown-toggle" href="#" v-b-toggle.companyCollapse>Company</a>
                                     <b-collapse class="dropdown-menu" id="companyCollapse" v-model="showCollapseaCompany">
                                         <NuxtLink class="dropdown-item" to="/aboutUs">{{$t('about')}}</NuxtLink>
-                                        <a class="dropdown-item" href="./team.html">Team</a>
-                                        <a class="dropdown-item" href="./career.html">Career</a>
+                                        <NuxtLink class="dropdown-item" to="/team">Our Team</NuxtLink>
+                                        <NuxtLink class="dropdown-item" to="/career">Career</NuxtLink>
                                     </b-collapse>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" v-b-toggle.supportCollapse>Support
                                     </a>
                                     <b-collapse class="dropdown-menu" id="supportCollapse" v-model="showCollapseaSupport">
-                                        <a class="dropdown-item" href="./contact.html">Contact us</a>
-                                        <a class="dropdown-item" href="./helpdesk.html">Help Desk</a>
-                                        <a class="dropdown-item" href="./privacy-policy.html">Privacy</a>
-                                        <a class="dropdown-item" href="./faq.html">FAQ</a>
+                                        <NuxtLink class="dropdown-item" to="/contact">contact</NuxtLink>
+                                        <NuxtLink class="dropdown-item" to="/helpdesk">Help Desk</NuxtLink>
+                                        <NuxtLink class="dropdown-item" to="/privacy">Privacy</NuxtLink>
+                                        <NuxtLink class="dropdown-item" to="/faq">FAQ</NuxtLink>
                                     </b-collapse>
                                 </li>
                                 <li class="nav-item">
@@ -68,7 +68,7 @@
                                     </div>
                                 </li>
 
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown " id="language">
                                     <a class="nav-link" href="#" v-b-toggle.languageCollapse>
                                         <img :src="require(`@/assets/icons/`+ $i18n.locale +`.svg`)" style="width: 24px; height: auto" alt="" class="mr-1 ml-1" />
                                         {{ $t('lang') }}
@@ -102,6 +102,7 @@ export default {
             showCollapseaAalysis : false,
             showCollapseaCompany : false,
             showCollapseaSupport : false,
+            showCollapseaLanguage: false
 
             }
         },
@@ -111,6 +112,7 @@ export default {
             this.showCollapseaAalysis = false
             this.showCollapseaCompany = false
             this.showCollapseaSupport = false
+            this.showCollapseaLanguage= false
             }
         },
 
@@ -172,7 +174,8 @@ export default {
 
   @media (min-width: 1200px) {
     #analysisCollapse {
-      display: block; } }
+      display: block; } 
+}
 
 
 </style>

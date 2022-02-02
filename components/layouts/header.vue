@@ -19,7 +19,7 @@
                             <span class="navbar-toggler-icon"></span>
                         </b-button>
                         
-                        <b-collapse class="collapse navbar-collapse" id="my-collapse">
+                        <b-collapse class="collapse navbar-collapse" id="my-collapse"  v-model="showCollapse">
                             <ul class="navbar-nav">
 
                                 
@@ -30,7 +30,7 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" v-b-toggle.analysisCollapse>Analysis</a>
                                     
-                                    <b-collapse class="dropdown-menu" id="analysisCollapse">
+                                    <b-collapse class="dropdown-menu" id="analysisCollapse"  v-model="showCollapseaAalysis">
                                         <a class="dropdown-item" href="#">Currencies</a>
                                         <a class="dropdown-item" href="#">Materials</a>
                                         <a class="dropdown-item" href="#">Stocks</a>
@@ -43,7 +43,7 @@
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" v-b-toggle.companyCollapse>Company</a>
-                                    <b-collapse class="dropdown-menu" id="companyCollapse">
+                                    <b-collapse class="dropdown-menu" id="companyCollapse" v-model="showCollapseaCompany">
                                         <NuxtLink class="dropdown-item" to="/aboutUs">{{$t('about')}}</NuxtLink>
                                         <a class="dropdown-item" href="./team.html">Team</a>
                                         <a class="dropdown-item" href="./career.html">Career</a>
@@ -52,7 +52,7 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" v-b-toggle.supportCollapse>Support
                                     </a>
-                                    <b-collapse class="dropdown-menu" id="supportCollapse">
+                                    <b-collapse class="dropdown-menu" id="supportCollapse" v-model="showCollapseaSupport">
                                         <a class="dropdown-item" href="./contact.html">Contact us</a>
                                         <a class="dropdown-item" href="./helpdesk.html">Help Desk</a>
                                         <a class="dropdown-item" href="./privacy-policy.html">Privacy</a>
@@ -98,6 +98,24 @@
 <script>
 import { BIcon, BIconArrowUp, BIconArrowDown } from 'bootstrap-vue'
 export default {
+      data() {
+            return {
+            showCollapse: false,
+            showCollapseaAalysis : false,
+            showCollapseaCompany : false,
+            showCollapseaSupport : false,
+
+            }
+        },
+        watch: {
+            '$route' () {
+            this.showCollapse = false
+            this.showCollapseaAalysis = false
+            this.showCollapseaCompany = false
+            this.showCollapseaSupport = false
+            }
+        },
+
       components: {
         BIcon,
         BIconArrowUp,

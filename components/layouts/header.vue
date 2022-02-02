@@ -68,25 +68,23 @@
                                     </div>
                                 </li>
 
-
+                        <li class="nav-item dropdown">
+                                    <a class="nav-link" href="#" v-b-toggle.languageCollapse>
+                                        <img :src="require(`@/assets/icons/`+ $i18n.locale +`.svg`)" style="width: 24px; height: auto" alt="" class="mr-1 ml-1" />
+                                        {{ $t('lang') }}
+                                    </a>
+                                    <b-collapse class="dropdown-menu" id="languageCollapse" v-model="showCollapseaLanguage">
+                                        <a class="dropdown-item" href="#" v-for="lang in $i18n.locales" :key="lang.code" :value="lang.code" :active="lang.code === activeLang" @click="changeLang(lang.code)">
+                                        <img :src="require(`@/assets/icons/`+ lang.code +`.svg`)" style="width: 24px; height: auto" alt="" class="mr-1" />
+                                        <span>{{ lang.name }}</span></a>
+                                    </b-collapse>
+                        </li>
                             </ul>
+                                                    <!-- language -->
                         </b-collapse>
 
 
-                        <!-- language -->
-                        <div class="d-none d-lg-block">
-                            <b-dropdown id="my-dropdown-toggle" class="ml-3 mr-3" variant="outline-secondary" no-caret>
-                            <template #button-content>
-                                <img :src="require(`@/assets/icons/`+ $i18n.locale +`.svg`)" style="width: 24px; height: auto" alt="" class="mr-1" />
-                                    <span>{{ $t('lang') }}</span>
-                            </template>
-                                    <b-dropdown-item
-                                    v-for="lang in $i18n.locales" :key="lang.code" :value="lang.code" :active="lang.code === activeLang" @click="changeLang(lang.code)">
-                                    <img :src="require(`@/assets/icons/`+ lang.code +`.svg`)" style="width: 24px; height: auto" alt="" class="mr-1" />
-                                    <span>{{ lang.name }}</span>
-                                </b-dropdown-item>
-                            </b-dropdown>
-                        </div>
+
                     </nav>
                 </div>
             </div>

@@ -26,15 +26,18 @@
                                 <li class="nav-item">
                                     <NuxtLink class="nav-link" to="/">{{$t('home')}}</NuxtLink>
                                 </li>
+
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Analysis</a>
-                                    <div class="dropdown-menu">
+                                    <a class="nav-link dropdown-toggle" href="#"  v-b-toggle.analysisCollapse  data-target="#analysisCollapse">Analysis</a>
+                                    
+                                    <b-collapse class="dropdown-menu description" id="analysisCollapse" >
                                         <a class="dropdown-item" href="#">Currencies</a>
                                         <a class="dropdown-item" href="#">Materials</a>
                                         <a class="dropdown-item" href="#">Stocks</a>
                                         <a class="dropdown-item" href="#">Cryptocurrencies</a>
-                                    </div>
+                                    </b-collapse>
                                 </li>
+                                
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">News</a>
                                 </li>
@@ -97,40 +100,50 @@
 import { BIcon, BIconArrowUp, BIconArrowDown } from 'bootstrap-vue'
 export default {
       components: {
-    BIcon,
-    BIconArrowUp,
-    BIconArrowDown
-  },
-     mounted() {
-    console.log(this.$dir()); // logs your direction 'ltr' or 'rtl'
-    console.log(this.$i18n.locale);
-    if (this.$i18n.locale == "ar") {
-        let htmlEl=document.querySelector("html");
-        htmlEl.setAttribute('dir','rtl');
-        htmlEl.setAttribute('lang','ar');
+        BIcon,
+        BIconArrowUp,
+        BIconArrowDown
+      },
+      mounted() {
+        console.log(this.$dir()); // logs your direction 'ltr' or 'rtl'
+        console.log(this.$i18n.locale);
+        if (this.$i18n.locale == "ar") {
+          let htmlEl = document.querySelector("html");
+          htmlEl.setAttribute('dir', 'rtl');
+          htmlEl.setAttribute('lang', 'ar');
+        }
+      },
+      computed: {
+        languages() {
+          return this.$i18n.locales
+        },
+        activeLang() {
+          return this.$i18n.locale
+        },
+      },
+      methods: {
+        changeLang: function (language) {
+          this.$i18n.setLocale(language);
+          this.restartServices();
+          this.$router.push('/')
+        },
+        restartServices() {
+          console.log("language changed");
+          window.location.reload(true)
+          this.socket.emit('change lang', this.$i18n.locale)
+        },
+        // hoverHandler(isHovered) {
+        //   if (isHovered) {
+        //     console.log("hoered");
+        //     return true;
+        //   } else {
+        //     // Do something else
+        //     console.log("gone");
+        //     return false;
+        //   }
+        // }
+      }
     }
-  },
-  computed: {
-    languages () {
-    return this.$i18n.locales
-  },
-  activeLang() {
-    return this.$i18n.locale
-  },
-  },
-methods:{
-      changeLang: function (language) {
-      this.$i18n.setLocale(language);
-      this.restartServices();
-      this.$router.push('/')
-    },
-      restartServices() {
-      console.log("language changed");
-      window.location.reload(true)
-      this.socket.emit('change lang', this.$i18n.locale)
-    },
-}
-}
 </script>
 
 <style>

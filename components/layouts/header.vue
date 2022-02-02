@@ -28,9 +28,9 @@
                                 </li>
 
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#"  v-b-toggle.analysisCollapse  data-target="#analysisCollapse">Analysis</a>
+                                    <a class="nav-link dropdown-toggle" href="#" v-b-toggle.analysisCollapse>Analysis</a>
                                     
-                                    <b-collapse class="dropdown-menu description" id="analysisCollapse" >
+                                    <b-collapse class="dropdown-menu" id="analysisCollapse">
                                         <a class="dropdown-item" href="#">Currencies</a>
                                         <a class="dropdown-item" href="#">Materials</a>
                                         <a class="dropdown-item" href="#">Stocks</a>
@@ -42,23 +42,22 @@
                                     <a class="nav-link" href="#">News</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Company
-                                    </a>
-                                    <div class="dropdown-menu">
+                                    <a class="nav-link dropdown-toggle" href="#" v-b-toggle.companyCollapse>Company</a>
+                                    <b-collapse class="dropdown-menu" id="companyCollapse">
                                         <NuxtLink class="dropdown-item" to="/aboutUs">{{$t('about')}}</NuxtLink>
                                         <a class="dropdown-item" href="./team.html">Team</a>
                                         <a class="dropdown-item" href="./career.html">Career</a>
-                                    </div>
+                                    </b-collapse>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Support
+                                    <a class="nav-link dropdown-toggle" href="#" v-b-toggle.supportCollapse>Support
                                     </a>
-                                    <div class="dropdown-menu">
+                                    <b-collapse class="dropdown-menu" id="supportCollapse">
                                         <a class="dropdown-item" href="./contact.html">Contact us</a>
                                         <a class="dropdown-item" href="./helpdesk.html">Help Desk</a>
                                         <a class="dropdown-item" href="./privacy-policy.html">Privacy</a>
                                         <a class="dropdown-item" href="./faq.html">FAQ</a>
-                                    </div>
+                                    </b-collapse>
                                 </li>
                                 <li class="nav-item">
                                     <NuxtLink class="nav-link" to="/blogs">Blogs</NuxtLink>
@@ -132,16 +131,16 @@ export default {
           window.location.reload(true)
           this.socket.emit('change lang', this.$i18n.locale)
         },
-        // hoverHandler(isHovered) {
-        //   if (isHovered) {
-        //     console.log("hoered");
-        //     return true;
-        //   } else {
-        //     // Do something else
-        //     console.log("gone");
-        //     return false;
-        //   }
-        // }
+        hoverHandler(isHovered) {
+          if (isHovered) {
+            console.log("hoered");
+            return true;
+          } else {
+            // Do something else
+            console.log("gone");
+            return false;
+          }
+        }
       }
     }
 </script>
@@ -154,6 +153,10 @@ export default {
 #my-dropdown-toggle span :hover{
   color: #231f20;
 }
+
+  @media (min-width: 1200px) {
+    #analysisCollapse {
+      display: block; } }
 
 
 </style>

@@ -108,6 +108,8 @@ export default {
         },
         watch: {
             '$route' () {
+            this.scrollToTop();
+            this.onWindowLoad();
             this.showCollapse = false
             this.showCollapseaAalysis = false
             this.showCollapseaCompany = false
@@ -115,15 +117,15 @@ export default {
             this.showCollapseaLanguage= false
             }
         },
-
       components: {
         BIcon,
         BIconArrowUp,
         BIconArrowDown
       },
+      create() {
+        window.addEventListener("load", this.onWindowLoad);
+     },
       mounted() {
-        console.log(this.$dir()); // logs your direction 'ltr' or 'rtl'
-        console.log(this.$i18n.locale);
         if (this.$i18n.locale == "ar") {
           let htmlEl = document.querySelector("html");
           htmlEl.setAttribute('dir', 'rtl');
@@ -158,7 +160,13 @@ export default {
             console.log("gone");
             return false;
           }
-        }
+        },
+          scrollToTop() {
+            window.scrollTo(0,0);
+        },
+            onWindowLoad() {
+            console.log("window load event");
+        },
       }
     }
 </script>

@@ -74,7 +74,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="service-img">
-                        <img src="images/about/1.jpg" alt="" class="img-fluid">
+                        <img src="~/assets/images/about/1.jpg" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>

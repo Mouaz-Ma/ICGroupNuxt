@@ -91,6 +91,6 @@ export default {
   layout: 'index',
   components: {
     Banner
-  }
+  },
   }
 </script>

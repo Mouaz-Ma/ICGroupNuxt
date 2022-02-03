@@ -52,24 +52,11 @@
 </template>
 <script>
 export default {
-    
+
 }
 </script>
 <style scoped>
 html{
     height: 100%;
-}
-body{
-    height: 100%;
-            background:
-            linear-gradient(
-          rgba(0, 0, 0, 0.9), 
-          rgba(0, 0, 0, 0.9)
-        ),
-        /* bottom, image */
-        url(https://images.unsplash.com/photo-1620266757065-5814239881fd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
 }
 </style>

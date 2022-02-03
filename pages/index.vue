@@ -414,5 +414,6 @@
 
 export default {
   layout: 'index',
+
   }
 </script>

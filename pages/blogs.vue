@@ -17,6 +17,6 @@ export default {
   layout: 'blogs',
   components: {
     BlogCard,
-  }
+  },
   }
 </script>

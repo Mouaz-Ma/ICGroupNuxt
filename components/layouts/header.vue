@@ -108,8 +108,6 @@ export default {
         },
         watch: {
             '$route' () {
-            this.scrollToTop();
-            this.onWindowLoad();
             this.showCollapse = false
             this.showCollapseaAalysis = false
             this.showCollapseaCompany = false
@@ -122,9 +120,6 @@ export default {
         BIconArrowUp,
         BIconArrowDown
       },
-      create() {
-        window.addEventListener("load", this.onWindowLoad);
-     },
       mounted() {
         if (this.$i18n.locale == "ar") {
           let htmlEl = document.querySelector("html");
@@ -146,26 +141,10 @@ export default {
           this.restartServices();
           this.$router.push('/')
         },
-        restartServices() {
+        restartServices: function() {
           console.log("language changed");
           window.location.reload(true)
           this.socket.emit('change lang', this.$i18n.locale)
-        },
-        hoverHandler(isHovered) {
-          if (isHovered) {
-            console.log("hoered");
-            return true;
-          } else {
-            // Do something else
-            console.log("gone");
-            return false;
-          }
-        },
-          scrollToTop() {
-            window.scrollTo(0,0);
-        },
-            onWindowLoad() {
-            console.log("window load event");
         },
       }
     }
@@ -184,6 +163,5 @@ export default {
     #analysisCollapse {
       display: block; } 
 }
-
 
 </style>

@@ -11203,3 +11203,23 @@ label.error {
     border-radius: 5px; }
 
 /*# sourceMappingURL=style.css.map */
+
+
+/* layout transtion */
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity 0.5s;
+}
+.layout-enter,
+.layout-leave-active {
+  opacity: 0;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+}

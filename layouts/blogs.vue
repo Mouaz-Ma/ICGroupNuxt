@@ -27,7 +27,7 @@
 import Header from '@/components/layouts/header'
 import Footer from "@/components/layouts/footer";
 import BlogSideBar from '@/components/blogSideBar.vue';
-import PageBanner from '../components/pageBanner.vue';
+import PageBanner from '@/components/pageBanner.vue';
 export default {
   name: 'blogs',
   components: {

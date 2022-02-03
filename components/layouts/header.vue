@@ -96,6 +96,7 @@
 <script>
 import { BIcon, BIconArrowUp, BIconArrowDown } from 'bootstrap-vue'
 export default {
+  scrollToTop: true,
       data() {
             return {
             showCollapse: false,

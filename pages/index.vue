@@ -7,7 +7,7 @@
         <div class="row justify-content-between align-items-center mt-5">
             <div class="col-xl-6 col-lg-6 col-12">
                 <div class="intro-content">
-                    <h1 class="text-white">Trade with <strong class="text-white">ICGroupsFx</strong> <br> Buy and
+                    <h1 class="text-white">{{test}} <strong class="text-white">ICGroupsFx</strong> <br> Buy and
                         sell and Make Profit
                     </h1>
                     <p class="text-white">Fast and secure way to Trade Cryptocurrencies, Stocks, Materials and Currencies</p>
@@ -410,10 +410,39 @@
 </template>
 
 <script>
-
-
 export default {
+    
   layout: 'index',
+        data() {
+        return {
+          loading: false,
+          test: null,
+        }
+      },
+    created () {
+        this.fetch();
+    },
+    //   mounted() {
+    //       this.fetching =  setInterval(this.fetch,10000)
+    //   },
+          beforeDestroy() {
+    clearInterval(this.fetching)
+          },
+    methods: {
+    // fetch: async function() {
+    //     this.test = await fetch('http://localhost:5000/').then(res => res.json());
+    // },
+      fetch: function () {
+        this.$axios.$get(process.env.API_URL+'/')
+        .then(res => {
+            console.log(res);
+            this.test = res;
+        })
+        .catch(err => {
+            console.log(err)
+        })
+      },
+    },
 
   }
 </script>

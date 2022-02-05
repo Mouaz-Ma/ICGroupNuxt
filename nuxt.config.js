@@ -5,15 +5,32 @@ export default {
     htmlAttrs: {
       lang: 'en'
     },
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+    meta: [{
+        charset: 'utf-8'
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: ''
+      },
+      {
+        name: 'format-detection',
+        content: 'telephone=no'
+      }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css' },
+    link: [{
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css'
+      },
     ],
   },
 
@@ -31,31 +48,48 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-  ],
+  buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     'nuxt-i18n',
+    '@nuxtjs/axios',
+    '@nuxtjs/dotenv',
   ],
   bootstrapVue: {
     // Install the `IconsPlugin` plugin (in addition to `BootstrapVue` plugin)
     icons: true
   },
   i18n: {
-    locales: [
-      { code: 'ar', name:'العربية', iso: 'ae-AE', file: 'ar.js', dir: 'rtl' },
-      { code: 'en', name:'English', iso: 'en-US', file: 'en.js', dir: 'ltr' },
+    locales: [{
+        code: 'ar',
+        name: 'العربية',
+        iso: 'ae-AE',
+        file: 'ar.js',
+        dir: 'rtl'
+      },
+      {
+        code: 'en',
+        name: 'English',
+        iso: 'en-US',
+        file: 'en.js',
+        dir: 'ltr'
+      },
     ],
     langDir: "static/lang",
     lazy: true,
     defaultLocale: 'en',
     strategy: 'no_prefix',
-},
+  },
+  axios: {
+    // proxy: true
+    BaseURL: process.env.API_URL,
+    proxyHeaders: false,
+    credentials: false
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  },
+  build: {},
 }

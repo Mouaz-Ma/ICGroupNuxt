@@ -10,13 +10,13 @@
                     </div>
                     <div class="auth-form card">
                         <div class="card-body">
-                            <form method="post" name="myform" class="signin_validate row g-3" action="otp-2.html">
+                            <form @submit.prevent="signIn" class="signin_validate row g-3" >
                                 <div class="col-12">
                                     <input type="email" class="form-control" placeholder="hello@example.com"
-                                        name="email">
+                                        v-model="email">
                                 </div>
                                 <div class="col-12">
-                                    <input type="password" class="form-control" placeholder="Password" name="password">
+                                    <input type="password" class="form-control" placeholder="Password" v-model="password">
                                 </div>
                                 <div class="col-6">
                                     <div class="form-check form-switch">
@@ -50,7 +50,27 @@
 </template>
 <script>
 export default {
-    
+        data() {
+       return {
+         email: '',
+         password: ''
+       };
+    },
+  methods: {
+     signIn() {
+         this.$axios.post(process.env.API_URL+'/users/login', {
+          email: this.email,
+          password: this.password
+        })
+        .then( (response) => {
+        this.$router.push({path: '/'});
+          console.log(response.data);
+        })
+        .catch( (error) => {
+          console.log(error);
+        });
+    }
+  }
 }
 </script>
 <style scoped>

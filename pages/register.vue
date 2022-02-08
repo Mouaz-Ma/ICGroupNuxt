@@ -10,17 +10,16 @@
                     </div>
                     <div class="auth-form card">
                         <div class="card-body">
-                            <form method="post" name="myform" class="signin_validate row g-3"
-                                action="verify-email.html">
+                            <form @submit.prevent="register" class="signin_validate row g-3">
                                 <div class="col-12">
-                                    <input type="text" class="form-control" placeholder="Name" name="name">
+                                    <input type="text" class="form-control" placeholder="Name" v-model="username">
                                 </div>
                                 <div class="col-12">
                                     <input type="email" class="form-control" placeholder="hello@example.com"
-                                        name="email">
+                                        v-model="email">
                                 </div>
                                 <div class="col-12">
-                                    <input type="password" class="form-control" placeholder="Password" name="password">
+                                    <input type="password" class="form-control" placeholder="Password" v-model="password">
                                 </div>
                                 <div class="col-12">
                                     <div class="form-check form-switch">
@@ -34,7 +33,7 @@
                                 </div>
 
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-primary btn-block">Create account</button>
+                                    <button class="btn btn-primary btn-block">Create account</button>
                                 </div>
                             </form>
                             <div class="text-center">
@@ -52,7 +51,29 @@
 </template>
 <script>
 export default {
-
+    data() {
+       return {
+         username: '',
+         email: '',
+         password: ''
+       };
+    },
+  methods: {
+     register() {
+         this.$axios.post(process.env.API_URL+'/users/register', {
+          username: this.username,
+          email: this.email,
+          password: this.password
+        })
+        .then( (response) => {
+        this.$router.push({name: 'verifyEmail', params: {email: this.email}});
+          console.log(response.data);
+        })
+        .catch( (error) => {
+          console.log(error);
+        });
+    }
+  }
 }
 </script>
 <style scoped>

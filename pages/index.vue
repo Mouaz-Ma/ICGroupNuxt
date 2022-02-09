@@ -7,7 +7,7 @@
         <div class="row justify-content-between align-items-center mt-5">
             <div class="col-xl-6 col-lg-6 col-12">
                 <div class="intro-content">
-                    <h1 class="text-white">{{test}} <strong class="text-white">ICGroupsFx</strong> <br> Buy and
+                    <h1 class="text-white">Trade with<strong class="text-white">ICGroupsFx</strong> <br> Buy and
                         sell and Make Profit
                     </h1>
                     <p class="text-white">Fast and secure way to Trade Cryptocurrencies, Stocks, Materials and Currencies</p>

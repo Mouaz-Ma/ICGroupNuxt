@@ -21,6 +21,13 @@
                                 <div class="col-12">
                                     <input type="password" class="form-control" placeholder="Password" v-model="password">
                                 </div>
+                                <!-- alerts -->
+                                <div class="col-12">
+                                    <b-alert variant="danger">
+                                    Dismissible Alert!
+                                    </b-alert>
+                                </div>
+                                    
                                 <div class="col-12">
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
@@ -59,21 +66,37 @@ export default {
        };
     },
   methods: {
-     register() {
-         this.$axios.post(process.env.API_URL+'/users/register', {
-          username: this.username,
-          email: this.email,
-          password: this.password
-        })
-        .then( (response) => {
-        this.$router.push({name: 'verifyEmail', params: {email: this.email}});
-          console.log(response.data);
-        })
-        .catch( (error) => {
-          console.log(error);
-        });
-    }
-  }
+     async register() {
+       try {
+           let data = {
+            username: this.username,
+            email: this.email,
+            password: this.password
+           };
+         let response = await this.$axios.post('/api/users/register', data);
+
+         console.log(response)
+         
+         if (response) {
+           console.log("response is true");
+           this.$auth.loginWith("local", {
+             data: {
+               email: this.email,
+               password: this.password,
+             }
+           });
+           this.$router.push({
+             path: '/verifyEmail',
+             params: {
+               email: this.email
+             }
+           });
+         }
+       } catch (err) {
+         console.log(err);
+       }
+     }
+     }
 }
 </script>
 <style scoped>

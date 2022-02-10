@@ -57,6 +57,7 @@ export default {
     'nuxt-i18n',
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
+    '@nuxtjs/auth',
   ],
   bootstrapVue: {
     // Install the `IconsPlugin` plugin (in addition to `BootstrapVue` plugin)
@@ -84,12 +85,39 @@ export default {
     strategy: 'no_prefix',
   },
   axios: {
-    // proxy: true
+    proxy: true,
     BaseURL: process.env.API_URL,
-    proxyHeaders: false,
-    credentials: false
+    // proxyHeaders: false,
+    // credentials: false
+  },
+
+  proxy: {
+    "/api": process.env.API_URL
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: '/api/users/login',
+            method: 'post',
+            propertyName: "token"
+          },
+          logout: {
+            url: '/api/users/logout',
+            method: 'post',
+          },
+          user: {
+            url: '/api/users/verify',
+            method: 'get'
+          }
+        }
+      }
+    }
+  }
 }

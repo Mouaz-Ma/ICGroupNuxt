@@ -419,30 +419,30 @@ export default {
           test: null,
         }
       },
-    created () {
-        this.fetch();
-    },
+    // created () {
+    //     this.fetch();
+    // },
     //   mounted() {
     //       this.fetching =  setInterval(this.fetch,10000)
     //   },
-          beforeDestroy() {
-    clearInterval(this.fetching)
-          },
-    methods: {
-    // fetch: async function() {
-    //     this.test = await fetch('http://localhost:5000/').then(res => res.json());
+    //       beforeDestroy() {
+    // clearInterval(this.fetching)
+    //       },
+    // methods: {
+    // // fetch: async function() {
+    // //     this.test = await fetch('http://localhost:5000/').then(res => res.json());
+    // // },
+    //   fetch: function () {
+    //     this.$axios.$get(process.env.API_URL+'/')
+    //     .then(res => {
+    //         console.log(res);
+    //         this.test = res;
+    //     })
+    //     .catch(err => {
+    //         console.log(err)
+    //     })
+    //   },
     // },
-      fetch: function () {
-        this.$axios.$get(process.env.API_URL+'/')
-        .then(res => {
-            console.log(res);
-            this.test = res;
-        })
-        .catch(err => {
-            console.log(err)
-        })
-      },
-    },
 
   }
 </script>

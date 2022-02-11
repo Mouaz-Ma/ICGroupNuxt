@@ -63,9 +63,17 @@
                                     <NuxtLink class="nav-link" to="/blogs">Blogs</NuxtLink>
                                 </li>
                                 <li>
+                          <template v-if="$auth.$state.loggedIn">
+                            <div>
+                              <span>hi there <nuxt-link to="/profile"> {{$auth.$state.user.username}}</nuxt-link></span>
+                            </div>
+                          </template>
+                                    <template v-else>
                                     <div class="signin-btn">
                                         <NuxtLink class="btn btn-primary" to="/signIn">Sign in</NuxtLink>
                                     </div>
+                                  </template>
+
                                 </li>
 
                         <li class="nav-item dropdown " id="language">
@@ -79,6 +87,7 @@
                                         <span>{{ lang.name }}</span></a>
                                     </b-collapse>
                         </li>
+                        <!-- here we having the username we need to style it  -->
                             </ul>
                                                     <!-- language -->
                         </b-collapse>

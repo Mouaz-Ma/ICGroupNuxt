@@ -58,6 +58,8 @@
 </template>
 <script>
 export default {
+    middleware: "auth",
+    auth: "guest",
     data() {
        return {
          username: '',
@@ -75,18 +77,18 @@ export default {
            };
          let response = await this.$axios.post('/api/users/register', data);
 
-         console.log(response)
+         console.log(response.body)
          
          if (response) {
            console.log("response is true");
-           this.$auth.loginWith("local", {
+           this.$auth.loginWith('local', {
              data: {
                email: this.email,
                password: this.password,
              }
            });
            this.$router.push({
-             path: '/verifyEmail',
+             name: '/verifyEmail',
              params: {
                email: this.email
              }

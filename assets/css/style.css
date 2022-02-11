@@ -8521,8 +8521,7 @@ body.dashboard {
     opacity: 1; }
 
 .content-body {
-  margin-left: 100px;
-  margin-top: 15px; }
+  margin-top: 100px; }
   @media only screen and (max-width: 767px) {
     .content-body {
       margin-left: 0px;
@@ -8843,7 +8842,7 @@ strong {
             padding: 20px 0px;
             position: fixed;
             top: 0;
-            left: 100px;
+            left: 0;
             right: 0;
             z-index: 02;
             background: #fff;

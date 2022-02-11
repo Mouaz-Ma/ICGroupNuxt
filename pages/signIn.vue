@@ -50,6 +50,8 @@
 </template>
 <script>
 export default {
+    middleware: "auth",
+    auth: "guest",
         data() {
        return {
          email: '',
@@ -57,20 +59,20 @@ export default {
        };
     },
   methods: {
-     signIn() {
-         this.$axios.post(process.env.API_URL+'/users/login', {
-          email: this.email,
-          password: this.password
-        })
-        .then( (response) => {
-        this.$router.push({path: '/'});
-          console.log(response.success);
-        })
-        .catch( (error) => {
-          console.log(error);
-        });
-    }
-  }
+     async signIn() {
+       try {
+           this.$auth.loginWith('local', {
+             data: {
+               email: this.email,
+               password: this.password,
+             }
+           });
+           this.$router.push('/');
+       } catch (err) {
+         console.log(err);
+       }
+     }
+     }
 }
 </script>
 <style scoped>

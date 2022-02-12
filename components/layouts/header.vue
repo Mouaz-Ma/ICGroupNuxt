@@ -75,6 +75,14 @@
                                   </template>
 
                                 </li>
+                                <li class="nav-item">
+                                  <template v-if="$auth.$state.loggedIn">
+                                    <div class="signin-btn">
+                                      <a class="btn btn-primary" href="#" @click="onLogout">Log Out</a>
+                                    </div>
+                                  </template>
+
+                                </li>
 
                         <li class="nav-item dropdown " id="language">
                                     <a class="nav-link" href="#" v-b-toggle.languageCollapse>
@@ -156,6 +164,9 @@ export default {
           window.location.reload(true)
           this.socket.emit('change lang', this.$i18n.locale)
         },
+        async onLogout() {
+          await this.$auth.logout()
+        }
       }
     }
 </script>

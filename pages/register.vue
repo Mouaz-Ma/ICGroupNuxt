@@ -77,7 +77,7 @@ export default {
            };
          let response = await this.$axios.post('/api/users/register', data);
 
-         console.log(response.body)
+         console.log(response.success)
          
          if (response) {
            console.log("response is true");
@@ -86,13 +86,14 @@ export default {
                email: this.email,
                password: this.password,
              }
-           });
-           this.$router.push({
-             name: '/verifyEmail',
-             params: {
-               email: this.email
-             }
-           });
+           }).then(() => {
+               this.$router.push({
+                 name: 'verifyEmail',
+                 params: {
+                   email: this.email
+                 }
+               });
+           }).catch(() => {});
          }
        } catch (err) {
          console.log(err);

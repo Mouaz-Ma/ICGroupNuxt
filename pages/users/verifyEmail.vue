@@ -17,12 +17,12 @@
                                         <p>We sent verification email to <strong
                                                 class="text-dark">{{email}}</strong>. Click the link inside to
                                             get started!</p>
-                                        <a href="index.html">Go to Dashboard</a>
+                                        <NuxtLink to="/">Go to Dashboard</NuxtLink>
                                     </div>
                                 </form>
                             </div>
                             <div class="card-footer text-center">
-                                <a href="signup.html">Email didn't arrive?</a>
+                                <p> please check your email inbox or spam inbox for the verification email</p>
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
 export default {
         data() {
        return {
-         email: this.$route.params.email
+         email: this.$auth.user.email
        };
     },
     

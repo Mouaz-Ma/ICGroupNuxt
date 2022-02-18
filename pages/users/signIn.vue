@@ -26,19 +26,18 @@
                                     </div>
                                 </div>
                                 <div class="col-6 text-right">
-                                    <a href="reset.html">Forgot Password?</a>
+                                    <NuxtLink to="/users/forgot">Forgot Password?</NuxtLink>
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary btn-block">Sign in</button>
                                 </div>
                             </form>
-                            <p class="mt-3 mb-0">Don't have an account? <NuxtLink to="/register" class="text-primary">Sign up</NuxtLink></p>
+                            <p class="mt-3 mb-0">Don't have an account? <NuxtLink to="/users/register" class="text-primary">Sign up</NuxtLink></p>
                         </div>
 
                     </div>
                     <div class="privacy-link">
-                        <a href="signup.html">Have an issue with 2-factor
-                            authentication?</a>
+                        <a href="signup.html">Have an issue with 2-factor authentication?</a>
                         <br />
                         <a href="signup.html">Privacy Policy</a>
                     </div>
@@ -66,8 +65,8 @@ export default {
                email: this.email,
                password: this.password,
              }
-           });
-           this.$router.push('/');
+           })
+            // this.$router.push('/');
        } catch (err) {
          console.log(err);
        }

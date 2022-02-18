@@ -4,7 +4,7 @@
             <div class="card">
                 <img class="img-fluid card-img-top" src="~/assets/images/blog/1.jpg" alt="">
                 <div class="card-body">
-                        <NuxtLink class="nav-link" to="/blog">
+                        <NuxtLink class="nav-link" to="/blogs/blog">
                         <h4 class="card-title">Why does Litecoin need MimbleWimble?</h4>
                         </NuxtLink>
                     <p class="card-text">Cras chinwag brown bread Eaton cracking goal so I said

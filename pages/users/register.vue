@@ -44,8 +44,7 @@
                                 </div>
                             </form>
                             <div class="text-center">
-                                <p class="mt-3 mb-0"> <NuxtLink to="/signIn" class="text-primary">Sign in</NuxtLink> to your
-                                    account</p>
+                                <p class="mt-3 mb-0"> <nuxt-Link to="/users/signIn" class="text-primary">Sign in</nuxt-Link> to your account</p>
                             </div>
                         </div>
 
@@ -88,7 +87,7 @@ export default {
              }
            }).then(() => {
                this.$router.push({
-                 name: 'verifyEmail',
+                 name: 'users-verifyEmail',
                  params: {
                    email: this.email
                  }

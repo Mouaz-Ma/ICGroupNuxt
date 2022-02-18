@@ -8,9 +8,9 @@
                 <div class="header-content">
                     <div class="header-left">
                         <div class="brand-logo">
-                            <nuxt-link to="/">
+                            <NuxtLink to="/">
                                 <img src="~/assets/images/logob.png" alt="">
-                            </nuxt-link>
+                            </NuxtLink>
 
                             
                         </div>
@@ -225,7 +225,7 @@
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">Information </h4>
-                            <nuxt-link class="btn btn-primary" to="/profileUpdate">Edit</nuxt-link>
+                            <NuxtLink class="btn btn-primary" to="/users/profileUpdate">Edit</NuxtLink>
                         </div>
                         <div class="card-body">
                             <form class="row">

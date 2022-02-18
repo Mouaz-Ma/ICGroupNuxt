@@ -114,7 +114,7 @@ export default {
             method: 'post',
           },
           user: {
-            url: '/api/users/verify',
+            url: '/api/users/user',
             method: 'get'
           }
         }

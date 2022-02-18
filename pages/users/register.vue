@@ -76,10 +76,9 @@ export default {
            };
          let response = await this.$axios.post('/api/users/register', data);
 
-         console.log(response.success)
+         console.log(response.data.success)
          
-         if (response) {
-           console.log("response is true");
+         if (response.data.success) {
            this.$auth.loginWith('local', {
              data: {
                email: this.email,

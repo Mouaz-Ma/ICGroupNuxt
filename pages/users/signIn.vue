@@ -5,7 +5,7 @@
             <div class="row justify-content-center h-100 align-items-center">
                 <div class="col-xl-5 col-md-6">
                     <div class="mini-logo text-center my-4">
-                         <NuxtLink class="nav-link" to="/"><img src="~/assets/images/logo.png" alt=""></NuxtLink>
+                         <NuxtLink class="nav-link" to="/"><img src="~/assets/images/logob.png" alt=""></NuxtLink>
                         <h4 class="card-title mt-3">Sign in to Tradee</h4>
                     </div>
                     <div class="auth-form card">
@@ -32,9 +32,14 @@
                                     <button type="submit" class="btn btn-primary btn-block">Sign in</button>
                                 </div>
                             </form>
+                            <div class="text-center">
+                                    <p class="mt-3 mb-0">Or Sign in with: </p>
+                                    <a class="iconLogo" id="facebookLogo" href="https://www.facebook.com/" target="_blank"><font-awesome-icon :icon="['fab', 'facebook']" class="fa-2x" /></a>
+                                    <a class="iconLogo" id="googleLogo" href="https://www.google.com/" target="_blank"><font-awesome-icon :icon="['fab', 'google']" class="fa-2x" /></a>
+                                </div>
+                            
                             <p class="mt-3 mb-0">Don't have an account? <NuxtLink to="/users/register" class="text-primary">Sign up</NuxtLink></p>
                         </div>
-
                     </div>
                     <div class="privacy-link">
                         <a href="signup.html">Have an issue with 2-factor authentication?</a>
@@ -77,5 +82,28 @@ export default {
 <style scoped>
 html{
     height: 100%;
+}
+.iconLogo{
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    opacity: .6;
+    -webkit-transition: .6s;
+    -moz-transition: .6s;
+    transition: .6s;
+}
+
+.iconLogo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    margin-top: -5px;
+    box-shadow: 0px 18px 22px -15px rgba(0,0,0,0.3);
+}
+
+#facebookLogo{
+    color: #0d6efd;
+}
+
+#googleLogo{
+    color: #de5246;
 }
 </style>

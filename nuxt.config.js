@@ -59,7 +59,24 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
     '@nuxtjs/auth',
+    '@nuxtjs/fontawesome',
   ],
+  fontawesome: {
+    icons: {
+      regular: ["faEnvelope"],
+      brands: [
+        "faGoogle",
+        "faFacebook",
+        "faFacebookF",
+        "faFacebookMessenger",
+        "faInstagram",
+        "faTwitter",
+        "faWhatsapp",
+        "faPinterest",
+        "faTelegramPlane"
+      ]
+    }
+  },
   bootstrapVue: {
     // Install the `IconsPlugin` plugin (in addition to `BootstrapVue` plugin)
     icons: true
@@ -118,7 +135,7 @@ export default {
             method: 'get'
           }
         }
-      }
-    }
+        }
+          }
   }
 }

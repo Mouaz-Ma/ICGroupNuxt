@@ -30,7 +30,7 @@
                                     
                                 <div class="col-12">
                                     <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                                        <input v-b-popover.left="'please confirm you are 18 or more'" v-model="checked" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
                                         <label class="form-check-label" for="flexSwitchCheckDefault">
                                             I certify that I am 18 years of age or older, and agree to the <a href="#"
                                                 class="text-primary">User Agreement</a> and <a href="#"
@@ -43,6 +43,11 @@
                                     <button class="btn btn-primary btn-block">Create account</button>
                                 </div>
                             </form>
+                            <div class="text-center">
+                                    <p class="mt-3 mb-0">Or Register in with: </p>
+                                    <a class="iconLogo" id="facebookLogo" href="https://www.facebook.com/" target="_blank"><font-awesome-icon :icon="['fab', 'facebook']" class="fa-2x" /></a>
+                                    <a class="iconLogo" id="googleLogo" href="https://www.google.com/" target="_blank"><font-awesome-icon :icon="['fab', 'google']" class="fa-2x" /></a>
+                                </div>
                             <div class="text-center">
                                 <p class="mt-3 mb-0"> <nuxt-Link to="/users/signIn" class="text-primary">Sign in</nuxt-Link> to your account</p>
                             </div>
@@ -63,35 +68,41 @@ export default {
        return {
          username: '',
          email: '',
-         password: ''
+         password: '',
+         checked: false,
+         notchecked: ""
        };
     },
   methods: {
      async register() {
        try {
-           let data = {
-            username: this.username,
-            email: this.email,
-            password: this.password
-           };
-         let response = await this.$axios.post('/api/users/register', data);
-
-         console.log(response.data.success)
-         
-         if (response.data.success) {
-           this.$auth.loginWith('local', {
-             data: {
-               email: this.email,
-               password: this.password,
-             }
-           }).then(() => {
-               this.$router.push({
-                 name: 'users-verifyEmail',
-                 params: {
-                   email: this.email
+           if(this.checked){
+               let data = {
+                username: this.username,
+                email: this.email,
+                password: this.password
+               };
+             let response = await this.$axios.post('/api/users/register', data);
+    
+             console.log(response.data.success)
+             
+             if (response.data.success) {
+               this.$auth.loginWith('local', {
+                 data: {
+                   email: this.email,
+                   password: this.password,
                  }
-               });
-           }).catch(() => {});
+               }).then(() => {
+                   this.$router.push({
+                     name: 'users-verifyEmail',
+                     params: {
+                       email: this.email
+                     }
+                   });
+               }).catch(() => {});
+           }
+         } else {
+             this.$root.$emit('bv::show::popover', 'flexSwitchCheckDefault')
          }
        } catch (err) {
          console.log(err);
@@ -103,5 +114,28 @@ export default {
 <style scoped>
 html{
     height: 100%;
+}
+.iconLogo{
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    opacity: .6;
+    -webkit-transition: .6s;
+    -moz-transition: .6s;
+    transition: .6s;
+}
+
+.iconLogo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    margin-top: -5px;
+    box-shadow: 0px 18px 22px -15px rgba(0,0,0,0.3);
+}
+
+#facebookLogo{
+    color: #0d6efd;
+}
+
+#googleLogo{
+    color: #de5246;
 }
 </style>

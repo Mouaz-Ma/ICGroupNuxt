@@ -69,6 +69,7 @@ export default {
          username: '',
          email: '',
          password: '',
+         strategy: '',
          checked: false,
          notchecked: ""
        };
@@ -80,7 +81,8 @@ export default {
                let data = {
                 username: this.username,
                 email: this.email,
-                password: this.password
+                password: this.password,
+                strategy: "local",
                };
              let response = await this.$axios.post('/api/users/register', data);
     

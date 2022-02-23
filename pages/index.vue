@@ -411,38 +411,47 @@
 
 <script>
 export default {
-    
+  middleware: "auth",
+  auth: "guest",
   layout: 'index',
-        data() {
-        return {
-          loading: false,
-          test: null,
+  data() {
+    return {
+      loading: false,
+    }
+  },
+  created() {
+    this.checkUser();
+  },
+  //   mounted() {
+  //       this.fetching =  setInterval(this.fetch,10000)
+  //   },
+  beforeDestroy() {
+    clearInterval(this.fetching)
+  },
+  methods: {
+    checkUser: async function () {
+        if(this.$auth.$state.loggedIn){
+            if(this.$auth.$state.strategy === "facebook"){
+                let data = {
+                username: this.$auth.$state.user.name,
+                email: this.$auth.$state.user.email,
+                strategy: "facebook",
+               };
+             await this.$axios.post('/api/users/registerSocial', data);
+
+            } else if (this.$auth.$state.strategy === "google"){
+            let data = {
+                username: this.$auth.$state.user.name,
+                email: this.$auth.$state.user.email,
+                strategy: "google",
+               };
+             await this.$axios.post('/api/users/registerSocial', data);
+            } else {
+                console.log("local so dont do anything he should have been registered")
+            }   
         }
-      },
-    // created () {
-    //     this.fetch();
-    // },
-    //   mounted() {
-    //       this.fetching =  setInterval(this.fetch,10000)
-    //   },
-    //       beforeDestroy() {
-    // clearInterval(this.fetching)
-    //       },
-    // methods: {
-    // // fetch: async function() {
-    // //     this.test = await fetch('http://localhost:5000/').then(res => res.json());
-    // // },
-    //   fetch: function () {
-    //     this.$axios.$get(process.env.API_URL+'/')
-    //     .then(res => {
-    //         console.log(res);
-    //         this.test = res;
-    //     })
-    //     .catch(err => {
-    //         console.log(err)
-    //     })
-    //   },
-    // },
+    },
+  },
 
   }
 </script>

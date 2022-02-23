@@ -115,9 +115,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-  router: {
-    middleware: ['auth']
-  },
+  // router: {
+  //   middleware: ['auth']
+  // },
 
 
   auth: {
@@ -148,10 +148,11 @@ export default {
           client_id: '160001613518-8qdslgbi9iq1h2f01p31utp6mpd2scd5.apps.googleusercontent.com'
         }
       },
+
       redirect: {
-        login: '/users/register',
+        login: '/users/signIn',
         logout: '/',
-        callback: '/users/register',
+        callback: '/users/signIn',
         home: '/'
       },
           }

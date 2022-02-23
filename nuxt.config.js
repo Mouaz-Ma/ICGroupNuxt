@@ -1,5 +1,5 @@
 export default {
-  mode: 'spa',
+  ssr: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'ICGroupNuxt',
@@ -115,6 +115,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+  router: {
+    middleware: ['auth']
+  },
 
 
   auth: {
@@ -135,7 +138,21 @@ export default {
             method: 'get'
           }
         }
+        },
+        facebook: {
+          client_id: '332127222262076',
+          userinfo_endpoint: 'https://graph.facebook.com/me?fields=about,name,picture.typr(large){url},email,birthday',
+          scope: ['public_profile', 'email', 'user_birthday']
+        },
+        google: {
+          client_id: '160001613518-8qdslgbi9iq1h2f01p31utp6mpd2scd5.apps.googleusercontent.com'
         }
+      },
+      redirect: {
+        login: '/users/register',
+        logout: '/',
+        callback: '/users/register',
+        home: '/'
+      },
           }
-  }
 }

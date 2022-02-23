@@ -34,8 +34,8 @@
                             </form>
                             <div class="text-center">
                                     <p class="mt-3 mb-0">Or Sign in with: </p>
-                                    <a class="iconLogo" id="facebookLogo" href="https://www.facebook.com/" target="_blank"><font-awesome-icon :icon="['fab', 'facebook']" class="fa-2x" /></a>
-                                    <a class="iconLogo" id="googleLogo" href="https://www.google.com/" target="_blank"><font-awesome-icon :icon="['fab', 'google']" class="fa-2x" /></a>
+                                    <b-button @click="$auth.loginWith('facebook')" class="iconLogo" id="facebookLogo" target="_blank"><font-awesome-icon :icon="['fab', 'facebook']" class="fa-2x" /></b-button>
+                                    <b-button @click="$auth.loginWith('google')" class="iconLogo" id="googleLogo" target="_blank"><font-awesome-icon :icon="['fab', 'google']" class="fa-2x" /></b-button>
                                 </div>
                             
                             <p class="mt-3 mb-0">Don't have an account? <NuxtLink to="/users/register" class="text-primary">Sign up</NuxtLink></p>
@@ -101,9 +101,13 @@ html{
 
 #facebookLogo{
     color: #0d6efd;
+    background-color: transparent;
+    border-color: transparent
 }
 
 #googleLogo{
     color: #de5246;
+    background-color: transparent;
+    border-color: transparent
 }
 </style>

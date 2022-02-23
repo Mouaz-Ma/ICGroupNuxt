@@ -5,7 +5,7 @@
             <div class="row justify-content-center h-100 align-items-center">
                 <div class="col-xl-5 col-md-6">
                     <div class="mini-logo text-center my-4">
-                         <NuxtLink class="nav-link" to="/"><img src="~/assets/images/logo.png" alt=""></NuxtLink>
+                         <NuxtLink class="nav-link" to="/"><img src="~/assets/images/logob.png" alt=""></NuxtLink>
                         <h4 class="card-title mt-3">Create your account</h4>
                     </div>
                     <div class="auth-form card">
@@ -45,8 +45,8 @@
                             </form>
                             <div class="text-center">
                                     <p class="mt-3 mb-0">Or Register in with: </p>
-                                    <a class="iconLogo" id="facebookLogo" href="https://www.facebook.com/" target="_blank"><font-awesome-icon :icon="['fab', 'facebook']" class="fa-2x" /></a>
-                                    <a class="iconLogo" id="googleLogo" href="https://www.google.com/" target="_blank"><font-awesome-icon :icon="['fab', 'google']" class="fa-2x" /></a>
+                                    <b-button @click="$auth.loginWith('facebook')" class="iconLogo" id="facebookLogo" target="_blank"><font-awesome-icon :icon="['fab', 'facebook']" class="fa-2x" /></b-button>
+                                    <b-button @click="$auth.loginWith('google')" class="iconLogo" id="googleLogo" target="_blank"><font-awesome-icon :icon="['fab', 'google']" class="fa-2x" /></b-button>
                                 </div>
                             <div class="text-center">
                                 <p class="mt-3 mb-0"> <nuxt-Link to="/users/signIn" class="text-primary">Sign in</nuxt-Link> to your account</p>
@@ -107,7 +107,7 @@ export default {
        } catch (err) {
          console.log(err);
        }
-     }
+     },
      }
 }
 </script>
@@ -133,9 +133,13 @@ html{
 
 #facebookLogo{
     color: #0d6efd;
+    background-color: transparent;
+    border-color: transparent
 }
 
 #googleLogo{
     color: #de5246;
+    background-color: transparent;
+    border-color: transparent
 }
 </style>

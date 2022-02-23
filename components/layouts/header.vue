@@ -65,7 +65,7 @@
                                 <li>
                           <template v-if="$auth.$state.loggedIn">
                             <div>
-                              <span>hi there <NuxtLink to="/users/profile"> {{$auth.$state.user.username}}</NuxtLink></span>
+                              <span>hi there <NuxtLink to="/users/profile"> {{$auth.$state.user.username}}{{$auth.$state.user.name}}</NuxtLink></span>
                             </div>
                           </template>
                                     <template v-else>

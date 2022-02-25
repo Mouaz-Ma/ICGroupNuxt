@@ -31,10 +31,10 @@
                                     <a class="nav-link dropdown-toggle" href="#" v-b-toggle.analysisCollapse>Analysis</a>
                                     
                                     <b-collapse class="dropdown-menu" id="analysisCollapse"  v-model="showCollapseaAalysis">
-                                        <a class="dropdown-item" href="#">Currencies</a>
-                                        <a class="dropdown-item" href="#">Materials</a>
-                                        <a class="dropdown-item" href="#">Stocks</a>
-                                        <a class="dropdown-item" href="#">Cryptocurrencies</a>
+                                      <NuxtLink class="dropdown-item" to="/analysis/currencies">Currencies</NuxtLink>
+                                      <NuxtLink class="dropdown-item" to="/analysis/materials">Materials</NuxtLink>
+                                      <NuxtLink class="dropdown-item" to="/analysis/stocks">Stocks</NuxtLink>
+                                      <NuxtLink class="dropdown-item" to="/analysis/crypto">Crypto</NuxtLink>
                                     </b-collapse>
                                 </li>
                                 

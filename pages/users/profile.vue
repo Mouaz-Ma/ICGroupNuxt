@@ -30,10 +30,11 @@
                             <span class="light"><i class="icofont-sun-alt"></i></span>
                         </div>
                         <div class="notification dropdown">
-                            <div class="notify-bell" data-toggle="dropdown">
-                                <span><i class="icofont-alarm"></i></span>
+                            <div class="notify-bell" data-toggle="dropdown" v-b-toggle="'notification'">
+                                <span ><i class="icofont-alarm"></i></span>
                             </div>
-                            <div class="dropdown-menu dropdown-menu-right notification-list">
+                            <b-collapse id="notification">
+                            <div class="dropdown-menu dropdown-menu-right notification-list" >
                                 <h4>Announcements</h4>
                                 <div class="lists">
                                     <a href="#" class="">
@@ -79,6 +80,7 @@
 
                                 </div>
                             </div>
+                            </b-collapse>
                         </div>
 
                         <div class="profile_log dropdown">

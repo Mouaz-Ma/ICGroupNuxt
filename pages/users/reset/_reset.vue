@@ -63,7 +63,7 @@ export default {
                             password: this.password,
                             }
                         })
-                    this.$router.push('/')
+                    // this.$router.push('/')
                     }
                 } else {
                     this.notMatched = true

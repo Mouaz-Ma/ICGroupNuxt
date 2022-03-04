@@ -30,11 +30,10 @@
                             <span class="light"><i class="icofont-sun-alt"></i></span>
                         </div>
                         <div class="notification dropdown">
-                            <div class="notify-bell" data-toggle="dropdown" v-b-toggle="'notification'">
+                            <a class="notify-bell" v-b-toggle.notification>
                                 <span ><i class="icofont-alarm"></i></span>
-                            </div>
-                            <b-collapse id="notification">
-                            <div class="dropdown-menu dropdown-menu-right notification-list" >
+                            </a>
+                            <b-collapse id="notification" class="dropdown-menu dropdown-menu-right notification-list" >
                                 <h4>Announcements</h4>
                                 <div class="lists">
                                     <a href="#" class="">
@@ -79,16 +78,16 @@
                                             class="icofont-simple-right"></i></a>
 
                                 </div>
-                            </div>
+                            
                             </b-collapse>
                         </div>
 
                         <div class="profile_log dropdown">
-                            <div class="user" data-toggle="dropdown">
+                            <a class="user" v-b-toggle.userOptions>
                                 <span class="thumb"><img src="~/assets/images/profile/2.png" alt=""></span>
                                 <span class="arrow"><i class="icofont-angle-down"></i></span>
-                            </div>
-                            <div class="dropdown-menu dropdown-menu-right">
+                            </a>
+                            <b-collapse class="dropdown-menu dropdown-menu-right" id="userOptions">
                                 <div class="user-email">
                                     <div class="user">
                                         <span class="thumb"><img src="~/assets/images/profile/2.png" alt=""></span>
@@ -127,7 +126,7 @@
                                 <a href="signin.html" class="dropdown-item logout">
                                     <i class="icofont-logout"></i> Logout
                                 </a>
-                            </div>
+                            </b-collapse>
                         </div>
                     </div>
 
@@ -139,7 +138,7 @@
 
     <!-- <div class="sidebar">
     <div class="brand-logo">
-        <a href="index.html"><img src="./images/logoi.png" alt="" width="30">
+        <a href="index.html"><img src="~/assets/images/logob.png" alt="" width="30">
         </a>
     </div>
     <div class="menu">
@@ -172,7 +171,7 @@
             &#169; <a href="#">Qkit</a>
         </p>
     </div>
-</div> -->
+</div>  -->
     <div class="content-body">
         <div class="container">
             <div class="row">
@@ -181,9 +180,9 @@
                         <div class="card-body">
                             <img src="~/assets/images/profile/2.png" alt="">
                             <h4>Welcome, {{$auth.$state.user.username}}!</h4>
+                            <div v-if="!$auth.$state.user.isVerified">
                             <p>Looks like you are not verified yet. Verify yourself to use the full potential of
                                 Tradee.</p>
-
                             <ul>
                                 <li>
                                     <a href="#">
@@ -198,10 +197,28 @@
                                     </a>
                                 </li>
                             </ul>
+                            </div>
+
                         </div>
                     </div>
                 </div>
-                <div class="col-xxl-6 col-xl-6 col-lg-6">
+                <div class="col-xxl-6 col-xl-6 col-lg-6" v-if="$auth.$state.user.userType === 'Administrator'">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Uploads</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="app-link">
+                                <h5>What would you like to upload</h5>
+                                <nuxt-link class="btn btn-primary" to="/blogs/uploadBlog">Blog</nuxt-link>
+                                <br>
+                                <div class="mt-3"></div>
+                                <nuxt-link class="btn btn-primary" to="/analysis/uploadAnalysis">Analysis</nuxt-link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6" v-else-if="$auth.$state.user.userType === 'normalUser'">
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">Download App</h4>

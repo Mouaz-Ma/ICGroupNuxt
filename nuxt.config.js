@@ -60,7 +60,6 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/auth',
     '@nuxtjs/fontawesome',
-    '@nuxtjs/cloudinary'
   ],
   fontawesome: {
     icons: {
@@ -81,12 +80,6 @@ export default {
   bootstrapVue: {
     // Install the `IconsPlugin` plugin (in addition to `BootstrapVue` plugin)
     icons: true
-  },
-  cloudinary: {
-    // Cloudinary configuration options
-    cloudName: process.env.CLOUDNAME,
-    apiKey: process.env.CLOUDINARY_API_KEY, //only needed if you are using server-side upload
-    apiSecret: process.env.CLOUDINARY_API_SECRET,
   },
   i18n: {
     locales: [

@@ -60,6 +60,7 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/auth',
     '@nuxtjs/fontawesome',
+    '@nuxtjs/moment'
   ],
   fontawesome: {
     icons: {
@@ -76,6 +77,9 @@ export default {
         "faTelegramPlane"
       ]
     }
+  },
+  moment: {
+    timezone: true
   },
   bootstrapVue: {
     // Install the `IconsPlugin` plugin (in addition to `BootstrapVue` plugin)

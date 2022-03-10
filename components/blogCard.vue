@@ -1,21 +1,29 @@
 <template>
-  <div>
+        <div class="col-xl-6 col-lg-6 col-md-6">
+            <div class="blog-grid">
+                <div class="card m-1">
+                    <img id="cardImage" class="img-fluid card-img-top" :src=imageSrc alt="">
+                    <div class="card-body">
+                        <a href="blog-single.html">
+                            <h4 class="card-title">{{title}}</h4>
+                        </a>
 
-      <b-card :title=title img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top>
-        <b-card-text>
-        </b-card-text>
-        <template #footer>
+                                    <b-card-text v-if="content.length<100">{{content}}</b-card-text>
+        <b-card-text v-else>{{content.substring(0,100)+".."}}</b-card-text>
+                    </div>
+                    <div class="card-footer">
+                        <div class="meta-info">
           <a href="#" class="author"><img id="authorImage" src="~/assets/images/avatar/5.jpg" alt="">{{author}}</a>
-          <a href="#" class="text-muted float-right"><i class="la la-calendar"></i> 31 July,
-            2019</a>
-        </template>
-      </b-card>
-
-  </div>
+          <a href="#" class="text-muted float-right"><i class="la la-calendar"></i> {{ $moment(createdAt).format('MM/DD/YYYY')}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </template>
 <script>
 export default {
-    props: ['title', 'author']
+    props: ['title', 'author', 'content', 'imageSrc', 'createdAt']
 }
 </script>
 
@@ -29,5 +37,12 @@ a {
     color: #fbcc31;
     text-decoration: none;
     outline: none;
+}
+
+#cardImage{
+  object-fit: cover;
+  height: 25rem;
+  width: 42rem;
+  padding: 5px;
 }
 </style>

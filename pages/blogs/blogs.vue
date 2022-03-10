@@ -1,21 +1,19 @@
 <template>
-<div>
-    <div id="main-wrapper show">
-      <div class="row">
-              <b-card-group deck>
-              <div v-for="blog in allBlogsData" :key="blog._id">
-                <div class="col-12" >
+  <div>
 
-                  <blog-card
-                  :title= blog.title
-                  :author=blog.author.username />
-                </div>
-
-              </div>
-            </b-card-group>
-            </div>
+      <b-card-group>
+          <div v-for="blog in allBlogsData" :key="blog._id">
+            <blog-card 
+            style="width:100%;"
+            :title=blog.title 
+            :author=blog.author.username 
+            :content=blog.content 
+            :imageSrc=blog.image.url 
+            :createdAt=blog.createdAt
+            />
+          </div>
+      </b-card-group>
     </div>
-</div>
 </template>
 <script>
 import BlogCard from '@/components/blogCard.vue';
@@ -43,5 +41,12 @@ export default {
       author: ""
     }
   },
+  methods:{
+
+  },
   }
 </script>
+
+<style>
+
+</style>

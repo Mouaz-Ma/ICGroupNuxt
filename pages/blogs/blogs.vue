@@ -1,18 +1,17 @@
 <template>
   <div>
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 col-md-6" v-for="blog in allBlogsData" :key="blog._id">
+        <blog-card 
 
-      <b-card-group>
-          <div v-for="blog in allBlogsData" :key="blog._id">
-            <blog-card 
-            style="width:100%;"
-            :title=blog.title 
-            :author=blog.author.username 
-            :content=blog.content 
-            :imageSrc=blog.image.url 
-            :createdAt=blog.createdAt
-            />
-          </div>
-      </b-card-group>
+        :title=blog.title 
+        :author=blog.author.username 
+        :content=blog.content 
+        :imageSrc=blog.image.url 
+        :createdAt=blog.createdAt
+        />
+      </div>
+    </div>
     </div>
 </template>
 <script>

@@ -1,8 +1,9 @@
 <template>
-  <div>
+
+<div class="row">
 
       <b-card-group>
-          <div v-for="blog in allBlogsData" :key="blog._id">
+          <div v-for="blog in allBlogsData" :key="blog._id" class="col-xl-6 col-lg-6 col-md-6">
             <blog-card 
             style="width:100%;"
             :title=blog.title 
@@ -11,9 +12,11 @@
             :imageSrc=blog.image.url 
             :createdAt=blog.createdAt
             />
+                    
           </div>
       </b-card-group>
-    </div>
+    
+</div>
 </template>
 <script>
 import BlogCard from '@/components/blogCard.vue';

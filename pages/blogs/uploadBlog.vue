@@ -30,12 +30,14 @@
                                         ></b-form-file>
                                         <div class="mt-1">Selected file: {{ selectedFile ? selectedFile.name : '' }}</div>
                                 </div>
-                                
-                                <div class="col-12">
+                                <div class="col-12 border">
+                                    <tiptap-editor  v-model="content" />
+                                </div>
+                                <!-- <div class="col-12">
                                     <textarea rows="4" cols="50" class="form-control" placeholder="Blog Body"
                                         v-model="content">
                                     </textarea>
-                                </div>
+                                </div> -->
                                 <!-- alerts -->
                                 <div class="col-12">
                                     <b-alert variant="danger">
@@ -59,8 +61,11 @@
 </div>
 </template>
 <script>
+import TiptapEditor from "@/components/TiptapEditor.vue"
 export default {
-
+    components:{
+        TiptapEditor
+    },
     data() {
        return {
            title: '',
@@ -86,6 +91,8 @@ export default {
             data.append("content", this.content);
             data.append("userID", this.$auth.$state.user._id);
             data.append("photo", this.selectedFile);
+
+            // console.log(this.content)
 
           let response = await this.$axios.post('/api/blogs/new', data);
 

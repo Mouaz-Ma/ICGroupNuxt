@@ -6240,6 +6240,9 @@ textarea.form-control-lg {
 
 .bg-primary {
   background-image: linear-gradient(to left, rgba(241,219,92,0.87) 30%, rgba(251,204,49,0.95) 100%), url('~/assets/images/main-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
  }
 
 .bg-secondary {

@@ -4,12 +4,10 @@
     <div class="card m-1">
       <img id="cardImage" class="img-fluid card-img-top" :src=imageSrc alt="">
       <div class="card-body">
-        <a href="blog-single.html">
           <h4 class="card-title">{{title}}</h4>
-        </a>
 
-        <b-card-text v-if="content.length<100">{{content}}</b-card-text>
-        <b-card-text v-else>{{content.substring(0,100)+".."}}</b-card-text>
+        <!-- <b-card-text v-if="content.length<100">{{content}}</b-card-text>
+        <b-card-text v-else>{{content.substring(0,100)+".."}}</b-card-text> -->
       </div>
       <div class="card-footer">
         <div class="meta-info">

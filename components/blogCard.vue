@@ -41,14 +41,8 @@ a {
 
 #cardImage{
   object-fit: cover;
-<<<<<<< HEAD
-  height: 10rem;
-  width: 20rem;
-  padding: 5px;
-=======
   height: 500px;
   width: 700px;
   padding: 2px;
->>>>>>> 74585e1835e8fbfaef53dc5027e35b2ef56ec942
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid section-margin" id="pageBanner">
+    <div class="container-fluid section-margin pt-5" id="pageBanner">
         <div class="container">
         <h1 class="titleBnner">{{ title }}</h1>
         </div>

@@ -1,5 +1,6 @@
 <template>
 
+<nuxt-link :to="'/blogs/'+blogId" >
   <div class="blog-grid">
     <div class="card m-1">
       <img id="cardImage" class="img-fluid card-img-top" :src=imageSrc alt="">
@@ -18,10 +19,11 @@
       </div>
     </div>
   </div>
+  </nuxt-link>
 </template>
 <script>
 export default {
-    props: ['title', 'author', 'content', 'imageSrc', 'createdAt']
+    props: ['title', 'author', 'content', 'imageSrc', 'createdAt', 'blogId']
 }
 </script>
 

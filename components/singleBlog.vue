@@ -7,129 +7,20 @@
                     
                     <div class="blog-single-post single">
                         <ul class="post-nfo">
-                            <li><i class="la la-calendar"></i>April 25, 2018</li>
-                            <li><i class="la la-comment-o"></i><a href="#" title="">4 Comments</a></li>
-                            <li><i class="la la-bookmark-o"></i><a href="#" title="">Apartments</a></li>
+                            <li><i class="la la-calendar"></i>{{$moment(createdAt).format('DD/MM/YYYY')}}</li>
+                            <li><i class="la la-comment-o"></i><a href="#" title="">{{reviews.length}} Comments</a></li>
+                            <li><i class="la la-bookmark-o"></i>
+                            <a v-for="tag in tags" :key="tag" href="#" title="">
+                                <span> {{ tag }} &nbsp;</span> 
+                            </a>
+                            </li>
                         </ul>
-                        <h3>Real Estate near ocean</h3>
+                        <h3>{{title}}</h3>
                         <div class="blog-img">
-                            <img src="~/assets/images/blog/1.jpg" alt="" class="img-fluid">
+                            <img :src=image.url alt="" class="img-fluid">
                         </div>
                         <!--blog-img end-->
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat nec purus eget
-                            porta.
-                            Aliquam ebendum erat. Donec dui eros, tincidunt at felis non, tristique aliquet ex.
-                            Aenean
-                            luctus, orci condimentum cursus, quam lorem
-                            vulputate ligula, ac pretium risus metus non est. Cras rutrum dolor in tortor ultrices,
-                            ullamcorper finibus magna sollicitudin. Vivamus sed massa sit amet diam porta dignissim
-                            at
-                            in lorem. In facilisis quis erat at tempus.
-                            Aliquam semper diam mollis mollis. Mauris dictum, ante ac interdum.</p>
-                        <p> Astibulum, nibh ipsum condimentum felis, quis luctus nisi nisl sed orci. Pellentesque
-                            habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed
-                            tempus
-                            puet rutrum ultrces. Cras pretium pretium odio aliquam
-                            tortor interduma. Morbi commodo egestas mauris, et porttitor ipsum iaculis fermentum.
-                            Phasellus ante nibh, posuere gravida odio mattis cursus. </p>
-                        <blockquote>Donec sapien odio, mollis ut phaliquet hendrerit erat. Etiam mollis odio ac
-                            libero
-                            ultrices cursus. Mauris massa felis, rutrum vitae velit et. Aliquam ac neque in dui
-                            eleifend
-                            elementum vitae mi.</blockquote>
-                        <p>Praesent bibendum eget justo ac volutpat. Proin laoreet hendrerit porttitor. Praesent ac
-                            lobortis urna. Nam vi ligula nec posuere ornare. Integer aliquet libero at lectus
-                            scelerisque fermentum. Sed dapibus massa ut ex semper porttitor.
-                            Donec blandit dui sit amet nunc sagittis, ut convallis ligula tempor. Vestibulum at
-                            tincidunt mi. Proin venenatis dui et ex lobortis ultricies. </p>
-                        <div class="blg-dv">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="blg-sm">
-                                        <img src="~/assets/images/blog/2.jpg" alt="" class="img-fluid">
-                                    </div>
-                                    <!--blg-sm end-->
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="blg-info">
-                                        <p>Orci varius natoque penatibus et magnis disa parturient montes, nascetur
-                                            ridiculus mus. Vestibulum scelerisque commodo ultricies. Phasellus vite
-                                            ipsum eget diam feme ntum tempor quis nec diam. Nulla at lacus
-                                            consequat.
-                                        </p>
-                                    </div>
-                                    <!--blg-info end-->
-                                </div>
-                            </div>
-                        </div>
-                        <!--blg-dv end-->
-                        <p>Ut egestas fringilla commodo. Phasellus ac mi vel massa mattis elementum non et quam.
-                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                            egestas. Praesent at nibh eros. Curabitur rutrum fermentum
-                            augue, ut auctor elit tempor scelerisque. Pellentesque habitant morbi tristique senectus
-                            et
-                            netus et malesuada fames ac turpis egestas. Vivamus sed ante eu justo feugiat fringilla
-                            sit
-                            amet quis arcu. Vivamus eget cursus ligula,
-                            condimentum feugiat velit, a viverra urna placerat et.</p>
-                        <ul class="bg-links">
-                            <li>Nunc varius varius dolor, sit amet dignissim ligula placerat ullamcorper quam a
-                                magna
-                                tempus ornare. </li>
-                            <li>Aliquam sapien lorem, aliquet consequat neque vel, placerat euismod isl vitae velit
-                                elementum aliquet.</li>
-                            <li>Sed id orci laoreet, lacinia ligula eget, fringilla metus. Quisque nec or
-                                condimentum
-                                accumsan neque. </li>
-                        </ul>
-                        <!--bg-links end-->
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat nec purus eget
-                            porta.
-                            Aliquam ebendum erat. Donec dui eros, tincidunt at felis non, tristique aliquet ex.
-                            Aenean
-                            luctus, orci condimentum cursus, quam lorem
-                            vulputate ligula, ac pretium risus metus non est. Cras rutrum dolor in tortor ultrices,
-                            ullamcorper finibus magna sollicitudin. Vivamus sed massa sit amet diam porta dignissim
-                            at
-                            in lorem. In facilisis quis erat at tempus.
-                            Aliquam semper diam mollis mollis. Mauris dictum, ante ac interdum.</p>
-                        <p> Astibulum, nibh ipsum condimentum felis, quis luctus nisi nisl sed orci. Pellentesque
-                            habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed
-                            tempus
-                            puet rutrum ultrces. Cras pretium pretium odio aliquam
-                            tortor interduma. Morbi commodo egestas mauris, et porttitor ipsum iaculis fermentum.
-                            Phasellus ante nibh, posuere gravida odio cursus risus. </p>
-                        <div class="post-share">
-                            <ul class="social-links">
-                                <li><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#" title=""><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#" title=""><i class="fa fa-instagram"></i></a></li>
-                                <li><a href="#" title=""><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                            <a href="#comment-sec" title="">Write A Comment <i class="la la-arrow-right"></i></a>
-                        </div>
-                        <!--post-share end-->
-                        <div class="cm-info-sec">
-                            <div class="cm-img">
-                                <img src="~/assets/images/blog/cm-img.png" alt="">
-                            </div>
-                            <!--author-img end-->
-                            <div class="cm-info">
-                                <h3>Endrey Tomson</h3>
-                                <p>Etiam euismod iaculis urna vel venenatis. Morbi rutrum commodo enim. Vivamus
-                                    tinci
-                                    dunt leo vel arcu elnd euismodtis purus in, pulvinar tellus nisl aliquam pretium
-                                    ac.
-                                </p>
-                                <ul class="social-links">
-                                    <li><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#" title=""><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#" title=""><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#" title=""><i class="fa fa-linkedin"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--cm-info-sec end-->
+                        <div v-html="content"></div>
                     </div>
                     <!--blog-single-post end-->
                     <div class="comment-section">
@@ -242,6 +133,19 @@
 <script>
 
 export default {
-    
+    props: {
+        title: String,
+        tags: [],
+        content: String,
+        reviews: [],
+        image: {
+            url: String,
+            filename: String
+        },
+        author: {
+            username: String
+        },
+        createdAt: String
+    },
 }
 </script>

@@ -6,6 +6,7 @@
           <div v-for="blog in allBlogsData" :key="blog._id" class="col-xl-6 col-lg-6 col-md-6">
             <blog-card 
             style="width:100%;"
+            :blogId=blog._id
             :title=blog.title 
             :author=blog.author.username 
             :content=blog.content 
@@ -31,7 +32,7 @@ export default {
       const allBlogs = $axios.get('/api/blogs/')
       const allBlogsResponse = await Promise.all([allBlogs])
       const allBlogsData = allBlogsResponse[0].data.blogs
-      console.log(allBlogsData)
+      console.log(allBlogsData[0])
       return {allBlogsData}
     } catch(err){
       console.log(err);

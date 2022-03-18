@@ -10,7 +10,7 @@
                     </div>
                     <div class="auth-form card">
                         <div class="card-body">
-                            <form @submit.prevent="uploadBlog" class="row g-3" >
+                            <form @submit.prevent="uploadBlogEdit" class="row g-3" >
                                 <div class="col-12">
                                     <input type="text" class="form-control" placeholder="Title" v-model="title" required>
                                 </div>
@@ -28,10 +28,14 @@
                                         id="file-upload"
                                         class="d-none"
                                         ></b-form-file>
-                                        <div class="mt-1">Selected file: {{ selectedFile ? selectedFile.name : '' }}</div>
+                                        <div class="mt-1">Selected file: {{ selectedFile ? selectedFile.name : '' }}
+                                            <img  v-bind:style="{ display: computedDisplay }" id="selectedFileImage" :src="selectedFileUrl" alt="">
+                                        </div>
                                 </div>
                                 <div class="col-12 border">
-                                    <tiptap-editor  v-model="content" />
+                                    <div data-app>
+                                        <tiptap-vuetify v-model="content" :extensions="extensions"  @input="$emit('input', arguments[0])" />
+                                    </div>
                                 </div>
                                 <!-- <div class="col-12">
                                     <textarea rows="4" cols="50" class="form-control" placeholder="Blog Body"
@@ -47,7 +51,7 @@
                                 
 
                                 <div class="text-center">
-                                    <button class="btn btn-primary btn-block">Upload a blog</button>
+                                    <button class="btn btn-primary btn-block">Confirm</button>
                                 </div>
                             </form>
 
@@ -61,11 +65,39 @@
 </div>
 </template>
 <script>
-import TiptapEditor from "@/components/TiptapEditor.vue"
+import {
+  TiptapVuetify,
+  Heading,
+  Bold,
+  Italic,
+  Strike,
+  Underline,
+  Paragraph,
+  BulletList,
+  OrderedList,
+  ListItem,
+  Link,
+  Blockquote,
+  HardBreak,
+  HorizontalRule,
+  History,
+  Image
+} from 'tiptap-vuetify'
+
 export default {
-    components:{
-        TiptapEditor
-    },
+    async asyncData({$axios, params}) {
+    try {
+        // write if blog not found to redirect back to blogs 
+      const blog = $axios.get('/api/blogs/' + params.id)
+      const blogResponse = await Promise.resolve(blog)
+      const blogData = blogResponse.data.blog
+      console.log(blogData)
+      return {blogData}
+    } catch(err){
+      console.log(err);
+    }
+  },
+    components: { TiptapVuetify },
     data() {
        return {
            title: '',
@@ -74,31 +106,77 @@ export default {
            user: '',
            selectedFile: null,
            fileName: '',
-       };
+           display: 'block',
+           selectedFileUrl: '',
+           deletedFileName: '',
+            // declare extensions you want to use
+            extensions: [
+            History,
+            Blockquote,
+            Link,
+            Underline,
+            Strike,
+            Italic,
+            ListItem,
+            BulletList,
+            OrderedList,
+            [
+                Heading,
+                {
+                options: {
+                    levels: [1, 2, 3, 4]
+                }
+                }
+            ],
+            Bold,
+            Link,
+            HorizontalRule,
+            Paragraph,
+            HardBreak,
+            Image
+            ],
+            };
+    },
+    computed: {
+        computedDisplay: function () {
+        return this.display;
+        }
+    },
+    created() {
+           this.title= this.blogData.title;
+           this.tagsInput= this.blogData.tags.join(' ')
+           this.content= this.blogData.content
+           this.selectedFileUrl= this.blogData.image.url
     },
   methods: {
       onFileSelected(event) {
+          this.deletedFileName = this.blogData.image.filename
           this.selectedFile = event.target.files[0];
-
+          this.display = 'none'
           this.fileName = event.target.files[0].name;
       },
-    async uploadBlog() {
+    async uploadBlogEdit() {
         try {
-            let tags = this.tagsInput.split(' ');
-            let data = new FormData();
-            data.append("title", this.title);
-            data.append("tagsInput", tags);
-            data.append("content", this.content);
-            data.append("userID", this.$auth.$state.user._id);
-            data.append("photo", this.selectedFile);
-
-            // console.log(this.content)
-
-          let response = await this.$axios.post('/api/blogs/new', data);
-
-          if (response.data.success) {
-            this.$router.push("/blogs/")
-          }
+            if(this.$auth.$state.user.userType === "Administrator"){
+                let tags = this.tagsInput.split(' ');
+                let data = new FormData();
+                data.append("title", this.title);
+                data.append("tagsInput", tags);
+                data.append("content", this.content);
+                data.append("userID", this.$auth.$state.user._id);
+                data.append("photo", this.selectedFile);
+                data.append("deletedImage", this.deletedFileName);
+    
+                // console.log(this.content)
+    
+              let response = await this.$axios.put(`/api/blogs/${this.$route.params.id}` , data);
+    
+              if (response.data.success) {
+                this.$router.push("/blogs")
+              }
+            } else {
+                console.log("you are not supposed to be here buddy!!");
+            }
         } catch (err) {
           console.log(err);
         }
@@ -109,6 +187,12 @@ export default {
 <style scoped>
 html{
     height: 100%;
+}
+
+#selectedFileImage{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
 }
 .custom-file-upload {
     border: 1px solid #ccc;

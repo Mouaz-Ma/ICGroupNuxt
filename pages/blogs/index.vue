@@ -45,9 +45,6 @@ export default {
       author: ""
     }
   },
-  methods:{
-
-  },
   }
 </script>
 

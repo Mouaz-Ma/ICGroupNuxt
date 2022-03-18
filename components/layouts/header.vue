@@ -20,7 +20,7 @@
                         </b-button>
                         
                         <b-collapse class="collapse navbar-collapse" id="my-collapse"  v-model="showCollapse">
-                            <ul class="navbar-nav clearfix">
+                            <ul class="navbar-nav clearfix flex">
 
                                 
                                 <li class="nav-item">
@@ -60,7 +60,7 @@
                                     </b-collapse>
                                 </li>
                                 <li class="nav-item">
-                                    <NuxtLink class="nav-link" to="/blogs/blogs">Blogs</NuxtLink>
+                                    <NuxtLink class="nav-link" to="/blogs/">Blogs</NuxtLink>
                                 </li>
                                 <li>
                           <template v-if="$auth.$state.loggedIn">

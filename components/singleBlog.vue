@@ -15,7 +15,15 @@
                             </a>
                             </li>
                         </ul>
-                        <h3>{{title}}</h3>
+                        <b-row align-v="center">
+                          <b-col><h3>{{title}}</h3></b-col>
+                          <b-col>
+                          <div v-if="$auth.$state.user.userType === 'Administrator'">
+                              <b-button class="m-3 float-right btns" variant="danger" @click="deleteBlog()">Delete </b-button>
+                              <b-button class="m-3 float-right" variant="success"><nuxt-link class="btns" :to="`/blogs/update/${this.$route.params.id}`">Update </nuxt-link></b-button>
+                          </div>
+                          </b-col>
+                        </b-row>
                         <div class="blog-img">
                             <img :src=image.url alt="" class="img-fluid">
                         </div>
@@ -147,5 +155,27 @@ export default {
         },
         createdAt: String
     },
+    methods: {
+        deleteBlog: async function () {
+          try {
+            let deleteResponse = await this.$axios.delete('/api/blogs/' + this.$route.params.id);
+            if (deleteResponse.data.success) {
+              this.$router.push("/blogs")
+            } else {
+              console.log("you are not supposed to be here buddy!!");
+            }
+          } catch (err) {
+            console.log(err)
+          }
+        }
+    }
 }
 </script>
+
+<style>
+.btns{
+    color: white;
+    text-decoration: none;
+    outline: none;
+}
+</style>

@@ -3,7 +3,7 @@
 
   <ClientOnly>
     <!-- Use the component in the right place of the template -->
-    <tiptap-vuetify v-model="content" :extensions="extensions"  @input="$emit('input', arguments[0])"/>
+    <tiptap-vuetify v-model="content" :extensions="extensions"  @input="$emit('input', arguments[0])" />
 
     <template #placeholder>
       Loading...
@@ -21,7 +21,6 @@ import {
   Italic,
   Strike,
   Underline,
-  Code,
   Paragraph,
   BulletList,
   OrderedList,
@@ -30,7 +29,8 @@ import {
   Blockquote,
   HardBreak,
   HorizontalRule,
-  History
+  History,
+  Image
 } from 'tiptap-vuetify'
 
 export default {
@@ -52,22 +52,22 @@ export default {
         Heading,
         {
           options: {
-            levels: [1, 2, 3]
+            levels: [1, 2, 3, 4]
           }
         }
       ],
       Bold,
       Link,
-      Code,
       HorizontalRule,
       Paragraph,
-      HardBreak
+      HardBreak,
+      Image
     ],
     // starting editor's content
-    content: `
-      write your blog here!!
-    `
-  })
+    content: 'Start your Blog here'
+  }),
+  methods:{
+  }
   
 }
 </script>

@@ -20,6 +20,7 @@ export default {
   },
     async asyncData({$axios, params}) {
     try {
+        // write if blog not found to redirect back to blogs 
         console.log(params.id)
       const blog = $axios.get('/api/blogs/' + params.id)
       const blogResponse = await Promise.resolve(blog)

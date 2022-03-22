@@ -3,7 +3,7 @@
         <div id="header">
           <Header />
         </div>
-        <page-banner title="Blogs"/>
+        <page-banner title="News"/>
             <div id="main-wrapper show">
 
           <div class="blog section-padding border-0">
@@ -31,7 +31,7 @@ import Footer from "@/components/layouts/footer";
 import BlogSideBar from '@/components/blogSideBar.vue';
 import PageBanner from '@/components/pageBanner.vue';
 export default {
-  name: 'blogs',
+  name: 'news',
   components: {
     Header,
     Footer,

@@ -39,7 +39,7 @@
                                 </li>
                                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">News</a>
+                                  <nuxt-link class="nav-link" to="/news">News</nuxt-link>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" v-b-toggle.companyCollapse>Company</a>

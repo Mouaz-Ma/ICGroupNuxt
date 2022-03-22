@@ -19,8 +19,8 @@
                           <b-col><h3>{{title}}</h3></b-col>
                           <b-col>
                           <div v-if="$auth.$state.loggedIn && $auth.$state.user.userType ==='Administrator'">
-                              <b-button class="m-3 float-right btns" variant="danger" @click="deleteBlog()">Delete </b-button>
-                              <b-button class="m-3 float-right" variant="success"><nuxt-link class="btns" :to="`/blogs/update/${this.$route.params.id}`">Update </nuxt-link></b-button>
+                              <b-button class="m-3 float-right btns" variant="danger" @click="deleteNews()">Delete </b-button>
+                              <b-button class="m-3 float-right" variant="success"><nuxt-link class="btns" :to="`/news/update/${this.$route.params.id}`">Update </nuxt-link></b-button>
                           </div>
                           </b-col>
                         </b-row>
@@ -156,11 +156,11 @@ export default {
         createdAt: String
     },
     methods: {
-        deleteBlog: async function () {
+        deleteNews: async function () {
           try {
-            let deleteResponse = await this.$axios.delete('/api/blogs/' + this.$route.params.id);
+            let deleteResponse = await this.$axios.delete('/api/news/' + this.$route.params.id);
             if (deleteResponse.data.success) {
-              this.$router.push("/blogs")
+              this.$router.push("/news")
             } else {
               console.log("you are not supposed to be here buddy!!");
             }

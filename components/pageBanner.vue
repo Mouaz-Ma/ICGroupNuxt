@@ -10,7 +10,7 @@ export default {
     props: ['title'],
 }
 </script>
-<style>
+<style scoped>
 .titleBnner{
     padding: 0px 0px 0px 20px;
 }

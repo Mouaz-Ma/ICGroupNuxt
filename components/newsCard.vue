@@ -29,7 +29,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #authorImage{
     max-width: 30px;
         border-radius: 50px;

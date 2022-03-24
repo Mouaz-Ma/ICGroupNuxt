@@ -1,0 +1,1 @@
+export const getAnalysisCategories = (state)  => state.analysisCategories

@@ -12,7 +12,7 @@
 </div>
 </template>
 
-<script>
+<script scoped>
 // import the component and the necessary extensions
 import {
   TiptapVuetify,

@@ -8,7 +8,7 @@
                     <div class="blog-single-post single">
                         <ul class="post-nfo">
                             <li><i class="la la-calendar"></i>{{$moment(createdAt).format('DD/MM/YYYY')}}</li>
-                            <li><i class="la la-comment-o"></i><a href="#" title="">{{reviews.length}} Comments</a></li>
+                            <li><i class="la la-comment-o"></i><a href="#" title=""> Comments</a></li>
                             <li><i class="la la-bookmark-o"></i>
                             <a v-for="tag in tags" :key="tag" href="#" title="">
                                 <span> {{ tag }} &nbsp;</span> 
@@ -19,8 +19,8 @@
                           <b-col><h3>{{title}}</h3></b-col>
                           <b-col>
                           <div v-if="$auth.$state.loggedIn && $auth.$state.user.userType ==='Administrator'">
-                              <b-button class="m-3 float-right btns" variant="danger" @click="deleteBlog()">Delete </b-button>
-                              <b-button class="m-3 float-right" variant="success"><nuxt-link class="btns" :to="`/blogs/update/${this.$route.params.id}`">Update </nuxt-link></b-button>
+                              <b-button class="m-3 float-right btns" variant="danger" @click="deleteAnalysis()">Delete </b-button>
+                              <b-button class="m-3 float-right" variant="success"><nuxt-link class="btns" :to="`/analysis/update/${this.$route.params.id}`">Update </nuxt-link></b-button>
                           </div>
                           </b-col>
                         </b-row>
@@ -153,14 +153,15 @@ export default {
         author: {
             username: String
         },
-        createdAt: String
+        createdAt: String,
+        selectedCategory
     },
     methods: {
-        deleteBlog: async function () {
+        deleteAnalysis: async function () {
           try {
-            let deleteResponse = await this.$axios.delete('/api/blogs/' + this.$route.params.id);
+            let deleteResponse = await this.$axios.delete('/api/analysis/single/' + this.$route.params.id);
             if (deleteResponse.data.success) {
-              this.$router.push("/blogs")
+              this.$router.push({name: 'analysis',  query: { categoryId: this.selectedCategory}})
             } else {
               console.log("you are not supposed to be here buddy!!");
             }

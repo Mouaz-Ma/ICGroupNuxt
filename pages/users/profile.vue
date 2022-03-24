@@ -214,7 +214,7 @@
                                 <br>
                                 <div class="mt-3"></div>
                                 <nuxt-link class="btn btn-primary" to="/analysis/uploadAnalysis">Analysis</nuxt-link>
-                                                                <br>
+                                <br>
                                 <div class="mt-3"></div>
                                 <nuxt-link class="btn btn-primary" to="/news/uploadNews">News</nuxt-link>
                             </div>

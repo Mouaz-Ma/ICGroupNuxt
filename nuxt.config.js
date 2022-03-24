@@ -66,7 +66,7 @@ export default {
     '@nuxtjs/auth',
     '@nuxtjs/fontawesome',
     '@nuxtjs/moment',
-    "@nuxtjs/vuetify"
+    "@nuxtjs/vuetify",
   ],
   fontawesome: {
     icons: {

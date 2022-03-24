@@ -154,11 +154,14 @@ export default {
             username: String
         },
         createdAt: String,
-        selectedCategory
+        selectedCategory:{
+            id: String
+            } 
     },
     methods: {
         deleteAnalysis: async function () {
           try {
+              console.log(this.selectedCategory)
             let deleteResponse = await this.$axios.delete('/api/analysis/single/' + this.$route.params.id);
             if (deleteResponse.data.success) {
               this.$router.push({name: 'analysis',  query: { categoryId: this.selectedCategory}})

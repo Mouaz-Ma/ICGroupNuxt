@@ -82,7 +82,7 @@
                       </div>
                     </li>
 
-                    <li class="nav-item dropdown d-flex" id="language">
+                    <li class="nav-item dropdown d-flex justify-content-center" id="language">
                       <a class="nav-link" href="#" v-b-toggle.languageCollapse>
                         <img :src="require(`@/assets/icons/`+ $i18n.locale +`.svg`)" style="width: 24px; height: auto"
                           alt="" class="mr-1 ml-1" />

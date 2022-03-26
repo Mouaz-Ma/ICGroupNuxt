@@ -27,7 +27,7 @@
                             <div class="app-link  text-center">
                                 <h5>Start Trading on MetaTrader Mobile App</h5>
                                 <p>Trading on Meta Trader mobile app is more secure, faster, and reliable.</p>
-                                <div class="d-flex flex-column w-50 text-center">
+                                <div class="d-flex justify-content-center" id="downloadLinks">
                                 <a href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5" class="btn btn-primary">
                                     <img src="@/assets/images/android.svg" alt="">
                                 </a>
@@ -486,3 +486,11 @@ export default {
 
   }
 </script>
+
+<style scoped>
+@media (max-width: 500px) {
+    #downloadLinks{
+        flex-direction: column;
+    }
+}
+</style>

@@ -13,31 +13,29 @@
                     <p class="text-white">Fast and secure way to Trade Cryptocurrencies, Stocks, Materials and Currencies</p>
 
                     <div class="intro-btn">
-                        <NuxtLink to="/users/register" class="btn btn-primary">Demo Account</NuxtLink>
-                        <NuxtLink to="/users/register" class="btn btn-outline-primary">Real Account</NuxtLink>
+                        <NuxtLink to="/users/register" class="btn btn-primary mb-1 w-50">Demo Account</NuxtLink>
+                        <NuxtLink to="/users/register" class="btn btn-outline-primary mb-1 w-50">Real Account</NuxtLink>
                     </div>
                 </div>
             </div>
-                <div class="col-xl-4 col-lg-6 col-12">
-                     <div class="intro-form-exchange">
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-12 d-flex justify-content-end">
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">Download Meta Trader App</h4>
                         </div>
                         <div class="card-body">
-                            <div class="app-link">
+                            <div class="app-link  text-center">
                                 <h5>Start Trading on MetaTrader Mobile App</h5>
                                 <p>Trading on Meta Trader mobile app is more secure, faster, and reliable.</p>
-                                <div class="d-flex">
+                                <div class="d-flex flex-column w-50 text-center">
                                 <a href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5" class="btn btn-primary">
                                     <img src="@/assets/images/android.svg" alt="">
                                 </a>
                                 <br>
-                                <div class="mt-3"></div>
                                 <a href=" https://apps.apple.com/tr/app/metatrader-5/id413251709" class="btn btn-primary">
                                     <img src="@/assets/images/apple.svg" alt="">
                                 </a>
-                                <div class="mt-3"></div>
+                                <br>
                                 <a href=" https://apps.apple.com/tr/app/metatrader-5/id413251709" class="btn btn-primary">
                                     <img src="@/assets/images/microsoft.svg" style="height: 24px; width: 90px" alt="">
                                 </a>
@@ -45,7 +43,7 @@
                             </div>
                         </div>
                     </div>
-                     </div>
+                    
                 </div>
             <!-- //////////////////////////////////////////
             Calculator

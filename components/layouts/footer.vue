@@ -98,6 +98,7 @@ export default {
   position: fixed;
   bottom: 60px;
   right: 20px; 
+  z-index: 1000;
 }
 
 #whatsAppImage{

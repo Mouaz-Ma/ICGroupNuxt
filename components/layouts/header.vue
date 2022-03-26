@@ -60,9 +60,11 @@
                     <li class="nav-item">
                       <NuxtLink class="nav-link" to="/blogs/">Blogs</NuxtLink>
                     </li>
-
+                    
+                  
                     <li class="nav-item" v-if="$auth.$state.loggedIn">
 
+                    <!-- here we having the username we need to style it  -->
                       <NuxtLink to="/users/profile">
                         <span>{{$auth.$state.user.username}}{{$auth.$state.user.name}}</span></NuxtLink>
 
@@ -80,21 +82,21 @@
                       </div>
                     </li>
 
-                    <li class="nav-item dropdown " id="language">
+                    <li class="nav-item dropdown d-flex" id="language">
                       <a class="nav-link" href="#" v-b-toggle.languageCollapse>
                         <img :src="require(`@/assets/icons/`+ $i18n.locale +`.svg`)" style="width: 24px; height: auto"
                           alt="" class="mr-1 ml-1" />
                         {{ $t('lang') }}
                       </a>
-                      <b-collapse class="dropdown-menu" id="languageCollapse" v-model="showCollapseaLanguage">
-                        <a class="dropdown-item" href="#" v-for="lang in $i18n.locales" :key="lang.code"
+                      <b-collapse class="dropdown-menu " id="languageCollapse" v-model="showCollapseaLanguage">
+                        <a class="d-flex" href="#" v-for="lang in $i18n.locales" :key="lang.code"
                           :value="lang.code" :active="lang.code === activeLang" @click="changeLang(lang.code)">
-                          <img :src="require(`@/assets/icons/`+ lang.code +`.svg`)" style="width: 24px; height: auto"
-                            alt="" class="mr-1" />
-                          <span>{{ lang.name }}</span></a>
+                          <img :src="require(`@/assets/icons/`+ lang.code +`.svg`)" style="width: 24px; height: auto" />
+                          <span class="m-1 w-50">{{ lang.name }}</span></a>
                       </b-collapse>
                     </li>
-                    <!-- here we having the username we need to style it  -->
+
+                    
                   </ul>
                   <!-- language -->
                 </b-collapse>
@@ -179,6 +181,11 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,700;1,100&display=swap');
+body{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
 
 #my-dropdown-toggle span{
   color: rgba(255, 255, 255, 0.85);

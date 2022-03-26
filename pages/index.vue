@@ -13,11 +13,42 @@
                     <p class="text-white">Fast and secure way to Trade Cryptocurrencies, Stocks, Materials and Currencies</p>
 
                     <div class="intro-btn">
-                        <a href="#" class="btn btn-primary">Demo Account </a>
-                        <a href="#" class="btn btn-outline-primary">Real Account</a>
+                        <NuxtLink to="/users/register" class="btn btn-primary">Demo Account</NuxtLink>
+                        <NuxtLink to="/users/register" class="btn btn-outline-primary">Real Account</NuxtLink>
                     </div>
                 </div>
             </div>
+                <div class="col-xl-4 col-lg-6 col-12">
+                     <div class="intro-form-exchange">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Download Meta Trader App</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="app-link">
+                                <h5>Start Trading on MetaTrader Mobile App</h5>
+                                <p>Trading on Meta Trader mobile app is more secure, faster, and reliable.</p>
+                                <div class="d-flex">
+                                <a href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5" class="btn btn-primary">
+                                    <img src="@/assets/images/android.svg" alt="">
+                                </a>
+                                <br>
+                                <div class="mt-3"></div>
+                                <a href=" https://apps.apple.com/tr/app/metatrader-5/id413251709" class="btn btn-primary">
+                                    <img src="@/assets/images/apple.svg" alt="">
+                                </a>
+                                <div class="mt-3"></div>
+                                <a href=" https://apps.apple.com/tr/app/metatrader-5/id413251709" class="btn btn-primary">
+                                    <img src="@/assets/images/microsoft.svg" style="height: 24px; width: 90px" alt="">
+                                </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     </div>
+                </div>
+            <!-- //////////////////////////////////////////
+            Calculator
             <div class="col-xl-4 col-lg-6 col-12">
                 <div class="intro-form-exchange">
                     <form method="post" name="myform" class="currency_validate trade-form row g-3">
@@ -52,6 +83,7 @@
                     </form>
                 </div>
             </div>
+            ////////////////////////////////////////// -->
         </div>
     </div>
     <div class="shape"></div>
@@ -204,7 +236,8 @@
         </div>
     </div>
 </div>
-
+<!-- //////////////////////////////////////////
+Trusted over
     <div class="brand  bg-light section-padding">
     <div class="container">
         <div class="row">
@@ -248,7 +281,7 @@
         </div>
     </div>
 </div>
-
+////////////////////////////////////////// -->
     <div class="appss section-padding">
     <div class="container">
         <div class="row align-items-center justify-content-between">

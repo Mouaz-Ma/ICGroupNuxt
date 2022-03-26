@@ -9465,7 +9465,7 @@ strong {
     left: 0;
     right: 0;
     background: url(./../images/svg/shape.svg);
-    height: 160px;
+    height: 90px;
     z-index: -1; }
 
 .bg-primary .intro-btn .btn-primary {
@@ -9529,7 +9529,7 @@ strong {
   -webkit-box-shadow: 0px 20px 25px rgba(22, 28, 45, 0.05);
           box-shadow: 0px 20px 25px rgba(22, 28, 45, 0.05);
   border-radius: 5px;
-  background: #fff;
+  background: transparent;
   z-index: 1; }
   .intro-form-exchange .nice-select {
     border-top-left-radius: 5px !important;

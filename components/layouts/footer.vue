@@ -1,5 +1,10 @@
 <template>
 <div id="footer">
+          <div id="whatsAppBtn">
+    <a href="https://wa.me/905445355553?text=ICGroup%20%D8%A7%D9%86%D8%A7%20%D9%85%D9%87%D8%AA%D9%85%20%D8%A8%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20" class="btn whatsApp"><img id="whatsAppImage"
+        src="https://global-uploads.webflow.com/601befbd3e6c39d9b373aa94/606aecfac9846644d0c6d979_whatsapp.svg"
+        alt=""></a>
+  </div>
     <div class="bottom section-padding">
     <div class="container">
         <div class="row">
@@ -62,12 +67,12 @@
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                 <div class="footer-social">
                     <ul>
-                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fab fa-telegram"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="https://www.facebook.com/icgroupsfx/"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com/icgroupsfx/"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://t.me/icgroupforex"><i class="fab fa-telegram"></i></a></li>
+                        <!-- <li><a href="#"><i class="fab fa-twitter"></i></a></li> -->
+                        <li><a href="https://www.linkedin.com/in/icgroupsfx/"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCJ-JtUfpKLrnfkhA3Mj0RCQ"><i class="fab fa-youtube"></i></a></li>
                         
                     </ul>
                 </div>
@@ -86,5 +91,17 @@ export default {
 #footer{
     bottom:0;
     width: 100%;
+}
+
+
+#whatsAppBtn {
+  position: fixed;
+  bottom: 60px;
+  right: 20px; 
+}
+
+#whatsAppImage{
+  max-width: 100%;
+  height: 75px;
 }
 </style>

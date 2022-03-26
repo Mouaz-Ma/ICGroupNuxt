@@ -66,7 +66,8 @@ export default {
     '@nuxtjs/auth',
     '@nuxtjs/fontawesome',
     '@nuxtjs/moment',
-    "@nuxtjs/vuetify",
+    "@nuxtjs/vuetify",    
+    '@nuxtjs/google-fonts'
   ],
   fontawesome: {
     icons: {
@@ -84,6 +85,20 @@ export default {
       ]
     }
   },
+  googleFonts: {
+    families: {
+      // a simple name
+      Roboto: true,
+      Mostserrat: true,
+  
+      // a name with spaces
+      'Mostserrat+Sans': true,
+  
+      // specific font weights
+      regular: [100, 300, 400],
+    }
+  },
+
   moment: {
     timezone: true
   },

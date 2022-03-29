@@ -1,5 +1,6 @@
 <template>
   <div style="overflow-x: hidden; display: flex; flex-flow: column; height: 100vh">
+<v-app class="mt-4">
     <div id="header">
       <Header  />
     </div>
@@ -9,6 +10,7 @@
     <div id="footer">
       <Footer />
     </div>
+</v-app>
   </div>
 </template>
 

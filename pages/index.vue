@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row justify-content-between align-items-center mt-5">
             <div class="col-xl-6 col-lg-6 col-12">
-                <div class="intro-content">
+                <div class="intro-content container">
                     <h1 class="text-white">Trade with<strong class="text-white">ICGroupsFx</strong> <br> Buy and
                         sell and Make Profit
                     </h1>

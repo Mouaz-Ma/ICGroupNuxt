@@ -1,6 +1,6 @@
 <template>
 
-
+<nuxt-link :to="'/news/'+newsId">
     <b-card :title=title :img-src=imageSrc img-top tag="article" style="max-width: 20rem;" class="m-2">
       <b-card-text>
         <b-card-text v-if="content.length<100">
@@ -14,14 +14,14 @@
         <div class="meta-info">
           <a href="#" class="text-muted float-right mt-2"><i class="la la-calendar"></i>
             {{ $moment(createdAt).format('MM/DD/YYYY')}}</a>
-          <nuxt-link :to="'/news/'+newsId">
+          
             <b-button variant="primary">Go To Article</b-button>
-          </nuxt-link>
+         
         </div>
       </b-card-text>
 
     </b-card>
-  
+   </nuxt-link>
 </template>
 <script>
 export default {

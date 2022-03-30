@@ -149,6 +149,7 @@
 <script>
 import Banner from "@/components/pageBanner";
 export default {
+    auth: false,
   layout: 'index',
   components: {
     Banner

@@ -11,11 +11,11 @@
         <b-card-body :title=title>
           <b-card-text>
            <!-- <h4 class="card-title">{{title}}</h4> -->
-           <p class="mt-2 mb-5" v-html="content.substring(0,100)+'..'"></p>
+           <!-- <p class="mt-2 mb-5" v-html="content.substring(0,100)+'..'"></p> -->
                  <div class="card-footer">
             <div class="meta-info">
               <a href="#" class="author"><img id="authorImage" src="~/assets/images/avatar/5.jpg" alt="">{{author}}</a>
-              <a href="#" class="text-muted float-right"><i class="la la-calendar"></i>
+              <a href="#" class="mt-1 text-muted float-right"><i class="la la-calendar"></i>
                 {{ $moment(createdAt).format('MM/DD/YYYY')}}</a>
             </div>
           </div>
@@ -36,8 +36,8 @@ export default {
 <style scoped>
 #authorImage{
     max-width: 30px;
-        border-radius: 50px;
-        margin-right: 7px;
+    border-radius: 50px;
+    margin-right: 7px;
 }
 a {
     color: #fbcc31;

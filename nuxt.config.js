@@ -32,11 +32,16 @@ export default {
         rel: 'stylesheet',
         href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css'
       },
-            // Iconfonts for Vuetify. You need to leave only which one you use
-            { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' },
-            { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css' },
-            { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/4.4.95/css/materialdesignicons.min.css' }
+      // Iconfonts for Vuetify. You need to leave only which one you use
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' },
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css' },
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/4.4.95/css/materialdesignicons.min.css' }
     ],
+      script: [{
+        src: "https://maps.googleapis.com/maps/api/js?key="+ process.env.GOOGLE_MAP_API_KEY,
+        hid: "map", 
+        defer: true,
+    }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -54,9 +59,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    "@nuxtjs/vuetify",    
-  ],
+  buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -69,7 +72,7 @@ export default {
     '@nuxtjs/fontawesome',
     '@nuxtjs/moment',
     "@nuxtjs/vuetify",    
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
   ],
   fontawesome: {
     icons: {
@@ -144,9 +147,9 @@ export default {
   build: {
     transpile: ['vuetify/lib', "tiptap-vuetify"]
   },
-  // router: {
-  //   middleware: ['auth']
-  // },
+  router: {
+    middleware: ['auth']
+  },
 
 
   auth: {

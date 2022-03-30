@@ -21,7 +21,7 @@
                             <h4 class="mb-3">Address</h4>
                             <ul>
                                 <li><i class="fa fa-map-marker"></i> Istanbul, Turkey</li>
-                                <li><i class="fa fa-phone"></i> (+880) 1243 665566</li>
+                                <li><i class="fa fa-phone"></i> +905 445 35 55 53</li>
                                 <li><i class="fa fa-envelope"></i> info@icgroupsfx.com</li>
                             </ul>
                         </div>
@@ -100,6 +100,12 @@
                         </form>
                     </div>
                 </div>
+                
+                    <div class="row mt-5">
+                        <div class="col-12">
+                        <div style="height: 500px; width: 100%;" ref="map"></div>
+                        </div>
+                    </div>
             </div>
         </div>
 </div>
@@ -108,6 +114,7 @@
 <script>
 import Banner from "@/components/pageBanner";
 export default {
+    auth: false,
   layout: 'index',
   components: {
     Banner
@@ -121,6 +128,19 @@ export default {
           successMessage: ''
       }
   },
+    mounted(){
+        const mapOptions = {
+            zoom: 15,
+            center: new window.google.maps.LatLng(41.00920862268097, 28.95530739373702),
+            disableDefaultUI: true,
+            zoomControl: true
+        };
+
+        const map = new window.google.maps.Map(this.$refs.map, mapOptions);
+        const position = new window.google.maps.LatLng(41.00920862268097, 28.95530739373702)
+        const marker = new window.google.maps.Marker({ position })
+        marker.setMap(map)
+    },
   methods: {
       contactForm: async function () {
           try {
@@ -146,3 +166,9 @@ export default {
   },
   }
 </script>
+
+<style scoped>
+.btn-primary{
+    color: aliceblue
+}
+</style>

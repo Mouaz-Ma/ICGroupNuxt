@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard">
     <div class="header landing headerBorder">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-xl-12">
             <div class="navigation">

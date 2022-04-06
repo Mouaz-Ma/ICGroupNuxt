@@ -20,7 +20,7 @@
             </div>
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-12 d-flex justify-content-end">
                <div class="row justify-content-center">
-                    <div class="col-xl-7">
+                    <div class="col-xl-8">
                         <div class="section-title text-center">
                             <span>Contact Us</span>
                             

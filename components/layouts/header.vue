@@ -1,5 +1,5 @@
 <template>
-  <div class="@@dashboard">
+  <div class="dashboard">
     <div class="header landing headerBorder">
       <div class="container">
         <div class="row">
@@ -181,11 +181,6 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,700;1,100&display=swap');
-body{
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-}
 
 #my-dropdown-toggle span{
   color: rgba(255, 255, 255, 0.85);

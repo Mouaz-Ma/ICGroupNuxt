@@ -9,7 +9,7 @@
                         <NuxtLink to="/"><img src="~/assets/images/logob.png" alt=""></NuxtLink>
                         <h4 class="card-title mt-3">Reset Password</h4>
                     </div>
-                    <div class="auth-form card">
+                    <div class="auth-form ">
                         <div class="card-body">
                             <form @submit.prevent="requestReset" action="verify-email.html" class="row g-3">
                                 <div class="col-12">
@@ -36,6 +36,7 @@
 
 <script>
 export default {
+    auth: false,
     data() {
        return {
          email: '',

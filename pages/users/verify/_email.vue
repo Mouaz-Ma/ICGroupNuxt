@@ -8,7 +8,9 @@
                         <div class="mini-logo text-center my-4">
                             <NuxtLink to="/"><img src="~/assets/images/logob.png" alt=""></NuxtLink>
                         </div>
-                        <div class="auth-form card">
+                        <div class="row">
+                            <div class="col-12">
+                        <div class="auth-form">
                             <div class="card-body">
                                 <form action="verify-step-2.html" class="identity-upload">
                                     <div class="identity-content">
@@ -17,6 +19,8 @@
                                         <NuxtLink to="/">Go to Home Page</NuxtLink>
                                     </div>
                                 </form>
+                            </div>
+                        </div>
                             </div>
                         </div>
                     </div>
@@ -29,6 +33,7 @@
 </template>
 <script>
 export default {
+    auth: false,
       methods: {
     async checkString () {
       const string = this.$route.params.email

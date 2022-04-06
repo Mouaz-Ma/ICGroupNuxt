@@ -7,42 +7,29 @@
         <div class="row justify-content-between align-items-center mt-5">
             <div class="col-xl-6 col-lg-6 col-12">
                 <div class="intro-content container">
-                    <h1 class="text-white">Trade with<strong class="text-white">ICGroupsFx</strong> <br> Buy and
+                    <h1 class="text-white">Trade with<strong class="text-white"> ICGroupsFx</strong> <br> Buy and
                         sell and Make Profit
                     </h1>
                     <p class="text-white">Fast and secure way to Trade Cryptocurrencies, Stocks, Materials and Currencies</p>
 
-                    <div class="intro-btn">
+                    <div class="intro-btn" v-if="!$auth.$state.user">
                         <NuxtLink to="/users/register" class="btn btn-primary mb-1 w-50">Demo Account</NuxtLink>
-                        <NuxtLink to="/users/register" class="btn btn-outline-primary mb-1 w-50">Real Account</NuxtLink>
+                        <!-- <NuxtLink to="/users/register" class="btn btn-outline-primary mb-1 w-50">Real Account</NuxtLink> -->
                     </div>
                 </div>
             </div>
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-12 d-flex justify-content-end">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">Download Meta Trader App</h4>
+               <div class="row justify-content-center">
+                    <div class="col-xl-7">
+                        <div class="section-title text-center">
+                            <span>Contact Us</span>
+                            
+                        <div>
+                        <contact-from />
                         </div>
-                        <div class="card-body">
-                            <div class="app-link  text-center">
-                                <h5>Start Trading on MetaTrader Mobile App</h5>
-                                <p>Trading on Meta Trader mobile app is more secure, faster, and reliable.</p>
-                                <div class="d-flex justify-content-center" id="downloadLinks">
-                                <a href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5" class="btn btn-primary">
-                                    <img src="@/assets/images/android.svg" alt="">
-                                </a>
-                                <br>
-                                <a href=" https://apps.apple.com/tr/app/metatrader-5/id413251709" class="btn btn-primary">
-                                    <img src="@/assets/images/apple.svg" alt="">
-                                </a>
-                                <br>
-                                <a href=" https://apps.apple.com/tr/app/metatrader-5/id413251709" class="btn btn-primary">
-                                    <img src="@/assets/images/microsoft.svg" style="height: 24px; width: 90px" alt="">
-                                </a>
-                                </div>
-                            </div>
                         </div>
                     </div>
+                </div>
                     
                 </div>
             <!-- //////////////////////////////////////////
@@ -292,12 +279,15 @@ Trusted over
                         <li><i class="la la-check"></i> Buy, Sell, and Make profit</li>
                     </ul>
                     <div class="mt-4">
-                        <a href="#" class="btn btn-primary my-1 waves-effect">
+                        <a href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5" class="btn btn-primary my-1 waves-effect">
                             <img src="~/assets/images/android.svg" alt="">
                         </a>
-                        <a href="#" class="btn btn-primary my-1 waves-effect">
+                        <a href=" https://apps.apple.com/tr/app/metatrader-5/id413251709" class="btn btn-primary my-1 waves-effect">
                             <img src="~/assets/images/apple.svg" alt="">
                         </a>
+                    <a href="https://download.metatrader.com/cdn/web/internationals.capital.groups/mt5/intcapitalgroups5setup.exe" class="btn btn-primary">
+                        <img src="@/assets/images/microsoft.svg" style="height: 24px; width: 90px" alt="">
+                    </a>
                     </div>
                 </div>
             </div>
@@ -309,7 +299,58 @@ Trusted over
         </div>
     </div>
 </div>
+<!-- ///////////////// get in touch ///////////////// -->
+    <div class="get-touch section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <div class="section-title">
+                    <h2>Get in touch. Stay in touch.</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="get-touch-content">
+                    <span><i class="fas fa-headset"></i></span>
+                    <h4>24 / 7 Support</h4>
+                    <p>Got a problem? Just get in touch. Our support team is available 24/7.
+                    </p>
 
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="get-touch-content">
+                    <span><i class="fas fa-blog"></i></span>
+                    <h4>Blog</h4>
+                    <p>News and updates from the world’s leading cryptocurrency exchange.
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="get-touch-content">
+                    <span><i class="fas fa-briefcase"></i></span>
+                    <h4>Careers</h4>
+                    <p>Help build the future of technology. Start your new career at Tradee.
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="get-touch-content">
+                    <span><i class="fas fa-users"></i></span>
+                    <h4>Community</h4>
+                    <p>Tradee is global. Join the discussion in our worldwide communities.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ///////////////// blogs //////////////// -->
     <div class="blog bg-light section-padding">
     <div class="container">
         <div class="row justify-content-center">
@@ -386,61 +427,13 @@ Trusted over
         </div>
     </div>
 </div>
-
-    <div class="get-touch section-padding">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xl-6">
-                <div class="section-title">
-                    <h2>Get in touch. Stay in touch.</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-3 col-lg-6 col-md-6">
-                <div class="get-touch-content">
-                    <span><i class="fas fa-headset"></i></span>
-                    <h4>24 / 7 Support</h4>
-                    <p>Got a problem? Just get in touch. Our support team is available 24/7.
-                    </p>
-
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6">
-                <div class="get-touch-content">
-                    <span><i class="fas fa-blog"></i></span>
-                    <h4>Blog</h4>
-                    <p>News and updates from the world’s leading cryptocurrency exchange.
-                    </p>
-
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6">
-                <div class="get-touch-content">
-                    <span><i class="fas fa-briefcase"></i></span>
-                    <h4>Careers</h4>
-                    <p>Help build the future of technology. Start your new career at Tradee.
-                    </p>
-
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-6 col-md-6">
-                <div class="get-touch-content">
-                    <span><i class="fas fa-users"></i></span>
-                    <h4>Community</h4>
-                    <p>Tradee is global. Join the discussion in our worldwide communities.
-                    </p>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 </div>
 </div>
 </template>
 
 <script>
+import contactFrom from "../components/contactFrom.vue"
+
 export default {
   middleware: "auth",
   auth: "guest",
@@ -450,6 +443,7 @@ export default {
       loading: false,
     }
   },
+  components: { contactFrom },
   created() {
     this.checkUser();
   },

@@ -1,5 +1,5 @@
 <template>
-  <div style="overflow-x: hidden; display: flex; flex-flow: column; height: 100vh">
+  <div class="mainLayout">
 <v-app class="mt-4">
     <div id="header">
       <Header  />
@@ -29,3 +29,12 @@ export default {
 }
 
 </script>
+<style>
+.mainLayout{
+  overflow-x: hidden;
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+}
+
+</style>

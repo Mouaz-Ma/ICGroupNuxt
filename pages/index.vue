@@ -84,22 +84,23 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                <div class="getstart-content">
+
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 ">
+                <div class="getstart-content v-card">
                     <span><i class="fas fa-user-circle"></i></span>
                     <h3>Tell us about yourself</h3>
                     <p>Provide your information and trading experience. Start Demo or Real Account</p>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                <div class="getstart-content">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 ">
+                <div class="getstart-content v-card">
                     <span><i class="fas fa-university"></i></span>
                     <h3>Fund your account</h3>
                     <p>Make a deposit via bank transfer, wire transfer, or debit card.</p>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
-                <div class="getstart-content">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 ">
+                <div class="getstart-content v-card">
                     <span><i class="fas fa-exchange-alt"></i></span>
                     <h3>Start Trading</h3>
                     <p>Once you're approved, you can trade on web and mobile.</p>
@@ -112,7 +113,7 @@
     <div class="portfolio section-padding bg-gradient-primary">
     <div class="container">
         <div class="row py-lg-5 justify-content-center">
-            <div class="col-xl-7">
+            <div class="col-xl-8">
                 <div class="section-title text-center">
                     <h2 class="text-white">Open your account today</h2>
                     <p class="text-white">ICGroupsFx has a variety of features that make it the best place to start trading</p>
@@ -120,7 +121,7 @@
             </div>
         </div>
         <div class="row align-items-center justify-content-between">
-            <div class="col-xl-4 col-lg-6">
+            <div class="col-xl-4 col-lg-6 col-md-4 order-xs-1">
                 <div class="portfolio_list">
                     <div class="media">
                         <span class="port-icon"> <i class="fas fa-user-circle"></i></span>
@@ -140,12 +141,12 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-6">
+            <div class="col-xl-4 col-lg-6 col-md-4 order-xs-12">
                 <div class="portfolio_img">
                     <img src="~/assets/images/demo/portfolio.jpg" alt="" class="img-fluid">
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-6">
+            <div class="col-xl-4 col-lg-6 col-md-4 order-xs-2">
                 <div class="portfolio_list">
                     <div class="media">
                         <span class="port-icon"> <i class="fas fa-shield-virus"></i></span>
@@ -192,7 +193,7 @@
                         <h4 class="card-title">MetaTrader 5</h4>
                         <p>Arade over 500 markets including equities, indices, FX and commodities on the new and improved MT5</p>
 
-                        <a href="#"> Know More </a>
+                        <NuxtLink to="/aboutUs">Know More</NuxtLink>
                     </div>
                 </div>
             </div>
@@ -203,7 +204,7 @@
                         <h4 class="card-title">Competitive Pricing</h4>
                         <p>Maximize your potential with straightforward pricing choices to suit your trading style</p>
 
-                        <a href="#"> Know More </a>
+                        <NuxtLink to="/aboutUs">Know More</NuxtLink>
                     </div>
                 </div>
             </div>
@@ -214,7 +215,7 @@
                         <h4 class="card-title">Transparent</h4>
                         <p>Get the most out of every trade with our clear, competitive pricing. No complicated schemes, no small print.</p>
 
-                        <a href="#"> Know More </a>
+                        <NuxtLink to="/aboutUs">Know More</NuxtLink>
                     </div>
                 </div>
             </div>
@@ -270,7 +271,7 @@ Trusted over
     <div class="appss section-padding">
     <div class="container">
         <div class="row align-items-center justify-content-between">
-            <div class="col-xl-7 col-lg-6 col-md-6">
+            <div class="col-xl-8 col-lg-6 col-md-6">
                 <div class="appss-content">
                     <h2>The secure app to trade by yourself</h2>
                     <ul>
@@ -279,15 +280,27 @@ Trusted over
                         <li><i class="la la-check"></i> Buy, Sell, and Make profit</li>
                     </ul>
                     <div class="mt-4">
-                        <a href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5" class="btn btn-primary my-1 waves-effect">
-                            <img src="~/assets/images/android.svg" alt="">
-                        </a>
-                        <a href=" https://apps.apple.com/tr/app/metatrader-5/id413251709" class="btn btn-primary my-1 waves-effect">
-                            <img src="~/assets/images/apple.svg" alt="">
-                        </a>
-                    <a href="https://download.metatrader.com/cdn/web/internationals.capital.groups/mt5/intcapitalgroups5setup.exe" class="btn btn-primary">
-                        <img src="@/assets/images/microsoft.svg" style="height: 24px; width: 90px" alt="">
-                    </a>
+                      <div class="row">
+                        <div class="col-md-2 col-xs-12"> <a
+                            href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5"
+                            class="btn btn-primary my-1 waves-effect">
+                            <img src="~/assets/images/android.svg"  style="height: 24px; width: 90px" alt="">
+                          </a></div>
+                        <div class="col-md-2 col-xs-12"> <a
+                            href=" https://apps.apple.com/tr/app/metatrader-5/id413251709"
+                            class="btn btn-primary my-1 waves-effect">
+                            <img src="~/assets/images/apple.svg"  style="height: 24px; width: 90px" alt="">
+                          </a></div>
+                        <div class="col-md-2 col-xs-12"> <a
+                            href="https://download.metatrader.com/cdn/web/internationals.capital.groups/mt5/intcapitalgroups5setup.exe"
+                            class="btn btn-primary my-1 waves-effect">
+                            <img src="@/assets/images/microsoft.svg" style="height: 24px; width: 90px" alt="">
+                          </a></div>
+
+
+
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -487,4 +500,14 @@ export default {
         flex-direction: column;
     }
 }
+.v-card {
+  opacity: 0.6;
+ }
+
+.v-card:hover {
+  transition: 0.01s ease-in-out;
+  opacity: 1;
+  box-shadow: 0 0 6px;
+}
+
 </style>

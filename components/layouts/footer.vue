@@ -8,7 +8,7 @@
     <div class="bottom section-padding">
     <div class="container">
         <div class="row">
-            <div class="col-xl-4">
+            <div class="col-xl-4 col-md-4">
                 <div class="bottom-logo">
                     <img class="pb-3" src="~/assets/images/logow.png" alt="">
 
@@ -16,7 +16,7 @@
                         complete and customizable solution to building the website of your dreams.</p>
                 </div>
             </div>
-            <div class="col-xl-2">
+            <div class="col-xl-2 col-md-2">
                 <div class="bottom-widget">
                     <h4 class="widget-title">Company</h4>
                     <ul>
@@ -27,7 +27,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-xl-2">
+            <div class="col-xl-2 col-md-2">
                 <div class="bottom-widget">
                     <h4 class="widget-title">Support</h4>
                     <ul>
@@ -38,7 +38,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-xl-4">
+            <div class="col-xl-4 col-md-4">
                 <div class="bottom-widget">
                     <h4 class="widget-title">Analysis</h4>
                     <div class="row">

@@ -23,6 +23,7 @@
 import BlogCard from '@/components/blogCard.vue';
 
 export default {
+  auth: false,
   layout: 'blogs',
   components: {
     BlogCard,

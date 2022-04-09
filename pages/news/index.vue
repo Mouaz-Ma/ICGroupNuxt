@@ -1,9 +1,9 @@
 <template>
 
-<div>
+<div class="row">
 
-      <b-card-group class="d-flex" columns>
-          <div v-for="news in allNewsData" :key="news._id">
+      <b-card-group class="d-flex">
+          <div v-for="news in allNewsData" :key="news._id" class="col-xl-4 col-lg-4 col-md-4">
             <news-card 
             style="width:100%;"
             :newsId=news._id

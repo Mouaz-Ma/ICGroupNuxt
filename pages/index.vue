@@ -414,7 +414,6 @@ export default {
                 const allBlogs = $axios.get('/api/blogs/')
                 const allBlogsResponse = await Promise.all([allBlogs])
                 const allBlogsData = allBlogsResponse[0].data.blogs
-                console.log(allBlogsData)
                 return {
                   allBlogsData
                 }

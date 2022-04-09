@@ -1,10 +1,7 @@
 <template>
                         <div class="blog-sidebar">
                         <div class="widget-search">
-                            <form action="#">
-                                <input type="text" class="form-control" placeholder="Subscribe Now">
-                                <span><i class="la la-search"></i></span>
-                            </form>
+                        <NuxtLink to="/users/register" class="btn btn-primary mb-1 w-100">Real Account</NuxtLink>
                         </div>
                         <div class="widget-recent-post">
                             <h3 class="post-title">Recent Post</h3>

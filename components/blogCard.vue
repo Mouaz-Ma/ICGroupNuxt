@@ -41,8 +41,8 @@ a {
 
 #cardImage{
   object-fit: cover;
-  height: 500px;
-  width: 700px;
+  height: 400px;
+  width: 600px;
   padding: 2px;
 }
 </style>

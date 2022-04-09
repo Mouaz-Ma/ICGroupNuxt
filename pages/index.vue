@@ -13,7 +13,7 @@
                     <p class="text-white">Fast and secure way to Trade Cryptocurrencies, Stocks, Materials and Currencies</p>
 
                     <div class="intro-btn" v-if="!$auth.$state.user">
-                        <NuxtLink to="/users/register" class="btn btn-primary mb-1 w-50">Demo Account</NuxtLink>
+                        <NuxtLink to="/users/register" class="btn btn-primary mb-1 w-50">Real Account</NuxtLink>
                         <!-- <NuxtLink to="/users/register" class="btn btn-outline-primary mb-1 w-50">Real Account</NuxtLink> -->
                     </div>
                 </div>
@@ -110,7 +110,7 @@
     </div>
 </div>
 
-    <div class="portfolio section-padding bg-gradient-primary">
+<div class="portfolio section-padding bg-gradient-primary">
     <div class="container">
         <div class="row py-lg-5 justify-content-center">
             <div class="col-xl-8">
@@ -121,7 +121,7 @@
             </div>
         </div>
         <div class="row align-items-center justify-content-between">
-            <div class="col-xl-4 col-lg-6 col-md-4 order-xs-1">
+            <div class="col-xl-4 col-lg-4 col-md-4 order-xs-1">
                 <div class="portfolio_list">
                     <div class="media">
                         <span class="port-icon"> <i class="fas fa-user-circle"></i></span>
@@ -141,12 +141,12 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-6 col-md-4 order-xs-12">
+            <div class="col-xl-4 col-lg-4 col-md-4 order-xs-12">
                 <div class="portfolio_img">
                     <img src="~/assets/images/demo/portfolio.jpg" alt="" class="img-fluid">
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-6 col-md-4 order-xs-2">
+            <div class="col-xl-4 col-lg-4 col-md-4 order-xs-2">
                 <div class="portfolio_list">
                     <div class="media">
                         <span class="port-icon"> <i class="fas fa-shield-virus"></i></span>
@@ -281,17 +281,17 @@ Trusted over
                     </ul>
                     <div class="mt-4">
                       <div class="row">
-                        <div class="col-md-2 col-xs-12"> <a
+                        <div class="col-lg-4 col-md-4 col-xs-12"> <a
                             href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5"
                             class="btn btn-primary my-1 waves-effect">
                             <img src="~/assets/images/android.svg"  style="height: 24px; width: 90px" alt="">
                           </a></div>
-                        <div class="col-md-2 col-xs-12"> <a
+                        <div class="ccol-lg-4 col-md-4 col-xs-12"> <a
                             href=" https://apps.apple.com/tr/app/metatrader-5/id413251709"
                             class="btn btn-primary my-1 waves-effect">
                             <img src="~/assets/images/apple.svg"  style="height: 24px; width: 90px" alt="">
                           </a></div>
-                        <div class="col-md-2 col-xs-12"> <a
+                        <div class="col-lg-4 col-md-4 col-xs-12"> <a
                             href="https://download.metatrader.com/cdn/web/internationals.capital.groups/mt5/intcapitalgroups5setup.exe"
                             class="btn btn-primary my-1 waves-effect">
                             <img src="@/assets/images/microsoft.svg" style="height: 24px; width: 90px" alt="">
@@ -324,6 +324,7 @@ Trusted over
         </div>
         <div class="row">
             <div class="col-xl-3 col-lg-6 col-md-6">
+            <NuxtLink to="/contact">
                 <div class="get-touch-content">
                     <span><i class="fas fa-headset"></i></span>
                     <h4>24 / 7 Support</h4>
@@ -331,8 +332,10 @@ Trusted over
                     </p>
 
                 </div>
+            </NuxtLink>
             </div>
             <div class="col-xl-3 col-lg-6 col-md-6">
+                <NuxtLink to="/blogs/">
                 <div class="get-touch-content">
                     <span><i class="fas fa-blog"></i></span>
                     <h4>Blog</h4>
@@ -340,24 +343,27 @@ Trusted over
                     </p>
 
                 </div>
+                </NuxtLink>
             </div>
             <div class="col-xl-3 col-lg-6 col-md-6">
+                <NuxtLink to="/tradingTools">
                 <div class="get-touch-content">
                     <span><i class="fas fa-briefcase"></i></span>
-                    <h4>Careers</h4>
+                    <h4>Trading Tools</h4>
                     <p>Help build the future of technology. Start your new career at Tradee.
                     </p>
-
                 </div>
+                </NuxtLink>
             </div>
             <div class="col-xl-3 col-lg-6 col-md-6">
+                <NuxtLink to="/contact">
                 <div class="get-touch-content">
                     <span><i class="fas fa-users"></i></span>
                     <h4>Community</h4>
                     <p>Tradee is global. Join the discussion in our worldwide communities.
                     </p>
-
                 </div>
+                </NuxtLink>
             </div>
         </div>
     </div>
@@ -374,69 +380,20 @@ Trusted over
             </div>
         </div>
         <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-12">
-                <div class="blog-grid">
-                    <div class="card">
-                        <img class="img-fluid card-img-top" src="~/assets/images/blog/1.jpg" alt="">
-                        <div class="card-body">
-                            <a href="blog-single.html">
-                                <h4 class="card-title">Why does Litecoin need MimbleWimble?</h4>
-                            </a>
-                            <p class="card-text">Cras chinwag brown bread Eaton cracking goal so I said a load
-                                of
-                                old tosh baking cakes.!</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="meta-info">
-                                <a href="#" class="author"><img src="~/assets/images/avatar/5.jpg" alt=""> Admin</a>
-                                <a href="#" class="post-date"><i class="la la-calendar"></i> 31 July, 2019</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-12">
-                <div class="blog-grid">
-                    <div class="card">
-                        <img class="img-fluid card-img-top" src="~/assets/images/blog/2.jpg" alt="">
-                        <div class="card-body">
-                            <a href="blog-single.html">
-                                <h4 class="card-title">How to securely store your HD wallet seeds?</h4>
-                            </a>
-                            <p class="card-text">Cras chinwag brown bread Eaton cracking goal so I said a load
-                                of
-                                old tosh baking cakes.!</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="meta-info">
-                                <a href="#" class="author"><img src="~/assets/images/avatar/6.jpg" alt=""> Admin</a>
-                                <a href="#" class="post-date"><i class="la la-calendar"></i> 31 July, 2019</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-12">
-                <div class="blog-grid">
-                    <div class="card">
-                        <img class="img-fluid card-img-top" src="~/assets/images/blog/3.jpg" alt="">
-                        <div class="card-body">
-                            <a href="blog-single.html">
-                                <h4 class="card-title">Exclusive Interview With Xinxi Wang Of Litecoin</h4>
-                            </a>
-                            <p class="card-text">Cras chinwag brown bread Eaton cracking goal so I said a load
-                                of
-                                old tosh baking cakes.!</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="meta-info">
-                                <a href="#" class="author"><img src="~/assets/images/avatar/7.jpg" alt=""> Admin</a>
-                                <a href="#" class="post-date"><i class="la la-calendar"></i> 31 July, 2019</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <b-card-group>
+          <div v-for="blog in allBlogsData.slice(-3)" :key="blog._id" class="col-xl-4 col-lg-4 col-md-4">
+            <blog-card 
+            
+            :blogId=blog._id
+            :title=blog.title 
+            :author=blog.author.username 
+            :content=blog.content 
+            :imageSrc=blog.image.url 
+            :createdAt=blog.createdAt
+            />
+                    
+          </div>
+      </b-card-group>
         </div>
     </div>
 </div>
@@ -448,48 +405,64 @@ Trusted over
 import contactFrom from "../components/contactFrom.vue"
 
 export default {
-  middleware: "auth",
-  auth: "guest",
-  layout: 'index',
-  data() {
-    return {
-      loading: false,
-    }
-  },
-  components: { contactFrom },
-  created() {
-    this.checkUser();
-  },
-  //   mounted() {
-  //       this.fetching =  setInterval(this.fetch,10000)
-  //   },
-  beforeDestroy() {
-    clearInterval(this.fetching)
-  },
-  methods: {
-    checkUser: async function () {
-        if(this.$auth.$state.loggedIn){
-            if(this.$auth.$state.strategy === "facebook"){
-                let data = {
-                username: this.$auth.$state.user.name,
-                email: this.$auth.$state.user.email,
-                strategy: "facebook",
-               };
-             await this.$axios.post('/api/users/registerSocial', data);
+        scrollToTop: true,
+          middleware: "auth",
+          auth: "guest",
+          layout: 'index',
+          async asyncData({$axios}) {
+              try {
+                const allBlogs = $axios.get('/api/blogs/')
+                const allBlogsResponse = await Promise.all([allBlogs])
+                const allBlogsData = allBlogsResponse[0].data.blogs
+                console.log(allBlogsData)
+                return {
+                  allBlogsData
+                }
+              } catch (err) {
+                console.log(err);
+              }
+            },
+            data() {
+              return {
+                allBlogsData: [],
+                title: "",
+                author: "",
+                loading: false,
+              }
+            },
+            components: {
+              contactFrom
+            },
+            created() {
+              this.checkUser();
+            },
+            beforeDestroy() {
+              clearInterval(this.fetching)
+            },
+            methods: {
+              checkUser: async function () {
+                if (this.$auth.$state.loggedIn) {
+                  if (this.$auth.$state.strategy === "facebook") {
+                    let data = {
+                      username: this.$auth.$state.user.name,
+                      email: this.$auth.$state.user.email,
+                      strategy: "facebook",
+                    };
+                    await this.$axios.post('/api/users/registerSocial', data);
 
-            } else if (this.$auth.$state.strategy === "google"){
-            let data = {
-                username: this.$auth.$state.user.name,
-                email: this.$auth.$state.user.email,
-                strategy: "google",
-               };
-             await this.$axios.post('/api/users/registerSocial', data);
-            } else {
-                console.log("local so dont do anything he should have been registered")
-            }   
-        }
-    },
-  },
+                  } else if (this.$auth.$state.strategy === "google") {
+                    let data = {
+                      username: this.$auth.$state.user.name,
+                      email: this.$auth.$state.user.email,
+                      strategy: "google",
+                    };
+                    await this.$axios.post('/api/users/registerSocial', data);
+                  } else {
+                    console.log("local so dont do anything he should have been registered")
+                  }
+                }
+              },
+            },
 
   }
 </script>

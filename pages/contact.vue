@@ -45,58 +45,61 @@
 import Banner from "@/components/pageBanner";
 import ContactFrom from '../components/contactFrom.vue';
 export default {
-    auth: false,
-  layout: 'index',
-  components: {
-    Banner,
-    ContactFrom
-  },
-  data(){
-      return {
+    scrollToTop: true,
+      auth: false,
+      layout: 'index',
+      components: {
+        Banner,
+        ContactFrom
+      },
+      data() {
+        return {
           name: '',
           email: '',
           phone: '',
           description: '',
           successMessage: ''
-      }
-  },
-    mounted(){
+        }
+      },
+      mounted() {
         const mapOptions = {
-            zoom: 15,
-            center: new window.google.maps.LatLng(41.00920862268097, 28.95530739373702),
-            disableDefaultUI: true,
-            zoomControl: true
+          zoom: 15,
+          center: new window.google.maps.LatLng(41.00920862268097, 28.95530739373702),
+          disableDefaultUI: true,
+          zoomControl: true
         };
 
         const map = new window.google.maps.Map(this.$refs.map, mapOptions);
         const position = new window.google.maps.LatLng(41.00920862268097, 28.95530739373702)
-        const marker = new window.google.maps.Marker({ position })
+        const marker = new window.google.maps.Marker({
+          position
+        })
         marker.setMap(map)
-    },
-  methods: {
-      contactForm: async function () {
+      },
+      methods: {
+        contactForm: async function () {
           try {
-              let data = {
-                  name: this.name,
-                  email: this.email,
-                  phone: this.phone,
-                  description: this.description
-              }
-              let response = await this.$axios.post('/api/users/contact', data);
-              if(response.data.success){
-                  this.successMessage = 'true'
-              } else {
-                  this.successMessage = 'false'
-              }
-              console.log(response)
-            //   if response is ok flash ok if not flash error
-          } catch(err){
+            let data = {
+              name: this.name,
+              email: this.email,
+              phone: this.phone,
+              description: this.description
+            }
+            let response = await this.$axios.post('/api/users/contact', data);
+            if (response.data.success) {
+              this.successMessage = 'true'
+            } else {
               this.successMessage = 'false'
-              console.log(err)
+            }
+            console.log(response)
+            //   if response is ok flash ok if not flash error
+          } catch (err) {
+            this.successMessage = 'false'
+            console.log(err)
           }
-      }
-  },
-  }
+        }
+      },
+    }
 </script>
 
 <style scoped>

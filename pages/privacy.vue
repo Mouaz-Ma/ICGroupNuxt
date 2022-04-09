@@ -99,10 +99,11 @@
 <script>
 import Banner from "@/components/pageBanner";
 export default {
-    auth: false,
-  layout: 'index',
-  components: {
-    Banner
-  },
-  }
+        scrollToTop: true,
+          auth: false,
+          layout: 'index',
+          components: {
+            Banner
+          },
+        }
 </script>

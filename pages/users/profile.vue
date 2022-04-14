@@ -93,7 +93,7 @@
                                         <span class="thumb"><img src="~/assets/images/profile/2.png" alt=""></span>
                                         <div class="user-info">
                                             <h5>Jannatul Maowa</h5>
-                                            <span>Tradee.inc@gmail.com</span>
+                                            <span>ICGroupsFx.inc@gmail.com</span>
                                         </div>
                                     </div>
                                 </div>
@@ -182,7 +182,7 @@
                             <h4>Welcome, {{$auth.$state.user.username}}!</h4>
                             <div v-if="!$auth.$state.user.isVerified">
                             <p>Looks like you are not verified yet. Verify yourself to use the full potential of
-                                Tradee.</p>
+                                ICGroupsFx.</p>
                             <ul>
                                 <li>
                                     <a href="#">

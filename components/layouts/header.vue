@@ -40,12 +40,12 @@
                       <nuxt-link class="nav-link" to="/news">News</nuxt-link>
                     </li>
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" v-b-toggle.companyCollapse>Company</a>
-                      <b-collapse class="dropdown-menu" id="companyCollapse" v-model="showCollapseaCompany">
+                      <NuxtLink class="nav-link" to="/aboutUs">Company</NuxtLink>
+                      <!-- <b-collapse class="dropdown-menu" id="companyCollapse" v-model="showCollapseaCompany">
                         <NuxtLink class="dropdown-item" to="/aboutUs">{{$t('about')}}</NuxtLink>
                         <NuxtLink class="dropdown-item" to="/team">Our Team</NuxtLink>
                         <NuxtLink class="dropdown-item" to="/career">Career</NuxtLink>
-                      </b-collapse>
+                      </b-collapse> -->
                     </li>
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" v-b-toggle.supportCollapse>Support
@@ -54,7 +54,7 @@
                         <NuxtLink class="dropdown-item" to="/contact">contact</NuxtLink>
                         <NuxtLink class="dropdown-item" to="/helpdesk">Help Desk</NuxtLink>
                         <NuxtLink class="dropdown-item" to="/privacy">Privacy</NuxtLink>
-                        <NuxtLink class="dropdown-item" to="/faq">FAQ</NuxtLink>
+                        <!-- <NuxtLink class="dropdown-item" to="/faq">FAQ</NuxtLink> -->
                       </b-collapse>
                     </li>
                     <li class="nav-item">

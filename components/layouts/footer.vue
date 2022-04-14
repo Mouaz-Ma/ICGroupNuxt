@@ -12,8 +12,7 @@
                 <div class="bottom-logo">
                     <img class="pb-3" src="~/assets/images/logow.png" alt="">
 
-                    <p>Tradee is a unique and beautiful collection of UI elements that are all flexible and modular. A
-                        complete and customizable solution to building the website of your dreams.</p>
+                    <p>We are a world-leading online trading provider, giving you access to opportunities across thousands of financial markets.</p>
                 </div>
             </div>
             <div class="col-xl-2 col-md-2">

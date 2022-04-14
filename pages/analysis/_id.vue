@@ -14,6 +14,7 @@
 <script>
 import singleAnalysis from '@/components/singleAnalysis.vue'
 export default {
+    auth: false,
   layout: 'analysis',
   components: {
     singleAnalysis

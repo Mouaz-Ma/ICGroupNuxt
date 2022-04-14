@@ -22,7 +22,6 @@
                <div class="row justify-content-center">
                     <div class="col-xl-8">
                         <div class="section-title text-center">
-                            <span>Contact Us</span>
                             
                         <div>
                         <contact-from />
@@ -284,18 +283,18 @@ Trusted over
                         <div class="col-lg-4 col-md-4 col-xs-12"> <a
                             href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5"
                             class="btn btn-primary my-1 waves-effect">
-                            <img src="~/assets/images/android.svg"  style="height: 24px; width: 90px" alt="">
+                            <img src="~/assets/images/android.svg" class="downloadImage" style="width: 90px" alt="">
                           </a></div>
                         <div class="ccol-lg-4 col-md-4 col-xs-12"> <a
                             href=" https://apps.apple.com/tr/app/metatrader-5/id413251709"
                             class="btn btn-primary my-1 waves-effect">
-                            <img src="~/assets/images/apple.svg"  style="height: 24px; width: 90px" alt="">
+                            <img src="~/assets/images/apple.svg" class="downloadImage" alt="">
                           </a></div>
                         <div class="col-lg-4 col-md-4 col-xs-12"> <a
                             href="https://download.metatrader.com/cdn/web/internationals.capital.groups/mt5/intcapitalgroups5setup.exe"
-                            class="btn btn-primary my-1 waves-effect">
-                            <img src="@/assets/images/microsoft.svg" style="height: 24px; width: 90px" alt="">
-                          </a></div>
+                            class="btn btn-primary my-1 waves-effect microsoftBtn">
+                            <img src="@/assets/images/microsoft.svg" class="downloadImage" alt="">
+                          Microsoft</a></div>
 
 
 
@@ -350,7 +349,7 @@ Trusted over
                 <div class="get-touch-content">
                     <span><i class="fas fa-briefcase"></i></span>
                     <h4>Trading Tools</h4>
-                    <p>Help build the future of technology. Start your new career at Tradee.
+                    <p>Help build the future of technology. Start your new career at ICGroupsFx.
                     </p>
                 </div>
                 </NuxtLink>
@@ -360,7 +359,7 @@ Trusted over
                 <div class="get-touch-content">
                     <span><i class="fas fa-users"></i></span>
                     <h4>Community</h4>
-                    <p>Tradee is global. Join the discussion in our worldwide communities.
+                    <p>ICGroupsFx is global. Join the discussion in our worldwide communities.
                     </p>
                 </div>
                 </NuxtLink>
@@ -467,6 +466,13 @@ export default {
 </script>
 
 <style scoped>
+.downloadImage{
+ height: 24px;
+}
+
+.microsoftBtn{
+    color: azure;
+}
 @media (max-width: 500px) {
     #downloadLinks{
         flex-direction: column;

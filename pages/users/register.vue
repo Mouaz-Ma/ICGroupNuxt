@@ -62,6 +62,7 @@
 </template>
 <script>
 export default {
+      auth: false,
     middleware: "auth",
     auth: "guest",
     data() {

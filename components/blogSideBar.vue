@@ -6,7 +6,7 @@
         <div class="widget-recent-post">
             <h3 class="post-title">Recent News</h3>
             <ul class="list-unstyled">
-                <li v-for="news in allNews.slice(-3)" :key="news._id" class="d-flex media">
+                <li v-for="news in allNews.slice(-3)" :key="news.id" class="d-flex media">
                     <img id="sideBarImage" :src="news.image.url" class="mr-3" alt="...">
                     <div class="media-body">
                     <nuxt-link :to="'/news/'+news._id">
@@ -24,7 +24,7 @@
         <div class="widget-category">
             <h3 class="widget-title">Analysis Categories</h3>
             <ul class="list-group">
-                <li v-for="item in items" :key="item" class="list-group-item d-flex justify-content-between align-items-center">
+                <li v-for="item in items" :key="item.id" class="list-group-item d-flex justify-content-between align-items-center">
                     <nuxt-link class="linkAnalysis" :to="{name: 'analysis',  query: { categoryId: item._id}}">
                     {{item.type}}
                     </nuxt-link>
@@ -32,26 +32,37 @@
                 </li>
             </ul>
         </div>
-        <div class="widget-tag">
-            <h3 class="widget-title">Tags</h3>
-            <div class="tag-group">
-                <a href="#">Tradix</a>
-                <a href="#">Song</a>
-                <a href="#">Title</a>
-                <a href="#">Good</a>
-                <a href="#">Dashboard</a>
-            </div>
+        <!-- <h1>{{this.$route.query.categoryId}}</h1> -->
+        <div v-if="this.$route.name === 'analysis'">
+        <div v-if="this.$route.query.categoryId === '623a28c41459c68fc780eed7'">
+        <tags-componant :tags="['Analysis', 'Crypto', 'BTC', 'ETH', 'Forex', 'Trading', 'MT5']" />    
         </div>
+        <div v-else-if="this.$route.query.categoryId === '623a29031459c68fc780eeda'">
+            <tags-componant :tags="['Analysis', 'USD', 'EUR', 'GBP', 'Currencies', 'Forex', 'Trading', 'MT5']" /> 
+        </div>
+        <div v-else-if="this.$route.query.categoryId === '623a29141459c68fc780eedc'">
+            <tags-componant :tags="['Analysis', 'Gold', 'Silver', 'XAU', 'Forex', 'Trading', 'MT5']" /> 
+        </div>
+        <div v-else-if="this.$route.query.categoryId === '623a29481459c68fc780eede'">
+            <tags-componant :tags="['Analysis', 'Stocks', 'DowJones', 'INDEXDJX', 'Forex', 'Trading', 'Nasdaq', 'MT5']" /> 
+        </div>
+        </div>
+        <div v-else-if="this.$route.name === 'blogs'">
+            <tags-componant :tags="['Analysis', 'Blogs', 'ICGroupsFx', 'Forex', 'Trading', 'MT5']" /> 
+        </div>
+
     </div>
 </template>
 <script>
+import tagsComponant from './layouts/tagsComponant.vue'
 export default {
+  components: { tagsComponant },
   async fetch() {
     try {
-      const allNewsFetch = await fetch(process.env.API_URL + '/api/news/').then(res => res.json())
+      const allNewsFetch = await fetch(process.env.API_URL + 'api/news/').then(res => res.json())
       this.allNews = allNewsFetch.news
-      console.log(this.allNews)
-    //   console.log(allNews.body)
+    //   console.log(this.allNews)
+      console.log(this.$route)
     //   return {allNewsData}
     } catch(err){
       console.log(err);

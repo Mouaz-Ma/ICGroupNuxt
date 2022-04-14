@@ -24,6 +24,7 @@
 import AnalysisCard from '@/components/analysisCard.vue';
 
 export default {
+    auth: false,
   layout: 'analysis',
   components: {
     AnalysisCard,

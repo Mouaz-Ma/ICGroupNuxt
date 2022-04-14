@@ -1,7 +1,7 @@
 <template>
     <div id="main-wrapper show">
     <Banner :title="$t('Help Desk')" />
-    <div class="helpdesk-search section-padding">
+    <!-- <div class="helpdesk-search section-padding">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-7">
@@ -16,6 +16,22 @@
                                 </button>
                             </form>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+        <div class="intro-video section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8">
+                    <div class="intro-video-play">
+                        <div class="play-btn">
+                            <a><i class="fa fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="intro-video-content text-center mt-5">
+                        <h2>We saved a seat for you</h2>
                     </div>
                 </div>
             </div>
@@ -134,7 +150,7 @@
                     <div class="ticket-box-content">
                         <h3>Can't find what you're looking for?</h3>
                         <p>Let us help you!</p>
-                        <a href="#" class="btn btn-success">Submit Ticket</a>
+                        <div class="btn btn-success"  v-html="zohoScript">Submit</div>
                     </div>
                 </div>
             </div>
@@ -146,15 +162,15 @@
 <script>
 import Banner from "@/components/pageBanner";
 export default {
+      auth: false,
         scrollToTop: true,
-          auth: false,
           layout: 'index',
           components: {
             Banner
           },
           data() {
             return {
-              zohoScript: "<script type='text/javascript'>var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:'d17173f8c96be3bd427909d4f4934e9bc0a3309477205234e8d5a02b64e015ba', values:{},ready:function(){}};var d=document;s=d.createElement('script');s.type='text/javascript';s.id='zsiqscript';s.defer=true;s.src='https://salesiq.zoho.com/widget';t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);<\/script>"
+              zohoScript: "<script type='text/javascript'>let $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:'d17173f8c96be3bd427909d4f4934e9bc0a3309477205234e8d5a02b64e015ba', values:{},ready:function(){}};let d=document;s=d.createElement('script');s.type='text/javascript';s.id='zsiqscript';s.defer=true;s.src='https://salesiq.zoho.com/widget';t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);<\/script>"
             }
           },
         }

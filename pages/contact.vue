@@ -45,8 +45,8 @@
 import Banner from "@/components/pageBanner";
 import ContactFrom from '../components/contactFrom.vue';
 export default {
+    auth: false,
     scrollToTop: true,
-      auth: false,
       layout: 'index',
       components: {
         Banner,

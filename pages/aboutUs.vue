@@ -42,7 +42,7 @@
                             <img src="~/assets/images/avatar/6.jpg" alt="" class="img-fluid mr-4 rounded-circle">
                             <div class="media-body">
                                 <h3>Eric Benz</h3>
-                                <span>CEO of Tradee</span>
+                                <span>CEO of ICGroupsFx</span>
                                 <p class="mt-2">John Abraham has over 10 years of experience working in and around
                                     Financial Technology. He has delivered innovative SaaS systems for some of
                                     today's biggest institutions around payments, identity, and banking
@@ -74,7 +74,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="service-img">
-                        <img src="~/assets/images/about/1.jpg" alt="" class="img-fluid">
+                        <img src="~/assets/images/about/About_Us.jpg" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -88,8 +88,8 @@
 <script>
 import Banner from "@/components/pageBanner";
 export default {
+      auth: false,
     scrollToTop: true,
-    auth: false,
     layout: 'index',
     components: {
     Banner

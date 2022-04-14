@@ -6,7 +6,7 @@
                 <div class="col-xl-5 col-md-6">
                     <div class="mini-logo text-center my-4">
                          <NuxtLink class="nav-link" to="/"><img src="~/assets/images/logob.png" alt=""></NuxtLink>
-                        <h4 class="card-title mt-3">Sign in to Tradee</h4>
+                        <h4 class="card-title mt-3">Sign in to ICGroupsFx</h4>
                     </div>
                     <div class="auth-form card">
                         <div class="card-body">

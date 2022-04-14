@@ -64,12 +64,12 @@
                 ></v-slider>
             </v-card-text>
       </div>
-      <div class="col-12">
+      <!-- <div class="col-12">
         <div class="mb-3">
           <textarea class="form-control p-3" name="message" rows="5" v-model="description"
             placeholder="Tell us what we can help you with!"></textarea>
         </div>
-      </div>
+      </div> -->
     </div>
     <button type="submit" class="btn btn-primary px-4 py-2">
       Send message
@@ -85,7 +85,6 @@ export default {
         name: '',
         email: '',
         phone: '',
-        description: '',
         successMessage: '',
         tradingType: '',
         ticksLabels: ['100$', '1000$', '5000$', '10,000$', '50,000$'],
@@ -108,7 +107,6 @@ export default {
             name: this.name,
             email: this.email,
             phone: this.phone,
-            description: this.description,
             tradingType: this.tradingType,
             iniInvestment: this.iniInvestment
         }

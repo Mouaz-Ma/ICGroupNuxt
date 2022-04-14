@@ -14,6 +14,7 @@
 <script>
 import SingleBlog from '@/components/singleBlog.vue'
 export default {
+    auth: false,
   layout: 'blogs',
   components: {
     SingleBlog

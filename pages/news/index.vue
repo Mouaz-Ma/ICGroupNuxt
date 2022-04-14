@@ -23,6 +23,7 @@
 import NewsCard from '@/components/newsCard.vue';
 
 export default {
+    auth: false,
   layout: 'news',
   components: {
     NewsCard,

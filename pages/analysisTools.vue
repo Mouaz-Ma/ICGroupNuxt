@@ -32,7 +32,7 @@
                 "timezone": "Etc/UTC",
                 "theme": "dark",
                 "style": "0",
-                "locale": "en",
+                "locale": "ar_AE",
                 "toolbar_bg": "#f1f3f6",
                 "enable_publishing": false,
                 "withdateranges": true,
@@ -59,8 +59,8 @@
             {
             "colorTheme": "dark",
             "isTransparent": false,
-                "width": "100%",
-                "height": "850",
+            "width": "100%",
+            "height": "850",
             "locale": "ar_AE",
             "importanceFilter": "-1,0,1"
             }
@@ -86,7 +86,7 @@
                 "market": "forex",
                 "showToolbar": true,
                 "colorTheme": "dark",
-                "locale": "en"
+                "locale": "ar_AE",
                 }
                 </script>
                 </div>

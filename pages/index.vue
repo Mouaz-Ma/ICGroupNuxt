@@ -323,7 +323,7 @@ Trusted over
         </div>
         <div class="row">
             <div class="col-xl-3 col-lg-6 col-md-6">
-            <NuxtLink to="/contact">
+            <NuxtLink class="linksInTouch" to="/contact">
                 <div class="get-touch-content">
                     <span><i class="fas fa-headset"></i></span>
                     <h4>24 / 7 Support</h4>
@@ -334,7 +334,7 @@ Trusted over
             </NuxtLink>
             </div>
             <div class="col-xl-3 col-lg-6 col-md-6">
-                <NuxtLink to="/blogs/">
+                <NuxtLink class="linksInTouch" to="/blogs/">
                 <div class="get-touch-content">
                     <span><i class="fas fa-blog"></i></span>
                     <h4>Blog</h4>
@@ -345,7 +345,7 @@ Trusted over
                 </NuxtLink>
             </div>
             <div class="col-xl-3 col-lg-6 col-md-6">
-                <NuxtLink to="/tradingTools">
+                <NuxtLink class="linksInTouch" to="/analysisTools">
                 <div class="get-touch-content">
                     <span><i class="fas fa-briefcase"></i></span>
                     <h4>Trading Tools</h4>
@@ -355,7 +355,7 @@ Trusted over
                 </NuxtLink>
             </div>
             <div class="col-xl-3 col-lg-6 col-md-6">
-                <NuxtLink to="/contact">
+                <NuxtLink class="linksInTouch" to="/contact">
                 <div class="get-touch-content">
                     <span><i class="fas fa-users"></i></span>
                     <h4>Community</h4>
@@ -486,6 +486,10 @@ export default {
   transition: 0.01s ease-in-out;
   opacity: 1;
   box-shadow: 0 0 6px;
+}
+
+.linksInTouch{
+    color: #273444 !important;
 }
 
 </style>

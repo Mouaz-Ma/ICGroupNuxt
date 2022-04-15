@@ -31,7 +31,7 @@
                         <div v-html="content"></div>
                     </div>
                     <!--blog-single-post end-->
-                    <div class="comment-section">
+                    <!-- <div class="comment-section">
                         <h3 class="p-title">Comments</h3>
                         <ul>
                             <li>
@@ -39,13 +39,13 @@
                                     <div class="cm-img">
                                         <img src="~/assets/images/blog/cm-img.png" alt="">
                                     </div>
-                                    <!--author-img end-->
+                                   
                                     <div class="cm-info">
                                         <h3>Kritsofer Nolan</h3>
                                         <h4>April 25, 2018</h4>
                                     </div>
                                 </div>
-                                <!--cm-info-sec end-->
+                                
                                 <p>Nam placerat facilisis placerat. Morbi elit nibh, auctor sit amet sodales id,
                                     porttitor eu quam. Aenean dui libero, laoreet quis con sequat vitae, posuere ut
                                     sapien. Etiam pharetra nulla vel diam eleifend, eu placerat nunc
@@ -57,13 +57,13 @@
                                     <div class="cm-img">
                                         <img src="~/assets/images/blog/cm-img.png" alt="">
                                     </div>
-                                    <!--author-img end-->
+                                   
                                     <div class="cm-info">
                                         <h3>Kritsofer Nolan</h3>
                                         <h4>April 25, 2018</h4>
                                     </div>
                                 </div>
-                                <!--cm-info-sec end-->
+                                
                                 <p>Nam placerat facilisis placerat. Morbi elit nibh, auctor sit amet sodales id,
                                     porttitor eu quam. Aenean dui libero, laoreet quis con sequat vitae, posuere ut
                                     sapien. Etiam pharetra nulla vel diam eleifend, eu placerat nunc
@@ -75,13 +75,13 @@
                                     <div class="cm-img">
                                         <img src="~/assets/images/blog/cm-img.png" alt="">
                                     </div>
-                                    <!--author-img end-->
+                                   
                                     <div class="cm-info">
                                         <h3>Kritsofer Nolan</h3>
                                         <h4>April 25, 2018</h4>
                                     </div>
                                 </div>
-                                <!--cm-info-sec end-->
+                                
                                 <p>Nam placerat facilisis placerat. Morbi elit nibh, auctor sit amet sodales id,
                                     porttitor eu quam. Aenean dui libero, laoreet quis con sequat vitae, posuere ut
                                     sapien. Etiam pharetra nulla vel diam eleifend, eu placerat nunc
@@ -89,9 +89,9 @@
                                 <a href="#" title="" class="cm-reply">Reply</a>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
                     <!--comment-section end-->
-                    <div class="post-comment-sec" id="comment-sec">
+                    <!-- <div class="post-comment-sec" id="comment-sec">
                         <h3 class="p-title">Leave a reply</h3>
                         <form class="js-ajax-form" novalidate="novalidate">
                             <div class="form-fieldss">
@@ -101,28 +101,28 @@
                                             <input class="form-control" type="text" name="name" placeholder="Your Name"
                                                 id="name">
                                         </div>
-                                        <!-- form-field end-->
+                                       
                                     </div>
                                     <div class="col-lg-4 col-md-4">
                                         <div class="form-group">
                                             <input class="form-control" type="email" name="email"
                                                 placeholder="Your Email" id="email">
                                         </div>
-                                        <!-- form-field end-->
+                                       
                                     </div>
                                     <div class="col-lg-4 col-md-4 pr-0">
                                         <div class="form-group">
                                             <input class="form-control" type="text" name="phone"
                                                 placeholder="Your Phone">
                                         </div>
-                                        <!-- form-field end-->
+                                       
                                     </div>
                                     <div class="col-lg-12 col-md-12 pl-0 pr-0">
                                         <div class="form-group">
                                             <textarea class="form-control" name="message"
                                                 placeholder="Your Message"></textarea>
                                         </div>
-                                        <!-- form-field end-->
+                                       
                                     </div>
                                     <div class="col-lg-12 col-md-12 pl-0">
                                         <button type="submit" class="btn btn-primary submit">Send Message</button>
@@ -130,7 +130,7 @@
                                 </div>
                             </div>
                         </form>
-                    </div>
+                    </div> -->
                     <!--post-comment-sec end-->
                 </div>
             </div>

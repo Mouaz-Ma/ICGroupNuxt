@@ -30,10 +30,10 @@
                 <div class="bottom-widget">
                     <h4 class="widget-title">Support</h4>
                     <ul>
-                        <li><a href="#">Ticket</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Open Account</a></li>
-                        <li><a href="#">Helpdesk</a></li>
+                        <li><NuxtLink to="/contact">contact</NuxtLink></li>
+                        <li><NuxtLink to="/privacy">Privacy</NuxtLink></li>
+                        <li><NuxtLink to="/users/register">Open Account</NuxtLink></li>
+                        <li><NuxtLink to="/helpdesk">Help Desk</NuxtLink></li>
                     </ul>
                 </div>
             </div>
@@ -43,10 +43,9 @@
                     <div class="row">
                         <div class="col-xl-6">
                             <ul>
-                                <li><a href="#">Stocks</a></li>
-                                <li><a href="#">Cryptocurrencies</a></li>
-                                <li><a href="#">Materials</a></li>
-                                <li><a href="#">Currencies</a></li>
+                        <li v-for="item in items" :key="item._id">
+                            <NuxtLink :to="{name: 'analysis',  query: { categoryId: item._id}}">{{item.type}}</NuxtLink>
+                        </li>
                             </ul>
                         </div>
                     </div>
@@ -83,7 +82,15 @@
 </template>
 <script>
 export default {
-    
+    computed: {
+        items:{
+            get: function() {
+            return this.$store.state.analysisCategories.map(element => {
+            return element;
+            });
+            }
+        }
+    },
 }
 </script>
 <style>

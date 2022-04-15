@@ -14,6 +14,7 @@
 <script>
 import SingleNews from '@/components/singleNews.vue'
 export default {
+      auth: false,
   layout: 'news',
   components: {
     SingleNews

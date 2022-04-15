@@ -101,9 +101,7 @@
 </div>
 </template>
 <script>
-import VueTradingView from 'vue-trading-view';
 export default {
-  components: { VueTradingView },
     layout: 'analysis',
     auth:false,
     data() {

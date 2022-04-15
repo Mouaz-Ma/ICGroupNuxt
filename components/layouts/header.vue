@@ -37,8 +37,12 @@
                       </b-collapse>
                     </li>
                     <li class="nav-item">
+                      <NuxtLink class="nav-link" to="/analysisTools/">Analysis Tools</NuxtLink>
+                    </li>
+                    <li class="nav-item">
                       <nuxt-link class="nav-link" to="/news">News</nuxt-link>
                     </li>
+                    
                     <li class="nav-item dropdown">
                       <NuxtLink class="nav-link" to="/aboutUs">Company</NuxtLink>
                       <!-- <b-collapse class="dropdown-menu" id="companyCollapse" v-model="showCollapseaCompany">

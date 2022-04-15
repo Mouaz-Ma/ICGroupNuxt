@@ -50,6 +50,9 @@
         <div v-else-if="this.$route.name === 'blogs'">
             <tags-componant :tags="['Analysis', 'Blogs', 'ICGroupsFx', 'Forex', 'Trading', 'MT5']" /> 
         </div>
+        <div v-else-if="this.$route.name === 'analysisTools'">
+            <tags-componant :tags="['Analysis', 'Blogs', 'ICGroupsFx', 'Trading_Tools','Forex', 'Trading', 'MT5']" /> 
+        </div>
 
     </div>
 </template>

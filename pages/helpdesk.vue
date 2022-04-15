@@ -173,5 +173,9 @@ export default {
               zohoScript: "<script type='text/javascript'>let $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:'d17173f8c96be3bd427909d4f4934e9bc0a3309477205234e8d5a02b64e015ba', values:{},ready:function(){}};let d=document;s=d.createElement('script');s.type='text/javascript';s.id='zsiqscript';s.defer=true;s.src='https://salesiq.zoho.com/widget';t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);<\/script>"
             }
           },
+          mounted(){
+            this.zohoScript= "<script type='text/javascript'>let $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:'d17173f8c96be3bd427909d4f4934e9bc0a3309477205234e8d5a02b64e015ba', values:{},ready:function(){}};let d=document;s=d.createElement('script');s.type='text/javascript';s.id='zsiqscript';s.defer=true;s.src='https://salesiq.zoho.com/widget';t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);<\/script>"
+
+          }
         }
 </script>

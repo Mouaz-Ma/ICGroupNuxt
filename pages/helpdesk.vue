@@ -26,12 +26,9 @@
             <div class="row justify-content-center">
                 <div class="col-xl-8">
                     <div class="intro-video-play">
-                        <div class="play-btn">
-                            <a><i class="fa fa-play"></i></a>
+                        <div class="play-btn videoBorder mainVideo">   
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/WL-G_9hm4rw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                    </div>
-                    <div class="intro-video-content text-center mt-5">
-                        <h2>We saved a seat for you</h2>
                     </div>
                 </div>
             </div>
@@ -40,55 +37,55 @@
 
     <div class="help-category section-padding">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
                     <div class="help-cat">
                         <span class="la la-video-camera"></span>
-                        <h4>Video Guide</h4>
+                        <h4>Video Guides</h4>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                <!-- <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
                     <div class="help-cat">
                         <span class="la la-support"></span>
                         <h4>FAQ</h4>
                     </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                </div> -->
+                <!-- <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
                     <div class="help-cat">
                         <span class="la la-book"></span>
                         <h4>API for developers</h4>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="row justify-content-center">
                 <div class="col-auto">
-                    <a href="#" class="sub-cat">
-                        <h5> Troubleshooting </h5>
+                    <a href="https://www.youtube.com/playlist?list=PLZMLtZYaSKEpd4O3yD56NPgu1O1sPQylN" class="sub-cat videoBorder">
+                        <h5 class="videoTitle"> سلسلة تعلم الفوركس </h5>
                     </a>
                 </div>
                 <div class="col-auto">
-                    <a href="#" class="sub-cat">
-                        <h5> Partnership </h5>
+                    <a href="https://www.youtube.com/playlist?list=PLZMLtZYaSKEpnjZxc3o-G1VcLQlNC_xad" class="sub-cat videoBorder">
+                        <h5 class="videoTitle"> تحليل العملات </h5>
                     </a>
                 </div>
                 <div class="col-auto">
-                    <a href="#" class="sub-cat">
-                        <h5> Getting started </h5>
+                    <a href="https://www.youtube.com/playlist?list=PLZMLtZYaSKEqZERoX5NrZlHyU0Ecw0iiK" class="sub-cat videoBorder">
+                        <h5 class="videoTitle"> تحليل نفط وغاز </h5>
                     </a>
                 </div>
                 <div class="col-auto">
-                    <a href="#" class="sub-cat">
-                        <h5> Wallets </h5>
+                    <a href="https://www.youtube.com/playlist?list=PLZMLtZYaSKEr-DauK33HkaeukpK0ckMQ0" class="sub-cat videoBorder">
+                        <h5 class="videoTitle"> ذهب وفضة </h5>
                     </a>
                 </div>
                 <div class="col-auto">
-                    <a href="#" class="sub-cat">
-                        <h5> Healthy Tips </h5>
+                    <a href="https://www.youtube.com/playlist?list=PLZMLtZYaSKEqHAkmv311Wtd2d4QZbQp2-" class="sub-cat videoBorder">
+                        <h5 class="videoTitle"> مؤشرات - داوجونز </h5>
                     </a>
                 </div>
                 <div class="col-auto">
-                    <a href="#" class="sub-cat">
-                        <h5> Crypto-definitions </h5>
+                    <a href="https://www.youtube.com/playlist?list=PLZMLtZYaSKEoT3JsUr7pRZSRsTGSEuLcr" class="sub-cat videoBorder">
+                        <h5 class="videoTitle"> عملات الكترونية - بيتكوين واثيريوم </h5>
                     </a>
                 </div>
             </div>
@@ -151,23 +148,8 @@
                         <h3>Can't find what you're looking for?</h3>
                         <p>Let us help you!</p>
                         <div v-if="isZohoLoaded">
-                        <div class="btn btn-success"  v-if="openTab">
-                            <script type = 'text/javascript' >
-                              let $zoho = $zoho || {};
-                            $zoho.salesiq = $zoho.salesiq || {
-                              widgetcode: 'd17173f8c96be3bd427909d4f4934e9bc0a3309477205234e8d5a02b64e015ba',
-                              values: {},
-                              ready: function () {}
-                            };
-                            let d = document;
-                            s = d.createElement('script');
-                            s.type = 'text/javascript';
-                            s.id = 'zsiqscript';
-                            s.defer = true;
-                            s.src = 'https://salesiq.zoho.com/widget';
-                            t = d.getElementsByTagName('script')[0];
-                            t.parentNode.insertBefore(s, t); 
-                            </script>
+                        <div v-if="openTab">
+                        <script type="text/javascript" id="zsiqchat">var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode: "d17173f8c96be3bd427909d4f4934e9bc0a3309477205234e8d5a02b64e015ba", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);</script>
                         </div>
                         </div>
                     </div>
@@ -206,8 +188,24 @@ export default {
         }
           },
           async mounted(){
-            this.openTab= true
-
+            this.openTab = true
           }
         }
 </script>
+
+<style scoped>
+.mainVideo{
+    box-shadow: 5px 10px #888888;
+}
+.videoBorder{
+    border: 2px #fbcc31 solid;
+      transition: 0.3s;
+}
+
+.sub-cat:hover{
+        color: white;
+        box-shadow: 5px 10px #888888;
+        background: rgb(30, 27, 27);
+}
+
+</style>

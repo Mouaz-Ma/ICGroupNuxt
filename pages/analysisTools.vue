@@ -31,7 +31,7 @@
                 "interval": "D",
                 "timezone": "Etc/UTC",
                 "theme": "dark",
-                "style": "0",
+                "style": "1",
                 "locale": "ar_AE",
                 "toolbar_bg": "#f1f3f6",
                 "enable_publishing": false,
@@ -55,11 +55,34 @@
       <v-card>
         <div v-if="isS3Loaded2">
         <v-card-text class="d-flex justify-content-center">
-<!-- TradingView Widget BEGIN -->
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <div class="tradingview-widget-copyright">‎<a href="https://ar.tradingview.com/markets/currencies/economic-calendar/" rel="noopener" target="_blank"><span class="blue-text">‎ المفكرة الاقتصادية ‎</span></a>‎ بواسطة TradingView</div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
+        {
+        "width": "100%",
+        "height": "859px",
+        "colorTheme": "dark",
+        "isTransparent": false,
+        "locale": "ar_AE",
+        "importanceFilter": "-1,0,1"
+        }
+        </script>
+        </div>
+        <!-- TradingView Widget END -->
+        </v-card-text>
+          </div>
+      </v-card>
+    </v-tab-item>
+    <v-tab-item>
+      <v-card>
+        <div v-if="isS3Loaded3">
+          <span v-if="openTab" class="d-flex justify-content-center">
+            <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
   <div class="tradingview-widget-container__widget"></div>
   <div class="tradingview-widget-copyright">‎<a href="https://ar.tradingview.com/markets/" rel="noopener" target="_blank"><span class="blue-text">‎الأسواق المالية‎</span></a>‎ من TradingView</div>
-</div>
   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
   {
   "colorTheme": "dark",
@@ -205,32 +228,8 @@
   ]
 }
   </script>
-        </v-card-text>
-          </div>
-      </v-card>
-    </v-tab-item>
-    <v-tab-item>
-      <v-card>
-        <div v-if="isS3Loaded3">
-          <span v-if="openTab" class="d-flex justify-content-center">
-              <!-- TradingView Widget BEGIN -->
-                <div class="tradingview-widget-container">
-                <div class="tradingview-widget-container__widget"></div>
-                <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/forex-screener/" rel="noopener" target="_blank"><span class="blue-text">Forex Screener</span></a> by TradingView</div>
-                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
-                {
-                "width": "100%",
-                "height": "850",
-                "defaultColumn": "overview",
-                "defaultScreen": "general",
-                "market": "forex",
-                "showToolbar": true,
-                "colorTheme": "dark",
-                "locale": "ar_AE",
-                }
-                </script>
-                </div>
-                <!-- TradingView Widget END -->
+</div>
+<!-- TradingView Widget END -->
 
           </span>
         </div>
@@ -249,6 +248,7 @@ export default {
             isS3Loaded1: false,
             isS3Loaded2: false,
             isS3Loaded3: false,
+            openTab: false,
         }
     },
     head () {
@@ -263,7 +263,7 @@ export default {
                 },
                 {
                     hid: 's32',
-                    src: 'https://s3.tradingview.com/external-embedding/embed-widget-screener.js',
+                    src: '"https://s3.tradingview.com/external-embedding/embed-widget-events.js',
                     async: true,
                     callback: () => {this.isS3Loaded2 = true }
                 },

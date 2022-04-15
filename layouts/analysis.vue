@@ -7,7 +7,7 @@
             <div id="main-wrapper show">
 
           <div class="blog section-padding border-0">
-            <div class="container">
+            <div class="container-fluid">
               <div class="row">
                 <div class="col-xl-9 col-lg-9">
                     <Nuxt />

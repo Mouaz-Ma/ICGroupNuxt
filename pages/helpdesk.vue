@@ -150,13 +150,31 @@
                     <div class="ticket-box-content">
                         <h3>Can't find what you're looking for?</h3>
                         <p>Let us help you!</p>
-                        <div class="btn btn-success"  v-html="zohoScript">Submit</div>
+                        <div v-if="isZohoLoaded">
+                        <div class="btn btn-success"  v-if="openTab">
+                            <script type = 'text/javascript' >
+                              let $zoho = $zoho || {};
+                            $zoho.salesiq = $zoho.salesiq || {
+                              widgetcode: 'd17173f8c96be3bd427909d4f4934e9bc0a3309477205234e8d5a02b64e015ba',
+                              values: {},
+                              ready: function () {}
+                            };
+                            let d = document;
+                            s = d.createElement('script');
+                            s.type = 'text/javascript';
+                            s.id = 'zsiqscript';
+                            s.defer = true;
+                            s.src = 'https://salesiq.zoho.com/widget';
+                            t = d.getElementsByTagName('script')[0];
+                            t.parentNode.insertBefore(s, t); 
+                            </script>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<div v-html="zohoScript"></div>
 </div>
 </template>
 <script>
@@ -170,11 +188,25 @@ export default {
           },
           data() {
             return {
-              zohoScript: "<script type='text/javascript'>let $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:'d17173f8c96be3bd427909d4f4934e9bc0a3309477205234e8d5a02b64e015ba', values:{},ready:function(){}};let d=document;s=d.createElement('script');s.type='text/javascript';s.id='zsiqscript';s.defer=true;s.src='https://salesiq.zoho.com/widget';t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);<\/script>"
+                isZohoLoaded: true,
+                openTab: false,
             }
           },
-          mounted(){
-            this.zohoScript= "<script type='text/javascript'>let $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:'d17173f8c96be3bd427909d4f4934e9bc0a3309477205234e8d5a02b64e015ba', values:{},ready:function(){}};let d=document;s=d.createElement('script');s.type='text/javascript';s.id='zsiqscript';s.defer=true;s.src='https://salesiq.zoho.com/widget';t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);<\/script>"
+          head () {
+                return {
+            script: [
+                {
+                    hid: 's31',
+                    src: 'https://salesiq.zoho.com/widget',
+                    async: true,
+                    defer: true,
+                    callback: () => {this.isZohoLoaded = true }
+                },
+            ]
+        }
+          },
+          async mounted(){
+            this.openTab= true
 
           }
         }

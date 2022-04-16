@@ -43,8 +43,8 @@
                     <div class="row">
                         <div class="col-xl-6">
                             <ul>
-                        <li v-for="item in items" :key="item._id">
-                            <NuxtLink :to="{name: 'analysis',  query: { categoryId: item._id}}">{{item.type}}</NuxtLink>
+                        <li v-for="category in analysisCategory" :key="category._id">
+                            <NuxtLink :to="{name: 'analysis',  query: { categoryId: category._id}}">{{category.type}}</NuxtLink>
                         </li>
                             </ul>
                         </div>
@@ -83,14 +83,19 @@
 <script>
 export default {
     computed: {
-        items:{
-            get: function() {
-            return this.$store.state.analysisCategories.map(element => {
-            return element;
-            });
-            }
-        }
+        analysisCategory(){
+          return this.$store.getters.getAnalysisCategories
+        },
     },
+    created() {
+        this.getAnalysisCategories()
+      },
+
+      methods: {
+          getAnalysisCategories() {
+          this.$store.dispatch('getAnalysisCategories');
+        },
+      }
 }
 </script>
 <style>

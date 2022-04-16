@@ -31,8 +31,8 @@
                       <a class="nav-link dropdown-toggle" href="#" v-b-toggle.analysisCollapse>Analysis</a>
 
                       <b-collapse class="dropdown-menu" id="analysisCollapse" v-model="showCollapseaAalysis">
-                        <div v-for="item in items" :key="item._id">
-                            <NuxtLink class="dropdown-item" :to="{name: 'analysis',  query: { categoryId: item._id}}">{{item.type}}</NuxtLink>
+                        <div v-for="category in analysisCategory" :key="category._id">
+                            <NuxtLink class="dropdown-item" :to="{name: 'analysis',  query: { categoryId: category._id}}">{{category.type}}</NuxtLink>
                         </div>
                       </b-collapse>
                     </li>
@@ -156,15 +156,17 @@ export default {
         activeLang() {
           return this.$i18n.locale
         },
-        items:{
-            get: function() {
-            return this.$store.state.analysisCategories.map(element => {
-            return element;
-            });
-            }
-        }
+        analysisCategory(){
+          return this.$store.getters.getAnalysisCategories
+        },
+      },
+      created() {
+        this.getAnalysisCategories()
       },
       methods: {
+          getAnalysisCategories() {
+          this.$store.dispatch('getAnalysisCategories');
+        },
         changeLang: function (language) {
           this.$i18n.setLocale(language);
           this.restartServices();

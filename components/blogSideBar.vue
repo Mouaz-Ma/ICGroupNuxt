@@ -62,7 +62,7 @@ export default {
   components: { tagsComponant },
   async fetch() {
     try {
-      const allNewsFetch = await fetch(process.env.API_URL + 'api/news/').then(res => res.json())
+      const allNewsFetch = await fetch('/api/news/').then(res => res.json())
       this.allNews = allNewsFetch.news
     //   console.log(this.allNews)
       console.log(this.$route)

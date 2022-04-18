@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-xxl-12">
                 <div class="header-content">
-                    <div class="header-left">
+                    <div class="header-left ml-5">
                         <div class="brand-logo">
                             <NuxtLink to="/">
                                 <img src="~/assets/images/logob.png" alt="">
@@ -14,14 +14,15 @@
 
                             
                         </div>
-                        <div class="search">
+                        <!-- search -->
+                        <!-- <div class="search">
                             <form action="#">
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Search Here">
                                     <span class="input-group-text"><i class="icofont-search"></i></span>
                                 </div>
                             </form>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="header-right">
@@ -29,7 +30,8 @@
                             <span class="dark"><i class="icofont-moon"></i></span>
                             <span class="light"><i class="icofont-sun-alt"></i></span>
                         </div>
-                        <div class="notification dropdown">
+                        <!-- notification area -->
+                        <!-- <div class="notification dropdown">
                             <a class="notify-bell" v-b-toggle.notification>
                                 <span ><i class="icofont-alarm"></i></span>
                             </a>
@@ -80,8 +82,8 @@
                                 </div>
                             
                             </b-collapse>
-                        </div>
-
+                        </div> -->
+                        <!-- user option -->
                         <div class="profile_log dropdown">
                             <a class="user" v-b-toggle.userOptions>
                                 <span class="thumb"><img src="~/assets/images/profile/2.png" alt=""></span>
@@ -171,12 +173,12 @@
             &#169; <a href="#">Qkit</a>
         </p>
     </div>
-</div>  -->
+</div>   -->
     <div class="content-body">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-6 col-xl-6 col-lg-6">
-                    <div class="card welcome-profile">
+                    <div class="card welcome-profile w-100 h-100">
                         <div class="card-body">
                             <img src="~/assets/images/profile/2.png" alt="">
                             <h4>Welcome, {{$auth.$state.user.username}}!</h4>
@@ -203,7 +205,7 @@
                     </div>
                 </div>
                 <div class="col-xxl-6 col-xl-6 col-lg-6" v-if="$auth.$state.user.userType === 'Administrator'">
-                    <div class="card">
+                    <div class="card w-100 h-100">
                         <div class="card-header">
                             <h4 class="card-title">Uploads</h4>
                         </div>
@@ -222,7 +224,7 @@
                     </div>
                 </div>
                 <div class="col-xxl-6 col-xl-6 col-lg-6" v-else-if="$auth.$state.user.userType === 'normalUser'">
-                    <div class="card">
+                    <div class="card w-100 h-100">
                         <div class="card-header">
                             <h4 class="card-title">Download App</h4>
                         </div>
@@ -244,7 +246,7 @@
                 </div>
 
                 <div class="col-xxl-12">
-                    <div class="card">
+                    <div class="card w-100 h-100">
                         <div class="card-header">
                             <h4 class="card-title">Information </h4>
                             <NuxtLink class="btn btn-primary" to="/users/profileUpdate">Edit</NuxtLink>
@@ -288,7 +290,7 @@
                 </div>
 
                 <div class="col-xxl-8 col-xl-6">
-                    <div class="card">
+                    <div class="card w-100 h-100">
                         <div class="card-header">
                             <h4 class="card-title">VERIFY & UPGRADE </h4>
                         </div>
@@ -302,7 +304,7 @@
                     </div>
                 </div>
                 <div class="col-xxl-4 col-xl-6">
-                    <div class="card">
+                    <div class="card w-100 h-100">
                         <div class="card-header">
                             <h4 class="card-title">Earn 30% Commission </h4>
                         </div>

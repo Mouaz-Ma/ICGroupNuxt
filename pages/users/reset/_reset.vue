@@ -28,7 +28,7 @@
                                 </div>
                             </form>
                             <div class="new-account mt-3">
-                                <p>Don't get code? <a class="text-primary" href="otp-1.html">Resend</a></p>
+                                <p>Don't get code? <a class="text-primary" href="#">Check your spam inbox!</a></p>
                                 <NuxtLink to="/">Go to Home Page</NuxtLink>
                             </div>
                         </div>

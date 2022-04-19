@@ -1,4 +1,5 @@
 <template>
+<v-app>
     <div id="main-wrapper show" class="show">
     <div class="authincation section-padding">
         <div class="container h-100">
@@ -8,22 +9,32 @@
                          <NuxtLink class="nav-link" to="/"><img src="~/assets/images/logob.png" alt=""></NuxtLink>
                         <h4 class="card-title mt-3">Sign in to ICGroupsFx</h4>
                     </div>
+                      <!-- alerts -->
+                    <div v-if="successMessage === 'true'">
+                        <v-alert border="bottom" color="green" dense dismissible outlined prominent shaped text type="success">Thank you for
+                        Somthing Went Wrong!</v-alert>
+                    </div>
+
+                    <div v-else-if="successMessage === 'false'">
+                        <v-alert border="bottom" color="red" dense dismissible outlined prominent shaped text type="error"> there was an
+                        Eroor submiting your form</v-alert>
+                    </div>
                     <div class="auth-form card">
                         <div class="card-body">
                             <form @submit.prevent="signIn" class="signin_validate row g-3" >
                                 <div class="col-12">
                                     <input type="email" class="form-control" placeholder="hello@example.com"
-                                        v-model="email">
+                                        v-model="email" required>
                                 </div>
                                 <div class="col-12">
-                                    <input type="password" class="form-control" placeholder="Password" v-model="password">
+                                    <input type="password" class="form-control" placeholder="Password" v-model="password" required>
                                 </div>
                                 <div class="col-6">
-                                    <div class="form-check form-switch">
+                                    <!-- <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
                                         <label class="form-check-label" for="flexSwitchCheckDefault">Remember
                                             me</label>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="col-6 text-right">
                                     <NuxtLink to="/users/forgot">Forgot Password?</NuxtLink>
@@ -42,15 +53,15 @@
                         </div>
                     </div>
                     <div class="privacy-link">
-                        <a href="signup.html">Have an issue with 2-factor authentication?</a>
+                        <nuxt-link to="/privacy">Privacy Policy</nuxt-link>
                         <br />
-                        <a href="signup.html">Privacy Policy</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+</v-app>
 </template>
 <script>
 export default {
@@ -59,20 +70,27 @@ export default {
         data() {
        return {
          email: '',
-         password: ''
+         password: '',
+        successMessage: '',
        };
     },
   methods: {
      async signIn() {
        try {
-           this.$auth.loginWith('local', {
+          let response = await this.$auth.loginWith('local', {
              data: {
                email: this.email,
                password: this.password,
              }
            })
+           if(response.data.success){
+               this.successMessage = 'true'
+           }else {
+               this.successMessage = 'false'
+           }
             // this.$router.push('/');
        } catch (err) {
+        this.successMessage = 'false'
          console.log(err);
        }
      }
@@ -109,5 +127,8 @@ html{
     color: #de5246;
     background-color: transparent;
     border-color: transparent
+}
+.btn-primary{
+    color: aliceblue;
 }
 </style>

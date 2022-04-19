@@ -12,12 +12,12 @@
                       <!-- alerts -->
                     <div v-if="successMessage === 'true'">
                         <v-alert border="bottom" color="green" dense dismissible outlined prominent shaped text type="success">Thank you for
-                        Somthing Went Wrong!</v-alert>
+                        Success!</v-alert>
                     </div>
 
                     <div v-else-if="successMessage === 'false'">
                         <v-alert border="bottom" color="red" dense dismissible outlined prominent shaped text type="error"> there was an
-                        Eroor submiting your form</v-alert>
+                        Somthing Went wrong</v-alert>
                     </div>
                     <div class="auth-form card">
                         <div class="card-body">

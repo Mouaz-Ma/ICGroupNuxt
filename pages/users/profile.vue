@@ -1,4 +1,5 @@
 <template>
+<v-app>
     <div id="main-wrapper show">
 
     <div class="headerprofile">
@@ -94,13 +95,13 @@
                                     <div class="user">
                                         <span class="thumb"><img src="~/assets/images/profile/2.png" alt=""></span>
                                         <div class="user-info">
-                                            <h5>Jannatul Maowa</h5>
-                                            <span>ICGroupsFx.inc@gmail.com</span>
+                                            <h5>{{$auth.state.user.username}}</h5>
+                                            <span>{{$auth.state.user.email}}</span>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="user-balance">
+                                <!-- balance -->
+                                <!-- <div class="user-balance">
                                     <div class="available">
                                         <p>Available</p>
                                         <span>0.00 BTC</span>
@@ -109,23 +110,27 @@
                                         <p>Total</p>
                                         <span>0.00 USD</span>
                                     </div>
-                                </div>
-                                <a href="profile.html" class="dropdown-item">
-                                    <i class="icofont-ui-user"></i>Profile
-                                </a>
-                                <a href="accounts.html" class="dropdown-item">
+                                </div> -->
+                                <NuxtLink to="/users/profile" class="dropdown-item"><i class="icofont-ui-user"></i>Profile</NuxtLink>
+
+                                <NuxtLink class="dropdown-item" to="/users/profileUpdate"><i class="icofont-ui-settings"></i>Edit and Settings</NuxtLink>
+                                <!-- wallet -->
+                                <!-- <a href="accounts.html" class="dropdown-item">
                                     <i class="icofont-wallet"></i>Wallet
-                                </a>
-                                <a href="settings-profile.html" class="dropdown-item">
+                                </a> -->
+                                <!-- settings -->
+                                <!-- <a href="settings-profile.html" class="dropdown-item">
                                     <i class="icofont-ui-settings"></i> Setting
-                                </a>
-                                <a href="settings-activity.html" class="dropdown-item">
+                                </a> -->
+                                <!-- settings -->
+                                <!-- <a href="settings-activity.html" class="dropdown-item">
                                     <i class="icofont-history"></i> Activity
-                                </a>
-                                <a href="lock.html" class="dropdown-item">
+                                </a> -->
+                                <!-- lock -->
+                                <!-- <a href="lock.html" class="dropdown-item">
                                     <i class="icofont-lock"></i>Lock
-                                </a>
-                                <a href="signin.html" class="dropdown-item logout">
+                                </a> -->
+                                <a @click="logout()" href="#" class="dropdown-item logout">
                                     <i class="icofont-logout"></i> Logout
                                 </a>
                             </b-collapse>
@@ -188,16 +193,16 @@
                             <ul>
                                 <li>
                                     <a href="#">
-                                        <span class="verified"><i class="icofont-check-alt"></i></span>
+                                        <span @click="getVerified()" class="verified"><i class="icofont-check-alt"></i></span>
                                         Verify account
                                     </a>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a href="#">
                                         <span class="not-verified"><i class="icofont-close-line"></i></span>
                                         Two-factor authentication (2FA)
                                     </a>
-                                </li>
+                                </li> -->
                             </ul>
                             </div>
 
@@ -255,41 +260,76 @@
                             <form class="row">
                                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
                                     <div class="user-info">
-                                        <span>USER ID</span>
-                                        <h4>818778</h4>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
-                                    <div class="user-info">
                                         <span>EMAIL ADDRESS</span>
                                         <h4>{{$auth.$state.user.email}}</h4>
                                     </div>
                                 </div>
                                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
                                     <div class="user-info">
-                                        <span>COUNTRY OF RESIDENCE</span>
-                                        <h4>Bangladesh</h4>
+                                        <span>Authentication Strategy:</span>
+                                        <h4>{{$auth.$state.user.strategy}}</h4>
                                     </div>
                                 </div>
-                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                                <!-- <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
                                     <div class="user-info">
                                         <span>JOINED SINCE</span>
                                         <h4>20/10/2020</h4>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
                                     <div class="user-info">
                                         <span>TYPE</span>
-                                        <h4>Personal</h4>
+                                        <div v-if="$auth.state.user.userType === 'Administrator'">
+                                        <h4>Administrator</h4>
+                                        </div>
+                                        <div v-else>
+                                            <h4>Normal</h4>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                                    <div class="user-info">
+                                        <span>Is Verified?</span>
+                                        <div v-if="$auth.state.user.isVerified === true">
+                                        <h4>Verified</h4>
+                                        </div>
+                                        <div v-else>
+                                            <h4>Not Verified</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                             </form>
 
                         </div>
                     </div>
                 </div>
+                    <!-- alerts -->
+                    <div class="mt-5" v-if="verifyAlertMessage === 'true'">
+                        <v-alert border="bottom" color="green" dense dismissible outlined prominent shaped text type="success">Thank you for
+                        an email was sent please check you inbox or spam box!</v-alert>
+                    </div>
 
-                <div class="col-xxl-8 col-xl-6">
+                    <div class="mt-5" v-else-if="verifyAlertMessage === 'false'">
+                        <v-alert border="bottom" color="red" dense dismissible outlined prominent shaped text type="error"> there was an
+                        Somthing Went Wrong</v-alert>
+                    </div>
+
+                <div class="col-xxl-8 col-xl-6" v-if="$auth.state.user.isVerified === true">
+                    <div class="card w-100 h-100">
+                        <div class="card-header">
+                            <h4 class="card-title">VERIFY & UPGRADE </h4>
+                        </div>
+                        <div class="card-body">
+                            <h5>Account Status : <span class="text-success">Verified <i
+                                        class="icofont-verification-check"></i></span> </h5>
+                            <p>Your account is verified. Contact our call center to help you enable funding, trading, and withdrawal.
+                            </p>
+                            <NuxtLink class="btn btn-primary" to="/contact">Contact Call Center</NuxtLink>
+                        </div>
+                    </div>
+                </div>
+                    <div v-else  class="col-xxl-8 col-xl-6">
                     <div class="card w-100 h-100">
                         <div class="card-header">
                             <h4 class="card-title">VERIFY & UPGRADE </h4>
@@ -299,18 +339,80 @@
                                         class="icofont-warning"></i></span> </h5>
                             <p>Your account is unverified. Get verified to enable funding, trading, and withdrawal.
                             </p>
-                            <a href="#" class="btn btn-primary"> Get Verified</a>
+                            <a class="btn btn-primary" @click="getVerified()"> Get Verified</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xxl-4 col-xl-6">
                     <div class="card w-100 h-100">
                         <div class="card-header">
-                            <h4 class="card-title">Earn 30% Commission </h4>
+                            <h4 class="card-title"><i class="icofont-bank"></i> Bank Transfere Numbers: </h4>
                         </div>
+                    <!-- alerts -->
+                    <div class="text-center ma-2">
+                        <v-snackbar
+                        v-model="snackbar"
+                        >
+                        {{ this.copiedToClipBoard }}
+
+                        <template v-slot:action="{ attrs }">
+                            <v-btn
+                            color="pink"
+                            text
+                            v-bind="attrs"
+                            @click="snackbar = false"
+                            >
+                            Close
+                            </v-btn>
+                        </template>
+                        </v-snackbar>
+                    </div>
                         <div class="card-body">
-                            <p>Refer your friends and earn 30% of their trading fees.</p>
-                            <a href="#" class="btn btn-primary"> Referral Program</a>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="user-info">
+                                        <h4>Is Bank</h4>
+                                        <h4>TRY:</h4>
+                                        <span @click="copySign('ASAAD SAHLOUL')">Name: ASAAD SAHLOUL</span><br>
+                                        <span @click="copySign('TR 3000 0100 2480 7807 0507 5005')">TR 3000 0100 2480 7807 0507 5005</span>
+                                        <h4>USD:</h4>
+                                        <span @click="copySign('ASAAD SAHLOUL')">Name: ASAAD SAHLOUL</span><br>
+                                        <span @click="copySign('TR 3000 0100 2480 7807 0507 5005')">TR 3000 0100 2480 7807 0507 5005</span>
+                                        
+                                    </div>
+                                <hr>
+                                </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="user-info">
+                                        <h4>Kuveyt Türk:</h4>
+                                        <h4>TRY:</h4>
+                                        <span @click="copySign('KHALED JUMA')">Name: KHALED JUMA</span><br>
+                                        <span @click="copySign('TR800020500009676033300001')">TR800020500009676033300001</span>
+                                        <h4>USD:</h4>
+                                        <span @click="copySign('KHALED JUMA')">Name: KHALED JUMA</span><br>
+                                        <span @click="copySign('TR960020500009676033300101')">TR960020500009676033300101</span>
+                                        
+                                    </div>
+                                <hr>
+                                </div>
+                                    <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="user-info">
+                                        <h4>Al Baraka Bankası:</h4>
+                                        <h4>TRY:</h4>
+                                        <span @click="copySign('KHALED JUMA')">Name: KHALED JUMA</span><br>
+                                        <span @click="copySign('TR04 0020 3000 0782 3533 0000 01')">TR04 0020 3000 0782 3533 0000 01</span>
+                                        <h4>USD:</h4>
+                                        <span @click="copySign('KHALED JUMA')">Name: KHALED JUMA</span><br>
+                                        <span @click="copySign('TR74 0020 3000 0782 3533 0000 02')">TR74 0020 3000 0782 3533 0000 02</span>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
@@ -319,15 +421,47 @@
     </div>
 
 </div>
+</v-app>
 </template>
 <script>
 export default {
     data() {
         return{
             name:"",
-            email:""
+            email:"",
+            verifyAlertMessage: '',
+            copiedToClipBoard: '',
+             snackbar: false,
         }
-    }
+    },
+    methods: {
+        async logout() {
+          await this.$auth.logout()
+        },
+    async getVerified() {
+        try {
+            const userId = this.$auth.$state.user._id
+            console.log(typeof(userId));
+            const response = await this.$axios.get('/api/users/varifyById/'+userId)
+            if(response.data.success){
+                console.log(response.data.success)
+                this.verifyAlertMessage = 'true'
+            } else {
+                this.verifyAlertMessage = 'false'
+            }
+        } catch(err){
+            this.verifyAlertMessage = 'false'
+        }
+
+    },
+       async copySign(iban) {
+           this.snackbar = true
+        navigator.clipboard.writeText(iban);
+
+        /* Alert the copied text */
+        this.copiedToClipBoard =("Copied the text: " + iban);
+            }
+    },
     
 }
 </script>

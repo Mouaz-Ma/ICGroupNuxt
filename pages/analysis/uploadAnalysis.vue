@@ -1,4 +1,5 @@
 <template>
+<v-app>
     <div id="main-wrapper show" class="show">
     <div class="authincation section-padding">
         <div class="container h-100">
@@ -8,28 +9,53 @@
                          <NuxtLink class="nav-link" to="/"><img src="~/assets/images/logob.png" alt=""></NuxtLink>
                             <h4 class="card-title mt-3 mb-3 text-center">New Analysis Form</h4>
                     </div>
+                      <!-- alerts -->
+                    <div v-if="successMessage === 'true'">
+                        <v-alert border="bottom" color="green" dense dismissible outlined prominent shaped text type="success">New Analysis been uploaded</v-alert>
+                    </div>
+
+                    <div v-else-if="successMessage === 'false'">
+                        <v-alert border="bottom" color="red" dense dismissible outlined prominent shaped text type="error"> there was an Eroor submiting your form</v-alert>
+                    </div>
+                    
                     <div class="auth-form card">
                         <div class="card-body">
-                            <form @submit.prevent="uploadAnalysis" class="row g-3" >
+                            <form @submit.prevent="uploadAnalysis" class="row g-3" enctype='multipart/form-data'>
                                 <div class="col-12">
                                     <input type="text" class="form-control" placeholder="Title" v-model="title" required>
                                 </div>
                                 <div class="col-12">
                                     <input type="text" class="form-control" placeholder="Tags" v-model="tagsInput">
                                 </div>
+                                <hr>
+                                <h3><i class="icofont-upload-alt"></i>uploads</h3>
                                 <div class="col-12">
-                                    <label for="file-upload" class="custom-file-upload">
-                                        <i class="fa fa-plus"></i> Image Upload
+                                    <label for="image-upload" class="custom-file-upload">
+                                        <i class="icofont-file-image"></i> Image Upload
                                     </label>
                                         <b-form-file
                                         placeholder="Choose an image or drop it here..."
                                         drop-placeholder="Drop file here..."
                                         @change="onFileSelected"
-                                        id="file-upload"
+                                        id="image-upload"
                                         class="d-none"
                                         ></b-form-file>
-                                        <div class="mt-1">Selected file: {{ selectedFile ? selectedFile.name : '' }}</div>
                                 </div>
+                                <div class="m-1">Selected Image file: {{ selectedFile ? fileName: '' }}</div>
+
+                                <div class="col-12">
+                                    <label for="audio-upload" class="custom-file-upload">
+                                        <i class="icofont-file-audio"></i> Audio Upload
+                                    </label>
+                                        <b-form-file
+                                        drop-placeholder="Drop file here..."
+                                        @change="onAudioFileSelected"
+                                        id="audio-upload"
+                                        class="d-none"
+                                        ></b-form-file>
+                                </div>
+                                <div class="m-1">Selected Audio file: {{ selectedAudioFile ? audioFileName : '' }}</div>
+                                <hr>
                                 <div class="col-12">
                                 <v-select
                                     v-model="selectedCategory"
@@ -65,6 +91,7 @@
         </div>
     </div>
 </div>
+</v-app>
 </template>
 <script>
 import TiptapEditor from "@/components/TiptapEditor.vue"
@@ -79,8 +106,11 @@ export default {
            content: '',
            user: '',
            selectedFile: null,
+           selectedAudioFile: null,
            fileName: '',
-           selectedCategory: null
+           audioFileName: '',
+           selectedCategory: null,
+           successMessage: '',
        };
     },
     computed: {
@@ -95,10 +125,13 @@ export default {
     getAnalysisCategories() {
           this.$store.dispatch('getAnalysisCategories');
         },
-      onFileSelected(event) {
-          this.selectedFile = event.target.files[0];
-
-          this.fileName = event.target.files[0].name;
+    onFileSelected(event) {
+        this.selectedFile = event.target.files[0];
+        this.fileName = event.target.files[0].name;
+      },
+    onAudioFileSelected(event) {
+        this.selectedAudioFile = event.target.files[0];
+        this.audioFileName = event.target.files[0].name;
       },
     async uploadAnalysis() {
         try {
@@ -109,17 +142,19 @@ export default {
             data.append("content", this.content);
             data.append("userID", this.$auth.$state.user._id);
             data.append("photo", this.selectedFile);
+            data.append("audio", this.selectedAudioFile);
             data.append("category", this.selectedCategory);
             
-
-            // console.log(this.content)
-
           let response = await this.$axios.post('/api/analysis/new', data);
 
           if (response.data.success) {
+              this.successMessage = 'true';
             this.$router.push({name: 'analysis',  query: { categoryId: this.selectedCategory}})
+          } else {
+               this.successMessage = 'false';
           }
         } catch (err) {
+             this.successMessage = 'false';
           console.log(err);
         }
       },

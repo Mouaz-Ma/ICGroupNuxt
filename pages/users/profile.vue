@@ -371,7 +371,7 @@
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="user-info">
-                                        <h4>Is Bank</h4>
+                                        <h4>Ziraat Bank</h4>
                                         <h4>TRY:</h4>
                                         <span @click="copySign('ASAAD SAHLOUL')">Name: ASAAD SAHLOUL</span><br>
                                         <span @click="copySign('TR 3000 0100 2480 7807 0507 5005')">TR 3000 0100 2480 7807 0507 5005</span>

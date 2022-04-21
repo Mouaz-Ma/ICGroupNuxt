@@ -20,7 +20,7 @@
                     
                     <div class="auth-form card">
                         <div class="card-body">
-                            <form @submit.prevent="uploadAnalysis" class="row g-3" enctype='multipart/form-data'>
+                            <form @submit.prevent="uploadAnalysis" class="row g-3">
                                 <div class="col-12">
                                     <input type="text" class="form-control" placeholder="Title" v-model="title" required>
                                 </div>

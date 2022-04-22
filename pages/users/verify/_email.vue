@@ -37,7 +37,6 @@ export default {
       methods: {
     async checkString () {
       const string = this.$route.params.email
-      console.log(string);
       const verification = await this.$axios.get('/api/users/verify/'+string)
     }
   },

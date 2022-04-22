@@ -22,11 +22,9 @@ export default {
     async asyncData({$axios, params}) {
     try {
         // write if news not found to redirect back to newss 
-        console.log(params.id)
       const news = $axios.get('/api/news/' + params.id)
       const newsResponse = await Promise.resolve(news)
       const newsData = newsResponse.data.news
-      console.log(newsData.tags)
       return {newsData}
     } catch(err){
       console.log(err);

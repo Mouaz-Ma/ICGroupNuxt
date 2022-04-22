@@ -57,7 +57,6 @@ export default {
         async requestReset () {
             try {
                 let response = await this.$axios.post('/api/users/requestReset', {email: this.email});
-                console.log(response)
                 if (response.data.success){
                     this.successMessage = 'true'
                 } else {

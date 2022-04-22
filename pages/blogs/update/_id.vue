@@ -91,7 +91,6 @@ export default {
       const blog = $axios.get('/api/blogs/' + params.id)
       const blogResponse = await Promise.resolve(blog)
       const blogData = blogResponse.data.blog
-      console.log(blogData)
       return {blogData}
     } catch(err){
       console.log(err);
@@ -166,8 +165,7 @@ export default {
                 data.append("userID", this.$auth.$state.user._id);
                 data.append("photo", this.selectedFile);
                 data.append("deletedImage", this.deletedFileName);
-    
-                // console.log(this.content)
+
     
               let response = await this.$axios.put(`/api/blogs/${this.$route.params.id}` , data);
     

@@ -122,11 +122,6 @@ export default {
         console.log(err)
         }
     },
-    // itemsList(){
-    //     this.$store.state.analysisCategories.forEach(element => {
-    //         this.items.push(element.type)
-    //     });
-    // }
     },
 }
 </script>

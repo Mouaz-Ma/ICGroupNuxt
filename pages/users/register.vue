@@ -97,7 +97,6 @@ export default {
                };
              let response = await this.$axios.post('/api/users/register', data);
     
-             console.log(response.data.success)
              
              if (response.data.success) {
                   this.successMessage = 'true'

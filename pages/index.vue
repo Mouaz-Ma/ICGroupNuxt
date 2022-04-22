@@ -456,7 +456,7 @@ export default {
                     };
                     await this.$axios.post('/api/users/registerSocial', data);
                   } else {
-                    console.log("local so dont do anything he should have been registered")
+                    console.log("Local")
                   }
                 }
               },

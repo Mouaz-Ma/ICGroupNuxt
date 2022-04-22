@@ -64,9 +64,6 @@ export default {
     try {
       const allNewsFetch = await fetch('/api/news/').then(res => res.json())
       this.allNews = allNewsFetch.news
-    //   console.log(this.allNews)
-      console.log(this.$route)
-    //   return {allNewsData}
     } catch(err){
       console.log(err);
     }

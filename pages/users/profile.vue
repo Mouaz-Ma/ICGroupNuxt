@@ -441,10 +441,8 @@ export default {
     async getVerified() {
         try {
             const userId = this.$auth.$state.user._id
-            console.log(typeof(userId));
             const response = await this.$axios.get('/api/users/varifyById/'+userId)
             if(response.data.success){
-                console.log(response.data.success)
                 this.verifyAlertMessage = 'true'
             } else {
                 this.verifyAlertMessage = 'false'

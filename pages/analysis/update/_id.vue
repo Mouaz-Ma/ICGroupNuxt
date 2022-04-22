@@ -184,8 +184,6 @@ export default {
                 data.append("deletedImage", this.deletedFileName);
                 data.append("category", this.selectedCategory);
     
-                console.log(data.get(this.selectedFile))
-    
               let response = await this.$axios.put(`/api/analysis/single/${this.$route.params.id}` , data);
     
               if (response.data.success) {

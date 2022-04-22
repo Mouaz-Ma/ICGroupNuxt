@@ -18,10 +18,18 @@
                         <b-row align-v="center">
                           <b-col><h3>{{title}}</h3></b-col>
                           <b-col>
-                          <div v-if="$auth.$state.loggedIn && $auth.$state.user.userType ==='Administrator'">
-                              <b-button class="m-3 float-right btns" variant="danger" @click="deleteAnalysis()">Delete </b-button>
-                              <b-button class="m-3 float-right" variant="success"><nuxt-link class="btns" :to="`/analysis/update/${this.$route.params.id}`">Update </nuxt-link></b-button>
-                          </div>
+                          <div v-if="audio != null" >
+                            <audio-player 
+                            v-if="audio.filename"
+                            :title="title"
+                            :author="author"
+                            :audio="audio"
+
+                            class="m-3 float-right btns" />
+                              </div>
+                              <b-button v-if="$auth.$state.loggedIn && $auth.$state.user.userType ==='Administrator'" class="m-3 float-right btns" variant="danger" @click="deleteAnalysis()">Delete </b-button>
+                              <b-button v-if="$auth.$state.loggedIn && $auth.$state.user.userType ==='Administrator'" class="m-3 float-right" variant="success"><nuxt-link class="btns" :to="`/analysis/update/${this.$route.params.id}`">Update </nuxt-link></b-button>
+                        
                           </b-col>
                         </b-row>
                         <div class="blog-img">
@@ -150,6 +158,10 @@ export default {
             url: String,
             filename: String
         },
+        audio: {
+            url: String,
+            filename: String
+        },
         author: {
             username: String
         },
@@ -161,7 +173,6 @@ export default {
     methods: {
         deleteAnalysis: async function () {
           try {
-              console.log(this.selectedCategory)
             let deleteResponse = await this.$axios.delete('/api/analysis/single/' + this.$route.params.id);
             if (deleteResponse.data.success) {
               this.$router.push({name: 'analysis',  query: { categoryId: this.selectedCategory}})

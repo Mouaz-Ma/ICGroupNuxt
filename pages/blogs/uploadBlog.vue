@@ -92,8 +92,6 @@ export default {
             data.append("userID", this.$auth.$state.user._id);
             data.append("photo", this.selectedFile);
 
-            // console.log(this.content)
-
           let response = await this.$axios.post('/api/blogs/new', data);
 
           if (response.data.success) {

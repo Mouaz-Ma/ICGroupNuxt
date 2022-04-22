@@ -18,7 +18,6 @@ jQuery(window).on("load", function () {
                 .addClass("active")
                 .parent()
                 .addClass("active"); ;) {
-            // console.log(o)
             if (!o.is("li")) break;
             o = o.parent()
                 .addClass("show")

@@ -1,6 +1,6 @@
 <template>
 
-<div class="row">
+<div class="row" v-if="allAnalysisData.length != 0">
 <h1>{{allAnalysisData[0].category.type}}</h1>
       <b-card-group>
           <div v-for="analysis in allAnalysisData" :key="analysis._id" class="col-xl-6 col-lg-6 col-md-6">
@@ -24,6 +24,7 @@
 import AnalysisCard from '@/components/analysisCard.vue';
 
 export default {
+  watchQuery: true,
     auth: false,
   layout: 'analysis',
   components: {
@@ -36,14 +37,17 @@ export default {
       author: ""
     }
   },
-  watchQuery: true,
+    watch: {
+    '$route' () {
+      Object.assign(this.$data, this.$options.data())
+    }
+  },
   async asyncData({$axios, query}) {
     try {
-        console.log(query.categoryId)
       const allAnalysis = await $axios.get('/api/analysis/' + query.categoryId)
       const allAnalysisResponse = await Promise.all([allAnalysis])
       const allAnalysisData = allAnalysisResponse[0].data.analysis
-      console.log(allAnalysisData)
+      console.log(allAnalysisData.length)
       return {allAnalysisData}
     } catch(err){
       console.log(err);

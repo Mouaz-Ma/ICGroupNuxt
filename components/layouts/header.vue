@@ -173,7 +173,6 @@ export default {
           this.$router.push('/')
         },
         restartServices: function() {
-          console.log("language changed");
           window.location.reload(true)
           this.socket.emit('change lang', this.$i18n.locale)
         },

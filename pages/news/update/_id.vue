@@ -91,7 +91,6 @@ export default {
       const news = $axios.get('/api/news/' + params.id)
       const newsResponse = await Promise.resolve(news)
       const newsData = newsResponse.data.news
-      console.log(newsData)
       return {newsData}
     } catch(err){
       console.log(err);
@@ -167,7 +166,6 @@ export default {
                 data.append("photo", this.selectedFile);
                 data.append("deletedImage", this.deletedFileName);
     
-                // console.log(this.content)
     
               let response = await this.$axios.put(`/api/news/${this.$route.params.id}` , data);
     

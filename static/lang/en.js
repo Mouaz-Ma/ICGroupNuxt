@@ -8,5 +8,18 @@ export default {
     "recomendations" : "We recommend you take a look at the Nuxt documentation, whether you are new or have previous experience with the framework.",
     "getting Started" : "To get started, remove components/Tutorial.vue and start coding in pages/index.vue. Have fun!",
     "Help Desk" : "Help Desk",
-    "Trading Tools": "Trading Tools"
+    "Trading Tools": "Trading Tools",
+    "Our Story": "Our Story",
+    "Our Story paragraph 1st": "It all started back in 2006 in Damascus where our company was born as an individual effort that grew with experience and professionalism into an advanced experience five years later in Dubai. ",
+    "Our Story paragraph 2nd": "We launched our first office in Turkey in 2013 only to open a subsidiary office in Mersin five years later.",
+    "Our Story paragraph 3rd": "We got our agents’ accreditations in Sweden, Germany, and Iraq. 2021 ended with opening our Dubai office, and we celebrated the new year looking forward to opening more offices around the Middle East.",
+    "Our Services": "Our Services",
+    "Technical Analysis": "Technical Analysis",
+    "Technical Analysis graph": "We study recent and past market data to forecast the direction of prices and determine curve trends. We study every trading tool that exists in the money market; Currencies - Metals - Energy - Shares - Electronic currencies.",
+    "Trading": "Trading",
+    "Trading graph": "Everyone can trade online nowadays, therefore we specialize in selecting stocks for trading that, according to technical analysis indicators, is in high demand and will achieve the highest profit.",
+    "Workshops and Trainings": "Workshops and Trainings",
+    "Workshops and Trainings graph": "If you are interested in online trading or in discovering this world, we offer you a range of advanced solutions and special services during your trading time. Our economic advisers offer you free workshops and training before starting.",
+    "Why choose to trade with IC Groups FX?": "Why choose to trade with IC Groups FX?",
+    "Why choose to trade with IC Groups FX? graph": "We provide you with an innovative and reliable environment, and the best user services from our 24/7 multilingual support offices. We offer a wide range of trading tools including the most popular one; forex, and others like stock trading, commodities, indices and digital currencies."
 }

@@ -1,6 +1,5 @@
 <template>
-<v-app>
-
+<div>
   <!-- alerts -->
   <div v-if="successMessage === 'true'">
     <v-alert border="bottom" color="green" dense dismissible outlined prominent shaped text type="success">Thank you for
@@ -75,8 +74,7 @@
       Send message
     </button>
   </form>
-</v-app>
-
+</div>
 </template>
 <script>
 export default {

@@ -1,4 +1,5 @@
 <template>
+<v-app>
     <div id="main-wrapper show">
 
     <div class="authincation section-padding">
@@ -42,6 +43,7 @@
     </div>
 
 </div>
+</v-app>
 </template>
 
 <script>

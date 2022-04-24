@@ -144,15 +144,51 @@ export default {
             data.append("photo", this.selectedFile);
             data.append("audio", this.selectedAudioFile);
             data.append("category", this.selectedCategory);
-            
-          let response = await this.$axios.post('/api/analysis/new', data);
+            if (this.selectedAudioFile && ! this.selectedFile) {
+                if(this.selectedAudioFile.type === "audio/mp3" || this.selectedAudioFile.type === "audio/mpeg"){
+                    let response = await this.$axios.post('/api/analysis/new', data);
+                        console.log(response.data)
+                    if (response.data.success === true) {
+                        this.successMessage = 'true';
+                        this.$router.push({name: 'analysis',  query: { categoryId: this.selectedCategory}})
+                    } else {
+                        this.successMessage = 'false';
+                    }
+                }
 
-          if (response.data.success) {
-              this.successMessage = 'true';
-            this.$router.push({name: 'analysis',  query: { categoryId: this.selectedCategory}})
-          } else {
-               this.successMessage = 'false';
-          }
+            } else if (this.selectedFile && !this.selectedAudioFile) {
+                if(this.selectedFile.type === "image/jpeg" ){
+                    let response = await this.$axios.post('/api/analysis/new', data);
+                        console.log(response.data)
+                    if (response.data.success === true) {
+                        this.successMessage = 'true';
+                        this.$router.push({name: 'analysis',  query: { categoryId: this.selectedCategory}})
+                    } else {
+                        this.successMessage = 'false';
+                    }
+                }
+
+            } else if (this.selectedFile && this.selectedAudioFile) {
+                if((this.selectedFile.type === "image/jpeg") && (this.selectedAudioFile.type === "audio/mp3" || this.selectedAudioFile.type === "audio/mpeg")){
+                    let response = await this.$axios.post('/api/analysis/new', data);
+                        console.log(response.data)
+                    if (response.data.success === true) {
+                        this.successMessage = 'true';
+                        this.$router.push({name: 'analysis',  query: { categoryId: this.selectedCategory}})
+                    } else {
+                        this.successMessage = 'false';
+                    }
+                }
+            } else {
+              let response = await this.$axios.post('/api/analysis/new', data);
+                console.log(response.data)
+              if (response.data.success === true) {
+                  this.successMessage = 'true';
+                this.$router.push({name: 'analysis',  query: { categoryId: this.selectedCategory}})
+              } else {
+                   this.successMessage = 'false';
+              }
+            }
         } catch (err) {
              this.successMessage = 'false';
           console.log(err);

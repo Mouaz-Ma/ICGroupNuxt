@@ -96,7 +96,9 @@ export default {
              this.timeLineValue = document.getElementById('audio').currentTime / document.getElementById('audio').duration * 100
         },
         timeLineBar: function() {
+          if(document.getElementById('audio')){
             this.timeLineValue = document.getElementById('audio').currentTime / document.getElementById('audio').duration * 100
+          }
         },
         previousSeconds: function() {
             this.timeLineValue = document.getElementById('audio').currentTime - 10

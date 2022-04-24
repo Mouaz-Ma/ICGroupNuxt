@@ -175,7 +175,7 @@ export default {
           try {
             let deleteResponse = await this.$axios.delete('/api/analysis/single/' + this.$route.params.id);
             if (deleteResponse.data.success) {
-              this.$router.push({name: 'analysis',  query: { categoryId: this.selectedCategory}})
+                this.$router.go(-1) 
             } else {
               console.log("you are not supposed to be here buddy!!");
             }

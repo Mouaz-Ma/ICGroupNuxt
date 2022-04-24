@@ -373,11 +373,12 @@
                                     <div class="user-info">
                                         <h4>Ziraat Bank</h4>
                                         <h4>TRY:</h4>
-                                        <span @click="copySign('ASAAD SAHLOUL')">Name: ASAAD SAHLOUL</span><br>
-                                        <span @click="copySign('TR 3000 0100 2480 7807 0507 5005')">TR 3000 0100 2480 7807 0507 5005</span>
+                                        <span @click="copySign('ASAAD SAHLOUL')">Name: ASAAD SAHLOUL<v-btn icon ><v-icon>mdi-content-copy</v-icon></v-btn></span><br>
+
+                                        <span @click="copySign('TR 3000 0100 2480 7807 0507 5005')">TR 3000 0100 2480 7807 0507 5005<v-btn icon ><v-icon>mdi-content-copy</v-icon></v-btn></span>
                                         <h4>USD:</h4>
-                                        <span @click="copySign('ASAAD SAHLOUL')">Name: ASAAD SAHLOUL</span><br>
-                                        <span @click="copySign('TR 3000 0100 2480 7807 0507 5005')">TR 3000 0100 2480 7807 0507 5005</span>
+                                        <span @click="copySign('ASAAD SAHLOUL')">Name: ASAAD SAHLOUL<v-btn icon ><v-icon>mdi-content-copy</v-icon></v-btn></span><br>
+                                        <span @click="copySign('TR 3000 0100 2480 7807 0507 5005')">TR 3000 0100 2480 7807 0507 5005<v-btn icon ><v-icon>mdi-content-copy</v-icon></v-btn></span>
                                         
                                     </div>
                                 <hr>
@@ -386,11 +387,11 @@
                                     <div class="user-info">
                                         <h4>Kuveyt Türk:</h4>
                                         <h4>TRY:</h4>
-                                        <span @click="copySign('KHALED JUMA')">Name: KHALED JUMA</span><br>
-                                        <span @click="copySign('TR800020500009676033300001')">TR800020500009676033300001</span>
+                                        <span @click="copySign('KHALED JUMA')">Name: KHALED JUMA<v-btn icon ><v-icon>mdi-content-copy</v-icon></v-btn></span><br>
+                                        <span @click="copySign('TR800020500009676033300001')">TR800020500009676033300001<v-btn icon ><v-icon>mdi-content-copy</v-icon></v-btn></span>
                                         <h4>USD:</h4>
-                                        <span @click="copySign('KHALED JUMA')">Name: KHALED JUMA</span><br>
-                                        <span @click="copySign('TR960020500009676033300101')">TR960020500009676033300101</span>
+                                        <span @click="copySign('KHALED JUMA')">Name: KHALED JUMA<v-btn icon ><v-icon>mdi-content-copy</v-icon></v-btn></span><br>
+                                        <span @click="copySign('TR960020500009676033300101')">TR960020500009676033300101<v-btn icon ><v-icon>mdi-content-copy</v-icon></v-btn></span>
                                         
                                     </div>
                                 <hr>
@@ -400,11 +401,11 @@
                                     <div class="user-info">
                                         <h4>Al Baraka Bankası:</h4>
                                         <h4>TRY:</h4>
-                                        <span @click="copySign('KHALED JUMA')">Name: KHALED JUMA</span><br>
-                                        <span @click="copySign('TR04 0020 3000 0782 3533 0000 01')">TR04 0020 3000 0782 3533 0000 01</span>
+                                        <span @click="copySign('KHALED JUMA')">Name: KHALED JUMA<v-btn icon ><v-icon>mdi-content-copy</v-icon></v-btn></span><br>
+                                        <span @click="copySign('TR04 0020 3000 0782 3533 0000 01')">TR04 0020 3000 0782 3533 0000 01<v-btn icon ><v-icon>mdi-content-copy</v-icon></v-btn></span>
                                         <h4>USD:</h4>
-                                        <span @click="copySign('KHALED JUMA')">Name: KHALED JUMA</span><br>
-                                        <span @click="copySign('TR74 0020 3000 0782 3533 0000 02')">TR74 0020 3000 0782 3533 0000 02</span>
+                                        <span @click="copySign('KHALED JUMA')">Name: KHALED JUMA<v-btn icon ><v-icon>mdi-content-copy</v-icon></v-btn></span><br>
+                                        <span @click="copySign('TR74 0020 3000 0782 3533 0000 02')">TR74 0020 3000 0782 3533 0000 02<v-btn icon ><v-icon>mdi-content-copy</v-icon></v-btn></span>
                                         
                                     </div>
                                 </div>

@@ -1,5 +1,5 @@
 <template>
-<div>
+<v-app>
 
   <!-- alerts -->
   <div v-if="successMessage === 'true'">
@@ -75,7 +75,7 @@
       Send message
     </button>
   </form>
-</div>
+</v-app>
 
 </template>
 <script>

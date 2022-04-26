@@ -17,6 +17,7 @@
                                 <div class="col-12">
                                     <input type="text" class="form-control" placeholder="Tags" v-model="tagsInput">
                                 </div>
+                                <!-- image -->
                                 <div class="col-12">
                                     <label for="file-upload" class="custom-file-upload">
                                         <i class="fa fa-plus"></i> Image Upload
@@ -28,8 +29,24 @@
                                         id="file-upload"
                                         class="d-none"
                                         ></b-form-file>
+                                        <div class="mt-1">Selected file: {{ selectedImage ? selectedImage.name : '' }}
+                                            <img v-if="selectedImageUrl"  v-bind:style="{ display: computedDisplay }" id="selectedFileImage" :src="selectedImageUrl" alt="">
+                                        </div>
+                                </div>
+                                <!-- audio -->
+                                <div class="col-12">
+                                    <label for="file-upload" class="custom-file-upload">
+                                        <i class="fa fa-plus"></i> Audio Upload
+                                    </label>
+                                        <b-form-file
+                                        placeholder="Choose an image or drop it here..."
+                                        drop-placeholder="Drop file here..."
+                                        @change="onFileSelected"
+                                        id="file-upload"
+                                        class="d-none"
+                                        ></b-form-file>
                                         <div class="mt-1">Selected file: {{ selectedFile ? selectedFile.name : '' }}
-                                            <img  v-bind:style="{ display: computedDisplay }" id="selectedFileImage" :src="selectedFileUrl" alt="">
+                                            <audio v-if="selectedFileUrl" v-bind:style="{ display: computedDisplay }" :src="selectedFileUrl" controls></audio>
                                         </div>
                                 </div>
                                  <div class="col-12">
@@ -110,11 +127,15 @@ export default {
            tagsInput: '',
            content: '',
            user: '',
+           selectedImage: null,
            selectedFile: null,
+           imageName: '',
            fileName: '',
            display: 'block',
+           selectedImageUrl: '',
            selectedFileUrl: '',
            deletedFileName: '',
+           deletedImageName: '',
             // declare extensions you want to use
             extensions: [
             History,
@@ -157,7 +178,12 @@ export default {
            this.title= this.analysisData.title;
            this.tagsInput= this.analysisData.tags.join(' ')
            this.content= this.analysisData.content
-           this.selectedFileUrl= this.analysisData.image.url
+           if(this.analysisData.image){
+           this.selectedImageUrl= this.analysisData.image.url
+           }
+           if(this.analysisData.audio){
+               this.selectedFileUrl = this.analysisData.audio.url
+           }
            this.selectedCategory = this.analysisData.category._id
            this.getAnalysisCategories()
     },
@@ -166,10 +192,21 @@ export default {
           this.$store.dispatch('getAnalysisCategories');
         },
       onFileSelected(event) {
-          this.deletedFileName = this.analysisData.image.filename
-          this.selectedFile = event.target.files[0];
-          this.display = 'none'
-          this.fileName = event.target.files[0].name;
+          if(event){
+              if (event.target.files[0].type === 'image/jpeg'){
+              this.deletedImageName = this.analysisData.image.filename
+              this.selectedImage = event.target.files[0];
+              this.display = 'none'
+              this.imageName = event.target.files[0].name;
+              } else if (event.target.files[0].type === 'audio/mpeg' || event.target.files[0].type === 'audio/mp3'){
+                if(this.analysisData.audio){
+                    this.deletedFileName = this.analysisData.audio.filename
+                }
+              this.selectedFile = event.target.files[0];
+              this.display = 'none'
+              this.fileName = event.target.files[0].name;
+              }
+          }
       },
     async uploadAnalysisEdit() {
         try {
@@ -180,8 +217,10 @@ export default {
                 data.append("tagsInput", tags);
                 data.append("content", this.content);
                 data.append("userID", this.$auth.$state.user._id);
-                data.append("photo", this.selectedFile);
-                data.append("deletedImage", this.deletedFileName);
+                data.append("photo", this.selectedImage);
+                data.append("audio", this.selectedFile);
+                data.append("deletedImage", this.deletedImageName);
+                data.append("deletedAudio", this.deletedFileName);
                 data.append("category", this.selectedCategory);
     
               let response = await this.$axios.put(`/api/analysis/single/${this.$route.params.id}` , data);

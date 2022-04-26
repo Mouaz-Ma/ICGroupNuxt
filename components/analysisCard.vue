@@ -2,7 +2,7 @@
 
 <nuxt-link :to="'/analysis/'+analysisId" >
 <div>
-  <b-card no-body class="overflow-hidden" style="max-width: 540px;">
+  <b-card no-body class="overflow-hidden w-100">
     <b-row no-gutters>
       <b-col md="6">
         <b-card-img id="cardImage" :src=imageSrc alt="Image" class="rounded-0 img-fluid card-img-top"></b-card-img>
@@ -47,13 +47,14 @@ a {
 
 #cardImage{
   object-fit: cover;
-  height: 100%;
-  width: 100%;
+  height: 300px;
+  width: 650px;
   padding: 2px;
 }
 
 .card-footer{
   bottom: 0;
   position: absolute;
+  width: 45%;
 }
 </style>

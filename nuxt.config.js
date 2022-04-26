@@ -1,3 +1,4 @@
+import redirectSSL from 'redirect-ssl';
 export default {
   ssr: true,
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -111,6 +112,7 @@ export default {
     // Install the `IconsPlugin` plugin (in addition to `BootstrapVue` plugin)
     icons: true
   },
+  serverMiddleware: [redirectSSL.create({enabled: process.env.NODE_ENV === 'production'})],
   i18n: {
     locales: [
       {

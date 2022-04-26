@@ -27,6 +27,7 @@
     "nanoid": "^2.1.11",
     "nuxt": "^2.15.8",
     "nuxt-i18n": "^6.28.1",
+    "redirect-ssl": "^3.0.0",
     "tiptap-vuetify": "^2.24.0",
     "vue": "^2.6.14"
   },

@@ -16,15 +16,15 @@
       <div class="col-12 col-md-4">
         <div class="mb-3">
           <label class="form-label">
-            Full name
+            {{ $t('Name')}}
           </label>
-          <input type="text" class="form-control" id="contactName" placeholder="Full name" v-model="name" required>
+          <input type="text" class="form-control" id="contactName" :placeholder="$t('Name')" v-model="name" required>
         </div>
       </div>
       <div class="col-12 col-md-4">
         <div class="mb-3">
           <label class="form-label">
-            Telephone Number
+            {{ $t('Tel.')}}
           </label>
           <input type="tel" class="form-control" v-model="phone" placeholder="+90xx xx xx xx xx" required>
 
@@ -33,7 +33,7 @@
       <div class="col-12 col-md-4">
         <div class="mb-3">
           <label class="form-label">
-            Email
+            {{ $t('Email')}}
           </label>
           <input type="email" class="form-control" v-model="email" placeholder="hello@domain.com">
 
@@ -43,11 +43,11 @@
         <v-select
         :items="items"
         v-model=tradingType
-        label="Trading Type"
+        :label="$t('Trading Type')"
         ></v-select>
       </div>
       <div class="col-12">
-          <v-subheader>Estimated initial investment</v-subheader>
+          <v-subheader>{{ $t('Estimated initial investment')}}</v-subheader>
             <v-card-text>
                 <v-slider
                     v-model="iniInvestment"
@@ -71,7 +71,7 @@
       </div> -->
     </div>
     <button type="submit" class="btn btn-primary px-4 py-2">
-      Send message
+      {{ $t('Send message')}}
     </button>
   </form>
 </div>
@@ -92,9 +92,17 @@ export default {
     computed: {
         items:{
             get: function() {
-            return this.$store.state.analysisCategories.map(element => {
-            return element.type;
-            });
+              if(this.$i18n.locale == 'ar'){
+                return this.$store.state.analysisCategories.map(element => {
+                return element.ar;
+              });
+              } else if(this.$i18n.locale == 'en'){
+                return this.$store.state.analysisCategories.map(element => {
+                return element.type;
+              });
+              }
+
+
             }
         }
     },
@@ -126,5 +134,8 @@ export default {
 <style scoped>
 .btn-primary{
     color: aliceblue
+}
+.md1 .md-select-icon {
+    display: none;
 }
 </style>

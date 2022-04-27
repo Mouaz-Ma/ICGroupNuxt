@@ -19,7 +19,7 @@
                 <div class="bottom-widget">
                     <h4 class="widget-title">Company</h4>
                     <ul>
-                        <li><NuxtLink to="/aboutUs">{{$t('about')}}</NuxtLink></li>
+                        <li><NuxtLink to="/aboutUs">{{ $t('about')}}</NuxtLink></li>
                         <li><a href="#">Career</a></li>
                         <li><a href="#">Terms & Conditions</a></li>
                         <li><a href="#">Success Story</a></li>
@@ -59,7 +59,7 @@
         <div class="row">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                 <div class="copyright">
-                    <p>© Copyright 2022 <a href="#">ICGroupsFx</a> {{$t('copy Rights')}}</p>
+                    <p>© Copyright 2022 <a href="#">ICGroupsFx</a> {{ $t('copy Rights')}}</p>
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">

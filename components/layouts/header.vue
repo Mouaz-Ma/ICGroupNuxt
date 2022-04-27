@@ -24,45 +24,52 @@
 
 
                     <li class="nav-item">
-                      <NuxtLink class="nav-link" to="/">{{$t('home')}}</NuxtLink>
+                      <NuxtLink class="nav-link" to="/">{{ $t('home')}}</NuxtLink>
                     </li>
 
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" v-b-toggle.analysisCollapse>Analysis</a>
+                      <a class="nav-link dropdown-toggle" href="#" v-b-toggle.analysisCollapse>{{ $t('Analysis')}}</a>
 
                       <b-collapse class="dropdown-menu" id="analysisCollapse" v-model="showCollapseaAalysis">
-                        <div v-for="category in analysisCategory" :key="category._id">
-                            <NuxtLink class="dropdown-item" :to="{name: 'analysis',  query: { categoryId: category._id}}">{{category.type}}</NuxtLink>
+                        <div v-if=" this.$i18n.locale == 'ar'">
+                          <div v-for="category in analysisCategory" :key="category._id">
+                              <NuxtLink class="dropdown-item" :to="{name: 'analysis',  query: { categoryId: category._id}}">{{category.ar}}</NuxtLink>
+                          </div>
+                        </div>
+                        <div v-else-if="this.$i18n.locale == 'en'">
+                          <div v-for="category in analysisCategory" :key="category._id">
+                              <NuxtLink class="dropdown-item" :to="{name: 'analysis',  query: { categoryId: category._id}}">{{category.type}}</NuxtLink>
+                          </div>
                         </div>
                       </b-collapse>
                     </li>
                     <li class="nav-item">
-                      <NuxtLink class="nav-link" to="/analysisTools/">Analysis Tools</NuxtLink>
+                      <NuxtLink class="nav-link" to="/analysisTools/">{{ $t('Analysis Tools')}}</NuxtLink>
                     </li>
                     <li class="nav-item">
-                      <nuxt-link class="nav-link" to="/news">News</nuxt-link>
+                      <nuxt-link class="nav-link" to="/news">{{ $t('News')}}</nuxt-link>
                     </li>
                     
                     <li class="nav-item dropdown">
-                      <NuxtLink class="nav-link" to="/aboutUs">Company</NuxtLink>
+                      <NuxtLink class="nav-link" to="/aboutUs">{{ $t('Company')}}</NuxtLink>
                       <!-- <b-collapse class="dropdown-menu" id="companyCollapse" v-model="showCollapseaCompany">
-                        <NuxtLink class="dropdown-item" to="/aboutUs">{{$t('about')}}</NuxtLink>
+                        <NuxtLink class="dropdown-item" to="/aboutUs">{{ $t('about')}}</NuxtLink>
                         <NuxtLink class="dropdown-item" to="/team">Our Team</NuxtLink>
                         <NuxtLink class="dropdown-item" to="/career">Career</NuxtLink>
                       </b-collapse> -->
                     </li>
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" v-b-toggle.supportCollapse>Support
+                      <a class="nav-link dropdown-toggle" href="#" v-b-toggle.supportCollapse>{{ $t('Support')}}
                       </a>
                       <b-collapse class="dropdown-menu" id="supportCollapse" v-model="showCollapseaSupport">
-                        <NuxtLink class="dropdown-item" to="/contact">contact</NuxtLink>
-                        <NuxtLink class="dropdown-item" to="/helpdesk">Help Desk</NuxtLink>
-                        <NuxtLink class="dropdown-item" to="/privacy">Privacy</NuxtLink>
+                        <NuxtLink class="dropdown-item" to="/contact">{{ $t('contact')}}</NuxtLink>
+                        <NuxtLink class="dropdown-item" to="/helpdesk">{{ $t('Help Desk')}}</NuxtLink>
+                        <NuxtLink class="dropdown-item" to="/privacy">{{ $t('Privacy')}}</NuxtLink>
                         <!-- <NuxtLink class="dropdown-item" to="/faq">FAQ</NuxtLink> -->
                       </b-collapse>
                     </li>
                     <li class="nav-item">
-                      <NuxtLink class="nav-link" to="/blogs/">Blogs</NuxtLink>
+                      <NuxtLink class="nav-link" to="/blogs/">{{ $t('Blogs')}}</NuxtLink>
                     </li>
                     
                   
@@ -75,14 +82,14 @@
                     </li>
                     <li v-else>
                       <div class="signin-btn">
-                        <NuxtLink class="btn btn-primary" to="/users/signIn">Sign in</NuxtLink>
+                        <NuxtLink class="btn btn-primary" to="/users/signIn">{{ $t('Sign In')}}</NuxtLink>
                       </div>
                     </li>
 
 
                     <li class="nav-item" v-if="$auth.$state.loggedIn">
                       <div class="signin-btn">
-                        <a class="btn btn-primary" href="#" @click="onLogout">Log Out</a>
+                        <a class="btn btn-primary" href="#" @click="onLogout">{{ $t('Sign Out')}}</a>
                       </div>
                     </li>
 
@@ -90,7 +97,7 @@
                       <a class="nav-link" href="#" v-b-toggle.languageCollapse>
                         <img :src="require(`@/assets/icons/`+ $i18n.locale +`.svg`)" style="width: 24px; height: auto"
                           alt="" class="mr-1 ml-1" />
-                        {{ $t('lang') }}
+                        {{$t('lang')}}
                       </a>
                       <b-collapse class="dropdown-menu " id="languageCollapse" v-model="showCollapseaLanguage">
                         <a class="d-flex" href="#" v-for="lang in $i18n.locales" :key="lang.code"
@@ -174,7 +181,7 @@ export default {
         },
         restartServices: function() {
           window.location.reload(true)
-          this.socket.emit('change lang', this.$i18n.locale)
+
         },
         async onLogout() {
           await this.$auth.logout()

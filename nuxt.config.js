@@ -133,6 +133,8 @@ export default {
     lazy: true,
     defaultLocale: 'en',
     strategy: 'no_prefix',
+    silentTranslationWarn: process.env.NODE_ENV === 'production',
+    silentFallbackWarn: process.env.NODE_ENV === 'production',
   },
   axios: {
     proxy: true,

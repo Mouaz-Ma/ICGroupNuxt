@@ -7,13 +7,12 @@
         <div class="row justify-content-between align-items-center mt-5">
             <div class="col-xl-6 col-lg-6 col-12">
                 <div class="intro-content container">
-                    <h1 class="text-white">Trade with<strong class="text-white"> ICGroupsFx</strong> <br> Buy and
-                        sell and Make Profit
+                    <h1 class="text-white">{{ $t('Trade with')}}<strong class="text-white"> ICGroupsFx</strong> <br> {{ $t('Buy and sell and Make Profit')}}
                     </h1>
-                    <p class="text-white">Fast and secure way to Trade Cryptocurrencies, Stocks, Materials and Currencies</p>
+                    <p class="text-white">{{ $t('2nd home intro')}}</p>
 
                     <div class="intro-btn" v-if="!$auth.$state.user">
-                        <NuxtLink to="/users/register" class="btn btn-primary mb-1 w-50">Real Account</NuxtLink>
+                        <NuxtLink to="/users/register" class="btn btn-primary mb-1 w-50">{{ $t('Open Account')}}</NuxtLink>
                         <!-- <NuxtLink to="/users/register" class="btn btn-outline-primary mb-1 w-50">Real Account</NuxtLink> -->
                     </div>
                 </div>
@@ -78,33 +77,36 @@
         <div class="row justify-content-center">
             <div class="col-xl-8">
                 <div class="section-title">
-                    <h2>Get started in a few minutes</h2>
+                    <h2>{{ $t('Open Account')}}</h2>
                 </div>
             </div>
         </div>
         <div class="row">
 
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 ">
-                <div class="getstart-content v-card">
+                <div class="getstart-content v-card h-100">
                     <span><i class="fas fa-user-circle"></i></span>
-                    <h3>Tell us about yourself</h3>
-                    <p>Provide your information and trading experience. Start Demo or Real Account</p>
+                    <h3>{{ $t('Tell us about yourself')}}</h3>
+                    <p>{{ $t('Tell us about yourself intro')}}</p>
                 </div>
             </div>
+
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 ">
-                <div class="getstart-content v-card">
+                <div class="getstart-content v-card h-100">
                     <span><i class="fas fa-university"></i></span>
-                    <h3>Fund your account</h3>
-                    <p>Make a deposit via bank transfer, wire transfer, or debit card.</p>
+                    <h3>{{ $t('Fund your account')}}</h3>
+                    <p>{{ $t('Fund your account intro')}}</p>
                 </div>
             </div>
+
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 ">
-                <div class="getstart-content v-card">
+                <div class="getstart-content v-card h-100">
                     <span><i class="fas fa-exchange-alt"></i></span>
-                    <h3>Start Trading</h3>
-                    <p>Once you're approved, you can trade on web and mobile.</p>
+                    <h3>{{ $t('Start Trading')}}</h3>
+                    <p>{{ $t('Start Trading intro')}}</p>
                 </div>
             </div>
+            
         </div>
     </div>
 </div>
@@ -114,8 +116,8 @@
         <div class="row py-lg-5 justify-content-center">
             <div class="col-xl-8">
                 <div class="section-title text-center">
-                    <h2 class="text-white">Open your account today</h2>
-                    <p class="text-white">ICGroupsFx has a variety of features that make it the best place to start trading</p>
+                    <h2 class="text-white">{{ $t('Open your account today')}}</h2>
+                    <p class="text-white">{{ $t('Open your account today intro')}}</p>
                 </div>
             </div>
         </div>
@@ -125,17 +127,15 @@
                     <div class="media">
                         <span class="port-icon"> <i class="fas fa-user-circle"></i></span>
                         <div class="media-body">
-                            <h4>Daily Analysis</h4>
-                            <p>Buy and sell with our team which is the best.
-                            </p>
+                            <h4>{{ $t('Daily Analysis')}}</h4>
+                            <p>{{ $t('Daily Analysis intro')}}</p>
                         </div>
                     </div>
                     <div class="media">
                         <span class="port-icon"> <i class="fas fa-shopping-bag"></i></span>
                         <div class="media-body">
-                            <h4>Risk Management</h4>
-                            <p>Stay away from risks and set alarms to your requests
-                            </p>
+                            <h4>{{ $t('Risk Management')}}</h4>
+                            <p>{{ $t('Risk Management intro')}}</p>
                         </div>
                     </div>
                 </div>
@@ -150,19 +150,15 @@
                     <div class="media">
                         <span class="port-icon"> <i class="fas fa-shield-virus"></i></span>
                         <div class="media-body">
-                            <h4>Fast and Secure withdrawals</h4>
-                            <p>For added security, store your funds in a vault with time delayed
-                                withdrawals.
-                            </p>
+                            <h4>{{ $t('Fast and Secure withdrawals')}}</h4>
+                            <p>{{ $t('Fast and Secure withdrawals intro')}}</p>
                         </div>
                     </div>
                     <div class="media">
                         <span class="port-icon"> <i class="fas fa-mobile"></i></span>
                         <div class="media-body">
-                            <h4>Metatrader 5</h4>
-                            <p>Stay on top of the markets with Metatrader 5 app for <a href="#">Android</a>
-                                or
-                                <a href="#">iOS</a>.
+                            <h4>{{ $t('Metatrader 5')}}</h4>
+                            <p>{{ $t('Metatrader 5 intro')}}</p>
                             </p>
                         </div>
                     </div>
@@ -177,9 +173,8 @@
         <div class="row justify-content-center">
             <div class="col-xl-6">
                 <div class="section-title text-center">
-                    <h2>Why ICGroupsFx?</h2>
-                    <p> All of our products are ready to go, easy to use and offer great value to any kind of
-                        business
+                    <h2>{{ $t('Why ICGroupsFx?')}}</h2>
+                    <p> {{ $t('Why ICGroupsFx? intro')}}
                     </p>
                 </div>
             </div>
@@ -189,10 +184,10 @@
                 <div class="card trade-app-content">
                     <div class="card-body">
                         <span><i class="fas fa-mobile"></i></span>
-                        <h4 class="card-title">MetaTrader 5</h4>
-                        <p>Arade over 500 markets including equities, indices, FX and commodities on the new and improved MT5</p>
+                        <h4 class="card-title">{{ $t('Metatrader 5')}}</h4>
+                        <p>{{ $t('why Metatrader')}}</p>
 
-                        <NuxtLink to="/aboutUs">Know More</NuxtLink>
+                        <NuxtLink to="/aboutUs">{{ $t('Know More')}}</NuxtLink>
                     </div>
                 </div>
             </div>
@@ -200,10 +195,9 @@
                 <div class="card trade-app-content">
                     <div class="card-body">
                         <span><i class="fas fa-desktop"></i></span>
-                        <h4 class="card-title">Competitive Pricing</h4>
-                        <p>Maximize your potential with straightforward pricing choices to suit your trading style</p>
-
-                        <NuxtLink to="/aboutUs">Know More</NuxtLink>
+                        <h4 class="card-title">{{ $t('Competitive Pricing')}}</h4>
+                        <p>{{ $t('Competitive Pricing intro')}}</p>
+                        <NuxtLink to="/aboutUs">{{ $t('Know More')}}</NuxtLink>
                     </div>
                 </div>
             </div>
@@ -211,10 +205,9 @@
                 <div class="card trade-app-content">
                     <div class="card-body">
                         <span><i class="fas fa-database"></i></span>
-                        <h4 class="card-title">Transparent</h4>
-                        <p>Get the most out of every trade with our clear, competitive pricing. No complicated schemes, no small print.</p>
-
-                        <NuxtLink to="/aboutUs">Know More</NuxtLink>
+                        <h4 class="card-title">{{ $t('Transparent')}}</h4>
+                        <p>{{ $t('Transparent intro')}}</p>
+                        <NuxtLink to="/aboutUs">{{ $t('Know More')}}</NuxtLink>
                     </div>
                 </div>
             </div>
@@ -272,11 +265,11 @@ Trusted over
         <div class="row align-items-center justify-content-between">
             <div class="col-xl-8 col-lg-6 col-md-6">
                 <div class="appss-content">
-                    <h2>The secure app to trade by yourself</h2>
+                    <h2>{{ $t('The secure app to trade by yourself')}}</h2>
                     <ul>
-                        <li><i class="la la-check"></i> Download Metatrader 5 to Start trading</li>
-                        <li><i class="la la-check"></i> Login to your account through ICGroupsFx</li>
-                        <li><i class="la la-check"></i> Buy, Sell, and Make profit</li>
+                        <li><i class="la la-check"></i> {{ $t('Download Metatrader 5 to Start trading')}}</li>
+                        <li><i class="la la-check"></i> {{ $t('Login to your account through ICGroupsFx')}}</li>
+                        <li><i class="la la-check"></i> {{ $t('Buy, Sell, and Make profit')}}</li>
                     </ul>
                     <div class="mt-4">
                       <div class="row">
@@ -317,7 +310,7 @@ Trusted over
         <div class="row justify-content-center">
             <div class="col-xl-6">
                 <div class="section-title">
-                    <h2>Get in touch. Stay in touch.</h2>
+                    <h2>{{ $t('Get in touch. Stay in touch.')}}</h2>
                 </div>
             </div>
         </div>
@@ -326,9 +319,8 @@ Trusted over
             <NuxtLink class="linksInTouch" to="/contact">
                 <div class="get-touch-content">
                     <span><i class="fas fa-headset"></i></span>
-                    <h4>24 / 7 Support</h4>
-                    <p>Got a problem? Just get in touch. Our support team is available 24/7.
-                    </p>
+                    <h4>{{ $t('24 / 7 Support')}}</h4>
+                    <p>{{ $t('24 / 7 Support intro')}}</p>
 
                 </div>
             </NuxtLink>
@@ -337,9 +329,8 @@ Trusted over
                 <NuxtLink class="linksInTouch" to="/blogs/">
                 <div class="get-touch-content">
                     <span><i class="fas fa-blog"></i></span>
-                    <h4>Blog</h4>
-                    <p>News and updates from the world’s leading cryptocurrency exchange.
-                    </p>
+                    <h4>{{ $t('Blog')}}</h4>
+                    <p>{{ $t('Blog intro')}}</p>
 
                 </div>
                 </NuxtLink>
@@ -348,9 +339,8 @@ Trusted over
                 <NuxtLink class="linksInTouch" to="/analysisTools">
                 <div class="get-touch-content">
                     <span><i class="fas fa-briefcase"></i></span>
-                    <h4>Trading Tools</h4>
-                    <p>Help build the future of technology. Start your new career at ICGroupsFx.
-                    </p>
+                    <h4>{{ $t('Trading Tools')}}</h4>
+                    <p>{{ $t('Trading Tools intro')}}</p>
                 </div>
                 </NuxtLink>
             </div>
@@ -358,9 +348,8 @@ Trusted over
                 <NuxtLink class="linksInTouch" to="/contact">
                 <div class="get-touch-content">
                     <span><i class="fas fa-users"></i></span>
-                    <h4>Community</h4>
-                    <p>ICGroupsFx is global. Join the discussion in our worldwide communities.
-                    </p>
+                    <h4>{{ $t('Community')}}</h4>
+                    <p>{{ $t('Community intro')}}</p>
                 </div>
                 </NuxtLink>
             </div>

@@ -9820,7 +9820,7 @@ label.error {
   border-bottom-right-radius: 7px; }
 
 .welcome-profile {
-  background: #fbcc31 !important; }
+  background: var(--bs-gray-dark) !important; }
   .welcome-profile .card-body img {
     border: 4px solid #fff;
     border-radius: 100px;

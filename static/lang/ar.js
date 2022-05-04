@@ -4,7 +4,7 @@ export default {
     "lang": "العربية",
     "home": " الرئيسية",
     "Analysis": "التحليلات",
-    "Analysis Tools": "أدوات التحليل",
+    "Tools": "أدوات التحليل",
     "News": "أخبار",
     "Company": "الشركة",
     "Support": "الدعم",

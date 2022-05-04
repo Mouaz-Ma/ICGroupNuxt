@@ -183,10 +183,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-xxl-6 col-xl-6 col-lg-6">
-                    <div class="card welcome-profile w-100 h-100">
+                    <div class="card welcome-profile w-100 ">
                         <div class="card-body">
                             <img src="~/assets/images/profile/2.png" alt="">
                             <h4>Welcome, {{$auth.$state.user.username}}!</h4>
+                             <NuxtLink id="black" class="btn btn-outline-secondary float-right" to="/users/profileUpdate">Edit</NuxtLink>
                             <div v-if="!$auth.$state.user.isVerified">
                             <p>Looks like you are not verified yet. Verify yourself to use the full potential of
                                 ICGroupsFx.</p>
@@ -205,57 +206,8 @@
                                 </li> -->
                             </ul>
                             </div>
+                            <div v-else>
 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xxl-6 col-xl-6 col-lg-6" v-if="$auth.$state.user.userType === 'Administrator'">
-                    <div class="card w-100 h-100">
-                        <div class="card-header">
-                            <h4 class="card-title">Uploads</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="app-link">
-                                <h5>What would you like to upload</h5>
-                                <nuxt-link class="btn btn-primary" to="/blogs/uploadBlog">Blog</nuxt-link>
-                                <br>
-                                <div class="mt-3"></div>
-                                <nuxt-link class="btn btn-primary" to="/analysis/uploadAnalysis">Analysis</nuxt-link>
-                                <br>
-                                <div class="mt-3"></div>
-                                <nuxt-link class="btn btn-primary" to="/news/uploadNews">News</nuxt-link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xxl-6 col-xl-6 col-lg-6" v-else-if="$auth.$state.user.userType === 'normalUser'">
-                    <div class="card w-100 h-100">
-                        <div class="card-header">
-                            <h4 class="card-title">Download App</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="app-link">
-                                <h5>Get Verified On Our Mobile App</h5>
-                                <p>Verifying your identity on our mobile app more secure, faster, and reliable.</p>
-                                <a href="#" class="btn btn-primary">
-                                    <img src="~/assets/images/android.svg" alt="">
-                                </a>
-                                <br>
-                                <div class="mt-3"></div>
-                                <a href="#" class="btn btn-primary">
-                                    <img src="~/assets/images/apple.svg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xxl-12">
-                    <div class="card w-100 h-100">
-                        <div class="card-header">
-                            <h4 class="card-title">Information </h4>
-                            <NuxtLink class="btn btn-primary" to="/users/profileUpdate">Edit</NuxtLink>
-                        </div>
                         <div class="card-body">
                             <form class="row">
                                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
@@ -298,12 +250,87 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                                    <div class="user-info">
+                                        <span>Telephone</span>
+                                        <div v-if="$auth.state.user.telephone != ''">
+                                        <h4>{{$auth.state.user.telephone}}</h4>
+                                        </div>
+                                        <div v-else>
+                                            <h4>No telephone number was added</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </form>
+
+                        </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+<!-- 
+                <div class="col-xxl-6">
+                    <div class="card w-100 h-100">
+                        <div class="card-header">
+                            <h4 class="card-title">Information </h4>
+                            <NuxtLink class="btn btn-primary" to="/users/profileUpdate">Edit</NuxtLink>
+                        </div>
+                        <div class="card-body">
+                            <form class="row">
+                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                                    <div class="user-info">
+                                        <span>EMAIL ADDRESS</span>
+                                        <h4>{{$auth.$state.user.email}}</h4>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                                    <div class="user-info">
+                                        <span>Authentication Strategy:</span>
+                                        <h4>{{$auth.$state.user.strategy}}</h4>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                                    <div class="user-info">
+                                        <span>TYPE</span>
+                                        <div v-if="$auth.state.user.userType === 'Administrator'">
+                                        <h4>Administrator</h4>
+                                        </div>
+                                        <div v-else>
+                                            <h4>Normal</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                                    <div class="user-info">
+                                        <span>Is Verified?</span>
+                                        <div v-if="$auth.state.user.isVerified === true">
+                                        <h4>Verified</h4>
+                                        </div>
+                                        <div v-else>
+                                            <h4>Not Verified</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                                    <div class="user-info">
+                                        <span>Telephone</span>
+                                        <div v-if="$auth.state.user.telephone != ''">
+                                        <h4>{{$auth.state.user.telephone}}</h4>
+                                        </div>
+                                        <div v-else>
+                                            <h4>No telephone number was added</h4>
+                                        </div>
+                                    </div>
+                                </div>
                                 
                             </form>
 
                         </div>
                     </div>
-                </div>
+                </div> -->
                     <!-- alerts -->
                     <div class="mt-5" v-if="verifyAlertMessage === 'true'">
                         <v-alert border="bottom" color="green" dense dismissible outlined prominent shaped text type="success">Thank you for
@@ -314,36 +341,7 @@
                         <v-alert border="bottom" color="red" dense dismissible outlined prominent shaped text type="error"> there was an
                         Somthing Went Wrong</v-alert>
                     </div>
-
-                <div class="col-xxl-8 col-xl-6" v-if="$auth.state.user.isVerified === true">
-                    <div class="card w-100 h-100">
-                        <div class="card-header">
-                            <h4 class="card-title">VERIFY & UPGRADE </h4>
-                        </div>
-                        <div class="card-body">
-                            <h5>Account Status : <span class="text-success">Verified <i
-                                        class="icofont-verification-check"></i></span> </h5>
-                            <p>Your account is verified. Contact our call center to help you enable funding, trading, and withdrawal.
-                            </p>
-                            <NuxtLink class="btn btn-primary" to="/contact">Contact Call Center</NuxtLink>
-                        </div>
-                    </div>
-                </div>
-                    <div v-else  class="col-xxl-8 col-xl-6">
-                    <div class="card w-100 h-100">
-                        <div class="card-header">
-                            <h4 class="card-title">VERIFY & UPGRADE </h4>
-                        </div>
-                        <div class="card-body">
-                            <h5>Account Status : <span class="text-warning">Pending <i
-                                        class="icofont-warning"></i></span> </h5>
-                            <p>Your account is unverified. Get verified to enable funding, trading, and withdrawal.
-                            </p>
-                            <a class="btn btn-primary" @click="getVerified()"> Get Verified</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xxl-4 col-xl-6">
+                                    <div class="col-xxl-4 col-xl-6">
                     <div class="card w-100 h-100">
                         <div class="card-header">
                             <h4 class="card-title"><i class="icofont-bank"></i> Bank Transfere Numbers: </h4>
@@ -417,6 +415,104 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-xxl-8 col-xl-6" v-if="$auth.state.user.isVerified === true">
+                    <div class="card w-100 h-100">
+                        <div class="card-header">
+                            <h4 class="card-title">VERIFY & UPGRADE </h4>
+                        </div>
+                        <div class="card-body">
+                            <h5>Account Status : <span class="text-success">Verified <i
+                                        class="icofont-verification-check"></i></span> </h5>
+                            <p>Your account is verified. Contact our call center to help you enable funding, trading, and withdrawal.
+                            </p>
+                            <NuxtLink class="btn btn-primary" to="/contact">Contact Call Center</NuxtLink>
+                        </div>
+                    </div>
+                </div>
+                    <div v-else  class="col-xxl-8 col-xl-6">
+                    <div class="card w-100 h-100">
+                        <div class="card-header">
+                            <h4 class="card-title">VERIFY & UPGRADE </h4>
+                        </div>
+                        <div class="card-body">
+                            <h5>Account Status : <span class="text-warning">Pending <i
+                                        class="icofont-warning"></i></span> </h5>
+                            <p>Your account is unverified. Get verified to enable funding, trading, and withdrawal.
+                            </p>
+                            <a class="btn btn-primary" @click="getVerified()"> Get Verified</a>
+                        </div>
+                    </div>
+                </div>
+                                <div class="col-xxl-6 col-xl-6 col-lg-6" v-if="$auth.$state.user.userType === 'Administrator'">
+                    <div class="card w-100 h-100">
+                        <div class="card-header">
+                            <h4 class="card-title">Uploads</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="app-link">
+                                <h5>What would you like to upload</h5>
+                                <nuxt-link class="btn btn-primary" to="/blogs/uploadBlog">Blog</nuxt-link>
+                                <br>
+                                <div class="mt-3"></div>
+                                <nuxt-link class="btn btn-primary" to="/analysis/uploadAnalysis">Analysis</nuxt-link>
+                                <br>
+                                <div class="mt-3"></div>
+                                <nuxt-link class="btn btn-primary" to="/news/uploadNews">News</nuxt-link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6" v-else-if="$auth.$state.user.userType === 'Normal User'">
+                    <div class="card w-100 h-100">
+                        <div class="card-header">
+                            <h4 class="card-title">Download App</h4>
+                        </div>
+                        <div class="card-body">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-xl-8 col-lg-6 col-md-6">
+                <div class="appss-content">
+                    <h2>{{ $t('The secure app to trade by yourself')}}</h2>
+                    <ul>
+                        <li><i class="la la-check"></i> {{ $t('Download Metatrader 5 to Start trading')}}</li>
+                        <li><i class="la la-check"></i> {{ $t('Login to your account through ICGroupsFx')}}</li>
+                        <li><i class="la la-check"></i> {{ $t('Buy, Sell, and Make profit')}}</li>
+                    </ul>
+                    <div class="mt-4">
+                      <div class="row">
+                        <div class="col-lg-4 col-md-4 col-xs-12"> <a
+                            href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5"
+                            class="btn btn-primary my-1 waves-effect">
+                            <img src="~/assets/images/android.svg" class="downloadImage" style="width: 90px" alt="">
+                          </a></div>
+                        <div class="ccol-lg-4 col-md-4 col-xs-12"> <a
+                            href=" https://apps.apple.com/tr/app/metatrader-5/id413251709"
+                            class="btn btn-primary my-1 waves-effect">
+                            <img src="~/assets/images/apple.svg" class="downloadImage" alt="">
+                          </a></div>
+                        <div class="col-lg-4 col-md-4 col-xs-12"> <a
+                            href="https://download.metatrader.com/cdn/web/internationals.capital.groups/mt5/intcapitalgroups5setup.exe"
+                            class="btn btn-primary my-1 waves-effect microsoftBtn">
+                            <img src="@/assets/images/microsoft.svg" class="float-left downloadImage" alt="">
+                          Microsoft</a></div>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-5 col-md-5">
+                <div class="appss-img">
+                    <img class="img-fluid" src="~/assets/images/metatrader.png" alt="">
+                </div>
+            </div>
+        </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -464,3 +560,15 @@ export default {
     
 }
 </script>
+
+<style scoped>
+.downloadImage{
+ height: 20px;
+}
+.microsoftBtn{
+    color: azure;
+}
+#black{
+    color: black;
+}
+</style>

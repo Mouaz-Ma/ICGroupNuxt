@@ -8,12 +8,12 @@
                 <div class="header-content">
                     <div class="header-left">
                         <div class="brand-logo">
-                            <a href="index.html">
+                                <nuxt-link to="/">
                                 <img src="~/assets/images/logob.png" alt="">
-                            </a>
+                            </nuxt-link>
                         </div>
                         <div class="search">
-                            <form action="#">
+                            <form>
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Search Here">
                                     <span class="input-group-text"><i class="icofont-search"></i></span>
@@ -174,8 +174,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-xxl-12 col-xl-12">
+                    <div class="row">
                     <div class="page-title">
-                        <h4>Profile Updater</h4>
+                        <h4 class="float-left">Profile Updater</h4>
+                        <button @click="$router.go(-1)" type="button" class="btn btn-outline-secondary float-right" id="black"><i class="icofont-redo"></i> back</button>
+                    </div>
                     </div>
                     <div class="card">
                         <div class="card-header">
@@ -198,7 +201,7 @@
                                             <h4 class="card-title">User Profile</h4>
                                         </div>
                                         <div class="card-body">
-                                            <form action="#">
+                                            <form>
                                                 <div class="row g-3">
                                                     <div class="col-xxl-12">
                                                         <label class="form-label">Your Name</label>
@@ -226,7 +229,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-xxl-12">
-                                                        <button class="btn btn-success waves-effect">Save</button>
+                                                        <button class="btn btn-outline-dark float-right wave-effect" id="reverseBlack">Save</button>
                                                     </div>
                                                 </div>
                                             </form>
@@ -249,14 +252,19 @@
                                                         <label class="form-label">New Password</label>
                                                         <input type="password" class="form-control" v-model="password"
                                                             placeholder="***************">
+                                                    </div>
+                                                    <div class="col-xxl-12">
+                                                        <label class="form-label">New Telephone</label>
+                                                        <input type="tel" class="form-control" v-model="telephone"
+                                                            :placeholder=$auth.$state.user.telephone>
+                                                    </div>
                                                         <small class="mt-2 mb-0 d-block">Enable two factor authencation
                                                             on the
                                                             security
                                                             page
                                                         </small>
-                                                    </div>
                                                     <div class="col-12">
-                                                        <button class="btn btn-success waves-effect">Save</button>
+                                                        <button class="btn btn-outline-dark float-right wave-effect" id="reverseBlack">Save</button>
                                                     </div>
                                                 </div>
                                             </form>
@@ -269,8 +277,7 @@
                                             <h4 class="card-title">Personal Information</h4>
                                         </div>
                                         <div class="card-body">
-                                            <form method="post" name="myform" class="personal_validate"
-                                                novalidate="novalidate">
+                                            <form method="post" name="myform" class="personal_validate">
                                                 <div class="row g-4">
                                                     <div class="col-xxl-6 col-xl-6 col-lg-6">
                                                         <label class="form-label">Your Name</label>
@@ -641,8 +648,7 @@
                                                     </div>
 
                                                     <div class="col-12">
-                                                        <button
-                                                            class="btn btn-success pl-5 pr-5 waves-effect">Save</button>
+                                                        <button class="btn btn-outline-dark float-right wave-effect" id="reverseBlack">Save</button>
                                                     </div>
                                                 </div>
                                             </form>
@@ -666,7 +672,8 @@ export default {
         return{
             name:"",
             email:"",
-            password: ""
+            password: "",
+            telephone: ""
         }
     },
     methods: {
@@ -674,7 +681,8 @@ export default {
             let data = {
                 name : this.name,
                 email : this.email,
-                password : this.password
+                password : this.password,
+                telephone: this.telephone
             }
             try {
                 let response = await this.$axios.$put('/api/users/updateUser', data);
@@ -683,6 +691,7 @@ export default {
                     this.name = "";
                     this.email = "";
                     this.password = "";
+                    this.telephone = "";
 
                     await this.$auth.fetchUser();
                 }
@@ -694,3 +703,8 @@ export default {
     
 }
 </script>
+<style scoped>
+#black{
+    color: black;
+}
+</style>

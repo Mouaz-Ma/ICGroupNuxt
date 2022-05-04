@@ -159,7 +159,6 @@
                         <div class="media-body">
                             <h4>{{ $t('Metatrader 5')}}</h4>
                             <p>{{ $t('Metatrader 5 intro')}}</p>
-                            </p>
                         </div>
                     </div>
                 </div>

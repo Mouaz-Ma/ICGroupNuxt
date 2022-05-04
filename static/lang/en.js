@@ -4,7 +4,7 @@ export default {
     "lang": "English",
     "home": "Home",
     "ِAnalysis": "Analysis",
-    "ِAnalysis Tools": "Analysis Tools",
+    "ِTools": "Tools",
     "ِNews": "News",
     "ِCompany": "Company",
     "ِSupport": "Support",

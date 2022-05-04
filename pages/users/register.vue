@@ -30,6 +30,9 @@
                                 <div class="col-12">
                                     <input type="password" class="form-control" placeholder="Password" v-model="password" required>
                                 </div>
+                                <div class="col-12">
+                                    <input type="tel" class="form-control" placeholder="Tel." v-model="telephone" required>
+                                </div>
                                 <!-- alerts -->
                                 <div class="col-12">
                                     <b-alert variant="danger">
@@ -80,6 +83,7 @@ export default {
          username: '',
          email: '',
          password: '',
+         telephone: '',
          strategy: '',
          checked: false,
          notchecked: "",
@@ -93,6 +97,7 @@ export default {
                 username: this.username,
                 email: this.email,
                 password: this.password,
+                telephone: this.telephone,
                 strategy: "local",
                };
              let response = await this.$axios.post('/api/users/register', data);

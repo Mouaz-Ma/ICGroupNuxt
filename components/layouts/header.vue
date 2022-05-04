@@ -44,7 +44,7 @@
                       </b-collapse>
                     </li>
                     <li class="nav-item">
-                      <NuxtLink class="nav-link" to="/analysisTools/">{{ $t('Analysis Tools')}}</NuxtLink>
+                      <NuxtLink class="nav-link" to="/analysisTools/">{{$t('Tools')}}</NuxtLink>
                     </li>
                     <li class="nav-item">
                       <nuxt-link class="nav-link" to="/news">{{ $t('News')}}</nuxt-link>
@@ -97,13 +97,15 @@
                       <a class="nav-link" href="#" v-b-toggle.languageCollapse>
                         <img :src="require(`@/assets/icons/`+ $i18n.locale +`.svg`)" style="width: 24px; height: auto"
                           alt="" class="mr-1 ml-1" />
-                        {{$t('lang')}}
+                        <!-- {{$t('lang')}} -->
                       </a>
                       <b-collapse class="dropdown-menu " id="languageCollapse" v-model="showCollapseaLanguage">
-                        <a class="d-flex" href="#" v-for="lang in $i18n.locales" :key="lang.code"
+                        <a class="d-flex languageLink" href="#" v-for="lang in $i18n.locales" :key="lang.code"
                           :value="lang.code" :active="lang.code === activeLang" @click="changeLang(lang.code)">
                           <img :src="require(`@/assets/icons/`+ lang.code +`.svg`)" style="width: 24px; height: auto" />
-                          <span class="m-1 w-50">{{ lang.name }}</span></a>
+                          <!-- <span class="m-1 w-50">{{ lang.name }}</span> -->
+
+                          </a>
                       </b-collapse>
                     </li>
 
@@ -202,6 +204,10 @@ export default {
   @media (min-width: 1200px) {
     #analysisCollapse {
       display: block; } 
+}
+
+#languageCollapse{
+  background: transparent ;
 }
 
 </style>

@@ -45,7 +45,7 @@ export default {
         defer: true,
     },
     {
-      src:'js/pixel.js', 
+      src:'/assets/js/pixel.js', 
       type: 'text/javascript',
       hid: 'facebookPixel',
       ssr: false

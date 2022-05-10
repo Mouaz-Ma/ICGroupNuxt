@@ -12,8 +12,7 @@
                     </div>
                     <!-- alerts -->
                     <div v-if="successMessage === 'true'">
-                        <v-alert border="bottom" color="green" dense dismissible outlined prominent shaped text type="success">Thank you for
-                        submiting your Inquiry we will be back to you ASAP</v-alert>
+                        <v-alert border="bottom" color="green" dense dismissible outlined prominent shaped text type="success">Please check your email to recover your password.</v-alert>
                     </div>
 
                     <div v-else-if="successMessage === 'false'">

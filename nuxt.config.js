@@ -38,11 +38,19 @@ export default {
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/4.4.95/css/materialdesignicons.min.css' }
     ],
-      script: [{
+      script: [
+        {
         src: "https://maps.googleapis.com/maps/api/js?key="+ process.env.GOOGLE_MAP_API_KEY,
         hid: "map", 
         defer: true,
-    }],
+    },
+    {
+      src:'pixel.js', 
+      type: 'text/javascript',
+      hid: 'facebookPixel',
+      ssr: false
+    }
+  ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -54,6 +62,7 @@ export default {
   plugins: [
     '~/plugins/direction-control',
     "~/plugins/TiptapVuetify",
+    '~/plugins/gtm'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -74,6 +83,7 @@ export default {
     '@nuxtjs/moment',
     "@nuxtjs/vuetify",    
     '@nuxtjs/google-fonts',
+    '@nuxtjs/gtm',
   ],
   fontawesome: {
     icons: {
@@ -90,6 +100,34 @@ export default {
         "faTelegramPlane"
       ]
     }
+  },
+  gtm: {
+    enabled: true, /* see below */
+    debug: false,
+
+    id: 'GTM-'+process.env.GOOGLE_TAG_MANAGER_ID,
+    layer: 'dataLayer',
+    variables: {},
+
+    pageTracking: true,
+    pageViewEventName: 'nuxtRoute',
+
+    autoInit: true,
+    respectDoNotTrack: true,
+
+    scriptId: 'gtm-script',
+    scriptDefer: false,
+    scriptURL: 'https://www.googletagmanager.com/gtm.js',
+    crossOrigin: false,
+
+    noscript: true,
+    noscriptId: 'gtm-noscript',
+    noscriptURL: 'https://www.googletagmanager.com/ns.html'
+  },
+  publicRuntimeConfig: {
+    gtm: {
+      id: 'GTM-'+process.env.GOOGLE_TAG_MANAGER_ID
+    },
   },
   googleFonts: {
     families: {

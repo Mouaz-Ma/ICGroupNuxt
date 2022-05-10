@@ -30,7 +30,7 @@
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" v-b-toggle.analysisCollapse>{{ $t('Analysis')}}</a>
 
-                      <b-collapse class="dropdown-menu" id="analysisCollapse" v-model="showCollapseaAalysis">
+                      <b-collapse class="dropdown-menu text-center" id="analysisCollapse" v-model="showCollapseaAalysis">
                         <div v-if=" this.$i18n.locale == 'ar'">
                           <div v-for="category in analysisCategory" :key="category._id">
                               <NuxtLink class="dropdown-item" :to="{name: 'analysis',  query: { categoryId: category._id}}">{{category.ar}}</NuxtLink>
@@ -61,7 +61,7 @@
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" v-b-toggle.supportCollapse>{{ $t('Support')}}
                       </a>
-                      <b-collapse class="dropdown-menu" id="supportCollapse" v-model="showCollapseaSupport">
+                      <b-collapse class="dropdown-menu text-center" id="supportCollapse" v-model="showCollapseaSupport">
                         <NuxtLink class="dropdown-item" to="/contact">{{ $t('contact')}}</NuxtLink>
                         <NuxtLink class="dropdown-item" to="/helpdesk">{{ $t('Help Desk')}}</NuxtLink>
                         <NuxtLink class="dropdown-item" to="/privacy">{{ $t('Privacy')}}</NuxtLink>
@@ -99,7 +99,7 @@
                           alt="" class="mr-1 ml-1" />
                         <!-- {{$t('lang')}} -->
                       </a>
-                      <b-collapse class="dropdown-menu " id="languageCollapse" v-model="showCollapseaLanguage">
+                      <b-collapse class="dropdown-menu text-center" id="languageCollapse" v-model="showCollapseaLanguage">
                         <a class="d-flex languageLink" href="#" v-for="lang in $i18n.locales" :key="lang.code"
                           :value="lang.code" :active="lang.code === activeLang" @click="changeLang(lang.code)">
                           <img :src="require(`@/assets/icons/`+ lang.code +`.svg`)" style="width: 24px; height: auto" />
@@ -207,7 +207,7 @@ export default {
 }
 
 #languageCollapse{
-  background: transparent ;
+  margin-left: 50px;
 }
 
 </style>

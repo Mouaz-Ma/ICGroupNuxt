@@ -571,4 +571,10 @@ export default {
 #black{
     color: black;
 }
+.v-application a {
+    color: white;
+}
+.v-application a:hover {
+    color: black;
+}
 </style>

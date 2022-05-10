@@ -2959,7 +2959,7 @@ textarea.form-control-lg {
   left: 0;
   z-index: 1000;
   display: none;
-  min-width: 10rem;
+  min-width: 4rem;
   padding: 0.5rem 0;
   margin: 0.125rem 0 0;
   font-size: 0.9375rem;
@@ -9162,7 +9162,7 @@ strong {
         border: 0px;
         margin-top: 10px;
         z-index: 998;
-        min-width: 10rem; }
+        min-width: 4rem; }
         .navigation .navbar ul .dropdown-menu a {
           display: inline-block;
           color: #8492A6; }

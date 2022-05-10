@@ -95,8 +95,8 @@
                                     <div class="user">
                                         <span class="thumb"><img src="~/assets/images/profile/2.png" alt=""></span>
                                         <div class="user-info">
-                                            <h5>{{$auth.state.user.username}}</h5>
-                                            <span>{{$auth.state.user.email}}</span>
+                                            <h5>{{$auth.$state.user.username}}</h5>
+                                            <span>{{$auth.$state.user.email}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -231,7 +231,7 @@
                                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
                                     <div class="user-info">
                                         <span>TYPE</span>
-                                        <div v-if="$auth.state.user.userType === 'Administrator'">
+                                        <div v-if="$auth.$state.user.userType === 'Administrator'">
                                         <h4>Administrator</h4>
                                         </div>
                                         <div v-else>
@@ -242,7 +242,7 @@
                                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
                                     <div class="user-info">
                                         <span>Is Verified?</span>
-                                        <div v-if="$auth.state.user.isVerified === true">
+                                        <div v-if="$auth.$state.user.isVerified === true">
                                         <h4>Verified</h4>
                                         </div>
                                         <div v-else>
@@ -253,8 +253,8 @@
                                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
                                     <div class="user-info">
                                         <span>Telephone</span>
-                                        <div v-if="$auth.state.user.telephone != ''">
-                                        <h4>{{$auth.state.user.telephone}}</h4>
+                                        <div v-if="$auth.$state.user.telephone != ''">
+                                        <h4>{{$auth.$state.user.telephone}}</h4>
                                         </div>
                                         <div v-else>
                                             <h4>No telephone number was added</h4>
@@ -295,7 +295,7 @@
                                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
                                     <div class="user-info">
                                         <span>TYPE</span>
-                                        <div v-if="$auth.state.user.userType === 'Administrator'">
+                                        <div v-if="$auth.$state.user.userType === 'Administrator'">
                                         <h4>Administrator</h4>
                                         </div>
                                         <div v-else>
@@ -306,7 +306,7 @@
                                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
                                     <div class="user-info">
                                         <span>Is Verified?</span>
-                                        <div v-if="$auth.state.user.isVerified === true">
+                                        <div v-if="$auth.$state.user.isVerified === true">
                                         <h4>Verified</h4>
                                         </div>
                                         <div v-else>
@@ -317,8 +317,8 @@
                                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
                                     <div class="user-info">
                                         <span>Telephone</span>
-                                        <div v-if="$auth.state.user.telephone != ''">
-                                        <h4>{{$auth.state.user.telephone}}</h4>
+                                        <div v-if="$auth.$state.user.telephone != ''">
+                                        <h4>{{$auth.$state.user.telephone}}</h4>
                                         </div>
                                         <div v-else>
                                             <h4>No telephone number was added</h4>
@@ -416,7 +416,7 @@
                     </div>
                 </div>
 
-                <div class="col-xxl-8 col-xl-6" v-if="$auth.state.user.isVerified === true">
+                <div class="col-xxl-8 col-xl-6" v-if="$auth.$state.user.isVerified === true">
                     <div class="card w-100 h-100">
                         <div class="card-header">
                             <h4 class="card-title">VERIFY & UPGRADE </h4>

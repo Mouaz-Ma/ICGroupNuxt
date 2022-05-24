@@ -11,7 +11,7 @@
       Eroor submiting your form</v-alert>
   </div>
 
-  <form @submit.prevent="contactForm" name="myform" class="contact_validate">
+  <form name="myform" class="contact_validate">
     <div class="row">
       <div class="col-12 col-md-4">
         <div class="mb-3">
@@ -70,7 +70,7 @@
         </div>
       </div> -->
     </div>
-    <button type="submit" class="btn btn-primary px-4 py-2">
+    <button :disabled="isLoading"  @click.prevent="contactForm" type="submit" class="btn btn-primary px-4 py-2">
       {{ $t('Send message')}}
     </button>
   </form>
@@ -87,6 +87,7 @@ export default {
         tradingType: '',
         ticksLabels: ['100$', '1000$', '5000$', '10,000$', '50,000$'],
         iniInvestment: '',
+        isLoading: false,
     }
     },
     computed: {
@@ -109,6 +110,7 @@ export default {
     methods: {
     contactForm: async function () {
         try {
+          this.isLoading = true;
         let data = {
             name: this.name,
             email: this.email,
@@ -119,8 +121,10 @@ export default {
         let response = await this.$axios.post('/api/users/contact', data);
         if (response.data.success) {
             this.successMessage = 'true'
+            this.isLoading = false;
         } else {
             this.successMessage = 'false'
+            this.isLoading = false;
         }
         //   if response is ok flash ok if not flash error
         } catch (err) {

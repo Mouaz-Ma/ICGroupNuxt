@@ -62,7 +62,6 @@ export default {
   plugins: [
     '~/plugins/direction-control',
     "~/plugins/TiptapVuetify",
-    '~/plugins/gtm'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -83,7 +82,7 @@ export default {
     '@nuxtjs/moment',
     "@nuxtjs/vuetify",    
     '@nuxtjs/google-fonts',
-    '@nuxtjs/gtm',
+    '@nuxtjs/google-gtag'
   ],
   fontawesome: {
     icons: {
@@ -101,34 +100,28 @@ export default {
       ]
     }
   },
-  gtm: {
-    enabled: true, /* see below */
-    debug: false,
-
-    id: 'GTM-'+process.env.GOOGLE_TAG_MANAGER_ID,
-    layer: 'dataLayer',
-    variables: {},
-
-    pageTracking: true,
-    pageViewEventName: 'nuxtRoute',
-
-    autoInit: true,
-    respectDoNotTrack: true,
-
-    scriptId: 'gtm-script',
-    scriptDefer: false,
-    scriptURL: 'https://www.googletagmanager.com/gtm.js',
-    crossOrigin: false,
-
-    noscript: true,
-    noscriptId: 'gtm-noscript',
-    noscriptURL: 'https://www.googletagmanager.com/ns.html'
+// example config
+'google-gtag':{
+  id: 'G-'+process.env.GOOGLE_TAG_MANAGER_ID, // required
+  config:{
+    // this are the config options for `gtag
+    // check out official docs: https://developers.google.com/analytics/devguides/collection/gtagjs/
+    anonymize_ip: true, // anonymize IP 
+    send_page_view: false, // might be necessary to avoid duplicated page track on page reload
+    linker:{
+      domains:['icgroupsfx.com','icgroup.herokuapp.com']
+    }
   },
-  publicRuntimeConfig: {
-    gtm: {
-      id: 'GTM-'+process.env.GOOGLE_TAG_MANAGER_ID
-    },
-  },
+  debug: true, // enable to track in dev mode
+  disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...)
+  // optional you can add more configuration like [AdWords](https://developers.google.com/adwords-remarketing-tag/#configuring_the_global_site_tag_for_multiple_accounts)
+  // additionalAccounts:[{
+  //   id: 'AW-XXXX-XX', // required if you are adding additional IDs
+  //   config:{
+  //     send_page_view:false // optional configurations
+  //   }
+  // }]
+ },
   googleFonts: {
     families: {
       // a simple name

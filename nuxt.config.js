@@ -102,7 +102,7 @@ export default {
   },
 // example config
 'google-gtag':{
-  id: 'G-'+process.env.GOOGLE_TAG_MANAGER_ID, // required
+  id: 'UA-'+process.env.GOOGLE_TAG_MANAGER_ID, // required
   config:{
     // this are the config options for `gtag
     // check out official docs: https://developers.google.com/analytics/devguides/collection/gtagjs/

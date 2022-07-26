@@ -269,15 +269,17 @@
 
                         </div>
                     </div>
-                                <div class="p-4">
+                    <!-- meta mask btn -->
+                                <!-- <div class="p-4">
                     <Metamask @connect="initWeb3" />
                     <div>
                     <p>Network: {{ web3.networkId }}</p>
                     <p>Account: {{ web3.coinbase }}</p>
                     <p>Balance: {{ web3.balance }}</p>
+                    <p>Ether Balance: {{ web3.etherBalance }}</p>
                     </div>
                     <p class="italic text-red-600">{{ errorMessage }}</p>
-                </div>
+                </div> -->
                 </div>
 
 <!-- 
@@ -586,15 +588,27 @@ export default {
           await window.ethereum.send('eth_requestAccounts');
           const instance = new Web3(window.ethereum)
           // Get necessary info on your node
+
+          const networkType = await instance.eth.net.getNetworkType();
+          const netWorkName = await instance.eth.net.getNetworkType();
           const networkId = await instance.eth.net.getId();
           const coinbase = await instance.eth.getCoinbase();
           const balance = await instance.eth.getBalance(coinbase);
+          const etherBalance = instance.utils.fromWei(balance, 'ether');
           // Save it to store
           this.registerWeb3Instance({
+            networkType,
+            netWorkName,
             networkId,
             coinbase,
-            balance
+            balance,
+            etherBalance
           });
+          console.log('Network: ' + netWorkName + ' (' + networkId + ')');
+          console.log('Network Type: ' + networkType);
+          console.log('Coin Base: ' + coinbase);
+          console.log('Blance: ' + balance);
+          console.log('Ether Balance: ' + etherBalance);
           this.errorMessage = '';
         } catch (error) {
           // User denied account access

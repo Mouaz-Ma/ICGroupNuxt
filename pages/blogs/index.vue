@@ -28,11 +28,17 @@ export default {
   components: {
     BlogCard,
   },
-  async asyncData({$axios}) {
+  async asyncData({$axios, i18n}) {
     try {
       const allBlogs = $axios.get('/api/blogs/')
       const allBlogsResponse = await Promise.all([allBlogs])
-      const allBlogsData = allBlogsResponse[0].data.blogs
+      let allBlogsData = allBlogsResponse[0].data.blogs
+      // console.log(i18n.locale)
+      if(i18n.locale === 'en'){
+        allBlogsData = allBlogsData.filter( blog => blog.language === 'en')
+        } else if(i18n.locale === 'ar') {
+        allBlogsData = allBlogsData.filter( blog => blog.language === 'ar')
+      }
       return {allBlogsData}
     } catch(err){
       console.log(err);

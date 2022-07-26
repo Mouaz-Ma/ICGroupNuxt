@@ -15,130 +15,31 @@
     <v-tab-item>
       <v-card>
         <v-card-text>
-          <div v-if="isS3Loaded1">
-            <span v-if="openTab">
                 <!-- TradingView Widget BEGIN -->
                 <div class="tradingview-widget-container">
-                <div id="tradingview_3fcb3"></div>
+                <div id="tradingview_4263a"></div>
                 <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
-                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-                <script type="text/javascript">
-                new TradingView.widget(
-                {
-                "width": "100%",
-                "height": "850",
-                "symbol": "NASDAQ:AAPL",
-                "interval": "D",
-                "timezone": "Etc/UTC",
-                "theme": "dark",
-                "style": "1",
-                "locale": "en",
-                "toolbar_bg": "#f1f3f6",
-                "enable_publishing": false,
-                "withdateranges": true,
-                "allow_symbol_change": true,
-                "details": true,
-                "hotlist": true,
-                "calendar": true,
-                "container_id": "tradingview_3fcb3"
-                });
-                </script>
+
                 </div>
                 <!-- TradingView Widget END -->
-
-            </span>
-          </div>
         </v-card-text>
       </v-card>
     </v-tab-item>
-    <v-tab-item>
-      <v-card>
-        <div v-if="isS3Loaded2">
-        <v-card-text class="d-flex justify-content-center">
-            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
-            {
-            "colorTheme": "dark",
-            "isTransparent": false,
-            "width": "100%",
-            "height": "850",
-            "locale": "en",
-            "importanceFilter": "-1,0,1"
-            }
-            </script>
-        </v-card-text>
-          </div>
-      </v-card>
+    <!-- calender -->
+    <v-tab-item class="text-center">
+<iframe
+    src="https://sslecal2.investing.com?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&importance=1,2,3&features=datepicker,timezone,timeselector,filters&countries=25,54,32,6,37,107,24,59,72,22,17,39,14,10,35,21,43,170,56,52,36,110,11,26,9,12,63,143,4,5&calType=day&timeZone=63&lang=1"
+    width="650" height="467" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe>
+<div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;"><span
+        style="font-size: 11px;color: #333333;text-decoration: none;">Real Time Economic Calendar provided by <a
+            href="https://www.investing.com/" rel="nofollow" target="_blank"
+            style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a>.</span>
+</div>
     </v-tab-item>
-    <v-tab-item>
-      <v-card>
-        <div v-if="isS3Loaded3">
-          <v-card-text  class="d-flex justify-content-center">
-            <!-- TradingView Widget BEGIN -->
-                <div class="tradingview-widget-container">
-                <div class="tradingview-widget-container__widget"></div>
-                <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/currencies/" rel="noopener" target="_blank"><span class="blue-text">Forex</span></a> by TradingView</div>
-                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
-                {
-                "colorTheme": "dark",
-                "dateRange": "12M",
-                "showChart": true,
-                "locale": "en",
-                "largeChartUrl": "",
-                "isTransparent": false,
-                "showSymbolLogo": true,
-                "showFloatingTooltip": false,
-                "width": "100%",
-                "height": "660",
-                "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
-                "plotLineColorFalling": "rgba(41, 98, 255, 1)",
-                "gridLineColor": "rgba(240, 243, 250, 0)",
-                "scaleFontColor": "rgba(120, 123, 134, 1)",
-                "belowLineFillColorGrowing": "rgba(41, 98, 255, 0.12)",
-                "belowLineFillColorFalling": "rgba(41, 98, 255, 0.12)",
-                "belowLineFillColorGrowingBottom": "rgba(41, 98, 255, 0)",
-                "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
-                "symbolActiveColor": "rgba(41, 98, 255, 0.12)",
-                "tabs": [
-                    {
-                    "title": "Forex",
-                    "symbols": [
-                        {
-                        "s": "FX:EURUSD",
-                        "d": "EUR/USD"
-                        },
-                        {
-                        "s": "FX:GBPUSD",
-                        "d": "GBP/USD"
-                        },
-                        {
-                        "s": "FX:USDJPY",
-                        "d": "USD/JPY"
-                        },
-                        {
-                        "s": "FX:USDCHF",
-                        "d": "USD/CHF"
-                        },
-                        {
-                        "s": "FX:AUDUSD",
-                        "d": "AUD/USD"
-                        },
-                        {
-                        "s": "FX:USDCAD",
-                        "d": "USD/CAD"
-                        }
-                    ],
-                    "originalTitle": "Forex"
-                    }
-                ]
-                }
-                </script>
-                </div>
-                <!-- TradingView Widget END -->
-
-          </v-card-text>
-        </div>
-      </v-card>
-    </v-tab-item>
+    <!-- prices -->
+    <v-tab-item class="text-center">
+<iframe src="https://www.widgets.investing.com/live-currency-cross-rates?theme=darkTheme&pairs=1,3,2,4,7,5,8,6,1525,1538,66,97,10254,10290,2126,18" width="100%" height="800px" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe><div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;">Powered by <a href="https://www.investing.com?utm_source=WMT&amp;utm_medium=referral&amp;utm_campaign=LIVE_CURRENCY_X_RATES&amp;utm_content=Footer%20Link" target="_blank" rel="nofollow">Investing.com</a></div>    
+</v-tab-item>
 
 
   </v-tabs>
@@ -157,128 +58,30 @@
     <v-tab-item>
       <v-card>
         <v-card-text>
-          <div v-if="isS3Loaded1">
-            <span v-if="openTab">
+
                 <!-- TradingView Widget BEGIN -->
                 <div class="tradingview-widget-container">
-                <div id="tradingview_3fcb3"></div>
+                <div id="tradingview_4263a"></div>
                 <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
-                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-                <script type="text/javascript">
-                new TradingView.widget(
-                {
-                "width": "100%",
-                "height": "850",
-                "symbol": "NASDAQ:AAPL",
-                "interval": "D",
-                "timezone": "Etc/UTC",
-                "theme": "dark",
-                "style": "1",
-                "locale": "ar_AE",
-                "toolbar_bg": "#f1f3f6",
-                "enable_publishing": false,
-                "withdateranges": true,
-                "allow_symbol_change": true,
-                "details": true,
-                "hotlist": true,
-                "calendar": true,
-                "container_id": "tradingview_3fcb3"
-                });
-                </script>
                 </div>
                 <!-- TradingView Widget END -->
 
-            </span>
-          </div>
         </v-card-text>
       </v-card>
     </v-tab-item>
-    <v-tab-item>
-      <v-card>
-        <div v-if="isS3Loaded2">
-        <v-card-text class="d-flex justify-content-center">
-            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
-            {
-            "colorTheme": "dark",
-            "isTransparent": false,
-            "width": "100%",
-            "height": "850",
-            "locale": "ar_AE",
-            "importanceFilter": "-1,0,1"
-            }
-            </script>
-        </v-card-text>
-          </div>
-      </v-card>
+    <v-tab-item class="text-center">
+  <iframe
+    src="https://sslecal2.investing.com?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&importance=1,2,3&features=datepicker,timezone,timeselector,filters&countries=25,54,32,6,37,107,24,59,72,22,17,39,14,10,35,21,43,170,56,52,36,110,11,26,9,12,63,143,4,5&calType=day&timeZone=63&lang=3"
+    width="650" height="467" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe>
+<div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;"><span
+        style="font-size: 11px;color: #333333;text-decoration: none;">Real Time Economic Calendar provided by <a
+            href="https://www.investing.com/" rel="nofollow" target="_blank"
+            style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a>.</span>
+</div>
     </v-tab-item>
-    <v-tab-item>
+    <v-tab-item class="text-center">
       <v-card>
-        <div v-if="isS3Loaded3">
-          <v-card-text  class="d-flex justify-content-center">
-            <!-- TradingView Widget BEGIN -->
-                <div class="tradingview-widget-container">
-                <div class="tradingview-widget-container__widget"></div>
-                <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/currencies/" rel="noopener" target="_blank"><span class="blue-text">Forex</span></a> by TradingView</div>
-                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
-                {
-                "colorTheme": "dark",
-                "dateRange": "12M",
-                "showChart": true,
-                "locale": "ar_AE",
-                "largeChartUrl": "",
-                "isTransparent": false,
-                "showSymbolLogo": true,
-                "showFloatingTooltip": false,
-                "width": "100%",
-                "height": "660",
-                "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
-                "plotLineColorFalling": "rgba(41, 98, 255, 1)",
-                "gridLineColor": "rgba(240, 243, 250, 0)",
-                "scaleFontColor": "rgba(120, 123, 134, 1)",
-                "belowLineFillColorGrowing": "rgba(41, 98, 255, 0.12)",
-                "belowLineFillColorFalling": "rgba(41, 98, 255, 0.12)",
-                "belowLineFillColorGrowingBottom": "rgba(41, 98, 255, 0)",
-                "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
-                "symbolActiveColor": "rgba(41, 98, 255, 0.12)",
-                "tabs": [
-                    {
-                    "title": "Forex",
-                    "symbols": [
-                        {
-                        "s": "FX:EURUSD",
-                        "d": "EUR/USD"
-                        },
-                        {
-                        "s": "FX:GBPUSD",
-                        "d": "GBP/USD"
-                        },
-                        {
-                        "s": "FX:USDJPY",
-                        "d": "USD/JPY"
-                        },
-                        {
-                        "s": "FX:USDCHF",
-                        "d": "USD/CHF"
-                        },
-                        {
-                        "s": "FX:AUDUSD",
-                        "d": "AUD/USD"
-                        },
-                        {
-                        "s": "FX:USDCAD",
-                        "d": "USD/CAD"
-                        }
-                    ],
-                    "originalTitle": "Forex"
-                    }
-                ]
-                }
-                </script>
-                </div>
-                <!-- TradingView Widget END -->
-
-          </v-card-text>
-        </div>
+   <iframe src="https://www.widgets.investing.com/live-currency-cross-rates?theme=darkTheme&pairs=1,3,2,4,7,5,8,6,1525,1538,66,97,10254,10290,2126,18" width="100%" height="800px" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe><div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;">Powered by <a href="https://www.investing.com?utm_source=WMT&amp;utm_medium=referral&amp;utm_campaign=LIVE_CURRENCY_X_RATES&amp;utm_content=Footer%20Link" target="_blank" rel="nofollow">Investing.com</a></div>
       </v-card>
     </v-tab-item>
 
@@ -292,9 +95,6 @@ export default {
     auth:false,
     data() {
         return {
-            isS3Loaded1: false,
-            isS3Loaded2: false,
-            isS3Loaded3: false,
         }
     },
     head () {
@@ -305,7 +105,51 @@ export default {
                     src: 'https://s3.tradingview.com/tv.js',
                     async: true,
                     defer: true,
-                    callback: () => {this.isS3Loaded1 = true }
+                    callback: () => {
+                      if (this.$i18n.locale === 'en') {
+                        new TradingView.widget(
+                                  {
+                         "width": 1000,
+                        "height": 810,
+                        "symbol": "NASDAQ:AAPL",
+                        "interval": "D",
+                        "timezone": "Etc/UTC",
+                        "theme": "light",
+                        "style": "1",
+                        "locale": "en",
+                        "toolbar_bg": "#f1f3f6",
+                        "enable_publishing": true,
+                        "withdateranges": true,
+                        "hide_side_toolbar": false,
+                        "allow_symbol_change": true,
+                        "details": true,
+                        "hotlist": true,
+                        "calendar": true,
+                        "container_id": "tradingview_4263a"
+                      });
+                      } else {
+                                                new TradingView.widget(
+                                  {
+                         "width": 1000,
+                        "height": 810,
+                        "symbol": "NASDAQ:AAPL",
+                        "interval": "D",
+                        "timezone": "Etc/UTC",
+                        "theme": "light",
+                        "style": "1",
+                         "locale": "ar_AE",
+                        "toolbar_bg": "#f1f3f6",
+                        "enable_publishing": true,
+                        "withdateranges": true,
+                        "hide_side_toolbar": false,
+                        "allow_symbol_change": true,
+                        "details": true,
+                        "hotlist": true,
+                        "calendar": true,
+                        "container_id": "tradingview_4263a"
+                      });
+                      }
+                      this.isS3Loaded1 = true }
                 },
                 {
                     hid: 's32',
@@ -321,10 +165,6 @@ export default {
                 },
             ]
         }
-    },
-    async mounted() {
-        this.openTab = true
-        console.log(this.$i18n.locale)
     },
 }
 </script>

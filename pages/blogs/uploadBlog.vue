@@ -18,6 +18,9 @@
                                     <input type="text" class="form-control" placeholder="Tags" v-model="tagsInput">
                                 </div>
                                 <div class="col-12">
+                                      <b-form-select v-model="blogLanguage" :options="options" class="border border-dark p-3 mt-3">Please Select a Language</b-form-select>
+                                </div>
+                                <div class="col-12">
                                     <label for="file-upload" class="custom-file-upload">
                                         <i class="fa fa-plus"></i> Image Upload
                                     </label>
@@ -62,6 +65,7 @@
 </template>
 <script>
 import TiptapEditor from "@/components/TiptapEditor.vue"
+import en from "../../static/lang/en";
 export default {
     components:{
         TiptapEditor
@@ -74,6 +78,8 @@ export default {
            user: '',
            selectedFile: null,
            fileName: '',
+           blogLanguage: null,
+           options: [{ value: null, text: 'Please select the language' },{value: 'en', text: 'English'}, {value: 'ar', text: 'Arabic'}],
        };
     },
   methods: {
@@ -91,6 +97,7 @@ export default {
             data.append("content", this.content);
             data.append("userID", this.$auth.$state.user._id);
             data.append("photo", this.selectedFile);
+            data.append("language", this.blogLanguage);
 
           let response = await this.$axios.post('/api/blogs/new', data);
 

@@ -91,7 +91,7 @@
 </template>
 <script>
 export default {
-    layout: 'analysis',
+    layout: 'tools',
     auth:false,
     data() {
         return {
@@ -109,8 +109,8 @@ export default {
                       if (this.$i18n.locale === 'en') {
                         new TradingView.widget(
                                   {
-                         "width": 1000,
-                        "height": 810,
+                                "width": "100%",    
+                        "height": "900px",
                         "symbol": "NASDAQ:AAPL",
                         "interval": "D",
                         "timezone": "Etc/UTC",
@@ -130,8 +130,8 @@ export default {
                       } else {
                                                 new TradingView.widget(
                                   {
-                         "width": 1000,
-                        "height": 810,
+                                "width": "100%",    
+                        "height": "900px",
                         "symbol": "NASDAQ:AAPL",
                         "interval": "D",
                         "timezone": "Etc/UTC",

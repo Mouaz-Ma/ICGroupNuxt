@@ -32,7 +32,7 @@ export default {
     try {
       const allBlogs = $axios.get('/api/blogs/')
       const allBlogsResponse = await Promise.all([allBlogs])
-      let allBlogsData = allBlogsResponse[0].data.blogs
+      let allBlogsData = allBlogsResponse[0].data.blogs.reverse()
       // console.log(i18n.locale)
       if(i18n.locale === 'en'){
         allBlogsData = allBlogsData.filter( blog => blog.language === 'en')

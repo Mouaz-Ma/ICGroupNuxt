@@ -7,6 +7,7 @@
           dark
           v-bind="attrs"
           v-on="on"
+          @click="loadSrc()"
         >
           Listen To Analysis
         </v-btn>
@@ -26,7 +27,8 @@
             </v-list-item-content>
 
             <v-spacer>
-                <audio :src=audio.url id="audio">
+                <audio id="audio">
+                  <source :src=audio.url type="audio/mpeg">
                 </audio>
             </v-spacer>
 
@@ -86,10 +88,20 @@ export default {
         }
     },
     methods: {
+      loadSrc() {
+        console.log(this.$props.audio.url)
+        const audio = document.getElementById('audio');
+        console.log('berofe -> ' + audio)
+        if (audio != null){
+          audio.src = this.$props.audio.url;
+          console.log('after -> ' + audio)
+        }
+      },
         togglePlay: function() {
             this.playBtn = this.playBtn !== true
             if(this.playBtn === false){
                 document.getElementById('audio').play();
+                
                 }else {
                 document.getElementById('audio').pause();
             }
@@ -111,6 +123,7 @@ export default {
     },
 
     mounted () {
+      this.loadSrc();
       this.timeLineRefresh = setInterval(this.timeLineBar, 100);
     }
 }

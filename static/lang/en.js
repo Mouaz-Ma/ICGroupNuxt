@@ -83,5 +83,7 @@ export default {
     "Why choose to trade with IC Groups FX? graph": "We provide you with an innovative and reliable environment, and the best user services from our 24/7 multilingual support offices. We offer a wide range of trading tools including the most popular one; forex, and others like stock trading, commodities, indices and digital currencies.",
     "home intro": "Trade with ICGroupsFx Buy and sell and Make Profit",
     "2nd home intro": "Fast and secure way to Trade Cryptocurrencies, Stocks, Materials and Currencies",
-
+    "registration" : "The Registrar of Companies in Scotland hereby certifies that INTERNATIONAL CAPITAL GROUPS LTD The company was registered as a private limited company on 26/July/2018 Scotland. License number 603720",
+    "warning" : "Your capital is at risk. Products that use the lever may not be suitable for everyone. Please see risk alert",
+    "footerCompanyDescriptio" : "We are a world-leading online trading provider, giving you access to opportunities across thousands of financial markets."
 }

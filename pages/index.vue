@@ -396,18 +396,22 @@ export default {
           middleware: "auth",
           auth: "guest",
           layout: 'index',
-          async asyncData({$axios}) {
-              try {
-                const allBlogs = $axios.get('/api/blogs/')
-                const allBlogsResponse = await Promise.all([allBlogs])
-                const allBlogsData = allBlogsResponse[0].data.blogs
-                return {
-                  allBlogsData
-                }
-              } catch (err) {
-                console.log(err);
-              }
-            },
+  async asyncData({$axios, i18n}) {
+    try {
+      const allBlogs = $axios.get('/api/blogs/')
+      const allBlogsResponse = await Promise.all([allBlogs])
+      let allBlogsData = allBlogsResponse[0].data.blogs.reverse()
+      // console.log(i18n.locale)
+      if(i18n.locale === 'en'){
+        allBlogsData = allBlogsData.filter( blog => blog.language === 'en')
+        } else if(i18n.locale === 'ar') {
+        allBlogsData = allBlogsData.filter( blog => blog.language === 'ar')
+      }
+      return {allBlogsData}
+    } catch(err){
+      console.log(err);
+    }
+  },
             data() {
               return {
                 allBlogsData: [],

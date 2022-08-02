@@ -14,7 +14,8 @@
            <!-- <p class="mt-2 mb-5" v-html="content.substring(0,100)+'..'"></p> -->
                  <div class="card-footer">
             <div class="meta-info">
-              <a href="#" class="author"><img id="authorImage" src="~/assets/images/avatar/5.jpg" alt="">{{author}}</a>
+              <a href="#" class="author">{{author}}</a>
+              <!-- <img id="authorImage" src="~/assets/images/avatar/5.jpg" alt=""> -->
               <a href="#" class="mt-1 text-muted float-right"><i class="la la-calendar"></i>
                 {{ $moment(createdAt).format('MM/DD/YYYY')}}</a>
             </div>

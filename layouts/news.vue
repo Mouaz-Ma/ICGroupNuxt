@@ -3,7 +3,7 @@
         <div id="header">
           <Header />
         </div>
-        <page-banner title="News"/>
+        <page-banner :title="$t('News')"/>
             <div id="main-wrapper show">
 
           <div class="blog section-padding border-0">

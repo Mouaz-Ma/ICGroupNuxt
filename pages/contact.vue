@@ -4,7 +4,7 @@
 <div class="@@dashboard">
 
 <div id="main-wrapper show">
-    <Banner title="Contact From" />
+    <Banner :title="$t('contact')" />
     <div class="contact-form section-padding">
             <div class="container">
                 <div class="row justify-content-center">

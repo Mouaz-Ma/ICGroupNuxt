@@ -32,7 +32,7 @@ export default {
     try {
       const allNews = $axios.get('/api/news/')
       const allNewsResponse = await Promise.all([allNews])
-      const allNewsData = allNewsResponse[0].data.news
+      const allNewsData = allNewsResponse[0].data.news.reverse()
       return {allNewsData}
     } catch(err){
       console.log(err);

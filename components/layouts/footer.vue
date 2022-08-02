@@ -8,11 +8,15 @@
     <div class="bottom section-padding">
     <div class="container">
         <div class="row">
+            <p class="registeration">{{$t('registration')}}</p>
+            <div class="warningLink">
+                <a href="https://drive.google.com/file/d/1iURtCaA6gLt3IFZhKDnGVmrkLFmsmv2t/view" target="_blank"><p>{{$t('warning')}}</p></a>
+            </div>
             <div class="col-xl-4 col-md-4">
                 <div class="bottom-logo">
                     <img class="pb-3" src="~/assets/images/logow.png" alt="">
 
-                    <p>We are a world-leading online trading provider, giving you access to opportunities across thousands of financial markets.</p>
+                    <a href="https://drive.google.com/file/d/1iURtCaA6gLt3IFZhKDnGVmrkLFmsmv2t/view" target="_blank"><p>{{$t('footerCompanyDescriptio')}}</p></a>
                 </div>
             </div>
             <div class="col-xl-2 col-md-2">
@@ -115,5 +119,20 @@ export default {
 #whatsAppImage{
   max-width: 100%;
   height: 75px;
+}
+
+.registeration{
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: -25px;
+}
+
+.warningLink a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: underline;
+}
+
+.warningLink a :hover{
+    color: #fbcc31;
 }
 </style>

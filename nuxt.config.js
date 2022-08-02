@@ -170,6 +170,7 @@ export default {
   axios: {
     proxy: true,
     BaseURL: process.env.API_URL,
+
     // proxyHeaders: false,
     // credentials: false
   },
@@ -177,7 +178,10 @@ export default {
   proxy: {
     "/api": process.env.API_URL
   },
-
+//   server: {
+//     host: "192.168.254.246",
+//     port: 3000,
+// },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: ['vuetify/lib', "tiptap-vuetify"]

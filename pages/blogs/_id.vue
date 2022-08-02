@@ -6,7 +6,7 @@
         :content="blogData.content"
         :image="blogData.image"
         :reviews="blogData.reviews"
-        :author="blogData.author"
+        author="By: ICGroupsFX"
         :createdAt="blogData.createdAt"
         />
 </div>

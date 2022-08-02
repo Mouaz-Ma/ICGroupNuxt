@@ -6,7 +6,7 @@
         :content="newsData.content"
         :image="newsData.image"
         :reviews="newsData.reviews"
-        :author="newsData.author"
+        author="By: ICGroupsFX"
         :createdAt="newsData.createdAt"
         />
 </div>

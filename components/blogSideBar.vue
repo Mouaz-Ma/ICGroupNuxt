@@ -13,7 +13,7 @@
                         <h5 class="mt-0 mb-1">{{news.title}}</h5>
                     </nuxt-link>
                         <div class="meta-info">
-                            <a href="#"><i class="la la-user"></i> {{news.author.username}}</a><br>
+                            <a href="#"><i class="la la-user"></i> By: ICGroupsFX</a><br>
                             <a href="#"><i class="la la-calendar"></i> {{ $moment(news.createdAt).format('MM/DD/YYYY')}}</a>
                     <hr>
                         </div>

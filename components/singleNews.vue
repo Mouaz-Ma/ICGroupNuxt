@@ -8,7 +8,7 @@
                     <div class="blog-single-post single">
                         <ul class="post-nfo">
                             <li><i class="la la-calendar"></i>{{$moment(createdAt).format('DD/MM/YYYY')}}</li>
-                            <li><i class="la la-comment-o"></i><a href="#" title="">{{reviews.length}} Comments</a></li>
+                            <li><i class="la la-comment-o"></i><a href="#" title="">By: ICGroupsFX</a></li>
                             <li><i class="la la-bookmark-o"></i>
                             <a v-for="tag in tags" :key="tag" href="#" title="">
                                 <span> {{ tag }} &nbsp;</span> 

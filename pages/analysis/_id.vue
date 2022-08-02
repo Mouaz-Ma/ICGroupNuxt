@@ -9,7 +9,7 @@
         :image="analysisData.image"
         :audio="analysisData.audio"
         :reviews="analysisData.reviews"
-        :author="analysisData.author"
+        author="By: ICGroupsFX"
         :createdAt="analysisData.createdAt"
          />
 

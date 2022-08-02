@@ -22,7 +22,7 @@
           <v-list-item>
             <v-list-item-content>
               <v-list-item-title>{{title}}</v-list-item-title>
-              <v-list-item-subtitle>By: {{author.username}}</v-list-item-subtitle>
+              <v-list-item-subtitle>By: ICGroupsFX</v-list-item-subtitle>
             </v-list-item-content>
 
             <v-spacer>

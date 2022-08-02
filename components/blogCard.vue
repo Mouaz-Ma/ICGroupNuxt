@@ -12,7 +12,8 @@
       </div>
       <div class="card-footer">
         <div class="meta-info">
-          <!-- <a href="#" class="author"><img id="authorImage" src="~/assets/images/avatar/5.jpg" alt="">{{author}}</a> -->
+          <a href="#" class="author">By: ICGroupsFX</a>
+          <!-- <img id="authorImage" src="~/assets/images/avatar/5.jpg" alt=""> -->
           <a href="#" class="text-muted float-right"><i class="la la-calendar"></i>
             {{ $moment(createdAt).format('MM/DD/YYYY')}}</a>
         </div>

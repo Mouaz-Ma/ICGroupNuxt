@@ -8,7 +8,7 @@
             style="width:100%;"
             :newsId=news._id
             :title=news.title 
-            :author=news.author.username 
+            author="By: ICGroupsFX" 
             :content=news.content 
             :imageSrc=news.image.url 
             :createdAt=news.createdAt

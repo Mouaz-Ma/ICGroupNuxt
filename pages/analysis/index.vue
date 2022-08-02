@@ -8,7 +8,7 @@
               style="width:100%;"
               :analysisId=analysis._id
               :title=analysis.title 
-              :author=analysis.author.username 
+              author="By: ICGroupsFX" 
               :content=analysis.content 
               :imageSrc=analysis.image.url
               :createdAt=analysis.createdAt

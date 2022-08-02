@@ -8,7 +8,7 @@
             style="width:100%;"
             :blogId=blog._id
             :title=blog.title 
-            :author=blog.author.username 
+            author="By: ICGroupsFX" 
             :content=blog.content 
             :imageSrc=blog.image.url 
             :createdAt=blog.createdAt

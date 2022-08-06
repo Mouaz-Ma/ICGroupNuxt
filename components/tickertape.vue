@@ -41,7 +41,7 @@
       "description": "USD/EUR",
       "proName": "FX_IDC:USDEUR"
     },
-        {
+    {
       "description": "USD/EUR",
       "proName": "FX_IDC:USDEUR"
     },

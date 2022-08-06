@@ -1,4 +1,5 @@
 <template>
+<v-app class="mt-4">
       <div style="overflow-x: hidden; display: flex; flex-flow: column; height: 100vh">
         <div id="header">
           <Header />
@@ -24,6 +25,7 @@
           <Footer />
         </div>
       </div>
+</v-app>
 </template>
 <script>
 import Header from '@/components/layouts/header'

@@ -122,9 +122,11 @@
         </div>
       </div>
     </div>
+    <Tickertape class="tickerTape" />
   </div>
 </template>
 <script>
+import Tickertape from '@/components/tickertape.vue'
 import { BIcon, BIconArrowUp, BIconArrowDown } from 'bootstrap-vue'
 export default {
   scrollToTop: true,
@@ -149,7 +151,8 @@ export default {
       components: {
         BIcon,
         BIconArrowUp,
-        BIconArrowDown
+        BIconArrowDown,
+        Tickertape
       },
       mounted() {
         if (this.$i18n.locale == "ar") {
@@ -208,6 +211,10 @@ export default {
 
 #languageCollapse{
   margin-left: 50px;
+}
+
+.tickerTape{
+  margin-top: 5.5rem;
 }
 
 </style>

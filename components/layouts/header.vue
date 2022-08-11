@@ -65,7 +65,7 @@
                         <NuxtLink class="dropdown-item" to="/contact">{{ $t('contact')}}</NuxtLink>
                         <NuxtLink class="dropdown-item" to="/helpdesk">{{ $t('Help Desk')}}</NuxtLink>
                         <NuxtLink class="dropdown-item" to="/privacy">{{ $t('Privacy')}}</NuxtLink>
-                        <!-- <NuxtLink class="dropdown-item" to="/faq">FAQ</NuxtLink> -->
+                        <NuxtLink class="dropdown-item" to="/faq">{{ $t('FAQ')}}</NuxtLink>
                       </b-collapse>
                     </li>
                     <li class="nav-item">

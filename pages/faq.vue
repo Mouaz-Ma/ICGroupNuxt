@@ -7,30 +7,101 @@
                 <div class="col-lg-9">
                     <div class="terms_condition-content">
                         <div class="terms_condition-text">
-                            <h3>Frequently Asked Questions </h3>
-                            <p>Tradix is an instant cryptocurrency exchange that allows you to exchange crypto
+                            <h3>{{ $t('Frequently Asked Questions')}} </h3>
+                            <!-- <p>Tradix is an instant cryptocurrency exchange that allows you to exchange crypto
                                 fast and buy it with a bank card. The service provides the best crypto-to-crypto
                                 rates and supports over 140 cryptocurrencies available for exchange
-                            </p>
+                            </p> -->
                         </div>
 
 
                         <div class="terms_condition-text">
-                            <h3>How does Tradix work? </h3>
+                            <h3>{{ $t('What is online trading?')}} </h3>
                             <p>
-                                Tradix’s trading algorithm is integrated into the largest cryptocurrency exchange
-                                platforms, including Binance, Poloniex, Bittrex, etc. In the span of milliseconds,
-                                Tradix makes bids and asks on the platforms, then selects and suggests the best
-                                available rate and displays the estimated rate on our site. The rates remain
-                                approximate until the transaction is actually made on the blockchain, which is why
-                                the exchange rate at the time of a transaction may differ slightly from the
-                                estimated rate that you see when you begin a transaction. To learn more about the
-                                process, see this <a href="#">article</a>
+                                {{ $t('What is online trading? paragraph')}}
+                            </p>
+                        </div>
+
+                        <div class="terms_condition-text">
+                            <h3>{{ $t('Is trading only for professional traders?')}} </h3>
+                            <p>
+                                {{ $t('Is trading only for professional traders? paragraph')}}
                             </p>
                         </div>
 
 
                         <div class="terms_condition-text">
+                            <h3>{{ $t('How can I make the most profit?')}} </h3>
+                            <p>
+                                {{ $t('How can I make the most profit? paragraph')}}
+                            </p>
+                        </div>
+
+                        <div class="terms_condition-text">
+                            <h3>{{ $t('What are spreads?')}} </h3>
+                            <p>
+                                {{ $t('What are spreads? paragraph')}}
+                            </p>
+                        </div>
+
+                        <div class="terms_condition-text">
+                            <h3>{{ $t('what is a trading ‘lot’?')}} </h3>
+                            <p>
+                                {{ $t('What is a trading ‘lot’? paragrpah')}}
+                            </p>
+                        </div>
+
+                        <div class="terms_condition-text">
+                            <h3>{{ $t('What is Leverage?')}} </h3>
+                            <p>
+                                {{ $t('What is Leverage? paragraph')}}
+                            </p>
+                        </div>
+
+                        <div class="terms_condition-text">
+                            <h3>{{ $t('What is Swap?')}} </h3>
+                            <p>
+                                {{ $t('What is Swap? paragraph')}}
+                            </p>
+                        </div>
+
+                        <div class="terms_condition-text">
+                            <h3>{{ $t('How to open a personal account with ICGroup brokerage firm?')}} </h3>
+                                {{ $t('How to open a personal account with ICGroup brokerage firm? paragrpah')}}
+                            <p><nuxt-link to="/contact">{{$t('contact')}}</nuxt-link>
+                            </p>
+                        </div>
+
+                         <div class="terms_condition-text">
+                            <h3>{{ $t('demo account open')}} </h3>
+                            <p>
+                                {{ $t('demo account open paragraph')}}
+                            </p>
+                        </div>
+
+                        <div class="terms_condition-text">
+                            <h3>{{ $t('Are there fees to be paid to open or close an account?')}} </h3>
+                            <p>
+                                {{ $t('Are there fees to be paid to open or close an account? paragraph')}}
+                            </p>
+                        </div>
+
+                        <div class="terms_condition-text">
+                            <h3>{{ $t('What is the difference between a trial account and a real account?')}} </h3>
+                            <p>
+                                {{ $t('What is the difference between a trial account and a real account? paragraph')}}
+                            </p>
+                        </div>
+
+                        <div class="terms_condition-text">
+                            <h3>{{ $t('Is there a fee or commission on money withdrawal?')}} </h3>
+                            <p>
+                                {{ $t('Is there a fee or commission on money withdrawal? paragraph')}}
+                            </p>
+                        </div>
+
+
+                        <!-- <div class="terms_condition-text">
                             <h3>Why should I trust you? </h3>
                             <p>Tradix is one of the most prominent instant cryptocurrency exchanges that has
                                 gained the trust of more than 2M users from all over the world. The service provides
@@ -134,7 +205,7 @@
                                         website, or bringing court proceedings against you.</p>
                                 </li>
                             </ul>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

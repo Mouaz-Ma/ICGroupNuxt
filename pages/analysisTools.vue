@@ -1,6 +1,6 @@
 <template>
 <div>
-  <v-tabs grow background-color="grey darken-3" v-if="this.$i18n.locale ==='en'">
+  <v-tabs grow v-if="this.$i18n.locale ==='en'">
     <v-tab>
       <h4>Advanced Chart</h4>
     </v-tab>
@@ -43,7 +43,7 @@
 
 
   </v-tabs>
-    <v-tabs grow background-color="grey darken-3" v-if="this.$i18n.locale ==='ar'">
+    <v-tabs grow v-if="this.$i18n.locale ==='ar'">
     <v-tab>
       <h4>Advanced Chart</h4>
     </v-tab>

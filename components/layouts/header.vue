@@ -123,10 +123,12 @@
       </div>
     </div>
     <Tickertape class="tickerTape" />
+    <NewsTicker />
   </div>
 </template>
 <script>
 import Tickertape from '@/components/tickertape.vue'
+import NewsTicker from '@/components/NewsTicker.vue'
 import { BIcon, BIconArrowUp, BIconArrowDown } from 'bootstrap-vue'
 export default {
   scrollToTop: true,
@@ -152,7 +154,8 @@ export default {
         BIcon,
         BIconArrowUp,
         BIconArrowDown,
-        Tickertape
+        Tickertape,
+        NewsTicker,
       },
       mounted() {
         if (this.$i18n.locale == "ar") {

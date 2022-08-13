@@ -1,170 +1,107 @@
 <template>
-<div>
-  <v-tabs grow v-if="this.$i18n.locale ==='en'">
-    <v-tab>
-      <h4>Advanced Chart</h4>
-    </v-tab>
-    <v-tab>
-      <h4>Economic Calendar</h4>
-    </v-tab>
-    <v-tab>
-      <h4>Exchange Prices</h4>
-    </v-tab>
+  <div>
+    <v-tabs grow v-if="this.$i18n.locale === 'en'">
+      <v-tab>
+        <h4>Advanced Chart</h4>
+      </v-tab>
+      <v-tab>
+        <h4>Economic Calendar</h4>
+      </v-tab>
+      <v-tab>
+        <h4>Exchange Prices</h4>
+      </v-tab>
 
 
-    <v-tab-item>
-      <v-card>
-        <v-card-text>
-                <!-- TradingView Widget BEGIN -->
-                <div class="tradingview-widget-container">
-                <div id="tradingview_4263a"></div>
-                <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
-
-                </div>
-                <!-- TradingView Widget END -->
-        </v-card-text>
-      </v-card>
-    </v-tab-item>
-    <!-- calender -->
-    <v-tab-item class="text-center">
-<iframe
-    src="https://sslecal2.investing.com?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&importance=1,2,3&features=datepicker,timezone,timeselector,filters&countries=25,54,32,6,37,107,24,59,72,22,17,39,14,10,35,21,43,170,56,52,36,110,11,26,9,12,63,143,4,5&calType=day&timeZone=63&lang=1"
-    width="650" height="467" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe>
-<div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;"><span
-        style="font-size: 11px;color: #333333;text-decoration: none;">Real Time Economic Calendar provided by <a
-            href="https://www.investing.com/" rel="nofollow" target="_blank"
-            style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a>.</span>
-</div>
-    </v-tab-item>
-    <!-- prices -->
-    <v-tab-item class="text-center">
-<iframe src="https://www.widgets.investing.com/live-currency-cross-rates?theme=darkTheme&pairs=1,3,2,4,7,5,8,6,1525,1538,66,97,10254,10290,2126,18" width="100%" height="800px" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe><div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;">Powered by <a href="https://www.investing.com?utm_source=WMT&amp;utm_medium=referral&amp;utm_campaign=LIVE_CURRENCY_X_RATES&amp;utm_content=Footer%20Link" target="_blank" rel="nofollow">Investing.com</a></div>    
-</v-tab-item>
-
-
-  </v-tabs>
-    <v-tabs grow v-if="this.$i18n.locale ==='ar'">
-    <v-tab>
-      <h4>Advanced Chart</h4>
-    </v-tab>
-    <v-tab>
-      <h4>Economic Calendar</h4>
-    </v-tab>
-    <v-tab>
-      <h4>Exchange Prices</h4>
-    </v-tab>
+      <v-tab-item>
+        <v-card>
+          <v-card-text>
+            <AdvancedChart />
+          </v-card-text>
+        </v-card>
+      </v-tab-item>
+      <!-- calender -->
+      <v-tab-item class="text-center">
+        <iframe
+          src="https://sslecal2.investing.com?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&importance=1,2,3&features=datepicker,timezone,timeselector,filters&countries=25,54,32,6,37,107,24,59,72,22,17,39,14,10,35,21,43,170,56,52,36,110,11,26,9,12,63,143,4,5&calType=day&timeZone=63&lang=1"
+          width="650" height="467" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe>
+        <div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;"><span
+            style="font-size: 11px;color: #333333;text-decoration: none;">Real Time Economic Calendar provided by <a
+              href="https://www.investing.com/" rel="nofollow" target="_blank"
+              style="font-size: 11px;color: #06529D; font-weight: bold;"
+              class="underline_link">Investing.com</a>.</span>
+        </div>
+      </v-tab-item>
+      <!-- prices -->
+      <v-tab-item class="text-center">
+        <iframe
+          src="https://www.widgets.investing.com/live-currency-cross-rates?theme=darkTheme&pairs=1,3,2,4,7,5,8,6,1525,1538,66,97,10254,10290,2126,18"
+          width="100%" height="800px" frameborder="0" allowtransparency="true" marginwidth="0"
+          marginheight="0"></iframe>
+        <div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;">Powered by <a
+            href="https://www.investing.com?utm_source=WMT&amp;utm_medium=referral&amp;utm_campaign=LIVE_CURRENCY_X_RATES&amp;utm_content=Footer%20Link"
+            target="_blank" rel="nofollow">Investing.com</a></div>
+      </v-tab-item>
 
 
-    <v-tab-item>
-      <v-card>
-        <v-card-text>
-
-                <!-- TradingView Widget BEGIN -->
-                <div class="tradingview-widget-container">
-                <div id="tradingview_4263a"></div>
-                <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
-                </div>
-                <!-- TradingView Widget END -->
-
-        </v-card-text>
-      </v-card>
-    </v-tab-item>
-    <v-tab-item class="text-center">
-  <iframe
-    src="https://sslecal2.investing.com?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&importance=1,2,3&features=datepicker,timezone,timeselector,filters&countries=25,54,32,6,37,107,24,59,72,22,17,39,14,10,35,21,43,170,56,52,36,110,11,26,9,12,63,143,4,5&calType=day&timeZone=63&lang=3"
-    width="650" height="467" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe>
-<div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;"><span
-        style="font-size: 11px;color: #333333;text-decoration: none;">Real Time Economic Calendar provided by <a
-            href="https://www.investing.com/" rel="nofollow" target="_blank"
-            style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a>.</span>
-</div>
-    </v-tab-item>
-    <v-tab-item class="text-center">
-      <v-card>
-   <iframe src="https://www.widgets.investing.com/live-currency-cross-rates?theme=darkTheme&pairs=1,3,2,4,7,5,8,6,1525,1538,66,97,10254,10290,2126,18" width="100%" height="800px" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe><div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;">Powered by <a href="https://www.investing.com?utm_source=WMT&amp;utm_medium=referral&amp;utm_campaign=LIVE_CURRENCY_X_RATES&amp;utm_content=Footer%20Link" target="_blank" rel="nofollow">Investing.com</a></div>
-      </v-card>
-    </v-tab-item>
+    </v-tabs>
+    <v-tabs grow v-if="this.$i18n.locale === 'ar'">
+      <v-tab>
+        <h4>Advanced Chart</h4>
+      </v-tab>
+      <v-tab>
+        <h4>Economic Calendar</h4>
+      </v-tab>
+      <v-tab>
+        <h4>Exchange Prices</h4>
+      </v-tab>
 
 
-  </v-tabs>
-</div>
+      <v-tab-item>
+        <v-card>
+          <v-card-text>
+            <AdvancedChart />
+          </v-card-text>
+        </v-card>
+      </v-tab-item>
+      <v-tab-item class="text-center">
+        <iframe
+          src="https://sslecal2.investing.com?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&importance=1,2,3&features=datepicker,timezone,timeselector,filters&countries=25,54,32,6,37,107,24,59,72,22,17,39,14,10,35,21,43,170,56,52,36,110,11,26,9,12,63,143,4,5&calType=day&timeZone=63&lang=3"
+          width="650" height="467" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe>
+        <div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;"><span
+            style="font-size: 11px;color: #333333;text-decoration: none;">Real Time Economic Calendar provided by <a
+              href="https://www.investing.com/" rel="nofollow" target="_blank"
+              style="font-size: 11px;color: #06529D; font-weight: bold;"
+              class="underline_link">Investing.com</a>.</span>
+        </div>
+      </v-tab-item>
+      <v-tab-item class="text-center">
+        <v-card>
+          <iframe
+            src="https://www.widgets.investing.com/live-currency-cross-rates?theme=darkTheme&pairs=1,3,2,4,7,5,8,6,1525,1538,66,97,10254,10290,2126,18"
+            width="100%" height="800px" frameborder="0" allowtransparency="true" marginwidth="0"
+            marginheight="0"></iframe>
+          <div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;">Powered by <a
+              href="https://www.investing.com?utm_source=WMT&amp;utm_medium=referral&amp;utm_campaign=LIVE_CURRENCY_X_RATES&amp;utm_content=Footer%20Link"
+              target="_blank" rel="nofollow">Investing.com</a></div>
+        </v-card>
+      </v-tab-item>
+
+
+    </v-tabs>
+  </div>
 </template>
 <script>
 export default {
-    layout: 'tools',
-    auth:false,
-    data() {
-        return {
-        }
-    },
-    head () {
-        return {
-            script: [
-                {
-                    hid: 's31',
-                    src: 'https://s3.tradingview.com/tv.js',
-                    async: true,
-                    defer: true,
-                    callback: () => {
-                      if (this.$i18n.locale === 'en') {
-                        new TradingView.widget(
-                                  {
-                                "width": "100%",    
-                        "height": "900px",
-                        "symbol": "NASDAQ:AAPL",
-                        "interval": "D",
-                        "timezone": "Etc/UTC",
-                        "theme": "light",
-                        "style": "1",
-                        "locale": "en",
-                        "toolbar_bg": "#f1f3f6",
-                        "enable_publishing": true,
-                        "withdateranges": true,
-                        "hide_side_toolbar": false,
-                        "allow_symbol_change": true,
-                        "details": true,
-                        "hotlist": true,
-                        "calendar": true,
-                        "container_id": "tradingview_4263a"
-                      });
-                      } else {
-                                                new TradingView.widget(
-                                  {
-                                "width": "100%",    
-                        "height": "900px",
-                        "symbol": "NASDAQ:AAPL",
-                        "interval": "D",
-                        "timezone": "Etc/UTC",
-                        "theme": "light",
-                        "style": "1",
-                         "locale": "ar_AE",
-                        "toolbar_bg": "#f1f3f6",
-                        "enable_publishing": true,
-                        "withdateranges": true,
-                        "hide_side_toolbar": false,
-                        "allow_symbol_change": true,
-                        "details": true,
-                        "hotlist": true,
-                        "calendar": true,
-                        "container_id": "tradingview_4263a"
-                      });
-                      }
-                      this.isS3Loaded1 = true }
-                },
-                {
-                    hid: 's32',
-                    src: 'https://s3.tradingview.com/external-embedding/embed-widget-screener.js',
-                    async: true,
-                    callback: () => {this.isS3Loaded2 = true }
-                },
-                                {
-                    hid: 's33',
-                    src: 'https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js',
-                    async: true,
-                    callback: () => {this.isS3Loaded3 = true }
-                },
-            ]
-        }
-    },
-}
+  layout: 'tools',
+  auth: false,
+  data() {
+    return {
+    };
+  },
+  head() {
+    return {
+      script: [],
+    };
+  },
+};
 </script>

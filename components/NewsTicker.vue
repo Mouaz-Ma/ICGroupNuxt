@@ -64,9 +64,9 @@
 }
 
 .ticker-container {
-  height: 4rem;
-  line-height: 4rem;
-  background-color: rgba(204, 34, 0, 1);
+  height: 44px;
+  line-height: 44px;
+  background-color: rgba(245, 245, 245, 1);
 }
 
 .ticker-toggler {
@@ -81,15 +81,15 @@
 .ticker-wrap {
   width: 100%;
   overflow: hidden;
-  height: 4rem;
+  height: 44px;
   padding-left: 100%;
   box-sizing: content-box;
 }
 
 .ticker-wrap .ticker {
   display: inline-block;
-  height: 4rem;
-  line-height: 4rem;
+  height: 44px;
+  line-height: 44px;
   white-space: nowrap;
   padding-right: 100%;
   box-sizing: content-box;
@@ -112,7 +112,7 @@
   display: inline-block;
   padding: 0 4rem;
   font-size: 1rem;
-  color: white;
+  color: black;
 }
 
 .ticker-wrap .ticker__item:hover {
@@ -122,15 +122,15 @@
 .rtl-ticker-wrap {
   width: 100%;
   overflow: hidden;
-  height: 4rem;
+  height: 44px;
   padding-left: 100%;
   box-sizing: content-box;
 }
 
 .rtl-ticker-wrap .rtl-ticker {
   display: inline-block;
-  height: 4rem;
-  line-height: 4rem;
+  height: 44px;
+  line-height: 44px;
   white-space: nowrap;
   padding-right: 100%;
   box-sizing: content-box;
@@ -153,14 +153,14 @@
   display: inline-block;
   padding: 0 4rem;
   font-size: 1rem;
-  color: white;
+  color: black;
 }
 
 .rtl-ticker-wrap .rtl-ticker__item a {
   display: inline-block;
   padding: 0 4rem;
   font-size: 1rem;
-  color: white;
+  color: black;
 }
 
 .rtl-ticker-wrap .rtl-ticker__item:hover {

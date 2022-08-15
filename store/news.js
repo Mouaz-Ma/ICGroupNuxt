@@ -143,6 +143,148 @@ export const state = () => ({
       link: 'https://sa.investing.com/news/forex-news/article-2303069',
     },
   ],
+  allNewsArrayEnglish: [
+    {
+      title: 'Oil drops as China data weighs',
+      link: 'https://www.investing.com/news/commodities-news/oil-prices-ease-as-aramco-says-ready-to-boost-crude-output-2871958',
+    },
+    {
+      title: 'Crude Oil Slumps; Chinese Data, Additional Supply Weigh',
+      link: 'https://www.investing.com/news/commodities-news/crude-oil-slumps-chinese-data-additional-supply-weigh-2872620',
+    },
+    {
+      title: 'Explainer-Why Europe faces climbing energy bills',
+      link: 'https://www.investing.com/news/commodities-news/explainerwhy-europe-faces-climbing-energy-bills-2872604',
+    },
+    {
+      title: 'Germany Sets Surcharge for Homes to Share the Cost of Gas Surge',
+      link: 'https://www.investing.com/news/commodities-news/germany-sets-surcharge-for-homes-to-share-the-cost-of-gas-surge-2872373',
+    },
+    {
+      title: 'China to lift Aug fuel exports but 2022 shipments to drop to 7-year lows',
+      link: 'https://www.investing.com/news/commodities-news/china-to-lift-aug-fuel-exports-but-2022-shipments-to-drop-to-7year-lows-2872039',
+    },
+    {
+      title: 'Explainer-How China manages refined fuel exports',
+      link: 'https://www.investing.com/news/commodities-news/explainerhow-china-manages-refined-fuel-exports-2872037',
+    },
+    {
+      title: 'China\'s July daily coal output jumps 16% yr/yr on peak summer demand',
+      link: 'https://www.investing.com/news/commodities-news/chinas-july-daily-coal-output-jumps-16-yryr-on-peak-summer-demand-2871997',
+    },
+    {
+      title: 'First ship carrying Ukraine wheat under U.N. deal docks in Turkey',
+      link: 'https://www.investing.com/news/commodities-news/first-ship-carrying-ukraine-wheat-under-un-deal-docks-in-turkey-2871890',
+    },
+    {
+      title: 'Energy &amp; Precious Metals - Weekly Review and Outlook',
+      link: 'https://www.investing.com/news/commodities-news/energy--precious-metals--weekly-review-and-outlook-2871848',
+    },
+    {
+      title: 'Saudi Aramco\'s Amin Nasser: a homegrown engineer who reached the top',
+      link: 'https://www.investing.com/news/commodities-news/saudi-aramcos-amin-nasser-a-homegrown-engineer-who-reached-the-top-2871841',
+    },
+    {
+      title: 'Bureau of Land Management to pause oil, gas leasing on 2.2 million acres in Colorado',
+      link: 'https://www.investing.com/news/world-news/blm-to-pause-oil-gas-leasing-on-22-million-acres-in-colorado-2871749',
+    },
+    {
+      title: 'Alaska diesel spill of 18,000 gallons contained, may be from valve seal failure',
+      link: 'https://www.investing.com/news/commodities-news/diesel-spill-of-18000-gallons-at-alaska-tank-farm-contained-local-media-2871494',
+    },
+    {
+      title: 'Berlin wants to reduce gas use by 2% with new regulations - officials',
+      link: 'https://www.investing.com/news/commodities-news/berlin-wants-to-reduce-gas-use-by-2-with-new-regulations--officials-2871672',
+    },
+    {
+      title: 'Mexico\'s Pemex requests $6.5 billion more funding for \'Dos Bocas\' refinery -documents, source',
+      link: 'https://www.investing.com/news/stock-market-news/mexicos-pemex-requests-65-billion-more-funding-for-dos-bocas-refinery--documents-source-2871661',
+    },
+    {
+      title: 'Oil falls 2% on expectations that U.S. Gulf supply disruption will ease',
+      link: 'https://www.investing.com/news/commodities-news/oil-prices-on-track-for-weekly-gain-as-recession-fears-ease-2870807',
+    },
+    {
+      title: 'Exclusive - PDVSA pauses oil-for-debt shipments to Europe, wants product swaps',
+      link: 'https://www.investing.com/news/commodities-news/exclusive--pdvsa-pauses-oilfordebt-shipments-to-europe-wants-product-swaps-2871646',
+    },
+    {
+      title: 'Developers add less than half of planned U.S. solar capacity in H1 - EIA',
+      link: 'https://www.investing.com/news/commodities-news/developers-add-less-than-half-of-planned-us-solar-capacity-in-h1--eia-2871645',
+    },
+    {
+      title: 'Oil Down as Druzhba Line Reopens, Struggles at $90s Despite Weekly Gain',
+      link: 'https://www.investing.com/news/commodities-news/oil-down-as-druzhba-line-reopens-struggles-at-90s-despite-weekly-gain-2871625',
+    },
+    {
+      title: 'Gold up 4th Week in Row, Triumphing Over Inflation Data',
+      link: 'https://www.investing.com/news/commodities-news/gold-up-4th-week-in-row-triumphing-over-inflation-data-2871641',
+    },
+    {
+      title: 'Oil flows through Druzhba to Czech Republic resume - pipeline operator',
+      link: 'https://www.investing.com/news/stock-market-news/oil-flows-through-druzhba-to-czech-republic-resume--pipeline-operator-2871634',
+    },
+    {
+      title: 'Iranian tanker reloads oil confiscated by U.S. in Greece',
+      link: 'https://www.investing.com/news/commodities-news/iranian-tanker-reloading-oil-in-greece-that-was-confiscated-by-us--sources-2871428',
+    },
+    {
+      title: 'Oil leak affecting U.S. offshore output contained at port station, Shell says',
+      link: 'https://www.investing.com/news/commodities-news/shell-says-oil-output-halted-at-three-gulf-of-mexico-platforms-on-pipeline-outage-2870602',
+    },
+    {
+      title: 'U.S. tightens export controls on advanced chip, gas turbine engine tech',
+      link: 'https://www.investing.com/news/commodities-news/us-heightens-export-controls-on-advanced-chip-gas-turbine-engine-technologies-2871441',
+    },
+    {
+      title: 'Crude Oil Lower; Uncertainty Over Demand, Supply Outlook',
+      link: 'https://www.investing.com/news/commodities-news/crude-oil-lower-uncertainty-over-demand-supply-outlook-2871453',
+    },
+    {
+      title: 'Spain: New Gas Pipeline Could be Ready in 8 to 9 Months',
+      link: 'https://www.investing.com/news/commodities-news/spain-new-gas-pipeline-could-be-ready-in-8-to-9-months-2871452',
+    },
+    {
+      title: 'Sky-high energy costs to fan fire under aluminium and zinc prices',
+      link: 'https://www.investing.com/news/commodities-news/skyhigh-energy-costs-to-fan-fire-under-aluminium-and-zinc-prices-2871448',
+    },
+    {
+      title: 'Winter diesel shock looms as tanks dry up ahead of sanctions',
+      link: 'https://www.investing.com/news/commodities-news/winter-diesel-shock-looms-as-tanks-dry-up-ahead-of-sanctions-2871342',
+    },
+    {
+      title: 'French maize crop rating tumbles as drought deepens',
+      link: 'https://www.investing.com/news/commodities-news/french-maize-crop-rating-tumbles-as-drought-deepens-2871052',
+    },
+    {
+      title: 'Exclusive-Kazakhstan to start oil sales via Azeri pipeline to bypass Russia',
+      link: 'https://www.investing.com/news/commodities-news/exclusivekazakhstan-to-start-oil-sales-via-azeri-pipeline-to-bypass-russia-2870878',
+    },
+    {
+      title: 'Darkness and debris impede rescue effort at flooded Mexico mine',
+      link: 'https://www.investing.com/news/commodities-news/darkness-and-debris-impede-rescue-effort-at-flooded-mexico-mine-2870548',
+    },
+    {
+      title: 'Gold Loses Some Sheen as Hawkish Fed Outweighs Softer Inflation',
+      link: 'https://www.investing.com/news/commodities-news/gold-loses-some-sheen-as-hawkish-fed-outweighs-softer-inflation-2870819',
+    },
+    {
+      title: 'Oil Prices Cool, but Eye Strong Week on Demand Hopes',
+      link: 'https://www.investing.com/news/commodities-news/oil-prices-cool-but-eye-strong-week-on-demand-hopes-2870803',
+    },
+    {
+      title: 'Methane emissions from U.S. shallow offshore platforms exceed those on land, study finds',
+      link: 'https://www.investing.com/news/commodities-news/methane-emissions-from-us-shallow-offshore-platforms-exceed-those-on-land-study-finds-2870756',
+    },
+    {
+      title: 'Miners face supply chain overhaul to meet U.S. EV credit deadline',
+      link: 'https://www.investing.com/news/commodities-news/miners-face-supply-chain-overhaul-to-meet-us-ev-credit-deadline-2870526',
+    },
+    {
+      title: 'Nine companies to buy oil from U.S. strategic reserve in latest sale',
+      link: 'https://www.investing.com/news/commodities-news/nine-companies-to-get-oil-from-us-strategic-reserve-in-latest-sale-2870597',
+    },
+  ],
   commiditiesNewsArray: [],
   cryptoCurrencyNewsArray: [],
   economicIndicatorNewsArray: [],
@@ -154,6 +296,9 @@ export const state = () => ({
 export const getters = {
   GET_ALL_NEWS(state) {
     return state.allNewsArray;
+  },
+  GET_ALL_NEWS_ENGLISH: (state) => {
+    return state.allNewsArrayEnglish;
   },
   GET_COMMIDITIES_NEWS: (state) => {
     return state.commiditiesNewsArray;

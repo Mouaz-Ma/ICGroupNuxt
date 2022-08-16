@@ -9,8 +9,9 @@ export async function getAnalysisCategories(context, data) {
       });
 }
 
-export async function fetchNewsEnglish(context, lang) {
-  this.$axios.get('api/news/ticker', {params: {languageOption: lang}}).then((res) => {
+export async function fetchNews(context, lang) {
+  this.$axios.get('/api/news/ticker', {params: {languageOption: lang}}).then((res) => {
+    console.log(res);
     context.commit('setNews', lang, res.data);
   }).catch((err) => {
     console.log(err);

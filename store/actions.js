@@ -9,20 +9,11 @@ export async function getAnalysisCategories(context, data) {
       });
 }
 
-
-// TODO: refactor fetchNewsEnglish and fetchNewsArabic into one function.
-export async function fetchNewsEnglish(context) {
-  this.$axios.get('api/news/ticker', {params: {languageOption: 'english'}}).then((res) => {
-    context.commit('setNewsArrayEnglish', res.data);
+export async function fetchNewsEnglish(context, lang) {
+  this.$axios.get('api/news/ticker', {params: {languageOption: lang}}).then((res) => {
+    context.commit('setNews', lang, res.data);
   }).catch((err) => {
     console.log(err);
   });
 };
 
-export async function fetchNewsArabic(context) {
-  this.$axios.get('api/news/ticker', {params: {languageOption: 'arabic'}}).then((res) => {
-    context.commit('setNewsArrayArabic', res.data);
-  }).catch((err) => {
-    console.log(err);
-  });
-}

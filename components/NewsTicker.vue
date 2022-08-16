@@ -2,7 +2,7 @@
   <div class="ticker-container" v-if="getActiveLanguage == 'ar'">
     <div class="rtl-ticker-wrap">
       <div class="rtl-ticker">
-        <div v-for="item in getNews" :key="item.link" class="rtl-ticker__item">
+        <div v-for="item in this.$store.state.news.allNewsArray" :key="item.link" class="rtl-ticker__item">
           <img src="~/assets/images/favicon.png" />
           <a :href="item.link">{{ item.title }}</a>
         </div>
@@ -12,7 +12,7 @@
   <div class="ticker-container" v-else>
     <div class="ticker-wrap">
       <div class="ticker">
-        <div v-for="item in getNews" :key="item.link" class="ticker__item">
+        <div v-for="item in this.$store.state.news.allNewsArray" :key="item.link" class="ticker__item">
           <img src="~/assets/images/favicon.png" />
           <a :href="item.link">{{ item.title }}</a>
         </div>
@@ -226,6 +226,7 @@ export default {
       return this.$i18n.locale;
     },
     getNews() {
+      console.log(this.$store.getters.getNews(this.getActiveLanguage))
       return this.$store.getters.getNews(this.getActiveLanguage);
     },
   },

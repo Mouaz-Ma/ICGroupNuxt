@@ -21,6 +21,36 @@
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      locale: 'en',
+    };
+  },
+  mounted() {
+    this.fetchNews();
+  },
+  methods: {
+    fetchNews() {
+      this.$store.dispatch('fetchNews', this.getActiveLanguage);
+    },
+    toggleVisible() {
+      this.isVisible = !this.isVisible;
+    },
+  },
+  computed: {
+    getActiveLanguage: function() {
+      return this.$i18n.locale;
+    },
+    getNews: function() {
+      console.log(this.$store.getters.getNews[this.getActiveLanguage]);
+      return this.$store.getters.getNews[this.getActiveLanguage];
+    },
+  },
+};
+</script>
+
 <style>
 @-webkit-keyframes ticker {
   0% {
@@ -202,33 +232,3 @@
   text-decoration: underline;
 } */
 </style>
-
-<script>
-export default {
-  data() {
-    return {
-      locale: 'en',
-    };
-  },
-  mounted() {
-    this.fetchNews();
-  },
-  methods: {
-    fetchNews() {
-      this.$store.dispatch('fetchNews', this.getActiveLanguage);
-    },
-    toggleVisible() {
-      this.isVisible = !this.isVisible;
-    },
-  },
-  computed: {
-    getActiveLanguage: function() {
-      return this.$i18n.locale;
-    },
-    getNews: function() {
-      console.log(this.$store.getters.getNews[this.getActiveLanguage]);
-      return this.$store.getters.getNews[this.getActiveLanguage];
-    },
-  },
-};
-</script>

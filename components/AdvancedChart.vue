@@ -28,7 +28,7 @@ export default {
         {
           "width": "100%",
           "height": "900px",
-          "symbol": "NASDAQ:AAPL",
+          "symbol": "CURRENCYCOM:GOLD",
           "interval": "D",
           "timezone": "Etc/UTC",
           "theme": "light",
@@ -50,7 +50,7 @@ export default {
         {
           "width": "100%",
           "height": "900px",
-          "symbol": "NASDAQ:AAPL",
+          "symbol": "CURRENCYCOM:GOLD",
           "interval": "D",
           "timezone": "Etc/UTC",
           "theme": "light",

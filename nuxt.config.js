@@ -49,6 +49,12 @@ export default {
       type: 'text/javascript',
       hid: 'facebookPixel',
       ssr: false
+    },
+    {
+      src:'https://s3.tradingview.com/tv.js', 
+      type: 'text/javascript',
+      hid: 'tradingViewAdvanced',
+      ssr: false
     }
   ],
   },

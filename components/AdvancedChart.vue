@@ -20,8 +20,10 @@ export default {
     const tvScript = document.createElement('script');
     tvScript.type = 'text/javascript';
     tvScript.src = 'https://s3.tradingview.com/tv.js';
+    // tvScript.async = false;
     const advancedChartScript = document.createElement('script');
     advancedChartScript.type = 'text/javascript';
+    // advancedChartScript.async = false;
     if (this.$i18n.locale === 'en') {
       console.log('mounted en');
       advancedChartScript.text = `new TradingView.widget(
@@ -68,10 +70,22 @@ export default {
         })`;
     }
     advancedChartContainer.appendChild(tvScript);
+    tvScript.onload = function() {
       advancedChartContainer.appendChild(advancedChartScript);
+    };
+    // window.setTimeout(() => {
+    //   advancedChartContainer.appendChild(advancedChartScript);
+    // }, 100);
     window.onload = function() {
       console.log('mounted child');
     };
+  },
+  head: {
+    script: [
+      {
+        src: 'https://s3.tradingview.com/tv.js',
+      },
+    ],
   },
 };
 </script>

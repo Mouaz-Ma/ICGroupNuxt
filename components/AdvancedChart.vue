@@ -69,9 +69,9 @@ export default {
     }
     advancedChartContainer.appendChild(tvScript);
       advancedChartContainer.appendChild(advancedChartScript);
-    // window.onload = function() {
-    //   console.log('mounted child');
-    // };
+    window.onload = function() {
+      console.log('mounted child');
+    };
   },
 };
 </script>

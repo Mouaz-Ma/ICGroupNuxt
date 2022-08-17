@@ -2,7 +2,7 @@
   <div class="ticker-container" v-if="getActiveLanguage == 'ar'">
     <div class="rtl-ticker-wrap">
       <div class="rtl-ticker">
-        <div v-for="item in GET_ALL_NEWS" :key="item.link" class="rtl-ticker__item">
+        <div v-for="item in this.$store.state.news.allNewsArray" :key="item.link" class="rtl-ticker__item">
           <img src="~/assets/images/favicon.png" />
           <a :href="item.link">{{ item.title }}</a>
         </div>
@@ -12,7 +12,7 @@
   <div class="ticker-container" v-else>
     <div class="ticker-wrap">
       <div class="ticker">
-        <div v-for="item in GET_ALL_NEWS_ENGLISH" :key="item.link" class="ticker__item">
+        <div v-for="item in this.$store.state.news.allNewsArray" :key="item.link" class="ticker__item">
           <img src="~/assets/images/favicon.png" />
           <a :href="item.link">{{ item.title }}</a>
         </div>
@@ -204,57 +204,30 @@
 </style>
 
 <script>
-import {mapActions, mapGetters, mapMutations} from 'vuex';
-
 export default {
   data() {
     return {
-      isVisible: true,
+      //
     };
   },
+  mounted() {
+    this.fetchNews();
+  },
   methods: {
-    ...mapActions('news', [
-      'FETCH_ALL_NEWS',
-      'FETCH_COMMIDITIES_NEWS',
-      'FETCH_CRYPTO_CURRENCY_NEWS',
-      'FETCH_ECONOMIC_INDICATOR_NEWS',
-      'FETCH_ECONOMY_NEWS',
-      'FETCH_FOREX_NEWS',
-      'FETCH_STOCK_MARKET_NEWS',
-    ]),
-    ...mapMutations('news', [
-      'SET_ALL_NEWS',
-      'SET_COMMIDITIES_NEWS',
-      'SET_CRYPTO_CURRENCY_NEWS',
-      'SET_ECONOMIC_INDICATOR_NEWS',
-      'SET_ECONOMY_NEWS',
-      'SET_FOREX_NEWS',
-      'SET_STOCK_MARKET_NEWS',
-      'UNSET_ALL_NEWS',
-      'UNSET_COMMIDITIES_NEWS',
-      'UNSET_CRYPTO_CURRENCY_NEWS',
-      'UNSET_ECONOMIC_INDICATOR_NEWS',
-      'UNSET_ECONOMY_NEWS',
-      'UNSET_FOREX_NEWS',
-      'UNSET_STOCK_MARKET_NEWS',
-    ]),
+    fetchNews() {
+      this.$store.dispatch('fetchNews', this.getActiveLanguage);
+    },
     toggleVisible() {
       this.isVisible = !this.isVisible;
     },
   },
   computed: {
-    ...mapGetters('news', [
-      'GET_ALL_NEWS',
-      'GET_ALL_NEWS_ENGLISH',
-      'GET_COMMIDITIES_NEWS',
-      'GET_CRYPTO_CURRENCY_NEWS',
-      'GET_ECONOMIC_INDICATOR_NEWS',
-      'GET_ECONOMY_NEWS',
-      'GET_FOREX_NEWS',
-      'GET_STOCK_MARKET_NEWS',
-    ]),
     getActiveLanguage() {
       return this.$i18n.locale;
+    },
+    getNews() {
+      console.log(this.$store.getters.getNews(this.getActiveLanguage))
+      return this.$store.getters.getNews(this.getActiveLanguage);
     },
   },
 };

@@ -12,10 +12,10 @@ export async function getAnalysisCategories(context, data) {
 export function fetchNews(context, lang) {
   this.$axios.get(
       '/api/news/ticker',
-      { params: { languageOption : lang } }
+      {params: {languageOption: lang}},
   ).then((res) => {
     console.log(res);
-    context.commit('setNews', lang, res.data);
+    context.commit('setNews', {lang: lang, data: res.data.tickerNews});
   }).catch((err) => {
     console.log(err);
   });

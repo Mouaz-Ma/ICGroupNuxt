@@ -1,4 +1,4 @@
 export default () => ({
   analysisCategories: [],
-  news: {arabic: [], english: []},
+  news: {ar: [], en: []},
 });

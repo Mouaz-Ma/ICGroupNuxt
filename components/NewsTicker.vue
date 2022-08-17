@@ -1,20 +1,20 @@
 <template>
   <div class="ticker-container" v-if="getActiveLanguage == 'ar'">
-    <div class="rtl-ticker-wrap">
+    <div class="rtl-ticker-wrap" v-if="getNews">
       <div class="rtl-ticker">
-        <div v-for="item in this.$store.state.news.allNewsArray" :key="item.link" class="rtl-ticker__item">
+        <div v-for="item in getNews" :key="item._id" class="rtl-ticker__item">
           <img src="~/assets/images/favicon.png" />
-          <a :href="item.link">{{ item.title }}</a>
+          <a :href="item.link" target="_blank">{{ item.title }}</a>
         </div>
       </div>
     </div>
   </div>
   <div class="ticker-container" v-else>
-    <div class="ticker-wrap">
+    <div class="ticker-wrap" v-if="getNews">
       <div class="ticker">
-        <div v-for="item in this.$store.state.news.allNewsArray" :key="item.link" class="ticker__item">
+        <div v-for="item in getNews" :key="item._id" class="ticker__item">
           <img src="~/assets/images/favicon.png" />
-          <a :href="item.link">{{ item.title }}</a>
+          <a :href="item.link" target="_blank">{{ item.title }}</a>
         </div>
       </div>
     </div>
@@ -207,7 +207,7 @@
 export default {
   data() {
     return {
-      //
+      locale: 'en',
     };
   },
   mounted() {
@@ -222,12 +222,12 @@ export default {
     },
   },
   computed: {
-    getActiveLanguage() {
+    getActiveLanguage: function() {
       return this.$i18n.locale;
     },
-    getNews() {
-      console.log(this.$store.getters.getNews(this.getActiveLanguage))
-      return this.$store.getters.getNews(this.getActiveLanguage);
+    getNews: function() {
+      console.log(this.$store.getters.getNews[this.getActiveLanguage]);
+      return this.$store.getters.getNews[this.getActiveLanguage];
     },
   },
 };

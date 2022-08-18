@@ -1,6 +1,6 @@
 <template>
 <!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container" id="exchange-prices">
+<div class="tradingview-widget-container mx-auto" id="exchange-prices">
   <div class="tradingview-widget-container__widget"></div>
   <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/currencies/forex-cross-rates/" rel="noopener" target="_blank"><span class="blue-text">Exchange Rates</span></a> by TradingView</div>
 </div>

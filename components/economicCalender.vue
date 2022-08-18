@@ -1,6 +1,6 @@
 <template>
 <!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container" id="economic-calander">
+<div class="tradingview-widget-container mx-auto" id="economic-calander">
   <div class="tradingview-widget-container__widget"></div>
   <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/currencies/economic-calendar/" rel="noopener" target="_blank"><span class="blue-text">Economic Calendar</span></a> by TradingView</div>
 </div>

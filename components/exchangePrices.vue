@@ -1,13 +1,10 @@
 <template>
-  <iframe
-          src="https://www.widgets.investing.com/live-currency-cross-rates?theme=darkTheme&pairs=1,3,2,4,7,5,8,6,1525,1538,66,97,10254,10290,2126,18"
-          width="100%" height="800px" frameborder="0" allowtransparency="true" marginwidth="0"
-          marginheight="0"></iframe>
-<!-- <div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;">
-<span style="font-size: 11px;color: #333333;text-decoration: none;">Real Time Economic Calendar provided by 
-<a href="https://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a>.
-</span>
-</div> -->
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container mx-auto" id="exchange-prices">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/currencies/forex-cross-rates/" rel="noopener" target="_blank"><span class="blue-text">Exchange Rates</span></a> by TradingView</div>
+</div>
+<!-- TradingView Widget END -->
 </template>
 
 <script>
@@ -18,7 +15,52 @@ export default {
     };
   },
   mounted() {
-
+    const exchangePrices = document.getElementById('exchange-prices');
+    const exchangePricesScript = document.createElement('script');
+    exchangePricesScript.type = 'text/javascript';
+    exchangePricesScript.src = 'https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js';
+    if (this.$i18n.locale === 'ar') {
+      exchangePricesScript.text = JSON.stringify({
+        'width': '770',
+        'height': '400',
+        'currencies': [
+          'EUR',
+          'USD',
+          'JPY',
+          'GBP',
+          'CHF',
+          'AUD',
+          'CAD',
+          'NZD',
+          'CNY',
+          'TRY',
+        ],
+        'isTransparent': false,
+        'colorTheme': 'light',
+        'locale': 'ar_AE',
+      });
+    } else {
+      exchangePricesScript.text = JSON.stringify({
+        'width': '770',
+        'height': '400',
+        'currencies': [
+          'EUR',
+          'USD',
+          'JPY',
+          'GBP',
+          'CHF',
+          'AUD',
+          'CAD',
+          'NZD',
+          'CNY',
+          'TRY',
+        ],
+        'isTransparent': false,
+        'colorTheme': 'light',
+        'locale': 'en',
+      });
+    }
+    exchangePrices.appendChild(exchangePricesScript);
   },
 };
 </script>

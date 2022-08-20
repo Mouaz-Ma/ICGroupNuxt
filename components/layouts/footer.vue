@@ -21,7 +21,7 @@
             </div>
             <div class="col-xl-2 col-md-2">
                 <div class="bottom-widget">
-                    <h4 class="widget-title">Company</h4>
+                    <h4 class="widget-title">{{ $t('Company') }}</h4>
                     <ul>
                         <li><NuxtLink to="/aboutUs">{{ $t('about')}}</NuxtLink></li>
                         <li><a href="#">{{ $t('career') }}</a></li>

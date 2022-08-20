@@ -24,32 +24,37 @@
                     <h4 class="widget-title">Company</h4>
                     <ul>
                         <li><NuxtLink to="/aboutUs">{{ $t('about')}}</NuxtLink></li>
-                        <li><a href="#">Career</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Success Story</a></li>
+                        <li><a href="#">{{ $t('career') }}</a></li>
+                        <li><a href="#">{{ $t('terms & conditions') }}</a></li>
+                        <li><a href="#">{{ $t('success story') }}</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-xl-2 col-md-2">
                 <div class="bottom-widget">
-                    <h4 class="widget-title">Support</h4>
+                    <h4 class="widget-title">{{ $t('support') }}</h4>
                     <ul>
-                        <li><NuxtLink to="/contact">contact</NuxtLink></li>
-                        <li><NuxtLink to="/privacy">Privacy</NuxtLink></li>
-                        <li><NuxtLink to="/users/register">Open Account</NuxtLink></li>
-                        <li><NuxtLink to="/helpdesk">Help Desk</NuxtLink></li>
+                        <li><NuxtLink to="/contact">{{ $t('contact') }}</NuxtLink></li>
+                        <li><NuxtLink to="/privacy">{{ $t('privacy') }}</NuxtLink></li>
+                        <li><NuxtLink to="/users/register">{{ $t('open account') }}</NuxtLink></li>
+                        <li><NuxtLink to="/helpdesk">{{ $t('help desk') }}</NuxtLink></li>
                     </ul>
                 </div>
             </div>
             <div class="col-xl-4 col-md-4">
                 <div class="bottom-widget">
-                    <h4 class="widget-title">Analysis</h4>
+                    <h4 class="widget-title">{{ $t('analysis') }}</h4>
                     <div class="row">
                         <div class="col-xl-6">
-                            <ul>
-                        <li v-for="category in analysisCategory" :key="category._id">
-                            <NuxtLink :to="{name: 'analysis',  query: { categoryId: category._id}}">{{category.type}}</NuxtLink>
-                        </li>
+                            <ul v-if="$i18n.locale=='ar'">
+                                <li v-for="category in analysisCategory" :key="category._id">
+                                    <NuxtLink :to="{name: 'analysis',  query: { categoryId: category._id}}">{{category.ar}}</NuxtLink>
+                                </li>
+                            </ul>
+                            <ul v-else>
+                                <li v-for="category in analysisCategory" :key="category._id">
+                                    <NuxtLink :to="{name: 'analysis',  query: { categoryId: category._id}}">{{category.type}}</NuxtLink>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -75,7 +80,7 @@
                         <!-- <li><a href="#"><i class="fab fa-twitter"></i></a></li> -->
                         <li><a href="https://www.linkedin.com/in/icgroupsfx/"><i class="fab fa-linkedin"></i></a></li>
                         <li><a href="https://www.youtube.com/channel/UCJ-JtUfpKLrnfkhA3Mj0RCQ"><i class="fab fa-youtube"></i></a></li>
-                        
+
                     </ul>
                 </div>
             </div>
@@ -86,21 +91,21 @@
 </template>
 <script>
 export default {
-    computed: {
-        analysisCategory(){
-          return this.$store.getters.getAnalysisCategories
-        },
+  computed: {
+    analysisCategory() {
+      return this.$store.getters.getAnalysisCategories;
     },
-    created() {
-        this.getAnalysisCategories()
-      },
+  },
+  created() {
+    this.getAnalysisCategories();
+  },
 
-      methods: {
-          getAnalysisCategories() {
-          this.$store.dispatch('getAnalysisCategories');
-        },
-      }
-}
+  methods: {
+    getAnalysisCategories() {
+      this.$store.dispatch('getAnalysisCategories');
+    },
+  },
+};
 </script>
 <style>
 #footer{
@@ -112,7 +117,7 @@ export default {
 #whatsAppBtn {
   position: fixed;
   bottom: 60px;
-  right: 20px; 
+  right: 20px;
   z-index: 1000;
 }
 

@@ -15,7 +15,7 @@ export default {
     "Sign In": "تسجيل الدخول",
     "Sign Out": " تسجيل الخروج",
     "ٌRegister": "التسجيل",
-    "about": "حول",
+    "about": "من نحن",
     "copy Rights": "كل الحقوق محفوظة",
     "Open Account": "افتح حسابك الحقيقي",
     "Trade with": "تداول مع",
@@ -110,5 +110,16 @@ export default {
     "What is the difference between a trial account and a real account?" : "ما هو الفرق بين الحساب التجريبي والحساب الحقيقي ؟",
     "What is the difference between a trial account and a real account? paragraph" : "الفرق الوحيد والأساسي بين الحساب الحقيقي والحساب التجريبي يتمحور في كون الحساب التجريبي لا يشكل أي مخاطر على رأس المال .",
     "Is there a fee or commission on money withdrawal?" : "هل هناك أي رسوم أو عمولة على سحب الأموال ؟",
-    "Is there a fee or commission on money withdrawal? paragraph" : "ليس هناك أي رسوم أو أي عمولة على سحب الأموال من الرصيد."
-}
+    "Is there a fee or commission on money withdrawal? paragraph" : "ليس هناك أي رسوم أو أي عمولة على سحب الأموال من الرصيد.",
+    /* FOOTER START */
+    "career": "العمل",
+    "terms & conditions": "الشروط والأحكام",
+    "success story": "قصتنا",
+    "support": "الدعم والمساعدة",
+    "contact": "التواصل",
+    "privacy": "الخصوصية",
+    "open account": "افتح حساب مباشرة",
+    "help desk": "الدعم التقني",
+    "analysis": "التحليلات اليومية",
+    /* FOOTER END */
+};

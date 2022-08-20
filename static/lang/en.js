@@ -111,5 +111,16 @@ export default {
     "What is the difference between a trial account and a real account?" : "What is the difference between a trial account and a real account?",
     "What is the difference between a trial account and a real account? paragraph" : "The only and main difference between a trial account and a real account is that a trial account poses no danger to capital.",
     "Is there a fee or commission on money withdrawal?" : "Is there a fee or commission on money withdrawal?",
-    "Is there a fee or commission on money withdrawal? paragraph" : "There are no fees or commission on withdrawing money from an account."
-}
+    "Is there a fee or commission on money withdrawal? paragraph" : "There are no fees or commission on withdrawing money from an account.",
+    /* FOOTER START */
+    "career": "Career",
+    "terms & conditions": "Terms & Conditions",
+    "success story": "Success Story",
+    "support": "Support",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "open account": "Open Account",
+    "help desk": "Help Desk",
+    "analysis": "Analysis",
+    /* FOOTER END */
+};

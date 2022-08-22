@@ -200,11 +200,17 @@ export default {
 
 <style>
 
-#my-dropdown-toggle span{
-  color: rgba(255, 255, 255, 0.85);
+span.navbar-toggler-icon{
+  /* stroke: rgba(255, 255, 255, 0.85);
+  fill: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.85); */
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='rgba(255, 255, 255, 0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !important;
 }
-#my-dropdown-toggle span :hover{
-  color: #231f20;
+.navbar-toggler:hover .navbar-toggler-icon{
+  /* stroke: #231f20;
+  fill: #231f20;
+  color: #231f20; */
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='rgba(35, 31, 32, 0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !important;
 }
 
   @media (min-width: 1200px) {

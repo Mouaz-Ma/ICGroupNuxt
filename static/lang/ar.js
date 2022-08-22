@@ -127,4 +127,9 @@ export default {
     "Recent News": "آخر الأخبار",
     "Analysis Categories": "أصناف التحليلات",
     "Real Account": "حساب حقيقي",
+    /* ANALYSIS TOOLS PAGE START */
+    "Advanced Chart": "الرسم البياني المتقدم",
+    "Economic Calendar": "التقويم الاقتصادي",
+    "Exchange Prices": "أسعار الصرف",
+    /* ANALYSIS TOOLS PAGE END */
 };

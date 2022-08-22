@@ -128,4 +128,9 @@ export default {
     "Recent News": "Recent News",
     "Analysis Categories": "Analysis Categories",
     "Real Account": "Real Account",
+    /* ANALYSIS TOOLS PAGE START */
+    "Advanced Chart": "الرسم البياني المتقدم",
+    "Economic Calendar": "التقويم الاقتصادي",
+    "Exchange Prices": "أسعار الصرف",
+    /* ANALYSIS TOOLS PAGE END */
 };

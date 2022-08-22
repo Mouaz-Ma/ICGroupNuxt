@@ -133,4 +133,7 @@ export default {
     "Economic Calendar": "التقويم الاقتصادي",
     "Exchange Prices": "أسعار الصرف",
     /* ANALYSIS TOOLS PAGE END */
+    /* NEWS CARD BEGIN */
+    "Go To Article": "Go To Article",
+    /* NEWS CARD END */
 };

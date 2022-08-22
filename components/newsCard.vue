@@ -4,8 +4,7 @@
     <b-card :title=title :img-src=imageSrc img-top tag="article" style="max-width: 20rem;" class="m-2">
       <b-card-text>
         <b-card-text>
-          <div>
-          {{ getContent }}
+          <div v-html="getContent">
           </div>
         </b-card-text>
         <div class="meta-info">

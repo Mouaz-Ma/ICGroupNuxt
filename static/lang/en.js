@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default {
     // home and header
     "langCode": "en",
@@ -62,12 +63,12 @@ export default {
     "Blog" : "Blog",
     "Blog intro": "News and updates from the world's leading cryptocurrency exchange.",
     "Trading Tools": "Trading Tools",
-    "Trading Tools": "Help build the future of technology. Start your new career at ICGroupsFx.",
+    "Trading Tools intro": "Help build the future of technology. Start your new career at ICGroupsFx.",
     "Community": "Community",
-    "Community": "ICGroupsFx is global. Join the discussion in our worldwide communities.",
+    "Community intro": "ICGroupsFx is global. Join the discussion in our worldwide communities.",
     // help desk page
     "Help Desk" : "Help Desk",
-    "Trading Tools": "Trading Tools",
+    // "Trading Tools": "Trading Tools",
     "Our Story": "Our Story",
     "Our Story paragraph 1st": "It all started back in 2006 in Damascus where our company was born as an individual effort that grew with experience and professionalism into an advanced experience five years later in Dubai. ",
     "Our Story paragraph 2nd": "We launched our first office in Turkey in 2013 only to open a subsidiary office in Mersin five years later.",

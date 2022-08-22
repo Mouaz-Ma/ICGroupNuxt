@@ -362,7 +362,7 @@ Trusted over
         <div class="row justify-content-center">
             <div class="col-xl-6">
                 <div class="section-title text-center">
-                    <h2>Blog</h2>
+                    <h2>{{ $t('Blog') }}</h2>
                 </div>
             </div>
         </div>

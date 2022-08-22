@@ -4,7 +4,7 @@
       <div class="rtl-ticker">
         <div v-for="item in getNews" :key="item._id" class="rtl-ticker__item">
           <img src="~/assets/images/favicon.png" />
-          <a :href="item.link" target="_blank">{{ item.title }}</a>
+          <a :href="item.link" target="_blank" v-html="item.title"></a>
         </div>
       </div>
     </div>
@@ -14,7 +14,7 @@
       <div class="ticker">
         <div v-for="item in getNews" :key="item._id" class="ticker__item">
           <img src="~/assets/images/favicon.png" />
-          <a :href="item.link" target="_blank">{{ item.title }}</a>
+          <a :href="item.link" target="_blank" v-html="item.title"></a>
         </div>
       </div>
     </div>

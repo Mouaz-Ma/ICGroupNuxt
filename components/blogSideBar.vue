@@ -1,10 +1,10 @@
 <template>
         <div class="blog-sidebar">
         <div class="widget-search">
-        <NuxtLink v-if="!$auth.$state.user" to="/users/register" class="btn btn-primary mb-1 w-100">Real Account</NuxtLink>
+        <NuxtLink v-if="!$auth.$state.user" to="/users/register" class="btn btn-primary mb-1 w-100">{{ $t('Real Account') }}</NuxtLink>
         </div>
         <div class="widget-recent-post">
-            <h3 class="post-title">Recent News</h3>
+            <h3 class="post-title">{{ $t('Recent News') }}</h3>
             <ul class="list-unstyled">
                 <li v-for="news in allNews.slice(-3)" :key="news.id" class="d-flex media">
                     <img id="sideBarImage" :src="news.image.url" class="mr-3" alt="...">
@@ -22,8 +22,16 @@
             </ul>
         </div>
         <div class="widget-category">
-            <h3 class="widget-title">Analysis Categories</h3>
-            <ul class="list-group">
+            <h3 class="widget-title">{{ $t('Analysis Categories') }}</h3>
+            <ul class="list-group" v-if="$i18n.locale=='ar'">
+                <li v-for="item in items" :key="item.id" class="list-group-item d-flex justify-content-between align-items-center">
+                    <nuxt-link class="linkAnalysis" :to="{name: 'analysis',  query: { categoryId: item._id}}">
+                    {{item.ar}}
+                    </nuxt-link>
+                    <span class="badge badge-primary"><i class="icofont-external-link"></i></span>
+                </li>
+            </ul>
+            <ul class="list-group" v-else>
                 <li v-for="item in items" :key="item.id" class="list-group-item d-flex justify-content-between align-items-center">
                     <nuxt-link class="linkAnalysis" :to="{name: 'analysis',  query: { categoryId: item._id}}">
                     {{item.type}}

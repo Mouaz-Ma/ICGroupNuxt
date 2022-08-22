@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default {
         // home and header
     "langCode": "ar",
@@ -122,4 +123,8 @@ export default {
     "help desk": "الدعم التقني",
     "analysis": "التحليلات اليومية",
     /* FOOTER END */
+    "Tags": "كلمات مفتاحية",
+    "Recent News": "آخر الأخبار",
+    "Analysis Categories": "أصناف التحليلات",
+    "Real Account": "حساب حقيقي",
 };

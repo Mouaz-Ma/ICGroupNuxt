@@ -1,7 +1,7 @@
 <template>
 
 <div class="row" v-if="allAnalysisData.length != 0">
-<h1>{{allAnalysisData[0].category.type}}</h1>
+<h1>{{$i18n.locale === 'ar' ? allAnalysisData[0].category.ar : allAnalysisData[0].category.type}}</h1>
       <b-card-group>
           <div v-for="analysis in allAnalysisData" :key="analysis._id" class="col-xl-6 col-lg-6 col-md-6">
               <analysis-card 

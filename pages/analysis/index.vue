@@ -47,7 +47,6 @@ export default {
       const allAnalysis = await $axios.get('/api/analysis/' + query.categoryId)
       const allAnalysisResponse = await Promise.all([allAnalysis])
       const allAnalysisData = allAnalysisResponse[0].data.analysis.reverse()
-      console.log(allAnalysisData.length)
       return {allAnalysisData}
     } catch(err){
       console.log(err);

@@ -226,7 +226,6 @@ export default {
       return this.$i18n.locale;
     },
     getNews: function() {
-      console.log(this.$store.getters.getNews[this.getActiveLanguage]);
       return this.$store.getters.getNews[this.getActiveLanguage];
     },
   },

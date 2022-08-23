@@ -129,9 +129,9 @@ export default {
     "Analysis Categories": "Analysis Categories",
     "Real Account": "Real Account",
     /* ANALYSIS TOOLS PAGE START */
-    "Advanced Chart": "الرسم البياني المتقدم",
-    "Economic Calendar": "التقويم الاقتصادي",
-    "Exchange Prices": "أسعار الصرف",
+    "Advanced Chart": "Advanced Chart",
+    "Economic Calendar": "Economic Calendar",
+    "Exchange Prices": "Exchange Prices",
     /* ANALYSIS TOOLS PAGE END */
     /* NEWS CARD BEGIN */
     "Go To Article": "Go To Article",

@@ -89,12 +89,9 @@ export default {
     },
     methods: {
       loadSrc() {
-        console.log(this.$props.audio.url)
         const audio = document.getElementById('audio');
-        console.log('berofe -> ' + audio)
         if (audio != null){
           audio.src = this.$props.audio.url;
-          console.log('after -> ' + audio)
         }
       },
         togglePlay: function() {

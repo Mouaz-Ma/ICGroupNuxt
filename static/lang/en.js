@@ -1,17 +1,18 @@
+/* eslint-disable */
 export default {
     // home and header
     "langCode": "en",
     "lang": "English",
     "home": "Home",
-    "ِAnalysis": "Analysis",
-    "ِTools": "Tools",
-    "ِNews": "News",
-    "ِCompany": "Company",
-    "ِSupport": "Support",
+    "Analysis": "Analysis",
+    "Tools": "Tools",
+    "News": "News",
+    "Company": "Company",
+    "Support": "Support",
     "contact": "contact",
     "Help Desk": "Help Desk",
     "Privacy": "Privacy",
-    "ِBlogs": "Blogs",
+    "Blogs": "Blogs",
     "Sign In": "Sign In",
     "Sign Out": "Sign Out",
     "ٌRegister": "Register",
@@ -62,12 +63,12 @@ export default {
     "Blog" : "Blog",
     "Blog intro": "News and updates from the world's leading cryptocurrency exchange.",
     "Trading Tools": "Trading Tools",
-    "Trading Tools": "Help build the future of technology. Start your new career at ICGroupsFx.",
+    "Trading Tools intro": "Help build the future of technology. Start your new career at ICGroupsFx.",
     "Community": "Community",
-    "Community": "ICGroupsFx is global. Join the discussion in our worldwide communities.",
+    "Community intro": "ICGroupsFx is global. Join the discussion in our worldwide communities.",
     // help desk page
     "Help Desk" : "Help Desk",
-    "Trading Tools": "Trading Tools",
+    // "Trading Tools": "Trading Tools",
     "Our Story": "Our Story",
     "Our Story paragraph 1st": "It all started back in 2006 in Damascus where our company was born as an individual effort that grew with experience and professionalism into an advanced experience five years later in Dubai. ",
     "Our Story paragraph 2nd": "We launched our first office in Turkey in 2013 only to open a subsidiary office in Mersin five years later.",
@@ -123,4 +124,16 @@ export default {
     "help desk": "Help Desk",
     "analysis": "Analysis",
     /* FOOTER END */
+    "Tags": "Tags",
+    "Recent News": "Recent News",
+    "Analysis Categories": "Analysis Categories",
+    "Real Account": "Real Account",
+    /* ANALYSIS TOOLS PAGE START */
+    "Advanced Chart": "Advanced Chart",
+    "Economic Calendar": "Economic Calendar",
+    "Exchange Prices": "Exchange Prices",
+    /* ANALYSIS TOOLS PAGE END */
+    /* NEWS CARD BEGIN */
+    "Go To Article": "Go To Article",
+    /* NEWS CARD END */
 };

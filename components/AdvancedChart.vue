@@ -15,7 +15,6 @@ export default {
     };
   },
   mounted() {
-    console.log('mounted 1');
     const advancedChartContainer = document.getElementById('advanced-chart');
     const tvScript = document.createElement('script');
     tvScript.type = 'text/javascript';
@@ -23,7 +22,6 @@ export default {
     const advancedChartScript = document.createElement('script');
     advancedChartScript.type = 'text/javascript';
     if (this.$i18n.locale === 'en') {
-      console.log('mounted en');
       advancedChartScript.text = `new TradingView.widget(
         {
           "width": "100%",
@@ -45,7 +43,6 @@ export default {
           "container_id": "tradingview_4263a",
         })`;
     } else {
-      console.log('mounted ar');
       advancedChartScript.text = `new TradingView.widget(
         {
           "width": "100%",
@@ -72,6 +69,13 @@ export default {
     window.onload = function() {
       console.log('mounted child');
     };
+  },
+  head: {
+    script: [
+      {
+        src: 'https://s3.tradingview.com/tv.js',
+      },
+    ],
   },
 };
 </script>

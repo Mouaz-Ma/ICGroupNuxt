@@ -91,7 +91,6 @@ export default {
             } else {
               this.successMessage = 'false'
             }
-            console.log(response)
             //   if response is ok flash ok if not flash error
           } catch (err) {
             this.successMessage = 'false'

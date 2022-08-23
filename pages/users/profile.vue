@@ -607,7 +607,7 @@ export default {
           console.log('Network: ' + netWorkName + ' (' + networkId + ')');
           console.log('Network Type: ' + networkType);
           console.log('Coin Base: ' + coinbase);
-          console.log('Blance: ' + balance);
+          console.log('Balance: ' + balance);
           console.log('Ether Balance: ' + etherBalance);
           this.errorMessage = '';
         } catch (error) {

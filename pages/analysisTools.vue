@@ -2,13 +2,13 @@
   <div>
     <v-tabs grow>
       <v-tab>
-        <h4>Advanced Chart</h4>
+        <h4>{{ $t('Advanced Chart') }}</h4>
       </v-tab>
       <v-tab>
-        <h4>Economic Calendar</h4>
+        <h4>{{ $t('Economic Calendar') }}</h4>
       </v-tab>
       <v-tab>
-        <h4>Exchange Prices</h4>
+        <h4>{{ $t('Exchange Prices') }}</h4>
       </v-tab>
 
 

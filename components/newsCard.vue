@@ -3,20 +3,16 @@
 <nuxt-link :to="'/news/'+newsId">
     <b-card :title=title :img-src=imageSrc img-top tag="article" style="max-width: 20rem;" class="m-2">
       <b-card-text>
-        <b-card-text v-if="content.length<100">
-          <div v-html="content">
-          </div>
-        </b-card-text>
-        <b-card-text v-else>
-          <div v-html="content.substring(0,100)+'..'">
+        <b-card-text>
+          <div v-html="getContent">
           </div>
         </b-card-text>
         <div class="meta-info">
           <a href="#" class="text-muted float-right mt-2"><i class="la la-calendar"></i>
             {{ $moment(createdAt).format('MM/DD/YYYY')}}</a>
-          
-            <b-button variant="primary">Go To Article</b-button>
-         
+
+            <b-button variant="primary">{{ $t('Go To Article') }}</b-button>
+
         </div>
       </b-card-text>
 
@@ -25,8 +21,14 @@
 </template>
 <script>
 export default {
-    props: ['title', 'author', 'content', 'imageSrc', 'createdAt', 'newsId']
-}
+  props: ['title', 'author', 'content', 'imageSrc', 'createdAt', 'newsId'],
+  computed: {
+    getContent() {
+      const cleanText = this.content.replace(/<\/?[^>]+(>|$)/g, '');
+      return cleanText.length < 100 ? cleanText : cleanText.substring(0, 100) + '...';
+    },
+  },
+};
 </script>
 
 <style scoped>

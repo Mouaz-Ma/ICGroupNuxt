@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default {
         // home and header
     "langCode": "ar",
@@ -62,11 +63,11 @@ export default {
     "Blog" : "مقالات",
     "Blog intro": "الأخبار والتحديثات من بورصة العملات المشفرة الرائدة في العالم.",
     "Trading Tools": "أدوات التداول",
-    "Trading Tools": "ساعد في بناء مستقبل التكنولوجيا. ابدأ حياتك المهنية الجديدة في ICGroupsFx.",
+    "Trading Tools intro": "ساعد في بناء مستقبل التكنولوجيا. ابدأ حياتك المهنية الجديدة في ICGroupsFx.",
     "Community": "مجتمعنا",
-    "Community": "ICGroupsFx هي عالمية. انضم إلى المناقشة في مجتمعاتنا العالمية.",
+    "Community intro": "ICGroupsFx هي عالمية. انضم إلى المناقشة في مجتمعاتنا العالمية.",
     // help desk page
-    "Trading Tools": "Trading Tools",
+    // "Trading Tools": "Trading Tools",
     "Our Story": "قصتنا ",
     "Our Story paragraph 1st": "نعود للعام 2006، حيث بدأت شركتنا في دمشق كجهد فردي تنامى بفضل الخبرة والاحتراف إلى تجربة متطورة بعد خمس سنوات في دبي.",
     "Our Story paragraph 2nd": " لننطلق بعدها للعمل في تركيا في العام 2013، وبعد خمس سنوات أخرى كان افتتاح المقر الثاني لشركتنا في مرسين.",
@@ -122,4 +123,16 @@ export default {
     "help desk": "الدعم التقني",
     "analysis": "التحليلات اليومية",
     /* FOOTER END */
+    "Tags": "كلمات مفتاحية",
+    "Recent News": "آخر الأخبار",
+    "Analysis Categories": "أصناف التحليلات",
+    "Real Account": "حساب حقيقي",
+    /* ANALYSIS TOOLS PAGE START */
+    "Advanced Chart": "الرسم البياني المتقدم",
+    "Economic Calendar": "التقويم الاقتصادي",
+    "Exchange Prices": "أسعار الصرف",
+    /* ANALYSIS TOOLS PAGE END */
+    /* NEWS CARD BEGIN */
+    "Go To Article": "اذهب إلى المقالة",
+    /* NEWS CARD END */
 };

@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="dashboard">
     <div class="header landing headerBorder">
@@ -20,7 +21,7 @@
                 </b-button>
 
                 <b-collapse class="collapse navbar-collapse" id="my-collapse" v-model="showCollapse">
-                  <ul class="navbar-nav clearfix flex">
+                  <ul class="navbar-nav clearfix flex" id="icg-bootstrap-navbar-override">
 
 
                     <li class="nav-item">
@@ -49,7 +50,7 @@
                     <li class="nav-item">
                       <nuxt-link class="nav-link" to="/news">{{ $t('News')}}</nuxt-link>
                     </li>
-                    
+
                     <li class="nav-item dropdown">
                       <NuxtLink class="nav-link" to="/aboutUs">{{ $t('Company')}}</NuxtLink>
                       <!-- <b-collapse class="dropdown-menu" id="companyCollapse" v-model="showCollapseaCompany">
@@ -71,8 +72,8 @@
                     <li class="nav-item">
                       <NuxtLink class="nav-link" to="/blogs/">{{ $t('Blogs')}}</NuxtLink>
                     </li>
-                    
-                  
+
+
                     <li class="nav-item" v-if="$auth.$state.loggedIn">
 
                     <!-- here we having the username we need to style it  -->
@@ -93,27 +94,28 @@
                       </div>
                     </li>
 
-                    <li class="nav-item dropdown d-flex justify-content-center" id="language">
-                      <a class="nav-link" href="#" v-b-toggle.languageCollapse>
-                        <img :src="require(`@/assets/icons/`+ $i18n.locale +`.svg`)" style="width: 24px; height: auto"
-                          alt="" class="mr-1 ml-1" />
-                        <!-- {{$t('lang')}} -->
-                      </a>
-                      <b-collapse class="dropdown-menu text-center" id="languageCollapse" v-model="showCollapseaLanguage">
-                        <a class="d-flex languageLink" href="#" v-for="lang in $i18n.locales" :key="lang.code"
-                          :value="lang.code" :active="lang.code === activeLang" @click="changeLang(lang.code)">
-                          <img :src="require(`@/assets/icons/`+ lang.code +`.svg`)" style="width: 24px; height: auto" />
-                          <!-- <span class="m-1 w-50">{{ lang.name }}</span> -->
+                      <div id="language-dropdown-wrapper">
+                    <li class="nav-item"  id="language-dropdown-wrapper">
+                        <a class="nav-link" href="#" @click="toggleLanguageDropdownMenu()">
+                          <img :src="require(`@/assets/icons/`+ $i18n.locale +`.svg`)" style="width: 24px; height: auto"
+                            alt="" class="mx-1" />
+                          <!-- {{$t('lang')}} -->
+                        </a>
+                        <div id="language-dropdown-menu" v-if="showLanguageMenu">
+                          <a class="language-dropdown-menu__item" href="#" v-for="lang in $i18n.locales" :key="lang.code"
+                            :value="lang.code" :active="lang.code === activeLang" @click="changeLang(lang.code)">
+                            <img :src="require(`@/assets/icons/`+ lang.code +`.svg`)" style="width: 24px; height: auto" />
+                            <!-- <span class="m-1 w-50">{{ lang.name }}</span> -->
 
-                          </a>
-                      </b-collapse>
+                            </a>
+                        </div>
                     </li>
+                      </div>
 
-                    
+
                   </ul>
                   <!-- language -->
                 </b-collapse>
-
 
 
               </nav>
@@ -127,75 +129,79 @@
   </div>
 </template>
 <script>
-import Tickertape from '@/components/tickertape.vue'
-import NewsTicker from '@/components/NewsTicker.vue'
-import { BIcon, BIconArrowUp, BIconArrowDown } from 'bootstrap-vue'
+import Tickertape from '@/components/tickertape.vue';
+import NewsTicker from '@/components/NewsTicker.vue';
+// import {BIcon, BIconArrowUp, BIconArrowDown} from 'bootstrap-vue';
 export default {
   scrollToTop: true,
-      data() {
-            return {
-            showCollapse: false,
-            showCollapseaAalysis : false,
-            showCollapseaCompany : false,
-            showCollapseaSupport : false,
-            showCollapseaLanguage: false,
-            }
-        },
-        watch: {
-            '$route' () {
-            this.showCollapse = false
-            this.showCollapseaAalysis = false
-            this.showCollapseaCompany = false
-            this.showCollapseaSupport = false
-            this.showCollapseaLanguage= false
-            }
-        },
-      components: {
-        BIcon,
-        BIconArrowUp,
-        BIconArrowDown,
-        Tickertape,
-        NewsTicker,
-      },
-      mounted() {
-        if (this.$i18n.locale == "ar") {
-          let htmlEl = document.querySelector("html");
-          htmlEl.setAttribute('dir', 'rtl');
-          htmlEl.setAttribute('lang', 'ar');
-        }
-      },
-      computed: {
-        languages() {
-          return this.$i18n.locales
-        },
-        activeLang() {
-          return this.$i18n.locale
-        },
-        analysisCategory(){
-          return this.$store.getters.getAnalysisCategories
-        },
-      },
-      created() {
-        this.getAnalysisCategories()
-      },
-      methods: {
-          getAnalysisCategories() {
-          this.$store.dispatch('getAnalysisCategories');
-        },
-        changeLang: function (language) {
-          this.$i18n.setLocale(language);
-          this.restartServices();
-          this.$router.push('/')
-        },
-        restartServices: function() {
-          window.location.reload(true)
-
-        },
-        async onLogout() {
-          await this.$auth.logout()
-        }
-      }
+  data() {
+    return {
+      showCollapse: false,
+      showCollapseaAalysis: false,
+      showCollapseaCompany: false,
+      showCollapseaSupport: false,
+      showCollapseaLanguage: false,
+      showLanguageMenu: false,
+    };
+  },
+  watch: {
+    '$route'() {
+      this.showCollapse = false;
+      this.showCollapseaAalysis = false;
+      this.showCollapseaCompany = false;
+      this.showCollapseaSupport = false;
+      this.showCollapseaLanguage = false;
+      this.showLanguageMenu = false;
+    },
+  },
+  components: {
+    // BIcon,
+    // BIconArrowUp,
+    // BIconArrowDown,
+    Tickertape,
+    NewsTicker,
+  },
+  mounted() {
+    if (this.$i18n.locale == 'ar') {
+      const htmlEl = document.querySelector('html');
+      htmlEl.setAttribute('dir', 'rtl');
+      htmlEl.setAttribute('lang', 'ar');
     }
+  },
+  computed: {
+    languages() {
+      return this.$i18n.locales;
+    },
+    activeLang() {
+      return this.$i18n.locale;
+    },
+    analysisCategory() {
+      return this.$store.getters.getAnalysisCategories;
+    },
+  },
+  created() {
+    this.getAnalysisCategories();
+  },
+  methods: {
+    getAnalysisCategories() {
+      this.$store.dispatch('getAnalysisCategories');
+    },
+    changeLang: function(language) {
+      this.$i18n.setLocale(language);
+      this.restartServices();
+      this.$router.push('/');
+    },
+    restartServices: function() {
+      window.location.reload(true);
+    },
+    toggleLanguageDropdownMenu() {
+      this.showLanguageMenu = !this.showLanguageMenu;
+    },
+    async onLogout() {
+      await this.$auth.logout();
+    },
+  },
+};
 </script>
 
 <style>
@@ -213,13 +219,79 @@ span.navbar-toggler-icon{
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='rgba(35, 31, 32, 0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !important;
 }
 
-  @media (min-width: 1200px) {
-    #analysisCollapse {
-      display: block; } 
+.navbar-toggler:focus .navbar-toggler-icon{
+  /* stroke: #231f20;
+  fill: #231f20;
+  color: #231f20; */
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='rgba(35, 31, 32, 0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !important;
+}
+
+@media (min-width: 1200px) {
+  #analysisCollapse {
+    display: block;
+  }
 }
 
 #languageCollapse{
   margin-left: 50px;
+}
+
+#icg-bootstrap-navbar-override .dropdown-menu {
+  color: white;
+  background-color: #231f20;
+}
+
+#language-dropdown-wrapper {
+  position: relative;
+  margin: 0.5rem 0;
+  display: inline-flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+#language-dropdown-menu {
+  position: static;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  border: 1px solid #2b2627;
+  background-color: #231f20;
+  z-index: 4444;
+  border-radius: 0.5rem;
+}
+
+.language-dropdown-menu__item {
+  padding: 0.5rem;
+  /* border: 0.3px solid #2b2627; */
+  background-color: #231f20;
+}
+
+.dropdown-menu > a:hover {
+    background-image: none;
+    background-color: rgb(251, 204, 49);
+}
+
+.dropdown-menu > div > div > a:hover {
+    background-image: none;
+    background-color: rgb(251, 204, 49);
+}
+
+#language-dropdown-menu a:hover {
+    background-color: rgba(251, 204, 49, 1);
+}
+
+@media (min-width: 1200px) {
+  #language-dropdown-wrapper {
+    margin: 0;
+    flex-direction: column;
+  }
+
+  #language-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 7%;
+    flex-direction: column;
+  }
 }
 
 .tickerTape{

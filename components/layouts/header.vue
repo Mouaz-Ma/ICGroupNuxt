@@ -8,7 +8,7 @@
             <div class="navigation">
               <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="brand-logo">
-                  <NuxtLink class="nav-link" to="/">
+                  <NuxtLink class="nav-link" to="/" exact>
                     <img src="~/assets/images/logo.png" alt="" class="logo-primary">
                     <img src="~/assets/images/logow.png" alt="" class="logo-white">
                   </NuxtLink>
@@ -25,34 +25,34 @@
 
 
                     <li class="nav-item">
-                      <NuxtLink class="nav-link" to="/">{{ $t('home')}}</NuxtLink>
+                      <NuxtLink class="nav-link" to="/" exact>{{ $t('home')}}</NuxtLink>
                     </li>
 
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" v-b-toggle.analysisCollapse>{{ $t('Analysis')}}</a>
+                      <a class="nav-link dropdown-toggle" :class="$route.path == '/analysis' ? 'nuxt-link-active' : ''" href="#" v-b-toggle.analysisCollapse>{{ $t('Analysis')}}</a>
 
                       <b-collapse class="dropdown-menu text-center" id="analysisCollapse" v-model="showCollapseaAalysis">
                         <div v-if=" this.$i18n.locale == 'ar'">
                           <div v-for="category in analysisCategory" :key="category._id">
-                              <NuxtLink class="dropdown-item" :to="{name: 'analysis',  query: { categoryId: category._id}}">{{category.ar}}</NuxtLink>
+                              <NuxtLink class="dropdown-item" :to="{name: 'analysis',  query: { categoryId: category._id}}" exact>{{category.ar}}</NuxtLink>
                           </div>
                         </div>
                         <div v-else-if="this.$i18n.locale == 'en'">
                           <div v-for="category in analysisCategory" :key="category._id">
-                              <NuxtLink class="dropdown-item" :to="{name: 'analysis',  query: { categoryId: category._id}}">{{category.type}}</NuxtLink>
+                              <NuxtLink class="dropdown-item" :to="{name: 'analysis',  query: { categoryId: category._id}}" exact>{{category.type}}</NuxtLink>
                           </div>
                         </div>
                       </b-collapse>
                     </li>
                     <li class="nav-item">
-                      <NuxtLink class="nav-link" to="/analysisTools/">{{$t('Tools')}}</NuxtLink>
+                      <NuxtLink class="nav-link" to="/analysisTools/" exact>{{$t('Tools')}}</NuxtLink>
                     </li>
                     <li class="nav-item">
-                      <nuxt-link class="nav-link" to="/news">{{ $t('News')}}</nuxt-link>
+                      <nuxt-link class="nav-link" to="/news" exact>{{ $t('News')}}</nuxt-link>
                     </li>
 
                     <li class="nav-item dropdown">
-                      <NuxtLink class="nav-link" to="/aboutUs">{{ $t('Company')}}</NuxtLink>
+                      <NuxtLink class="nav-link" to="/aboutUs" exact>{{ $t('Company')}}</NuxtLink>
                       <!-- <b-collapse class="dropdown-menu" id="companyCollapse" v-model="showCollapseaCompany">
                         <NuxtLink class="dropdown-item" to="/aboutUs">{{ $t('about')}}</NuxtLink>
                         <NuxtLink class="dropdown-item" to="/team">Our Team</NuxtLink>
@@ -60,13 +60,13 @@
                       </b-collapse> -->
                     </li>
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" v-b-toggle.supportCollapse>{{ $t('Support')}}
+                      <a class="nav-link dropdown-toggle" :class="['/contact', '/helpdesk', '/privacy', '/faq'].includes($route.path) ? 'nuxt-link-active' : ''" href="#" v-b-toggle.supportCollapse>{{ $t('Support')}}
                       </a>
                       <b-collapse class="dropdown-menu text-center" id="supportCollapse" v-model="showCollapseaSupport">
-                        <NuxtLink class="dropdown-item" to="/contact">{{ $t('contact')}}</NuxtLink>
-                        <NuxtLink class="dropdown-item" to="/helpdesk">{{ $t('Help Desk')}}</NuxtLink>
-                        <NuxtLink class="dropdown-item" to="/privacy">{{ $t('Privacy')}}</NuxtLink>
-                        <NuxtLink class="dropdown-item" to="/faq">{{ $t('FAQ')}}</NuxtLink>
+                        <NuxtLink class="dropdown-item" to="/contact" exact>{{ $t('contact')}}</NuxtLink>
+                        <NuxtLink class="dropdown-item" to="/helpdesk" exact>{{ $t('Help Desk')}}</NuxtLink>
+                        <NuxtLink class="dropdown-item" to="/privacy" exact>{{ $t('Privacy')}}</NuxtLink>
+                        <NuxtLink class="dropdown-item" to="/faq" exact>{{ $t('FAQ')}}</NuxtLink>
                       </b-collapse>
                     </li>
                     <li class="nav-item">
@@ -167,6 +167,10 @@ export default {
       htmlEl.setAttribute('dir', 'rtl');
       htmlEl.setAttribute('lang', 'ar');
     }
+    const path = this.$route.path;
+    const pathArray = path.split('/');
+    console.log(path);
+    console.log(pathArray);
   },
   computed: {
     languages() {
@@ -297,5 +301,15 @@ span.navbar-toggler-icon{
 .tickerTape{
   margin-top: 5.5rem;
 }
+
+
+.nuxt-link-active {
+  color: rgba(251, 204, 49, 1) !important;
+}
+
+.nuxt-link-exact-active {
+  color: rgba(251, 204, 49, 1) !important;
+}
+
 
 </style>

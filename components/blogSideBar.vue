@@ -1,7 +1,7 @@
 <template>
         <div class="blog-sidebar">
         <div class="widget-search">
-        <NuxtLink v-if="!$auth.$state.user" to="/users/register" class="btn btn-primary mb-1 w-100">{{ $t('Real Account') }}</NuxtLink>
+        <NuxtLink v-if="!$auth.$state.user" to="/users/register" class="btn btn-primary mb-1 w-100" id="realAccount">{{ $t('Real Account') }}</NuxtLink>
         </div>
         <div class="widget-recent-post">
             <h3 class="post-title">{{ $t('Recent News') }}</h3>
@@ -103,5 +103,13 @@ export default {
 .linkAnalysis{
     text-decoration: none;
     color: gray;
+}
+
+#realAccount {
+    color: #fbcc31 !important;
+}
+
+#realAccount:hover {
+    color: #231f20 !important;
 }
 </style>

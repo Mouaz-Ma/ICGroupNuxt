@@ -8558,11 +8558,13 @@ li {
 a {
   color: #fbcc31;
   text-decoration: none;
-  outline: none; }
-  a:hover, a:focus, a.active {
+  outline: none;
+}
+  a:hover, a:focus, a:active {
     text-decoration: none;
     outline: none;
-    color: #fbcc31; }
+    color: #fbcc31;
+  }
 
 b,
 strong {

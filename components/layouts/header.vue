@@ -282,6 +282,18 @@ span.navbar-toggler-icon{
     color: #231f20 !important;
 }
 
+.dropdown-menu > a:focus {
+    background-image: none;
+    background-color: rgb(251, 204, 49);
+    color: #231f20 !important;
+}
+
+.dropdown-menu > div > div > a:focus {
+    background-image: none;
+    background-color: rgb(251, 204, 49);
+    color: #231f20 !important;
+}
+
 #language-dropdown-menu a:hover {
     background-color: rgba(251, 204, 49, 1);
 }

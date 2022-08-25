@@ -4,14 +4,14 @@
     <b-card :title=title :img-src=imageSrc img-top tag="article" style="max-width: 20rem;" class="m-2">
       <b-card-text>
         <b-card-text>
-          <div v-html="getContent">
+          <div class="news-description" v-html="getContent">
           </div>
         </b-card-text>
         <div class="meta-info">
           <a href="#" class="text-muted float-right mt-2"><i class="la la-calendar"></i>
             {{ $moment(createdAt).format('MM/DD/YYYY')}}</a>
 
-            <b-button variant="primary">{{ $t('Go To Article') }}</b-button>
+            <b-button class="bootstrap-btn-override" variant="primary">{{ $t('Go To Article') }}</b-button>
 
         </div>
       </b-card-text>
@@ -41,6 +41,14 @@ a {
     color: #fbcc31;
     text-decoration: none;
     outline: none;
+}
+
+.bootstrap-btn-override:hover, .bootstrap-btn-override:focus {
+  color: #231f20;
+}
+
+.news-description {
+  color: #8492A6;
 }
 
 #cardImage{

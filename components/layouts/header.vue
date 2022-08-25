@@ -313,8 +313,12 @@ span.navbar-toggler-icon{
   color: rgba(251, 204, 49, 1) !important;
 }
 
-.nuxt-link-exact-active:hover {
+.dropdown-menu > .nuxt-link-exact-active:hover {
   color: #231f20 !important;
+}
+
+.dropdown-menu > div > div > .nuxt-link-exact-active:hover {
+    color: #231f20 !important;
 }
 
 

@@ -20,5 +20,6 @@ module.exports = {
     'new-cap': 0,
     'require-jsdoc': 0,
     'no-invalid-this': 0,
+    'vue/multi-word-component-names': 0,
   },
 };

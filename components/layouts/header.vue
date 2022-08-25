@@ -273,11 +273,13 @@ span.navbar-toggler-icon{
 .dropdown-menu > a:hover {
     background-image: none;
     background-color: rgb(251, 204, 49);
+    color: #231f20 !important;
 }
 
 .dropdown-menu > div > div > a:hover {
     background-image: none;
     background-color: rgb(251, 204, 49);
+    color: #231f20 !important;
 }
 
 #language-dropdown-menu a:hover {
@@ -309,6 +311,10 @@ span.navbar-toggler-icon{
 
 .nuxt-link-exact-active {
   color: rgba(251, 204, 49, 1) !important;
+}
+
+.nuxt-link-exact-active:hover {
+  color: #231f20 !important;
 }
 
 

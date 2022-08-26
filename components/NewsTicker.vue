@@ -29,10 +29,12 @@ export default {
     };
   },
   mounted() {
+    console.log('NewsTicker mounted');
     this.fetchNews();
   },
   methods: {
     fetchNews() {
+      console.log('NewsTicker fetchNews called');
       this.$store.dispatch('fetchNews', this.getActiveLanguage);
     },
     toggleVisible() {

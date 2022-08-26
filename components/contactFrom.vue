@@ -135,11 +135,28 @@ export default {
     },
 }
 </script>
-<style scoped>
+<style>
 .btn-primary{
     color: aliceblue
 }
+
+.btn-primary:hover {
+  color: #231f20;
+}
+
 .md1 .md-select-icon {
     display: none;
+}
+
+@media (max-width: 576px) {
+  html:lang(ar) .v-slider__tick-label {
+    margin-top: 0.5rem;
+    transform: translateX(50%) rotate(-45deg) !important;
+  }
+
+  html:lang(en) .v-slider__tick-label {
+    margin-top: 0.5rem;
+    transform: translateX(-50%) rotate(-45deg) !important;
+  }
 }
 </style>

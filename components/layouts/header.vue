@@ -166,6 +166,7 @@ export default {
       const htmlEl = document.querySelector('html');
       htmlEl.setAttribute('dir', 'rtl');
       htmlEl.setAttribute('lang', 'ar');
+      $nuxt.$vuetify.rtl = true;
     }
     const path = this.$route.path;
     const pathArray = path.split('/');

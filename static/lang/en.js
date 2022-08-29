@@ -233,4 +233,17 @@ export default {
     "privacy policy": "Privacy Policy",
     "sign up": "Sign Up",
     /* USER SIGN IN PAGE END */
+    /* USER REGISTER PAGE START */
+    "create your account": "Create your account",
+    "thank you for registering": "Thank you for registering!",
+    "error submiting form": "There's error submitting form.",
+    "I certify that I am 18 years of age or older": "I certify that I am 18 years of age or older",
+    "and agree to": "and agree to",
+    "user agreement": "User Agreement",
+    "create account": "Create account",
+    "or register in with": "Or register with",
+    "to your account": "to your account",
+
+
+    /* USER REGISTER PAGE END */
 };

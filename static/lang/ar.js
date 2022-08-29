@@ -230,7 +230,20 @@ export default {
     "forgot password?": "نسيت كلمة المرور؟",
     "don't have account": "لا تملك حساباً؟",
     "privacy policy": "سياسة الخصوصية",
-    "sign up": "إنشاء حساب"
+    "sign up": "إنشاء حساب",
     /* USER SIGN IN PAGE END */
+    /* USER REGISTER PAGE START */
+    "create your account": "أنشئ حسابك",
+    "thank you for registering": "شكراً لتسجيلك!",
+    "error submiting form": "حصل خطأ في عملية إرسال البيانات",
+    "I certify that I am 18 years of age or older": "أقر بأنني أبلغ من العمر 18 عامًا أو أكثر",
+    "and agree to": "وأوافق على",
+    "and": "و",
+    "user agreement": "اتفاقية المستخدم",
+    "create account": "أنشئ حساب",
+    "or register in with": "أو سجل باستخدام",
+    "to your account": "إلى حسابك",
 
+
+    /* USER REGISTER PAGE END */
 };

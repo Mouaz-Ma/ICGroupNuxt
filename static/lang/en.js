@@ -223,4 +223,14 @@ export default {
     "privacy cookies i3": "Blocking all cookies will have a negative impact upon the usability of many websites. If you block cookies, you will not be able to use all the features on our website.",
     "privacy cookies p2": "You can delete cookies already stored on your computer.",
     /* PRIVACY PAGE END */
+    /* USER SIGN IN PAGE START */
+    "sign in to icgroupsfx": "Sign in to ICGroupsFx",
+    "or sign in with": "Or sign in with: ",
+    "successfully signed in": "Successfully signed in",
+    "something went wrong": "Something went wrong",
+    "forgot password?": "Forgot password?",
+    "don't have account": "Don't have an account?",
+    "privacy policy": "Privacy Policy",
+    "sign up": "Sign Up",
+    /* USER SIGN IN PAGE END */
 };

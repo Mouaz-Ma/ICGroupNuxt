@@ -48,12 +48,12 @@
                         <div class="col-xl-6">
                             <ul v-if="$i18n.locale=='ar'">
                                 <li v-for="category in analysisCategory" :key="category._id">
-                                    <NuxtLink :to="{name: 'analysis',  query: { categoryId: category._id}}">{{category.ar}}</NuxtLink>
+                                    <NuxtLink :to="{name: 'analysis',  query: { categoryId: category._id}}" exact>{{category.ar}}</NuxtLink>
                                 </li>
                             </ul>
                             <ul v-else>
                                 <li v-for="category in analysisCategory" :key="category._id">
-                                    <NuxtLink :to="{name: 'analysis',  query: { categoryId: category._id}}">{{category.type}}</NuxtLink>
+                                    <NuxtLink :to="{name: 'analysis',  query: { categoryId: category._id}}" exact>{{category.type}}</NuxtLink>
                                 </li>
                             </ul>
                         </div>

@@ -241,7 +241,7 @@ export default {
     "and": "و",
     "user agreement": "اتفاقية المستخدم",
     "create account": "أنشئ حساب",
-    "or register in with": "أو سجل باستخدام",
+    "or register with": "أو سجل باستخدام",
     "to your account": "إلى حسابك",
 
 

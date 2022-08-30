@@ -241,7 +241,7 @@ export default {
     "and agree to": "and agree to",
     "user agreement": "User Agreement",
     "create account": "Create account",
-    "or register in with": "Or register with",
+    "or register with": "Or register with",
     "to your account": "to your account",
 
 

@@ -41,7 +41,7 @@
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
                     <div class="help-cat">
                         <span class="la la-video-camera"></span>
-                        <h4>Video Guides</h4>
+                        <h4>{{$t('video guides')}}</h4>
                     </div>
                 </div>
                 <!-- <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
@@ -97,7 +97,7 @@
             <div class="row justify-content-center">
                 <div class="col-xl-8">
                     <div class="section-title text-center">
-                        <h2>Troubleshooting</h2>
+                        <h2>{{$t('troubleshooting')}}</h2>
                     </div>
                 </div>
             </div>
@@ -106,30 +106,30 @@
                     <div class="troubleshooting-content">
                         <div class="row">
                             <div class="col-xl-4 col-lg-4 col-md-4">
-                                <h4>My Transaction</h4>
+                                <h4>{{$t('my transaction')}}</h4>
                                 <ul>
-                                    <li><a href="#">My transaction is stuck</a></li>
-                                    <li><a href="#">The amount is too low</a></li>
-                                    <li><a href="#">Sorry, payment was not received</a></li>
-                                    <li><a href="#">Still didn't get my refund</a></li>
+                                    <li><a href="#">{{$t('My transaction is stuck')}}</a></li>
+                                    <li><a href="#">{{$t('The amount is too low')}}</a></li>
+                                    <li><a href="#">{{$t('Sorry, payment was not received')}}</a></li>
+                                    <li><a href="#">{{$t("Still didn't get my refund")}}</a></li>
                                 </ul>
                             </div>
                             <div class="col-xl-4 col-lg-4 col-md-4">
-                                <h4>My Wallet</h4>
+                                <h4>{{$t('my wallet')}}</h4>
                                 <ul>
-                                    <li><a href="#">My wallet address is recognized as invalid</a></li>
-                                    <li><a href="#">What does ‘Not yet redeemed?’ mean</a></li>
-                                    <li><a href="#">I sent my ABC coins to a non-ABC wallet</a></li>
-                                    <li><a href="#">ETH contract addresses</a></li>
+                                    <li><a href="#">{{$t('My wallet address is recognized as invalid')}}</a></li>
+                                    <li><a href="#">{{$t('What does ‘Not yet redeemed?’ mean')}}</a></li>
+                                    <li><a href="#">{{$t('I sent my ABC coins to a non-ABC wallet')}}</a></li>
+                                    <li><a href="#">{{$t('ETH contract addresses')}}</a></li>
                                 </ul>
                             </div>
                             <div class="col-xl-4 col-lg-4 col-md-4">
-                                <h4>Other</h4>
+                                <h4>{{$t('other')}}</h4>
                                 <ul>
-                                    <li><a href="#">Customer service doesn't reply</a></li>
-                                    <li><a href="#">The amount is too low</a></li>
-                                    <li><a href="#">Can't log in</a></li>
-                                    <li><a href="#">Can’t enable / disable 2-FA</a></li>
+                                    <li><a href="#">{{$t("Customer service doesn't reply")}}</a></li>
+                                    <li><a href="#">{{$t('The amount is too low')}}</a></li>
+                                    <li><a href="#">{{$t("Can't log in")}}</a></li>
+                                    <li><a href="#">{{$t('Can’t enable / disable 2-FA')}}</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -145,8 +145,8 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="ticket-box-content">
-                        <h3>Can't find what you're looking for?</h3>
-                        <p>Let us help you!</p>
+                        <h3>{{$t("Can't find what you're looking for?")}}</h3>
+                        <p>{{$t("Let us help you!")}}</p>
                         <div v-if="isZohoLoaded">
                         <div v-if="openTab">
                         <script type="text/javascript" id="zsiqchat">var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode: "d17173f8c96be3bd427909d4f4934e9bc0a3309477205234e8d5a02b64e015ba", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);</script>

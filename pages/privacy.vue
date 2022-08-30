@@ -1,6 +1,6 @@
 <template>
   <div id="main-wrapper show">
-    <Banner title="Privacy Policy" />
+    <Banner :title="title" />
     <div class="terms_condition">
       <div class="container">
         <div class="row justify-content-center">
@@ -270,6 +270,11 @@ export default {
   layout: 'index',
   components: {
     Banner,
+  },
+  computed: {
+    title() {
+      return this.$t('privacy policy');
+    },
   },
 };
 </script>

@@ -215,7 +215,7 @@ export default {
     "privacy cookies": "Cookies",
     "privacy cookies p1": "Our website uses cookies. A cookie is a file containing an identifier (a string of letters and numbers) that is sent by a web server to a web browser and is stored by the browser. The identifier is then sent back to the server each time the browser requests a page from the server. Cookies may be either “persistent” cookies or “session” cookies: a persistent cookie will be stored by a web browser and will remain valid until its set expiry date, unless deleted by the user before the expiry date; a session cookie, on the other hand, will expire at the end of the user session, when the web browser is closed. Cookies do not typically contain any information that personally identifies a user, but personal information that we store about you may be linked to the information stored in and obtained from cookies. We use both session and persistent cookies on our website.",
     "privacy cookies i1": "The names of the cookies that we use on our website, and the purposes for which they are used, are set out below:",
-    "privacy cookies i1-i1": "we use Google Analytics and Adwords on our website to recognize a computer when a user visits the website / track users as they navigate the website / enable the use of a shopping cart on the website / improve the website’s usability / analyze the use of the website / administer the website / prevent fraud and improve the security of the website / personalize the website for each user / target advertisements which may be of particular interest to specific users;",
+    "privacy cookies i1-i1": "we use Google Analytics and Adwords on our website to recognize a computer when a user visits the website / track users as they navigate the website / improve the website’s usability / analyze the use of the website / administer the website / prevent fraud and improve the security of the website / personalize the website for each user / target advertisements which may be of particular interest to specific users;",
     "privacy cookies i2": "Most browsers allow you to refuse to accept cookies—for example:",
     "privacy cookies i2-i1": "in Internet Explorer (version 10) you can block cookies using the cookie handling override settings available by clicking “Tools,” “Internet Options,” “Privacy,” and then “Advanced”;",
     "privacy cookies i2-i2": "in Firefox (version 24) you can block all cookies by clicking “Tools,” “Options,” “Privacy,” selecting “Use custom settings for history” from the drop-down menu, and unticking “Accept cookies from sites”; and",
@@ -223,4 +223,27 @@ export default {
     "privacy cookies i3": "Blocking all cookies will have a negative impact upon the usability of many websites. If you block cookies, you will not be able to use all the features on our website.",
     "privacy cookies p2": "You can delete cookies already stored on your computer.",
     /* PRIVACY PAGE END */
+    /* USER SIGN IN PAGE START */
+    "sign in to icgroupsfx": "Sign in to ICGroupsFx",
+    "or sign in with": "Or sign in with: ",
+    "successfully signed in": "Successfully signed in",
+    "something went wrong": "Something went wrong",
+    "forgot password?": "Forgot password?",
+    "don't have account": "Don't have an account?",
+    "privacy policy": "Privacy Policy",
+    "sign up": "Sign Up",
+    /* USER SIGN IN PAGE END */
+    /* USER REGISTER PAGE START */
+    "create your account": "Create your account",
+    "thank you for registering": "Thank you for registering!",
+    "error submiting form": "There's error submitting form.",
+    "I certify that I am 18 years of age or older": "I certify that I am 18 years of age or older",
+    "and agree to": "and agree to",
+    "user agreement": "User Agreement",
+    "create account": "Create account",
+    "or register in with": "Or register with",
+    "to your account": "to your account",
+
+
+    /* USER REGISTER PAGE END */
 };

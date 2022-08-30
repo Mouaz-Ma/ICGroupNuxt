@@ -142,6 +142,8 @@ export default {
 
 .btn-primary:hover {
   color: #231f20;
+  background-color: aliceblue;
+  border-color: aliceblue;
 }
 
 .md1 .md-select-icon {

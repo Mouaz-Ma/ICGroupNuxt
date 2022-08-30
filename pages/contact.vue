@@ -10,18 +10,19 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-7">
                         <div class="section-title text-center">
-                            <span>Ask Question</span>
-                            <h2>Let us hear from you directly!</h2>
+                            <span>{{ $t('ask question') }}</span>
+                            <h2>{{ $t('let us hear from you directly') }}</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xl-4 col-md-4 col-sm-12">
                         <div class="info-list">
-                            <h4 class="mb-3">Address</h4>
+                            <h4 class="mb-3">{{ $t('address') }}</h4>
                             <ul>
-                                <li><i class="fa fa-map-marker"></i> Istanbul, Turkey</li>
-                                <li><i class="fa fa-phone"></i> +905 445 35 55 53</li>
+                                <li><i class="fa fa-map-marker"></i> {{$t('Istanbul, Turkey')}}</li>
+                                <li v-if="$i18n.locale=='ar'"><i class="fa fa-phone"></i> <span dir="ltr">+905 445 35 55 53</span></li>
+                                <li v-else><i class="fa fa-phone"></i> +905 445 35 55 53</li>
                                 <li><i class="fa fa-envelope"></i> info@icgroupsfx.com</li>
                             </ul>
                         </div>

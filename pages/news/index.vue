@@ -17,11 +17,16 @@ export default {
   components: {
     NewsCard,
   },
-  async asyncData({$axios}) {
+  async asyncData({$axios, i18n}) {
     try {
       const allNews = $axios.get('/api/news/');
       const allNewsResponse = await Promise.all([allNews]);
-      const allNewsData = allNewsResponse[0].data.news.reverse();
+      let allNewsData = allNewsResponse[0].data.news.reverse();
+      if(i18n.locale === 'en'){
+        allNewsData = allNewsData.filter( news => news.language === 'en')
+      } else if(i18n.locale === 'ar') {
+        allNewsData = allNewsData.filter( news => news.language === 'ar')
+      }
       return {allNewsData};
     } catch (err) {
       console.log(err);

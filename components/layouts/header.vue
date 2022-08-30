@@ -170,8 +170,6 @@ export default {
     }
     const path = this.$route.path;
     const pathArray = path.split('/');
-    console.log(path);
-    console.log(pathArray);
   },
   computed: {
     languages() {

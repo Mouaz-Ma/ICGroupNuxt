@@ -156,6 +156,10 @@ html{
     color: aliceblue;
 }
 
+.btn-primary:hover {
+  color: #231f20;
+}
+
 .v-application a {
   color: rgb(251, 204, 49);
 }

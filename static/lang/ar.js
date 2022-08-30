@@ -250,4 +250,24 @@ export default {
     "address": "العنوان",
     "Istanbul, Turkey": "اسطنبول، تركيا",
     /* CONTACT PAGE END */
+    /* HELP DESK PAGE BEGIN */
+    "video guides": "فيدوهات توجيهية",
+    "troubleshooting": "استكشاف الأخطاء وإصلاحها",
+    "my transaction": "معاملتي",
+    "my wallet": "محفظتي",
+    "other": "آخر",
+    "My transaction is stuck": "معاملتي عالقة",
+    "The amount is too low": "المبلغ منخفض جدًا",
+    "Sorry, payment was not received": "عذرًا ، لم يتم استلام الدفعة",
+    "Still didn't get my refund": "ما زلت لم أسترد أموالي",
+    "My wallet address is recognized as invalid": "تم التعرف على عنوان محفظتي على أنه غير صالح",
+    "What does ‘Not yet redeemed?’ mean": "ماذا تعني عبارة ‘لم تُستبدل بعد؟’",
+    "I sent my ABC coins to a non-ABC wallet": "لقد أرسلت عملاتي الـ ABC إلى محفظة غير تابعة لـ ABC",
+    "ETH contract addresses": "عناوين عقد ETH",
+    "Customer service doesn't reply": "خدمة العملاء لا ترد",
+    "Can't log in": "لا يمكن تسجيل الدخول",
+    "Can’t enable / disable 2-FA": "لا يمكن تفعيل / تعطيل 2FA",
+    "Can't find what you're looking for?": "ألا تستطيع إيجاد ما تبحث عنه؟",
+    "Let us help you!": "دعنا نساعدك!",
+    /* HELP DESK PAGE END */
 };

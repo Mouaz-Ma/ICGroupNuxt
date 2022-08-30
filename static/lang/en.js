@@ -250,4 +250,24 @@ export default {
     "address": "Address",
     "Istanbul, Turkey": "Istanbul, Turkey",
     /* CONTACT PAGE END */
+    /* HELP DESK PAGE BEGIN */
+    "video guides": "Video Guides",
+    "troubleshooting": "Troubleshooting",
+    "my transaction": "My Transaction",
+    "my wallet": "My Wallet",
+    "other": "Other",
+    "My transaction is stuck": "My transaction is stuck",
+    "The amount is too low": "The amount is too low",
+    "Sorry, payment was not received": "Sorry, payment was not received",
+    "Still didn't get my refund": "Still didn't get my refund",
+    "My wallet address is recognized as invalid": "My wallet address is recognized as invalid",
+    "What does ‘Not yet redeemed?’ mean": "What does ‘Not yet redeemed?’ mean",
+    "I sent my ABC coins to a non-ABC wallet": "I sent my ABC coins to a non-ABC wallet",
+    "ETH contract addresses": "ETH contract addresses",
+    "Customer service doesn't reply": "Customer service doesn't reply",
+    "Can't log in": "Can't log in",
+    "Can’t enable / disable 2-FA": "Can’t enable / disable 2-FA",
+    "Can't find what you're looking for?": "Can't find what you're looking for?",
+    "Let us help you!": "Let us help you!",
+    /* HELP DESK PAGE END */
 };

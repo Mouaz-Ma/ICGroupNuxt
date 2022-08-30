@@ -23,16 +23,16 @@
                 <div class="card-body">
                   <form @submit.prevent="register" class="signin_validate row g-3">
                     <div class="col-12">
-                      <input type="text" class="form-control" placeholder="Name" v-model="username" required>
+                      <input type="text" class="form-control" :placeholder="namePlaceholder" v-model="username" required>
                     </div>
                     <div class="col-12">
-                      <input type="email" class="form-control" placeholder="hello@example.com" v-model="email" required>
+                      <input type="email" class="form-control" :placeholder="emailPlaceholder" v-model="email" required>
                     </div>
                     <div class="col-12">
-                      <input type="password" class="form-control" placeholder="Password" v-model="password" required>
+                      <input type="password" class="form-control" :placeholder="passwordPlaceholder" v-model="password" required>
                     </div>
                     <div class="col-12">
-                      <input type="tel" class="form-control" placeholder="Tel." v-model="telephone" required>
+                      <input type="tel" class="form-control" :placeholder="telephonePlaceholder" v-model="telephone" required>
                     </div>
                     <!-- alerts -->
                     <div class="col-12">
@@ -45,8 +45,8 @@
                       <div class="form-check form-switch">
                         <!-- <input v-b-popover.left="'please confirm you are 18 or more'" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"> -->
                         <label class="form-check-label" for="flexSwitchCheckDefault">
-                          {{$t('I certify that I am 18 years of age or older')}}, {{$t('and agree to')}} <a href="#"
-                            class="text-primary">{{$t('user Agreement')}}</a> {{$t('and')}} <a href="#" class="text-primary">{{$t('privacy policy')}}</a>.
+                          {{$t('I certify that I am 18 years of age or older')}}, {{$t('and agree to')}} <nuxt-link to="/privacy"
+                            class="text-primary">{{$t('user agreement')}}</nuxt-link> {{$t('and')}} <nuxt-link to="/privacy" class="text-primary">{{$t('privacy policy')}}</nuxt-link>.
                         </label>
                       </div>
                     </div>
@@ -96,6 +96,14 @@ export default {
       successMessage: '',
     };
   },
+  mounted() {
+    if (this.$i18n.locale == 'ar') {
+      const htmlEl = document.querySelector('html');
+      htmlEl.setAttribute('dir', 'rtl');
+      htmlEl.setAttribute('lang', 'ar');
+      $nuxt.$vuetify.rtl = true;
+    }
+  },
   methods: {
     async register() {
       try {
@@ -131,6 +139,20 @@ export default {
         this.successMessage = 'false';
         console.log(err);
       }
+    },
+  },
+  computed: {
+    namePlaceholder() {
+      return this.$i18n.locale == 'ar' ? 'الاسم' : 'Name';
+    },
+    emailPlaceholder() {
+      return this.$i18n.locale == 'ar' ? 'البريد الالكتروني' : 'Email Address';
+    },
+    passwordPlaceholder() {
+      return this.$i18n.locale == 'ar' ? 'كلمة المرور' : 'Password';
+    },
+    telephonePlaceholder() {
+      return this.$i18n.locale == 'ar' ? 'رقم الهاتف' : 'Tel.';
     },
   },
 };

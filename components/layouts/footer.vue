@@ -24,9 +24,8 @@
                     <h4 class="widget-title">{{ $t('Company') }}</h4>
                     <ul>
                         <li><NuxtLink to="/aboutUs">{{ $t('about')}}</NuxtLink></li>
-                        <li><a href="#">{{ $t('career') }}</a></li>
-                        <li><a href="#">{{ $t('terms & conditions') }}</a></li>
-                        <li><a href="#">{{ $t('success story') }}</a></li>
+                        <li><NuxtLink to="/users/register">{{ $t('open account') }}</NuxtLink></li>
+                        <li><NuxtLink to="/faq">{{ $t('FAQ') }}</NuxtLink></li>
                     </ul>
                 </div>
             </div>
@@ -36,7 +35,6 @@
                     <ul>
                         <li><NuxtLink to="/contact">{{ $t('contact') }}</NuxtLink></li>
                         <li><NuxtLink to="/privacy">{{ $t('privacy') }}</NuxtLink></li>
-                        <li><NuxtLink to="/users/register">{{ $t('open account') }}</NuxtLink></li>
                         <li><NuxtLink to="/helpdesk">{{ $t('help desk') }}</NuxtLink></li>
                     </ul>
                 </div>

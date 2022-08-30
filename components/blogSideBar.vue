@@ -25,7 +25,7 @@
             <h3 class="widget-title">{{ $t('Analysis Categories') }}</h3>
             <ul class="list-group" v-if="$i18n.locale=='ar'">
                 <li v-for="item in items" :key="item.id" class="list-group-item d-flex justify-content-between align-items-center">
-                    <nuxt-link class="linkAnalysis" :to="{name: 'analysis',  query: { categoryId: item._id}}">
+                    <nuxt-link class="linkAnalysis" :to="{name: 'analysis',  query: { categoryId: item._id}}" exact>
                     {{item.ar}}
                     </nuxt-link>
                     <span class="badge badge-primary"><i class="icofont-external-link"></i></span>
@@ -33,7 +33,7 @@
             </ul>
             <ul class="list-group" v-else>
                 <li v-for="item in items" :key="item.id" class="list-group-item d-flex justify-content-between align-items-center">
-                    <nuxt-link class="linkAnalysis" :to="{name: 'analysis',  query: { categoryId: item._id}}">
+                    <nuxt-link class="linkAnalysis" :to="{name: 'analysis',  query: { categoryId: item._id}}" exact>
                     {{item.type}}
                     </nuxt-link>
                     <span class="badge badge-primary"><i class="icofont-external-link"></i></span>

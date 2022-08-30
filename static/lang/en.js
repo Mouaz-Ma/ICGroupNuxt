@@ -243,7 +243,11 @@ export default {
     "create account": "Create account",
     "or register with": "Or register with",
     "to your account": "to your account",
-
-
     /* USER REGISTER PAGE END */
+    /* CONTACT PAGE BEGIN */
+    "ask question": "Ask Question",
+    "let us hear from you directly": "Let us hear from you directly!",
+    "address": "Address",
+    "Istanbul, Turkey": "Istanbul, Turkey",
+    /* CONTACT PAGE END */
 };

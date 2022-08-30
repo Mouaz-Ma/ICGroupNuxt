@@ -243,7 +243,11 @@ export default {
     "create account": "أنشئ حساب",
     "or register with": "أو سجل باستخدام",
     "to your account": "إلى حسابك",
-
-
     /* USER REGISTER PAGE END */
+    /* CONTACT PAGE BEGIN */
+    "ask question": "اطرح سؤالًا",
+    "let us hear from you directly": "دعنا نسمع منك مباشرة!",
+    "address": "العنوان",
+    "Istanbul, Turkey": "اسطنبول، تركيا",
+    /* CONTACT PAGE END */
 };

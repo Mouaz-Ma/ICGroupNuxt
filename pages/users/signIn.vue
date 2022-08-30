@@ -25,19 +25,19 @@
                 <div class="card-body">
                   <form @submit.prevent="signIn" class="signin_validate row g-3">
                     <div class="col-12">
-                      <input type="email" class="form-control" placeholder="hello@example.com" v-model="email" required>
+                      <input type="email" class="form-control" :placeholder="emailPlaceholder" v-model="email" required>
                     </div>
                     <div class="col-12">
-                      <input type="password" class="form-control" placeholder="Password" v-model="password" required>
+                      <input type="password" class="form-control" :placeholder="passwordPlaceholder" v-model="password" required>
                     </div>
-                    <div class="col-6">
-                      <!-- <div class="form-check form-switch">
+                    <!-- <div class="col-6">
+                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
                                         <label class="form-check-label" for="flexSwitchCheckDefault">Remember
                                             me</label>
-                                    </div> -->
-                    </div>
-                    <div class="col-6 text-right">
+                                    </div>
+                    </div> -->
+                    <div class="">
                       <NuxtLink to="/users/forgot">{{ $t('forgot password?') }}</NuxtLink>
                     </div>
                     <div class="text-center">
@@ -82,6 +82,14 @@ export default {
       successMessage: '',
     };
   },
+  mounted() {
+    if (this.$i18n.locale == 'ar') {
+      const htmlEl = document.querySelector('html');
+      htmlEl.setAttribute('dir', 'rtl');
+      htmlEl.setAttribute('lang', 'ar');
+      $nuxt.$vuetify.rtl = true;
+    }
+  },
   methods: {
     async signIn() {
       try {
@@ -101,6 +109,14 @@ export default {
         this.successMessage = 'false';
         console.log(err);
       }
+    },
+  },
+  computed: {
+    emailPlaceholder() {
+      return this.$i18n.locale == 'ar' ? 'البريد الالكتروني' : 'Email Address';
+    },
+    passwordPlaceholder() {
+      return this.$i18n.locale == 'ar' ? 'كلمة المرور' : 'Password';
     },
   },
 };
@@ -138,5 +154,9 @@ html{
 }
 .btn-primary{
     color: aliceblue;
+}
+
+.v-application a {
+  color: rgb(251, 204, 49);
 }
 </style>

@@ -71,7 +71,12 @@ export default {
   async fetch() {
     try {
       const allNewsFetch = await fetch('/api/news/').then(res => res.json())
-      this.allNews = allNewsFetch.news
+      console.log()
+      if(this.$i18n.locale === 'ar'){
+          this.allNews = allNewsFetch.news.filter( news => news.language === 'ar').slice(-3)
+      } else {
+        this.allNews = allNewsFetch.news.filter( news => news.language === 'en').slice(-3)
+      }
     } catch(err){
       console.log(err);
     }

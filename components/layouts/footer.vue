@@ -121,7 +121,30 @@ export default {
 
 #whatsAppImage{
   max-width: 100%;
-  height: 75px;
+  width: 75%;
+  /* height: 75px; */
+  height: 75%;
+}
+
+@media (min-width: 400px) {
+    #whatsAppImage {
+        width: 85%;
+        height: 85%;
+    }
+}
+
+@media (min-width: 576px) {
+    #whatsAppImage {
+        width: 90%;
+        height: 90%;
+    }
+}
+
+@media (min-width: 768px) {
+    #whatsAppImage {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .registeration{

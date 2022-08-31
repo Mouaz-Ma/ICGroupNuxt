@@ -45,6 +45,7 @@ a {
 
 .bootstrap-btn-override:hover, .bootstrap-btn-override:focus {
   color: #231f20;
+  background-color: #fbcc31;
 }
 
 .news-description {

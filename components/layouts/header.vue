@@ -168,11 +168,6 @@ export default {
       htmlEl.setAttribute('lang', 'ar');
       $nuxt.$vuetify.rtl = true;
     }
-<<<<<<< HEAD
-=======
-    const path = this.$route.path;
-    const pathArray = path.split('/');
->>>>>>> 38366db (now news show based on the locale)
   },
   computed: {
     languages() {

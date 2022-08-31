@@ -64,12 +64,12 @@
     <div class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+            <div class="col-12 col-sm-6">
                 <div class="copyright">
                     <p>© Copyright 2022 <a href="#">ICGroupsFx</a> {{ $t('copy Rights')}}</p>
                 </div>
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+            <div class="col-12 col-sm-6">
                 <div class="footer-social">
                     <ul>
                         <li><a href="https://www.facebook.com/icgroupsfx/"><i class="fab fa-facebook"></i></a></li>

@@ -9325,9 +9325,9 @@ strong {
   .copyright a {
     color: #fff;
     font-size: 12px; }
-  @media only screen and (max-width: 767px) {
+  /* @media only screen and (max-width: 767px) {
     .copyright {
-      display: none; } }
+      display: none; } } */
 
 .dark-theme {
   background-color: #1d0042;

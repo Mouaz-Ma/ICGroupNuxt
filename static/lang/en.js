@@ -270,4 +270,5 @@ export default {
     "Can't find what you're looking for?": "Can't find what you're looking for?",
     "Let us help you!": "Let us help you!",
     /* HELP DESK PAGE END */
+    "Listen To Analysis": "Listen To Analysis",
 };

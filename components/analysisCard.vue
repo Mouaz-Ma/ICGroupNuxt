@@ -15,7 +15,9 @@
                   <div class="meta-info">
                     <a href="#" class="author">{{ author }}</a>
                     <!-- <img id="authorImage" src="~/assets/images/avatar/5.jpg" alt=""> -->
-                    <a href="#" class="mr-1 ml-1 text-muted float-right"><i class="la la-calendar"></i>
+                    <a v-if="$i18n.locale=='ar'" href="#" class="mr-1 ml-1 text-muted float-left"><i class="la la-calendar"></i>
+                      {{ $moment(createdAt).format('MM/DD/YYYY') }}</a>
+                    <a v-else href="#" class="mr-1 ml-1 text-muted float-right"><i class="la la-calendar"></i>
                       {{ $moment(createdAt).format('MM/DD/YYYY') }}</a>
                   </div>
                 </div>

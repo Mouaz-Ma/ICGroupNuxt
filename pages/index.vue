@@ -21,14 +21,14 @@
                <div class="row justify-content-center">
                     <div class="col-xl-8">
                         <div class="section-title text-center">
-                            
+
                         <div>
                         <contact-from />
                         </div>
                         </div>
                     </div>
                 </div>
-                    
+
                 </div>
             <!-- //////////////////////////////////////////
             Calculator
@@ -106,7 +106,7 @@
                     <p>{{ $t('Start Trading intro')}}</p>
                 </div>
             </div>
-            
+
         </div>
     </div>
 </div>
@@ -289,8 +289,6 @@ Trusted over
                           Microsoft</a></div>
 
 
-
-
                         </div>
                     </div>
                 </div>
@@ -362,73 +360,57 @@ Trusted over
 </template>
 
 <script>
-import contactFrom from "../components/contactFrom.vue"
-import LatestBlogs from "@/components/LatestBlogs.vue";
+import contactFrom from '../components/contactFrom.vue';
+import LatestBlogs from '@/components/LatestBlogs.vue';
 
 export default {
-        scrollToTop: true,
-          middleware: "auth",
-          auth: "guest",
-          layout: 'index',
-  async asyncData({$axios, i18n}) {
-    try {
-      const allBlogs = $axios.get('/api/blogs/')
-      const allBlogsResponse = await Promise.all([allBlogs])
-      let allBlogsData = allBlogsResponse[0].data.blogs.reverse()
-      if(i18n.locale === 'en'){
-        allBlogsData = allBlogsData.filter( blog => blog.language === 'en')
-        } else if(i18n.locale === 'ar') {
-        allBlogsData = allBlogsData.filter( blog => blog.language === 'ar')
-      }
-      return {allBlogsData}
-    } catch(err){
-      console.log(err);
-    }
+  scrollToTop: true,
+  middleware: 'auth',
+  auth: 'guest',
+  layout: 'index',
+  data() {
+    return {
+      allBlogsData: [],
+      title: '',
+      author: '',
+      loading: false,
+    };
   },
-            data() {
-              return {
-                allBlogsData: [],
-                title: "",
-                author: "",
-                loading: false,
-              }
-            },
-            components: {
-              contactFrom,
-              LatestBlogs,
-            },
-            created() {
-              this.checkUser();
-            },
-            beforeDestroy() {
-              clearInterval(this.fetching)
-            },
-            methods: {
-              checkUser: async function () {
-                if (this.$auth.$state.loggedIn) {
-                  if (this.$auth.$state.strategy === "facebook") {
-                    let data = {
-                      username: this.$auth.$state.user.name,
-                      email: this.$auth.$state.user.email,
-                      strategy: "facebook",
-                    };
-                    await this.$axios.post('/api/users/registerSocial', data);
+  components: {
+    contactFrom,
+    LatestBlogs,
+  },
+  created() {
+    this.checkUser();
+  },
+  beforeUnmount() {
+    clearInterval(this.fetching);
+  },
+  methods: {
+    checkUser: async function() {
+      if (this.$auth.$state.loggedIn) {
+        if (this.$auth.$state.strategy === 'facebook') {
+          const data = {
+            username: this.$auth.$state.user.name,
+            email: this.$auth.$state.user.email,
+            strategy: 'facebook',
+          };
+          await this.$axios.post('/api/users/registerSocial', data);
+        } else if (this.$auth.$state.strategy === 'google') {
+          const data = {
+            username: this.$auth.$state.user.name,
+            email: this.$auth.$state.user.email,
+            strategy: 'google',
+          };
+          await this.$axios.post('/api/users/registerSocial', data);
+        } else {
+          console.log('Local');
+        }
+      }
+    },
+  },
 
-                  } else if (this.$auth.$state.strategy === "google") {
-                    let data = {
-                      username: this.$auth.$state.user.name,
-                      email: this.$auth.$state.user.email,
-                      strategy: "google",
-                    };
-                    await this.$axios.post('/api/users/registerSocial', data);
-                  } else {
-                    console.log("Local")
-                  }
-                }
-              },
-            },
-
-  }
+};
 </script>
 
 <style scoped>

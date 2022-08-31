@@ -9,7 +9,7 @@
           v-on="on"
           @click="loadSrc()"
         >
-          Listen To Analysis
+          {{$t("Listen To Analysis")}}
         </v-btn>
       </template>
       <v-card tile>

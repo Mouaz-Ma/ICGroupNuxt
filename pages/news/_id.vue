@@ -9,15 +9,18 @@
         author="By: ICGroupsFX"
         :createdAt="newsData.createdAt"
         />
+        <latest-blogs></latest-blogs>
 </div>
 </template>
 <script>
 import SingleNews from '@/components/singleNews.vue'
+import LatestBlogs from '@/components/LatestBlogs.vue'
 export default {
       auth: false,
   layout: 'news',
   components: {
-    SingleNews
+    SingleNews,
+    LatestBlogs,
   },
     async asyncData({$axios, params}) {
     try {

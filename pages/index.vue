@@ -356,40 +356,14 @@ Trusted over
     </div>
 </div>
 
-<!-- ///////////////// blogs //////////////// -->
-    <div class="blog bg-light section-padding">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xl-6">
-                <div class="section-title text-center">
-                    <h2>{{ $t('Blog') }}</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-      <b-card-group>
-          <div v-for="blog in allBlogsData.slice(-3)" :key="blog._id" class="col-xl-4 col-lg-4 col-md-4">
-            <blog-card 
-            
-            :blogId=blog._id
-            :title=blog.title 
-            author="By: ICGroupsFX" 
-            :content=blog.content 
-            :imageSrc=blog.image.url 
-            :createdAt=blog.createdAt
-            />
-                    
-          </div>
-      </b-card-group>
-        </div>
-    </div>
-</div>
+<LatestBlogs />
 </div>
 </div>
 </template>
 
 <script>
 import contactFrom from "../components/contactFrom.vue"
+import LatestBlogs from "@/components/LatestBlogs.vue";
 
 export default {
         scrollToTop: true,
@@ -420,7 +394,8 @@ export default {
               }
             },
             components: {
-              contactFrom
+              contactFrom,
+              LatestBlogs,
             },
             created() {
               this.checkUser();

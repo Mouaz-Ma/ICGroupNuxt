@@ -70,7 +70,7 @@
         </div>
       </div> -->
     </div>
-    <button :disabled="isLoading"  @click.prevent="contactForm" type="submit" class="btn btn-primary px-4 py-2">
+    <button :disabled="isLoading"  @click.prevent="contactForm" type="submit" class="btn btn-primary px-4 py-2 mt-4">
       {{ $t('Send message')}}
     </button>
   </form>
@@ -152,12 +152,12 @@ export default {
 
 @media (max-width: 576px) {
   html:lang(ar) .v-slider__tick-label {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     transform: translateX(50%) rotate(-45deg) !important;
   }
 
   html:lang(en) .v-slider__tick-label {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     transform: translateX(-50%) rotate(-45deg) !important;
   }
 }

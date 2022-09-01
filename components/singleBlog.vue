@@ -10,8 +10,8 @@
                             <li><i class="la la-calendar"></i>{{$moment(createdAt).format('DD/MM/YYYY')}}</li>
                             <li><i class="la la-comment-o"></i><a href="#" title="">By: ICGroupsFX</a></li>
                             <li><i class="la la-bookmark-o"></i>
-                            <a v-for="tag in tags" :key="tag" href="#" title="">
-                                <span> {{ tag }} &nbsp;</span> 
+                            <a v-for="(tag, index) in tags" :key="index" href="#" title="">
+                                <span> {{ tag }} &nbsp;</span>
                             </a>
                             </li>
                         </ul>

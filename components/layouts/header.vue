@@ -207,6 +207,12 @@ export default {
 
 <style>
 
+@media only screen and (max-width: 991px) {
+  .navigation .navbar ul > li > a::after {
+    top: 15px;
+  }
+}
+
 span.navbar-toggler-icon{
   /* stroke: rgba(255, 255, 255, 0.85);
   fill: rgba(255, 255, 255, 0.85);

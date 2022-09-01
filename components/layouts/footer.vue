@@ -1,5 +1,6 @@
 <template>
 <div id="footer">
+    <CookiesDialog v-if="!cookiesPreference" />
           <div id="whatsAppBtn">
     <a href="https://wa.me/905445355553?text=ICGroup%20%D8%A7%D9%86%D8%A7%20%D9%85%D9%87%D8%AA%D9%85%20%D8%A8%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20" class="btn whatsApp"><img id="whatsAppImage"
         src="https://global-uploads.webflow.com/601befbd3e6c39d9b373aa94/606aecfac9846644d0c6d979_whatsapp.svg"
@@ -85,13 +86,21 @@
         </div>
     </div>
 </div>
+
 </div>
 </template>
 <script>
+import CookiesDialog from '@/components/CookiesDialog.vue';
 export default {
+  components: {
+    CookiesDialog,
+  },
   computed: {
     analysisCategory() {
       return this.$store.getters.getAnalysisCategories;
+    },
+    cookiesPreference() {
+      return this.$cookies.get('cookies_preference') || false;
     },
   },
   created() {

@@ -273,7 +273,7 @@ export default {
     "Listen To Analysis": "Listen To Analysis",
     /* COOKIES DIALOG COMPONENT BEGIN */
     "cookies dialog heading": "We value your privacy",
-    "cookies dialog body": "We and our partners store and/or access information on a device,  such as cookies and process personal data, such as unique identifiers and standard information sent by a device for personalized ads and content, ad and content measurement,and audience insights, as well as to develop and improve products. With you permission we and out partners may use precise geolocation data and identification through device scanning. You may click to consent to our partners' processing as described above. Alternatively you may access more detailed information and change your preferences before consenting or to refuse consenting. Please note that some processing of your personal data may not require your consent, but you have the right to object to such processing. Your preferences will apply to this website only. You can change your preferences at any time by returning to this site or visit our privacy policy.",
+    "cookies dialog body": "We use cookies to make your interactions with our website more meaningful. They help us better understand how our websites are used, so we can tailor content for you. For more information about the different cookies we are using, read the ",
     "cookies accept all": "Accept All",
     "cookies accept essential": "Accept Essential",
     /* COOKIES DIALOG COMPONENT END */

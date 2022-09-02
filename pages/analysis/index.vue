@@ -42,11 +42,16 @@ export default {
       Object.assign(this.$data, this.$options.data())
     }
   },
-  async asyncData({$axios, query}) {
+  async asyncData({$axios, query, i18n}) {
     try {
       const allAnalysis = await $axios.get('/api/analysis/' + query.categoryId)
       const allAnalysisResponse = await Promise.all([allAnalysis])
-      const allAnalysisData = allAnalysisResponse[0].data.analysis.reverse()
+      let allAnalysisData = allAnalysisResponse[0].data.analysis.reverse()
+      if(i18n.locale === 'en'){
+        allAnalysisData = allAnalysisData.filter( blog => blog.language === 'en')
+        } else if(i18n.locale === 'ar') {
+        allAnalysisData = allAnalysisData.filter( blog => blog.language === 'ar')
+      }
       return {allAnalysisData}
     } catch(err){
       console.log(err);

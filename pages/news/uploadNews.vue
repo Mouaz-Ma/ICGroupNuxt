@@ -18,7 +18,7 @@
                                     <input type="text" class="form-control" placeholder="Tags" v-model="tagsInput">
                                 </div>
                                 <div class="col-12">
-                                      <b-form-select v-model="blogLanguage" :options="options" class="border border-dark p-3 mt-3">Please Select a Language</b-form-select>
+                                      <b-form-select v-model="blogLanguage" :options="options" class="border border-dark p-3 mt-3"></b-form-select>
                                 </div>
                                 <div class="col-12">
                                     <label for="file-upload" class="custom-file-upload">

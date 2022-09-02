@@ -27,6 +27,9 @@
                                 <div class="col-12">
                                     <input type="text" class="form-control" placeholder="Tags" v-model="tagsInput">
                                 </div>
+                                <div class="col-12">
+                                      <b-form-select v-model="analysisLanguage" :options="options" class="border border-dark p-3 mt-3"></b-form-select>
+                                </div>
                                 <hr>
                                 <h3><i class="icofont-upload-alt"></i>uploads</h3>
                                 <div class="col-12">
@@ -111,6 +114,11 @@ export default {
            audioFileName: '',
            selectedCategory: null,
            successMessage: '',
+           analysisLanguage: null,
+           options: [
+            { value: null, text: 'Please select the language' },
+            {value: 'en', text: 'English'},
+            {value: 'ar', text: 'Arabic'}],
        };
     },
     computed: {
@@ -135,6 +143,7 @@ export default {
       },
     async uploadAnalysis() {
         try {
+            console.log('clicked')
             let tags = this.tagsInput.split(' ');
             let data = new FormData();
             data.append("title", this.title);
@@ -144,6 +153,7 @@ export default {
             data.append("photo", this.selectedFile);
             data.append("audio", this.selectedAudioFile);
             data.append("category", this.selectedCategory);
+            data.append("language", this.analysisLanguage);
             if (this.selectedAudioFile && ! this.selectedFile) {
                 if(this.selectedAudioFile.type === "audio/mp3" || this.selectedAudioFile.type === "audio/mpeg"){
                     let response = await this.$axios.post('/api/analysis/new', data);

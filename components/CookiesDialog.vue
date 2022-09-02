@@ -1,7 +1,7 @@
 <template>
   <div id="cookies-dialog">
       <h2 class="cookies-dialog__heading">{{$t("cookies dialog heading")}}</h2>
-      <p>{{$t("cookies dialog body")}}</p>
+      <p>{{$t("cookies dialog body")}} <NuxtLink to="/privacy" exact>{{ $t('Privacy')}}</NuxtLink></p>
       <div class="row">
         <div class="col-6">
           <button class="btn btn-primary w-100" @click="acceptAllCookies()">{{$t("cookies accept all")}}</button>

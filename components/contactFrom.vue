@@ -78,66 +78,70 @@
 </template>
 <script>
 export default {
-    data() {
+  data() {
     return {
-        name: '',
-        email: '',
-        phone: '',
-        successMessage: '',
-        tradingType: '',
-        ticksLabels: ['100$', '1000$', '5000$', '10,000$', '50,000$'],
-        iniInvestment: '',
-        isLoading: false,
-    }
-    },
-    computed: {
-        items:{
-            get: function() {
-              if(this.$i18n.locale == 'ar'){
-                return this.$store.state.analysisCategories.map(element => {
-                return element.ar;
-              });
-              } else if(this.$i18n.locale == 'en'){
-                return this.$store.state.analysisCategories.map(element => {
-                return element.type;
-              });
-              }
-
-
-            }
+      name: '',
+      email: '',
+      phone: '',
+      successMessage: '',
+      tradingType: '',
+      ticksLabels: ['100$', '1000$', '5000$', '10,000$', '50,000$'],
+      iniInvestment: '',
+      isLoading: false,
+    };
+  },
+  computed: {
+    items: {
+      get: function() {
+        if (this.$i18n.locale == 'ar') {
+          return this.$store.state.analysisCategories.map((element) => {
+            return element.ar;
+          });
+        } else if (this.$i18n.locale == 'en') {
+          return this.$store.state.analysisCategories.map((element) => {
+            return element.type;
+          });
         }
+      },
     },
-    methods: {
-    contactForm: async function () {
-        try {
-          this.isLoading = true;
-        let data = {
-            name: this.name,
-            email: this.email,
-            phone: this.phone,
-            tradingType: this.tradingType,
-            iniInvestment: this.iniInvestment
-        }
-        let response = await this.$axios.post('/api/users/contact', data);
+  },
+  methods: {
+    contactForm: async function() {
+      try {
+        this.isLoading = true;
+        const data = {
+          name: this.name,
+          email: this.email,
+          phone: this.phone,
+          tradingType: this.tradingType,
+          iniInvestment: this.iniInvestment,
+        };
+        const response = await this.$axios.post('/api/users/contact', data);
         if (response.data.success) {
-            this.successMessage = 'true'
-            this.isLoading = false;
+          this.successMessage = 'true';
+          this.isLoading = false;
+          // clear form
+          this.name = '';
+          this.email = '';
+          this.phone = '';
+          this.tradingType = '';
+          this.iniInvestment = '';
         } else {
-            this.successMessage = 'false'
-            this.isLoading = false;
+          this.successMessage = 'false';
+          this.isLoading = false;
         }
         //   if response is ok flash ok if not flash error
-        } catch (err) {
-        this.successMessage = 'false'
-        console.log(err)
-        }
+      } catch (err) {
+        this.successMessage = 'false';
+        console.log(err);
+      }
     },
-    },
-}
+  },
+};
 </script>
 <style>
 .btn-primary{
-    color: aliceblue
+    color: aliceblue;
 }
 
 .btn-primary:hover {

@@ -2,13 +2,11 @@
 <div>
   <!-- alerts -->
   <div v-if="successMessage === 'true'">
-    <v-alert border="bottom" color="green" dense dismissible outlined prominent shaped text type="success">Thank you for
-      submiting your Inquiry we will be back to you ASAP</v-alert>
+    <v-alert border="bottom" color="green" dense dismissible outlined prominent shaped text type="success">{{$t("Thank you for submitting your enquiry. we will be back to you as soon as possible.")}}</v-alert>
   </div>
 
   <div v-else-if="successMessage === 'false'">
-    <v-alert border="bottom" color="red" dense dismissible outlined prominent shaped text type="error"> there was an
-      Eroor submiting your form</v-alert>
+    <v-alert border="bottom" color="red" dense dismissible outlined prominent shaped text type="error">{{$t("error submiting form")}}</v-alert>
   </div>
 
   <form name="myform" class="contact_validate">

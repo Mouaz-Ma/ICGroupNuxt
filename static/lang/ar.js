@@ -277,4 +277,19 @@ export default {
     "cookies accept all": "قبول الجميع",
     "cookies accept essential": "قبول الضروري",
     /* COOKIES DIALOG COMPONENT END */
+    /* CONTACT FORM COMPONENT BEGIN */
+    "Thank you for submitting your enquiry. we will be back to you as soon as possible.": "شكرا لك على تقديم استفسارك. سنعود إليك في أقرب وقت ممكن.",
+    /* CONTACT FORM COMPONENT END */
+    /* UPLOAD ANALYSIS PAGE BEGIN */
+    "New Analysis has been uploaded": "تم رفع تحليل جديد",
+    /* UPLOAD ANALYSIS PAGE END */
+    /* FORGOT PAGE BEGIN */
+    "Please check your email to recover your password.": "رجاءً تفقد بريدك الﻹلكتروني لاستعادة كلمة المرور الخاصة بك.",
+    /* FORGOT PAGE END */
+    /* PROFILE PAGE BEGIN */
+    "An email was sent please check your inbox or spam box!": "تم إرسال بريد إلكتروني ، يرجى التحقق من صندوق الوارد الخاص بك أو صندوق البريد العشوائي!",
+    /* PROFILE PAGE END */
+    /* RESET PAGE BEGIN */
+    "Passwords didn't match, please enter again!": "كلمات المرور غير متطابقة ، يرجى إدخالها مرة أخرى!",
+    /* RESET PAGE END */
 };

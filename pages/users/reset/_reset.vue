@@ -12,7 +12,7 @@
                     <div class="auth-form card">
                         <div class="card-body">
                                 <b-alert v-model="notMatched" variant="danger" dismissible>
-                                Passwords didn't match, please Enter Again!
+                                {{$t("Passwords didn't match, please enter again!")}}
                                 </b-alert>
                             <form @submit.prevent="passReset" class="row g-3">
                                 <div class="col-12">

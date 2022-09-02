@@ -277,4 +277,19 @@ export default {
     "cookies accept all": "Accept All",
     "cookies accept essential": "Accept Essential",
     /* COOKIES DIALOG COMPONENT END */
+    /* CONTACT FORM COMPONENT BEGIN */
+    "Thank you for submitting your enquiry. we will be back to you as soon as possible.": "Thank you for submitting your enquiry. we will be back to you as soon as possible.",
+    /* CONTACT FORM COMPONENT END */
+    /* UPLOAD ANALYSIS PAGE BEGIN */
+    "New Analysis has been uploaded": "تم رفع تحليل جديد",
+    /* UPLOAD ANALYSIS PAGE END */
+    /* FORGOT PAGE BEGIN */
+    "Please check your email to recover your password.": "Please check your email to recover your password.",
+    /* FORGOT PAGE END */
+    /* PROFILE PAGE BEGIN */
+    "An email was sent please check your inbox or spam box!": "An email was sent please check your inbox or spam box!",
+    /* PROFILE PAGE END */
+    /* RESET PAGE BEGIN */
+    "Passwords didn't match, please enter again!": "Passwords didn't match, please enter again!",
+    /* RESET PAGE END */
 };

@@ -344,13 +344,11 @@
                 </div> -->
                     <!-- alerts -->
                     <div class="mt-5" v-if="verifyAlertMessage === 'true'">
-                        <v-alert border="bottom" color="green" dense dismissible outlined prominent shaped text type="success">Thank you for
-                        an email was sent please check you inbox or spam box!</v-alert>
+                        <v-alert border="bottom" color="green" dense dismissible outlined prominent shaped text type="success">{{$t("An email was sent please check your inbox or spam box!")}}</v-alert>
                     </div>
 
                     <div class="mt-5" v-else-if="verifyAlertMessage === 'false'">
-                        <v-alert border="bottom" color="red" dense dismissible outlined prominent shaped text type="error"> there was an
-                        Somthing Went Wrong</v-alert>
+                        <v-alert border="bottom" color="red" dense dismissible outlined prominent shaped text type="error">{{$t("something went wrong")}}</v-alert>
                     </div>
                                     <div class="col-xxl-4 col-xl-6">
                     <div class="card w-100 h-100">

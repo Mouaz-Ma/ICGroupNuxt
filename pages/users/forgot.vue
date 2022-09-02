@@ -12,12 +12,11 @@
                     </div>
                     <!-- alerts -->
                     <div v-if="successMessage === 'true'">
-                        <v-alert border="bottom" color="green" dense dismissible outlined prominent shaped text type="success">Please check your email to recover your password.</v-alert>
+                        <v-alert border="bottom" color="green" dense dismissible outlined prominent shaped text type="success">{{$t("Please check your email to recover your password.")}}</v-alert>
                     </div>
 
                     <div v-else-if="successMessage === 'false'">
-                        <v-alert border="bottom" color="red" dense dismissible outlined prominent shaped text type="error"> there was an
-                        Eroor submiting your form</v-alert>
+                        <v-alert border="bottom" color="red" dense dismissible outlined prominent shaped text type="error">{{$t("error submitting form")}}</v-alert>
                     </div>
                     <div class="auth-form ">
                         <div class="card-body">

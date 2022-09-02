@@ -11,11 +11,11 @@
                     </div>
                       <!-- alerts -->
                     <div v-if="successMessage === 'true'">
-                        <v-alert border="bottom" color="green" dense dismissible outlined prominent shaped text type="success">New Analysis been uploaded</v-alert>
+                        <v-alert border="bottom" color="green" dense dismissible outlined prominent shaped text type="success">{{$t("New Analysis has been uploaded")}}</v-alert>
                     </div>
 
                     <div v-else-if="successMessage === 'false'">
-                        <v-alert border="bottom" color="red" dense dismissible outlined prominent shaped text type="error"> there was an Eroor submiting your form</v-alert>
+                        <v-alert border="bottom" color="red" dense dismissible outlined prominent shaped text type="error">{{$t("error submiting form")}}</v-alert>
                     </div>
                     
                     <div class="auth-form card">

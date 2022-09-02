@@ -26,7 +26,7 @@
           <label class="form-label">
             {{ $t('Tel.')}}
           </label>
-          <input type="tel" class="form-control" v-model="phone" placeholder="+90xx xx xx xx xx" required>
+          <input type="tel" dir="ltr" class="form-control" v-model="phone" placeholder="+90xx xx xx xx xx" required>
 
         </div>
       </div>

@@ -11,11 +11,15 @@
         <b-card-text v-else>{{content.substring(0,100)+".."}}</b-card-text> -->
       </div>
       <div class="card-footer">
-        <div class="meta-info">
-          <a href="#" class="author">By: ICGroupsFX</a>
+        <div class="">
+          <div class="row">
+            <a href="#" class="author">By: ICGroupsFX</a>
+          </div>
           <!-- <img id="authorImage" src="~/assets/images/avatar/5.jpg" alt=""> -->
-          <a href="#" class="text-muted float-right"><i class="la la-calendar"></i>
-            {{ $moment(createdAt).format('MM/DD/YYYY')}}</a>
+          <div class="row">
+            <a href="#" class="text-muted"><i class="la la-calendar"></i>
+              {{ $moment(createdAt).format('MM/DD/YYYY')}}</a>
+          </div>
         </div>
       </div>
     </div>
@@ -29,6 +33,8 @@ export default {
 </script>
 
 <style scoped>
+
+
 #authorImage{
     max-width: 30px;
         border-radius: 50px;
@@ -42,8 +48,14 @@ a {
 
 #cardImage{
   object-fit: cover;
-  height: 400px;
+  height: 300px;
   width: 600px;
   padding: 2px;
+}
+
+@media(max-width: 786px) {
+  #cardImage {
+    height: 200px;
+  }
 }
 </style>

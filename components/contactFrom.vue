@@ -113,6 +113,7 @@ export default {
           phone: this.phone,
           tradingType: this.tradingType,
           iniInvestment: this.iniInvestment,
+          language: this.$i18n.locale
         };
         const response = await this.$axios.post('/api/users/contact', data);
         if (response.data.success) {

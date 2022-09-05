@@ -10794,10 +10794,11 @@ label.error {
 
 .blog-grid .card {
   border: 0px;
-  -webkit-box-shadow: 0 1.5rem 4rem rgba(22, 28, 45, 0.1);
-          box-shadow: 0 1.5rem 4rem rgba(22, 28, 45, 0.1);
+  /* -webkit-box-shadow: 0 1.5rem 4rem rgba(22, 28, 45, 0.1);
+          box-shadow: 0 1.5rem 4rem rgba(22, 28, 45, 0.1); */
   margin-bottom: 30px;
-  background: #fff; }
+  /* background: #fff; */
+}
   .blog-grid .card img {
     width: 100%; }
   .blog-grid .card .card-body {

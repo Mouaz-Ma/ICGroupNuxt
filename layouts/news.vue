@@ -1,44 +1,47 @@
 <template>
-<v-app class="mt-4">
-      <div style="overflow-x: hidden; display: flex; flex-flow: column; height: 100vh">
-        <div id="header">
-          <Header />
-        </div>
-        <page-banner :title="$t('News')"/>
-            <div id="main-wrapper show">
+  <v-app class="mt-4">
+    <div style="overflow-x: hidden; display: flex; flex-flow: column; height: 100vh">
+      <div id="header">
+        <Header />
+      </div>
+      <page-banner :title="$t('News')" />
+      <div id="main-wrapper show">
 
-          <div class="blog section-padding border-0">
-            <div class="container">
-              <div class="row">
-                <div class="col-xl-9 col-lg-9">
-                    <Nuxt />
-                </div>
-                <div class="col-xl-3 col-lg-3">
-                  <blog-side-bar />
-                </div>
+        <div class="blog section-padding border-0">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-9 col-lg-9">
+                <Nuxt />
+              </div>
+              <div class="col-xl-3 col-lg-3">
+                <blog-side-bar />
               </div>
             </div>
-          
-        </div>
-            </div>
-        <div id="footer">
-          <Footer />
+          </div>
+
         </div>
       </div>
-      </v-app>
+      <LatestBlogs />
+      <div id="footer">
+        <Footer />
+      </div>
+    </div>
+  </v-app>
 </template>
 <script>
 import Header from '@/components/layouts/header'
 import Footer from "@/components/layouts/footer";
 import BlogSideBar from '@/components/blogSideBar.vue';
 import PageBanner from '@/components/pageBanner.vue';
+import LatestBlogs from '@/components/LatestBlogs.vue';
 export default {
   name: 'news',
   components: {
     Header,
     Footer,
     BlogSideBar,
-    PageBanner
+    PageBanner,
+    LatestBlogs,
   },
     
 }

@@ -1,6 +1,6 @@
 <template>
   <!-- ///////////////// blogs //////////////// -->
-  <div class="blog bg-light section-padding">
+  <div class="blog section-padding">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-xl-6">

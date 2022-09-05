@@ -2,7 +2,7 @@
 
 <nuxt-link :to="'/blogs/'+blogId" >
   <div class="blog-grid">
-    <div class="card m-1">
+    <div class="card m-1 h-100b w-100">
       <img id="cardImage" class="img-fluid card-img-top" :src=imageSrc alt="">
       <div class="card-body">
           <h4 class="card-title">{{title}}</h4>

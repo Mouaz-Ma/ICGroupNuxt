@@ -1,29 +1,28 @@
 <template>
 
-<nuxt-link :to="'/blogs/'+blogId" >
-  <div class="blog-grid">
-    <div class="card m-1 h-100b w-100">
-      <img id="cardImage" class="img-fluid card-img-top" :src=imageSrc alt="">
-      <div class="card-body">
-          <h4 class="card-title">{{title}}</h4>
+  <nuxt-link :to="'/blogs/' + blogId">
+    <div class="icg-blog-card">
+      <div class="icg-blog-card__image-container">
+        <img class="icg-blog-card__image" :src=imageSrc alt=""></img>
+      </div>
+      <div class="icg-blog-card__body">
+        <h4 class="card-title">{{ title }}</h4>
 
         <!-- <b-card-text v-if="content.length<100">{{content}}</b-card-text>
         <b-card-text v-else>{{content.substring(0,100)+".."}}</b-card-text> -->
       </div>
-      <div class="card-footer">
+
+      <div class="icg-blog-card__footer">
         <div class="">
-          <div class="row">
-            <a href="#" class="author">By: ICGroupsFX</a>
-          </div>
-          <!-- <img id="authorImage" src="~/assets/images/avatar/5.jpg" alt=""> -->
-          <div class="row">
-            <a href="#" class="text-muted"><i class="la la-calendar"></i>
-              {{ $moment(createdAt).format('MM/DD/YYYY')}}</a>
-          </div>
+          <a href="#" class="author">By: ICGroupsFX</a>
+        </div>
+        <!-- <img id="authorImage" src="~/assets/images/avatar/5.jpg" alt=""> -->
+        <div class="">
+          <a href="#" class="text-muted"><i class="la la-calendar"></i>
+            {{ $moment(createdAt).format('MM/DD/YYYY') }}</a>
         </div>
       </div>
     </div>
-  </div>
   </nuxt-link>
 </template>
 <script>
@@ -33,6 +32,34 @@ export default {
 </script>
 
 <style scoped>
+
+.icg-blog-card {
+  width: 350px;
+  max-width: 350px;
+  border: solid 1px #ddd;
+  border-radius: 1rem;
+  overflow: hidden;
+  height: 100%;
+  margin: 0.5rem;
+}
+
+.icg-blog-card__image-container {
+  width: 100%;
+  height: 200px;
+}
+
+.icg-blog-card__image {
+  width: 100%;
+  height: 100%;
+}
+
+.icg-blog-card__body {
+  padding: 1rem 1.5rem;
+}
+
+.icg-blog-card__footer {
+  padding: 1rem 1.5rem;
+}
 
 
 #authorImage{

@@ -52,7 +52,7 @@
                     :tick-labels="ticksLabels"
                     color="grey lighten-1"
                     track-color="ex2.color"
-                    thumb-color="white"
+                    thumb-color="#dedede"
                     :min="1"
                     :max="5"
                     step="1"

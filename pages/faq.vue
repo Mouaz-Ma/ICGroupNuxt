@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-9">
-                    <div class="terms_condition-content">
+                    <div id="faq" class="terms_condition-content">
                         <div class="terms_condition-text">
                             <h3>{{ $t('Frequently Asked Questions')}} </h3>
                             <!-- <p>Tradix is an instant cryptocurrency exchange that allows you to exchange crypto
@@ -225,3 +225,19 @@ export default {
               },
   }
 </script>
+
+<style>
+#faq {
+  counter-reset: h3;
+}
+
+html:lang(en) #faq h3::before {
+  content: '';
+  margin-right: 0.5rem;
+}
+
+html:lang(ar) #faq h3::before {
+  content: '';
+  margin-left: 0.5rem;
+}
+</style>

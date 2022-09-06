@@ -65,7 +65,7 @@ export default {
         })`;
     }
     advancedChartContainer.appendChild(tvScript);
-      advancedChartContainer.appendChild(advancedChartScript);
+    advancedChartContainer.appendChild(advancedChartScript);
     // window.onload = function() {
     //   console.log('mounted child');
     // };

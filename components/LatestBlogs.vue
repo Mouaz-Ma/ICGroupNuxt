@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="row">
-        <b-card-group class="overflow-auto d-flex flex-row flex-nowrap p-2">
+        <b-card-group class="overflow-auto d-flex justify-content-center flex-row flex-nowrap p-2">
           <div v-for="blog in allBlogsData.slice(-3)" :key="blog._id" class="">
             <blog-card :blogId=blog._id :title=blog.title author="By: ICGroupsFX" :content=blog.content
               :imageSrc=blog.image.url :createdAt=blog.createdAt />

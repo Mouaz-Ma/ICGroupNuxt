@@ -9,7 +9,6 @@
         author="By: ICGroupsFX"
         :createdAt="blogData.createdAt"
         />
-        <latest-blogs></latest-blogs>
 </div>
 </template>
 <script>

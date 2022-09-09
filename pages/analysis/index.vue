@@ -12,7 +12,7 @@
         </div>
       </b-card-group>
     </div>
-    <v-pagination v-model="page" color="#fbcc31" :length="5" @input="handlePageChange"></v-pagination>
+    <v-pagination v-model="page" color="#fbcc31" :length=numberOfPages @input="handlePageChange"></v-pagination>
   </div>
 </template>
 <script>
@@ -31,30 +31,23 @@ export default {
       allAnalysisData: [],
       title: '',
       author: '',
+      numberOfPages: null
     };
   },
   watch: {
     '$route'() {
+      this.$fetch();
       Object.assign(this.$data, this.$options.data());
     },
   },
   async fetch() {
     try {
-      const allAnalysis = await this.$axios.get('/api/analysis/' + this.$nuxt._route.query.categoryId, {params: {page: this.page}});
+      const allAnalysis = await this.$axios.get('/api/analysis/' + this.$nuxt._route.query.categoryId, {params: {page: this.page , language : this.$i18n.locale}});
       const allAnalysisResponse = await Promise.all([allAnalysis]);
-      // console.log(this.$nuxt);
-      // console.log(this.$nuxt._route);
-      // console.log(this.$nuxt._route.query);
-      // console.log(allAnalysisResponse);
-      let allAnalysisData = allAnalysisResponse[0].data.analysis.reverse();
-      // console.log(allAnalysisData);
-      if (this.$i18n.locale === 'en') {
-        allAnalysisData = allAnalysisData.filter( (blog) => blog.language === 'en');
-      } else if (this.$i18n.locale === 'ar') {
-        allAnalysisData = allAnalysisData.filter( (blog) => blog.language === 'ar');
-      }
+      let allAnalysisData = allAnalysisResponse[0].data.analysis;
+      let numberOfPages = allAnalysisResponse[0].data.numberOfPages;
       this.allAnalysisData = allAnalysisData;
-      // return {allAnalysisData};
+      this.numberOfPages = numberOfPages;
     } catch (err) {
       console.log(err);
     }

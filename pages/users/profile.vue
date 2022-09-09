@@ -43,6 +43,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xxl-6 col-xl-6 col-lg-6">
+                    <UserWelcomeCard />
                     <div class="card welcome-profile w-100 ">
                         <div class="card-body">
                             <img src="~/assets/images/profile/2.png" alt="">
@@ -390,6 +391,7 @@
 </v-app>
 </template>
 <script>
+import UserWelcomeCard from '@/components/UserWelcomeCard.vue'
 import Web3 from 'web3'
 import {
   mapGetters,
@@ -397,6 +399,7 @@ import {
 } from 'vuex';
 export default {
   layout: 'users',
+  components: {UserWelcomeCard},
   data() {
     return {
       name: "",

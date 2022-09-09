@@ -286,6 +286,8 @@
                     </div>
                 </div>
 
+                <UserInformationCard />
+
                 <div class="col-xxl-8 col-xl-6" v-if="$auth.$state.user.isVerified === true">
                     <div class="card w-100 h-100">
                         <div class="card-header">
@@ -392,6 +394,7 @@
 </template>
 <script>
 import UserWelcomeCard from '@/components/UserWelcomeCard.vue'
+import UserInformationCard from '@/components/UserInformationCard.vue'
 import Web3 from 'web3'
 import {
   mapGetters,
@@ -399,7 +402,10 @@ import {
 } from 'vuex';
 export default {
   layout: 'users',
-  components: {UserWelcomeCard},
+  components: {
+    UserWelcomeCard,
+    UserInformationCard,
+  },
   data() {
     return {
       name: "",

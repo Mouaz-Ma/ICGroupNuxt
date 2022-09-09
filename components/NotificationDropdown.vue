@@ -103,7 +103,7 @@ export default {
   margin-top: 2rem;
   margin-bottom: 1rem;
   padding: 0rem 1rem;
-  width: 80%;
+  width: 90%;
   color: #231f20;
 }
 
@@ -140,7 +140,7 @@ export default {
 .icg-notification-dropdown__menu__item {
   font-size: small;
   padding: 1rem 1rem;
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;

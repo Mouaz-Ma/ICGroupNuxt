@@ -2,146 +2,6 @@
 <v-app>
     <div id="main-wrapper show">
 
-    <div class="headerprofile">
-    <div class="container">
-        <div class="row">
-            <div class="col-xxl-12">
-                <div class="header-content">
-                    <div class="header-left ml-5">
-                        <div class="brand-logo">
-                            <NuxtLink to="/">
-                                <img src="~/assets/images/logob.png" alt="">
-                            </NuxtLink>
-
-                            
-                        </div>
-                        <!-- search -->
-                        <!-- <div class="search">
-                            <form action="#">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search Here">
-                                    <span class="input-group-text"><i class="icofont-search"></i></span>
-                                </div>
-                            </form>
-                        </div> -->
-                    </div>
-
-                    <div class="header-right">
-                        <div class="dark-light-toggle" onclick="themeToggle()">
-                            <span class="dark"><i class="icofont-moon"></i></span>
-                            <span class="light"><i class="icofont-sun-alt"></i></span>
-                        </div>
-                        <!-- notification area -->
-                        <!-- <div class="notification dropdown">
-                            <a class="notify-bell" v-b-toggle.notification>
-                                <span ><i class="icofont-alarm"></i></span>
-                            </a>
-                            <b-collapse id="notification" class="dropdown-menu dropdown-menu-right notification-list" >
-                                <h4>Announcements</h4>
-                                <div class="lists">
-                                    <a href="#" class="">
-                                        <div class="d-flex align-items-center">
-                                            <span class="mr-3 icon success"><i class="icofont-check"></i></span>
-                                            <div>
-                                                <p>Account created successfully</p>
-                                                <span>2020-11-04 12:00:23</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="">
-                                        <div class="d-flex align-items-center">
-                                            <span class="mr-3 icon fail"><i class="icofont-close"></i></span>
-                                            <div>
-                                                <p>2FA verification failed</p>
-                                                <span>2020-11-04 12:00:23</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="">
-                                        <div class="d-flex align-items-center">
-                                            <span class="mr-3 icon success"><i class="icofont-check"></i></span>
-                                            <div>
-                                                <p>Device confirmation completed</p>
-                                                <span>2020-11-04 12:00:23</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="">
-                                        <div class="d-flex align-items-center">
-                                            <span class="mr-3 icon pending"><i
-                                                    class="icofont-warning"></i></span>
-                                            <div>
-                                                <p>Phone verification pending</p>
-                                                <span>2020-11-04 12:00:23</span>
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                    <a href="./settings-activity.html">More <i
-                                            class="icofont-simple-right"></i></a>
-
-                                </div>
-                            
-                            </b-collapse>
-                        </div> -->
-                        <!-- user option -->
-                        <div class="profile_log dropdown">
-                            <a class="user" v-b-toggle.userOptions>
-                                <span class="thumb"><img src="~/assets/images/profile/2.png" alt=""></span>
-                                <span class="arrow"><i class="icofont-angle-down"></i></span>
-                            </a>
-                            <b-collapse class="dropdown-menu dropdown-menu-right" id="userOptions">
-                                <div class="user-email">
-                                    <div class="user">
-                                        <span class="thumb"><img src="~/assets/images/profile/2.png" alt=""></span>
-                                        <div class="user-info">
-                                            <h5>{{$auth.$state.user.username}}</h5>
-                                            <span>{{$auth.$state.user.email}}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- balance -->
-                                <!-- <div class="user-balance">
-                                    <div class="available">
-                                        <p>Available</p>
-                                        <span>0.00 BTC</span>
-                                    </div>
-                                    <div class="total">
-                                        <p>Total</p>
-                                        <span>0.00 USD</span>
-                                    </div>
-                                </div> -->
-                                <NuxtLink to="/users/profile" class="dropdown-item"><i class="icofont-ui-user"></i>Profile</NuxtLink>
-
-                                <NuxtLink class="dropdown-item" to="/users/profileUpdate"><i class="icofont-ui-settings"></i>Edit and Settings</NuxtLink>
-                                <!-- wallet -->
-                                <!-- <a href="accounts.html" class="dropdown-item">
-                                    <i class="icofont-wallet"></i>Wallet
-                                </a> -->
-                                <!-- settings -->
-                                <!-- <a href="settings-profile.html" class="dropdown-item">
-                                    <i class="icofont-ui-settings"></i> Setting
-                                </a> -->
-                                <!-- settings -->
-                                <!-- <a href="settings-activity.html" class="dropdown-item">
-                                    <i class="icofont-history"></i> Activity
-                                </a> -->
-                                <!-- lock -->
-                                <!-- <a href="lock.html" class="dropdown-item">
-                                    <i class="icofont-lock"></i>Lock
-                                </a> -->
-                                <a @click="logout()" href="#" class="dropdown-item logout">
-                                    <i class="icofont-logout"></i> Logout
-                                </a>
-                            </b-collapse>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
     <!-- <div class="sidebar">
     <div class="brand-logo">
@@ -353,7 +213,7 @@
                                     <div class="col-xxl-4 col-xl-6">
                     <div class="card w-100 h-100">
                         <div class="card-header">
-                            <h4 class="card-title"><i class="icofont-bank"></i> Bank Transfere Numbers: </h4>
+                            <h4 class="card-title"><i class="icofont-bank"></i>{{$t("Bank Transfer Numbers")}}</h4>
                         </div>
                     <!-- alerts -->
                     <div class="text-center ma-2">
@@ -536,6 +396,7 @@ import {
   mapMutations
 } from 'vuex';
 export default {
+  layout: 'users',
   data() {
     return {
       name: "",

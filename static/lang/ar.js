@@ -288,6 +288,7 @@ export default {
     /* FORGOT PAGE END */
     /* PROFILE PAGE BEGIN */
     "An email was sent please check your inbox or spam box!": "تم إرسال بريد إلكتروني ، يرجى التحقق من صندوق الوارد الخاص بك أو صندوق البريد العشوائي!",
+    "Bank Transfer Numbers": "أرقام التحويل المصرفي",
     /* PROFILE PAGE END */
     /* RESET PAGE BEGIN */
     "Passwords didn't match, please enter again!": "كلمات المرور غير متطابقة ، يرجى إدخالها مرة أخرى!",

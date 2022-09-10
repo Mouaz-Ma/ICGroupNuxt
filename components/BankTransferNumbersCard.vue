@@ -114,6 +114,10 @@ export default {
 }
 
 .icg-card__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   border-bottom: solid 1px var(--icg-light-theme-border-color);
   padding: 1rem;
 }

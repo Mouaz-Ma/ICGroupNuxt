@@ -31,7 +31,7 @@
           <div class="col-12 col-lg-6 col-xxl-4">
             <BankTransferNumbersCard />
           </div>
-          <div class="col-12 col-lg-6 col-xxl-4">
+          <div class="col-12 col-md-6 col-xxl-4">
             <UserInformationCard />
           </div>
           <div class="col-xxl-8 col-xl-6" v-if="$auth.$state.user.isVerified === true">

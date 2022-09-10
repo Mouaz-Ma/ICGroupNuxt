@@ -33,12 +33,14 @@ export default {
 
 <style>
 .icg-user-navbar__wrapper {
-  background-color: white;
+  background-color: #FEF4D3;
   width: 100%;
-  /* position: fixed;
+  position: fixed;
   left: 0;
-  top: 0; */
+  top: 0;
+  z-index: 10;
   padding: 1.5rem 3rem;
+  border-bottom: solid 2px var(--icg-light-theme-border-color);
 }
 
 .icg-user-navbar__content {

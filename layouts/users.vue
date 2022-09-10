@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="icg-light-theme">
     <UserNavbarVue />
-    <div class="container">
+    <div class="container" style="margin-top: 6rem;">
       <Nuxt />
     </div>
   </div>
@@ -26,5 +26,14 @@ export default {
 </script>
 
 <style>
+:root {
+  --icg-light-theme-background-color: #FFFBF0;
+  --icg-light-theme-border-color: #FDE599;
+  --icg-light-theme-color: #231f20;
+}
 
+.icg-light-theme {
+  color: var(--icg-light-theme-color);
+  background-color: var(--icg-light-theme-background-color);
+}
 </style>

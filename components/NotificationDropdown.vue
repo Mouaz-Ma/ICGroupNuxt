@@ -78,14 +78,20 @@ export default {
 
 <style>
 .icg-notification-button {
+  color: #695102;
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
   transition: all ease-in-out 0.3s;
 }
 
-.icg-notification-button:focus, .icg-notification-button:active, .icg-notification-button:hover {
-  background-color: #eee;
+.icg-notification-button:hover {
+  color: #BE9204;
+}
+
+.icg-notification-button:focus, .icg-notification-button:active {
+  /* color: #FBD041; */
+  background-color: #FBD34F40;
 }
 
 .icg-notification-dropdown__wrapper {
@@ -109,7 +115,7 @@ export default {
 
 .icg-notification-dropdown__menu {
   position: absolute;
-  background-color: white;
+  background-color: var(--icg-light-theme-background-color);
   margin-top: 4rem;
   display: flex;
   flex-direction: column;

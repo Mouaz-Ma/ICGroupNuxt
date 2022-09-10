@@ -13,23 +13,26 @@
               <li><i class="la la-check"></i> {{ $t('Login to your account through ICGroupsFx')}}</li>
               <li><i class="la la-check"></i> {{ $t('Buy, Sell, and Make profit')}}</li>
             </ul>
-            <div class="mt-4">
-              <div class="row">
-                <div class="col-lg-4 col-md-4 col-xs-12"> <a
+            <div class="mt-4 btn-override">
+              <div class="d-flex flex-col justify-content-between">
+                <div class=""> <a
                     href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5"
                     class="btn btn-primary my-1 waves-effect">
                     <img src="~/assets/images/android.svg" class="downloadImage" style="width: 90px" alt="">
                   </a></div>
-                <div class="ccol-lg-4 col-md-4 col-xs-12"> <a
+                <div class=""> <a
                     href=" https://apps.apple.com/tr/app/metatrader-5/id413251709"
                     class="btn btn-primary my-1 waves-effect">
                     <img src="~/assets/images/apple.svg" class="downloadImage" alt="">
                   </a></div>
-                <div class="col-lg-4 col-md-4 col-xs-12"> <a
+                <button class="btn btn-primary my-1">
+                  <a
                     href="https://download.metatrader.com/cdn/web/internationals.capital.groups/mt5/intcapitalgroups5setup.exe"
-                    class="btn btn-primary my-1 waves-effect microsoftBtn">
-                    <img src="@/assets/images/microsoft.svg" class="float-left downloadImage" alt="">
-                    Microsoft</a></div>
+                    class="waves-effect microsoftBtn">
+                    <img src="@/assets/images/microsoft.svg" class="microsoft-img my-1" alt="">
+                    <span>Microsoft</span>
+                  </a>
+                </button>
               </div>
             </div>
           </div>
@@ -49,5 +52,26 @@ export default {};
 </script>
 
 <style>
+.btn > a {
+  color: white;
+}
 
+.btn-override > .btn-primary:hover, .btn-override > .btn-primary:active, .btn-override > .btn-primary:focus {
+  background-color: #FCDB6D;
+  color: var(--icg-light-theme-color);
+}
+
+.microsoft-img {
+  display: inline-block;
+  max-width: 1.25rem;
+  height: auto;
+}
+
+.microsoftBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
 </style>

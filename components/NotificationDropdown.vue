@@ -91,7 +91,7 @@ export default {
 
 .icg-notification-button:focus, .icg-notification-button:active {
   /* color: #FBD041; */
-  background-color: #FBD34F40;
+  background-color: #FEF8E2;
 }
 
 .icg-notification-dropdown__wrapper {
@@ -115,7 +115,7 @@ export default {
 
 .icg-notification-dropdown__menu {
   position: absolute;
-  background-color: var(--icg-light-theme-background-color);
+  background-color: #FFFBF0;
   margin-top: 4rem;
   display: flex;
   flex-direction: column;

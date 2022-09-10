@@ -111,6 +111,8 @@ export default {
   border: solid 1px var(--icg-light-theme-border-color);
   border-radius: 0.5rem;
   padding: 1rem;
+  margin: 1rem 0rem;
+  background-color: #FFFBF0;
 }
 
 .icg-card__header {

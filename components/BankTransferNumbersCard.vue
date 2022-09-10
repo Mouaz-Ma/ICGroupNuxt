@@ -1,7 +1,7 @@
 <template>
-  <div class="card w-100 h-100">
-    <div class="card-header">
-      <h4 class="card-title"><i class="icofont-bank"></i>{{$t("Bank Transfer Numbers")}}</h4>
+  <div class="icg-card">
+    <div class="icg-card__header">
+      <h4 class="card-title"><i class="icofont-bank"></i> {{$t("Bank Transfer Numbers")}}</h4>
     </div>
     <!-- alerts -->
     <div class="text-center ma-2">
@@ -32,7 +32,7 @@
                 <v-icon>mdi-content-copy</v-icon>
               </v-btn></span>
           </div>
-          <hr>
+          <hr class="icg-hr">
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6">
           <div class="user-info">
@@ -52,7 +52,7 @@
                 <v-icon>mdi-content-copy</v-icon>
               </v-btn></span>
           </div>
-          <hr>
+          <hr class="icg-hr">
         </div>
         <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-6">
@@ -98,3 +98,23 @@ export default {
   },
 };
 </script>
+
+<style>
+.icg-hr {
+  color: var(--icg-light-theme-border-color);
+  opacity: 1;
+}
+
+.icg-card {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px var(--icg-light-theme-border-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.icg-card__header {
+  border-bottom: solid 1px var(--icg-light-theme-border-color);
+  padding: 1rem;
+}
+</style>

@@ -2,7 +2,7 @@
   <div class="icg-card">
     <div class="icg-card__header">
       <h4 class="card-title">Information</h4>
-      <a href="./settings-profile.html" class="btn btn-primary">Edit</a>
+      <nuxt-link to="/users/profileUpdate" class="btn btn-primary">Edit</nuxt-link>
     </div>
     <div class="card-body">
       <form class="row">
@@ -30,6 +30,12 @@
             <h4>{{$auth.$state.user.userType}}</h4>
           </div>
         </div>
+        <div class="col-12 col-md-6 col-lg-6">
+          <div class="user-info">
+            <span>ACCOUNT STATUS</span>
+            <h4>{{isVerified}}</h4>
+          </div>
+        </div>
       </form>
 
     </div>
@@ -37,7 +43,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    isVerified() {
+      return this.$auth.$state.user.isVerified ? 'Verified' : 'Not verified';
+    },
+  },
+};
 </script>
 
 <style>

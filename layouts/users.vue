@@ -27,8 +27,9 @@ export default {
 
 <style>
 :root {
-  --icg-light-theme-background-color: #FEF4D3;
-  --icg-light-theme-border-color: #FDE599;
+  --icg-light-theme-background-color: white;
+  --icg-light-theme-component-background-color: white;
+  --icg-light-theme-border-color: #ddd;
   --icg-light-theme-color: #231f20;
 }
 

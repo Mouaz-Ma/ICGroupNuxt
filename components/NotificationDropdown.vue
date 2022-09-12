@@ -115,7 +115,7 @@ export default {
 
 .icg-notification-dropdown__menu {
   position: absolute;
-  background-color: #FFFBF0;
+  background-color: var(--icg-light-theme-component-background-color);
   margin-top: 4rem;
   display: flex;
   flex-direction: column;

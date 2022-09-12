@@ -31,7 +31,7 @@ export default {
   margin: 1rem 0rem;
   border: solid 1px var(--icg-light-theme-border-color);
   border-radius: 0.5rem;
-  background-color: #FFFBF0;
+  background-color: var(--icg-light-theme-component-background-color);
   /* background: #342E30;
   background: linear-gradient(180deg, #342E30 0%, #231f20 100%); */
 }

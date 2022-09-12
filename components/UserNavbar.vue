@@ -33,7 +33,7 @@ export default {
 
 <style>
 .icg-user-navbar__wrapper {
-  background-color: #FEEDB6;
+  background-color: var(--icg-light-theme-component-background-color);
   width: 100%;
   position: fixed;
   left: 0;

@@ -112,7 +112,7 @@ export default {
   border-radius: 0.5rem;
   padding: 1rem;
   margin: 1rem 0rem;
-  background-color: #FFFBF0;
+  background-color: var(--icg-light-theme-component-background-color);
 }
 
 .icg-card__header {

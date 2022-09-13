@@ -7,7 +7,7 @@
     <div class="text-center ma-2">
       <v-snackbar v-model="snackbar">
         {{ this.copiedToClipBoard }}
-          <v-btn color="pink" text v-bind="attrs" @click="snackbar = false">
+          <v-btn color="pink" text @click="snackbar = false">
             Close
           </v-btn>
       </v-snackbar>
@@ -85,6 +85,7 @@ export default {
   data() {
     return {
       snackbar: false,
+      copiedToClipBoard: null,
     };
   },
   methods: {

@@ -302,6 +302,15 @@ export default {
     "TELEPHONE": "الهاتف",
     "USER TYPE": "نوع المستخدم",
     "ACCOUNT STATUS": "وضع الحساب",
+    "VERIFY & UPGRADE": "التحقق والترقية",
+    "Account Status": "وضع الحساب",
+    "Pending": "قيد الانتظار",
+    "Verify your account": "تحقق من حسابك",
+    "Your account is not verified. Please verify your account to enable funding, trading, and withdrawal.": "لم يتم التحقق من حسابك. يرجى التحقق من حسابك لتمكين التمويل والتداول والسحب.",
+    "Your account is verified. Contact our call center to help you enable funding, trading, and withdrawal.": "تم التحقق من حسابك. اتصل بمركز الاتصال الخاص بنا لمساعدتك في تمكين التمويل والتداول والسحب.",
+    "Contact Call Center": "الاتصال بمركز الاتصال",
+    "Verified": "تم التحقق",
+    "Not verified": "لم يتم التحقق",
     /* PROFILE PAGE END */
     /* RESET PAGE BEGIN */
     "Passwords didn't match, please enter again!": "كلمات المرور غير متطابقة ، يرجى إدخالها مرة أخرى!",

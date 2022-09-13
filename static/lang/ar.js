@@ -313,6 +313,9 @@ export default {
     "Not verified": "لم يتم التحقق",
     "Administrator": "مدير",
     "Normal": "عادي",
+    "Profile": "الملف الشخصي",
+    "Settings": "الإعدادات",
+    "Logout": "تسجيل الخروج",
     /* PROFILE PAGE END */
     /* RESET PAGE BEGIN */
     "Passwords didn't match, please enter again!": "كلمات المرور غير متطابقة ، يرجى إدخالها مرة أخرى!",

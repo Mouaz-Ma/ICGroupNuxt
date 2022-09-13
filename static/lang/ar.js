@@ -292,6 +292,7 @@ export default {
     "Welcome": "مرحبًا، ",
     "It looks like you haven't verified your account yet. Please verifiy your account so you can use the full potential of": "يبدو أنك لم تقم بالتحقق من حسابك حتى الآن. يرجى التحقق من حسابك حتى تتمكن من استخدام الإمكانات الكاملة لـ ",
     "This is your personal dashboard, where you can find your personal information, and tools to help you getting started with": "هذه هي لوحة المعلومات الشخصية الخاصة بك ، حيث يمكنك العثور على معلوماتك الشخصية ، والأدوات التي تساعدك على البدء في استخدام ",
+    "Download App": "حمل التطبيق",
     /* PROFILE PAGE END */
     /* RESET PAGE BEGIN */
     "Passwords didn't match, please enter again!": "كلمات المرور غير متطابقة ، يرجى إدخالها مرة أخرى!",

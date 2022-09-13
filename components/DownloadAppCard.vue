@@ -1,7 +1,7 @@
 <template>
   <div class="icg-card">
     <div class="icg-card__header">
-      <h4 class="card-title">Download App</h4>
+      <h4 class="card-title">{{$t("Download App")}}</h4>
     </div>
     <div class="card-body">
       <div class="row align-items-center justify-content-between">
@@ -25,7 +25,7 @@
                     class="btn btn-primary my-1 waves-effect">
                     <img src="~/assets/images/apple.svg" class="downloadImage" alt="">
                   </a></div>
-                <button class="btn btn-primary my-1">
+                <button class="btn btn-primary my-1" dir="ltr">
                   <a
                     href="https://download.metatrader.com/cdn/web/internationals.capital.groups/mt5/intcapitalgroups5setup.exe"
                     class="waves-effect microsoftBtn">

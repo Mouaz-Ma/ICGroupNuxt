@@ -13,7 +13,7 @@
               <li><i class="la la-check"></i> {{ $t('Login to your account through ICGroupsFx')}}</li>
               <li><i class="la la-check"></i> {{ $t('Buy, Sell, and Make profit')}}</li>
             </ul>
-            <div class="mt-4 btn-override">
+            <div class="mt-4">
               <div class="d-flex flex-col justify-content-between">
                 <div class=""> <a
                     href="https://play.google.com/store/apps/details?id=net.metaquotes.metatrader5"
@@ -54,6 +54,10 @@ export default {};
 <style>
 .btn > a {
   color: white;
+}
+
+.btn-primary:active, .btn-primary:hover, .btn-primary:focus {
+  color: var(--icg-light-theme-color);
 }
 
 .btn-override > .btn-primary:hover, .btn-override > .btn-primary:active, .btn-override > .btn-primary:focus {

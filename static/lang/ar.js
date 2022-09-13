@@ -311,6 +311,8 @@ export default {
     "Contact Call Center": "الاتصال بمركز الاتصال",
     "Verified": "تم التحقق",
     "Not verified": "لم يتم التحقق",
+    "Administrator": "مدير",
+    "Normal": "عادي",
     /* PROFILE PAGE END */
     /* RESET PAGE BEGIN */
     "Passwords didn't match, please enter again!": "كلمات المرور غير متطابقة ، يرجى إدخالها مرة أخرى!",

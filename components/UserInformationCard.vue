@@ -27,7 +27,7 @@
         <div class="col-12 col-md-6 col-lg-6">
           <div class="user-info">
             <span>{{$t("USER TYPE")}}</span>
-            <h4>{{$auth.$state.user.userType}}</h4>
+            <h4>{{userType}}</h4>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-6">
@@ -46,7 +46,10 @@
 export default {
   computed: {
     isVerified() {
-      return this.$auth.$state.user.isVerified ? 'Verified' : 'Not verified';
+      return this.$auth.$state.user.isVerified ? this.$i18n.t('Verified') : this.$i18n.t('Not verified');
+    },
+    userType() {
+      return this.$i18n.t(this.$auth.$state.user.userType);
     },
   },
 };

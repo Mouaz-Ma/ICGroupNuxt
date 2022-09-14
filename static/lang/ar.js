@@ -320,4 +320,11 @@ export default {
     /* RESET PAGE BEGIN */
     "Passwords didn't match, please enter again!": "كلمات المرور غير متطابقة ، يرجى إدخالها مرة أخرى!",
     /* RESET PAGE END */
+    /*  VERIFY EMAIL PAGE BEGIN */
+    "Verify your email": "قم بتأكيد بريدك الإلكتروني",
+    "We sent verification email to": "لقد أرسلنا رسالة التحقق إلى",
+    "Click the link inside to get started!": "اضغط على الرابط في الداخل لتبدأ!",
+    "Go to Dashboard": "الذهاب إلى لوحة المعلومات الشخصية",
+    "please check your email inbox or spam inbox for the verification email": "يرجى تفقد صندوق البريد الإلكتروني الخاص بك أو البريد العشوائي من أجل البريد الإلكتروني للتحقق"
+    /*  VERIFY EMAIL PAGE END */
 };

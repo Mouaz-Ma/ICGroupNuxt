@@ -210,6 +210,11 @@
                                                     <div class="col-xxl-12">
                                                         <div class="d-flex align-items-center">
                                                             <img class="mr-3 rounded-circle mr-0 mr-sm-3"
+                                                            v-if="$auth.state.user" 
+                                                            :src=$auth.state.user.image.url width="55" height="55"
+                                                                alt="">
+                                                                <img class="mr-3 rounded-circle mr-0 mr-sm-3"
+                                                                v-else
                                                                 src="images/profile/2.png" width="55" height="55"
                                                                 alt="">
                                                             <div class="media-body">

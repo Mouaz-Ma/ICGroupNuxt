@@ -223,7 +223,7 @@ export default {
         facebook: {
           client_id: '332127222262076',
           userinfo_endpoint: 'https://graph.facebook.com/me?fields=about,name,picture.typr(large){url},email,birthday',
-          scope: ['public_profile', 'email', 'user_birthday', 'profile_picutre']
+          scope: ['public_profile', 'email', 'user_birthday']
         },
         google: {
           client_id: '160001613518-8qdslgbi9iq1h2f01p31utp6mpd2scd5.apps.googleusercontent.com'

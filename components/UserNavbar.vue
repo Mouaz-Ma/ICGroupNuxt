@@ -7,7 +7,7 @@
         </NuxtLink>
       </div>
       <div class="icg-user-navbar__controls">
-        <Searchbar />
+        <Searchbar v-if="$auth.state.user.userType === 'Administrator'" />
         <ThemeToggler />
         <NotificationDropdown />
         <ProfileDropdown />

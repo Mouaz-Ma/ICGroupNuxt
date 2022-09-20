@@ -8,32 +8,32 @@
       <form class="row">
         <div class="col-12 col-md-6 col-lg-6">
           <div class="user-info">
-            <span>{{$t("USER ID")}}</span>
-            <h4>{{$auth.$state.user._id}}</h4>
+            <h4>{{$t("USER ID")}}</h4>
+            <span>{{$auth.$state.user._id}}</span>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-6">
           <div class="user-info">
-            <span>{{$t("EMAIL ADDRESS")}}</span>
-            <h4>{{$auth.$state.user.email}}</h4>
+            <h4>{{$t("EMAIL ADDRESS")}}</h4>
+            <span>{{$auth.$state.user.email}}</span>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-6">
           <div class="user-info">
-            <span>{{$t("TELEPHONE")}}</span>
-            <h4>{{$auth.$state.user.telephone}}</h4>
+            <h4>{{$t("TELEPHONE")}}</h4>
+            <span>{{$auth.$state.user.telephone}}</span>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-6">
           <div class="user-info">
-            <span>{{$t("USER TYPE")}}</span>
-            <h4>{{userType}}</h4>
+            <h4>{{$t("USER TYPE")}}</h4>
+            <span>{{userType}}</span>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-6">
           <div class="user-info">
-            <span>{{$t("ACCOUNT STATUS")}}</span>
-            <h4>{{isVerified}}</h4>
+            <h4>{{$t("ACCOUNT STATUS")}}</h4>
+            <span>{{isVerified}}</span>
           </div>
         </div>
       </form>

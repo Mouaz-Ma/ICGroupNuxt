@@ -23,7 +23,23 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods:{
+    async getVerified() {
+      try {
+        const userId = this.$auth.$state.user._id;
+        const response = await this.$axios.get('/api/users/varifyById/' + userId);
+        if (response.data.success) {
+          this.verifyAlertMessage = 'true';
+        } else {
+          this.verifyAlertMessage = 'false';
+        }
+      } catch (err) {
+        this.verifyAlertMessage = 'false';
+      }
+    },
+  }
+};
 </script>
 
 <style>

@@ -2,7 +2,7 @@
   <div class="icg-user-welcome-card">
     <div class="icg-user-welcome-card__header">
       <div class="icg-user-welcome-card__user__image__container">
-        <img v-if="$auth.state.user" class="icg-user-welcome-card__user__image" :src=$auth.state.user.image.url alt="" />
+        <img v-if="$auth.$state.user && $auth.$state.user.image !== undefined" class="icg-user-welcome-card__user__image" :src=$auth.state.user.image.url alt="" />
         <img v-else class="icg-user-welcome-card__user__image" src="~/assets/images/profile/2.png" alt="" />
       </div>
       <div class="icg-user-welcome-card__header__title">{{$t("Welcome")}}, {{$auth.$state.user.username}}!</div>

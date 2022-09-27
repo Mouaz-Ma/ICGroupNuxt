@@ -2,15 +2,14 @@
   <div class="icg-user-welcome-card">
     <div class="icg-user-welcome-card__header">
       <div class="icg-user-welcome-card__user__image__container">
-        <img v-if="$auth.$state.user && $auth.$state.user.image !== undefined" class="icg-user-welcome-card__user__image" :src=$auth.state.user.image.url alt="" />
-        <img v-else class="icg-user-welcome-card__user__image" src="~/assets/images/profile/2.png" alt="" />
+        <img class="icg-user-welcome-card__user__image" :src="$store.getters.getUserImageUrl" alt="" />
       </div>
-      <div class="icg-user-welcome-card__header__title">{{$t("Welcome")}}, {{$auth.$state.user.username}}!</div>
+      <div class="icg-user-welcome-card__header__title">{{$t("Welcome")}}, {{$store.getters.getUserName}}!</div>
     </div>
-    <div v-if="!$auth.$state.user.isVerified" class="icg-user-welcome-card__body">
+    <div v-if="!$store.getters.getUserIsVerified" class="icg-user-welcome-card__body">
       <div class="icg-user-welcome-card__text">{{$t("It looks like you haven't verified your account yet. Please verifiy your account so you can use the full potential of")}} ICGroupsFx.</div>
     </div>
-    <div v-if="$auth.$state.user.isVerified" class="icg-user-welcome-card__body">
+    <div v-if="$store.getters.getUserIsVerified" class="icg-user-welcome-card__body">
       <div class="icg-user-welcome-card__text">{{$t("This is your personal dashboard, where you can find your personal information, and tools to help you getting started with")}} ICGroupsFx.</div>
     </div>
   </div>

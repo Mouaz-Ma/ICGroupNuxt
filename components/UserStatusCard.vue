@@ -1,5 +1,5 @@
 <template>
-  <div class="icg-card" v-if="$auth.$state.user.isVerified === true">
+  <div class="icg-card" v-if="$store.getters.getUserIsVerified === true">
     <div class="icg-card__header">
       <h4 class="card-title">{{$t("VERIFY & UPGRADE")}}</h4>
     </div>
@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  methods:{
+  methods: {
     async getVerified() {
       try {
         const userId = this.$auth.$state.user._id;
@@ -38,7 +38,7 @@ export default {
         this.verifyAlertMessage = 'false';
       }
     },
-  }
+  },
 };
 </script>
 

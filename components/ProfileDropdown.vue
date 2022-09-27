@@ -2,17 +2,15 @@
   <!-- PROFILE DROPDOWN BEGIN -->
   <div class="profile_log dropdown">
     <a class="user" v-b-toggle.userOptions>
-      <span v-if="$auth.$state.user && $auth.$state.user.image !== undefined" class="thumb"><img :src="$auth.$state.user.image.url" alt=""></span>
-      <span v-else class="thumb"><img src="~/assets/images/profile/2.png" alt=""></span>
+      <span class="thumb"><img :src="$store.getters.getUserImageUrl" alt=""></span>
       <span class="arrow"><i class="icofont-angle-down"></i></span>
     </a>
     <b-collapse class="dropdown-menu" :class="{'dropdown-menu-right': $i18n.locale != 'ar', 'dropdown-menu-left': $i18n.locale == 'ar'}" id="userOptions">
       <div class="user-email">
         <div class="user">
-          <span v-if="$auth.$state.user && $auth.$state.user.image !== undefined" class="thumb"><img :src=$auth.$state.user.image.url alt=""></span>
-          <span v-else class="thumb"><img src="~/assets/images/profile/2.png" alt=""></span>
-          <div class="user-info">
-            <h5>{{$auth.$state.user.username}}</h5>
+          <span class="thumb m-1"><img :src="$store.getters.getUserImageUrl" alt=""></span>
+          <div class="user-info m-1">
+            <h5>{{$store.getters.getUserName}}</h5>
             <span>{{$auth.$state.user.email}}</span>
           </div>
         </div>

@@ -9,7 +9,7 @@
         <div class="col-12 col-md-6 col-lg-6">
           <div class="user-info">
             <h4>{{$t("USER ID")}}</h4>
-            <span>{{$auth.$state.user._id}}</span>
+            <span>{{$store.getters.getUserId}}</span>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-6">
@@ -46,10 +46,10 @@
 export default {
   computed: {
     isVerified() {
-      return this.$auth.$state.user.isVerified ? this.$i18n.t('Verified') : this.$i18n.t('Not verified');
+      return this.$store.getters.getUserIsVerified ? this.$i18n.t('Verified') : this.$i18n.t('Not verified');
     },
     userType() {
-      return this.$i18n.t(this.$auth.$state.user.userType);
+      return this.$store.getters.getUserType(this);
     },
   },
 };

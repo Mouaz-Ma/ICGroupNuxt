@@ -2,6 +2,30 @@ export const getAnalysisCategories = (state) => state.analysisCategories;
 export const getNews = (state) => {
   return state.news;
 };
+export const getUserId = (state, commit, rootState) => {
+  if (rootState.auth.strategy == 'local') {
+    return rootState.auth.state.user._id;
+  } else if (rootState.auth.strategy == 'facebook') {
+    return rootState.auth.user.id;
+  } else if (rootState.auth.strategy == 'google') {
+    return rootState.auth.user.sub;
+  }
+};
+
+
+/*
+  Usage in a component:
+  define a method in a component, for example:
+  userType() {
+    return this.$store.getters.getUserType(this);
+  }
+  Notice the use of `this` as an arguemnt of getUserType function.
+  You can now use `userType` in template as expected.
+*/
+export const getUserType = (state, commit, rootState) => (app) => {
+  return app.$i18n.t(rootState.auth.user.userType) || app.$i18n.t('Normal');
+};
+
 export const getUserImageUrl = (state, commit, rootState) => {
   if (rootState.auth.strategy == 'local') {
     return rootState.auth.state.user.image !== undefined ? rootState.auth.state.user.image.url : '~/assets/images/profile/2.png';

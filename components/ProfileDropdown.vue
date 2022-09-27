@@ -2,13 +2,15 @@
   <!-- PROFILE DROPDOWN BEGIN -->
   <div class="profile_log dropdown">
     <a class="user" v-b-toggle.userOptions>
-      <span class="thumb"><img :src="$store.getters.getUserImageUrl" alt=""></span>
+      <span v-if="$store.getters.getUserImageUrl" class="thumb"><img :src="$store.getters.getUserImageUrl" alt=""></span>
+      <span v-else class="thumb"><img src="~/assets/images/profile/2.png" alt=""></span>
       <span class="arrow"><i class="icofont-angle-down"></i></span>
     </a>
     <b-collapse class="dropdown-menu" :class="{'dropdown-menu-right': $i18n.locale != 'ar', 'dropdown-menu-left': $i18n.locale == 'ar'}" id="userOptions">
       <div class="user-email">
         <div class="user">
-          <span class="thumb m-1"><img :src="$store.getters.getUserImageUrl" alt=""></span>
+          <span v-if="$store.getters.getUserImageUrl" class="thumb"><img :src="$store.getters.getUserImageUrl" alt=""></span>
+          <span v-else class="thumb"><img src="~/assets/images/profile/2.png" alt=""></span>
           <div class="user-info m-1">
             <h5>{{$store.getters.getUserName}}</h5>
             <span>{{$auth.$state.user.email}}</span>

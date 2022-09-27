@@ -4,7 +4,7 @@ export const getNews = (state) => {
 };
 export const getUserId = (state, commit, rootState) => {
   if (rootState.auth.strategy == 'local') {
-    return rootState.auth.state.user._id;
+    return rootState.auth.user._id;
   } else if (rootState.auth.strategy == 'facebook') {
     return rootState.auth.user.id;
   } else if (rootState.auth.strategy == 'google') {
@@ -28,7 +28,7 @@ export const getUserType = (state, commit, rootState) => (app) => {
 
 export const getUserImageUrl = (state, commit, rootState) => {
   if (rootState.auth.strategy == 'local') {
-    return rootState.auth.state.user.image !== undefined ? rootState.auth.state.user.image.url : '~/assets/images/profile/2.png';
+    return rootState.auth.user.image ? rootState.auth.user.image.url : false;
   } else if (rootState.auth.strategy == 'facebook') {
     return rootState.auth.user.picture.data.url;
   } else if (rootState.auth.strategy == 'google') {
@@ -50,7 +50,7 @@ export const getUserName = (state, commit, rootState) => {
   if (rootState.auth.strategy == 'local') {
     return rootState.auth.user.username;
   } else if (rootState.auth.strategy == 'facebook') {
-    return rootState.auth.user.username;
+    return rootState.auth.user.name;
   } else if (rootState.auth.strategy == 'google') {
     return rootState.auth.user.name;
   }

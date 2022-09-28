@@ -9,15 +9,13 @@
       <v-alert v-model="alertError" border="bottom" color="red" dense dismissible outlined prominent shaped text type="error">{{$t("error submiting form")}}</v-alert>
     </div>
 
-    <div v-if="getErrors">
-      <div v-for="error in errors">
-        <v-alert v-model="alertValidation" border="bottom" color="red" dense dismissible outlined prominent shaped text type="error">{{$t(error)}}</v-alert>
-      </div>
+    <div v-for="error in getErrors">
+      <v-alert v-model="alertValidation" border="bottom" color="red" dense dismissible outlined prominent shaped text type="error">{{$t(error)}}</v-alert>
     </div>
 
     <form name="myform" class="contact_validate">
       <div class="row">
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-3">
           <div class="mb-3">
             <label class="form-label">
               {{ $t('Name')}}
@@ -25,15 +23,15 @@
             <input type="text" class="form-control" id="contactName" :placeholder="$t('Name')" v-model="name" required>
           </div>
         </div>
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-6">
           <div class="mb-3">
             <label class="form-label">
               {{ $t('Tel.')}}
             </label>
-            <vue-phone-number-input dir="ltr" v-model="phone" size="lg" show-code-on-list clearable default-country-code="TR" :translations="{phoneNumberLabel: ''}" @update="phoneNumberPayload = $event"></vue-phone-number-input>
+            <vue-phone-number-input dir="ltr" v-model="phone" size="lg" show-code-on-list clearable fetch-country :translations="{phoneNumberLabel: ''}" @update="phoneNumberPayload = $event"></vue-phone-number-input>
           </div>
         </div>
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-3">
           <div class="mb-3">
             <label class="form-label">
               {{ $t('Email')}}
@@ -143,16 +141,24 @@ export default {
           language: this.$i18n.locale,
         };
         const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-        console.log(data);
+        // console.log(data);
         if ((this.name && this.email) || (this.name && this.phone) || (this.name && this.email && this.phone)) {
-          if (this.tradingType === '') {
-            this.alertError = true;
-            this.isLoading = false;
-            this.errors.push('Please select the type of investment.');
-          } else if (!emailRegex.test(this.email)) {
-            this.alertError = true;
+          if (!emailRegex.test(this.email)) {
+            if (!this.phone) {
+              this.alertValidation = true;
+              this.isLoading = false;
+              this.errors.push('Please enter a valid email address.');
+            }
+          }
+          if (this.email && this.phone && !emailRegex.test(this.email)) {
+            this.alertValidation = true;
             this.isLoading = false;
             this.errors.push('Please enter a valid email address.');
+          }
+          if (this.tradingType === '') {
+            this.alertValidation = true;
+            this.isLoading = false;
+            this.errors.push('Please select the type of investment.');
           } else {
             const response = await this.$axios.post('/api/users/contact', data);
             if (response.data.success) {
@@ -182,6 +188,7 @@ export default {
         this.alertError = true;
         console.log(err);
       }
+      // console.log(this.errors);
     },
   },
 };

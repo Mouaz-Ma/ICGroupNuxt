@@ -280,6 +280,8 @@ export default {
     /* CONTACT FORM COMPONENT BEGIN */
     "Thank you for submitting your enquiry. we will be back to you as soon as possible.": "شكرا لك على تقديم استفسارك. سنعود إليك في أقرب وقت ممكن.",
     "Please provide at least your name and email address or your name and phone number.": "يرجى تقديم اسمك وعنوان بريدك الإلكتروني أو اسمك ورقم هاتفك على الأقل.",
+    "Please select the type of investment.": "الرجاء تحديد نوع التداول.",
+    "Please enter a valid email address.": "رجاء قم بإدخال بريد الكتروني صحيح.",
     /* CONTACT FORM COMPONENT END */
     /* UPLOAD ANALYSIS PAGE BEGIN */
     "New Analysis has been uploaded": "تم رفع تحليل جديد",

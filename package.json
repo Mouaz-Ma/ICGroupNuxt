@@ -34,6 +34,7 @@
     "tiptap-vuetify": "^2.24.0",
     "vue": "^2.6.14",
     "vue-cookies": "^1.8.1",
+    "vue-phone-number-input": "^1.12.13",
     "web3": "^1.7.4"
   },
   "devDependencies": {

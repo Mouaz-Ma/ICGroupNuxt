@@ -9,8 +9,10 @@
       <v-alert v-model="alertError" border="bottom" color="red" dense dismissible outlined prominent shaped text type="error">{{$t("error submiting form")}}</v-alert>
     </div>
 
-    <div v-if="getErrors && getSuccessMessage === false">
-      <v-alert v-model="alertValidation" border="bottom" color="red" dense dismissible outlined prominent shaped text type="error">{{$t(errors[0])}}</v-alert>
+    <div v-if="getErrors">
+      <div v-for="error in errors">
+        <v-alert v-model="alertValidation" border="bottom" color="red" dense dismissible outlined prominent shaped text type="error">{{$t(error)}}</v-alert>
+      </div>
     </div>
 
     <form name="myform" class="contact_validate">
@@ -28,7 +30,7 @@
             <label class="form-label">
               {{ $t('Tel.')}}
             </label>
-            <input type="tel" dir="ltr" class="form-control" v-model="phone" placeholder="+90xx xx xx xx xx" required>
+            <vue-phone-number-input dir="ltr" v-model="phone" size="lg" show-code-on-list clearable default-country-code="TR" :translations="{phoneNumberLabel: ''}" @update="phoneNumberPayload = $event"></vue-phone-number-input>
           </div>
         </div>
         <div class="col-12 col-md-4">
@@ -36,7 +38,7 @@
             <label class="form-label">
               {{ $t('Email')}}
             </label>
-            <input type="email" class="form-control" v-model="email" placeholder="hello@domain.com">
+            <input dir="ltr" type="email" class="form-control" v-model="email" placeholder="hello@domain.com">
           </div>
         </div>
         <div class="col-12">
@@ -50,7 +52,7 @@
             <v-subheader>{{ $t('Estimated initial investment')}}</v-subheader>
               <v-card-text>
                   <v-slider
-                      v-model="iniInvestment"
+                      v-model="investmentSlider"
                       :tick-labels="ticksLabels"
                       color="grey lighten-1"
                       track-color="ex2.color"
@@ -77,20 +79,26 @@
   </div>
   </template>
 <script>
+import VuePhoneNumberInput from 'vue-phone-number-input';
+import 'vue-phone-number-input/dist/vue-phone-number-input.css';
+
 export default {
+  components: {VuePhoneNumberInput},
   data() {
     return {
       name: '',
       email: '',
-      phone: '',
+      phone: null,
       successMessage: null,
       tradingType: '',
       ticksLabels: ['100$', '1000$', '5000$', '10,000$', '50,000$'],
+      investmentSlider: 1,
       iniInvestment: '',
       isLoading: false,
       errors: [],
       alertValidation: false,
       alertError: false,
+      phoneNumberPayload: {formattedNumber: ''},
     };
   },
   computed: {
@@ -124,33 +132,45 @@ export default {
     contactForm: async function() {
       try {
         this.isLoading = true;
-        this.successMessage = '';
+        this.successMessage = null;
         this.errors = [];
         const data = {
           name: this.name,
           email: this.email,
-          phone: this.phone,
+          phone: this.phoneNumberPayload.formattedNumber,
           tradingType: this.tradingType,
-          iniInvestment: this.iniInvestment,
+          iniInvestment: this.ticksLabels[this.investmentSlider-1],
           language: this.$i18n.locale,
         };
+        const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        console.log(data);
         if ((this.name && this.email) || (this.name && this.phone) || (this.name && this.email && this.phone)) {
-          const response = await this.$axios.post('/api/users/contact', data);
-          if (response.data.success) {
-            this.successMessage = true;
+          if (this.tradingType === '') {
+            this.alertError = true;
             this.isLoading = false;
-            // clear form
-            this.name = '';
-            this.email = '';
-            this.phone = '';
-            this.tradingType = '';
-            this.iniInvestment = '';
+            this.errors.push('Please select the type of investment.');
+          } else if (!emailRegex.test(this.email)) {
+            this.alertError = true;
+            this.isLoading = false;
+            this.errors.push('Please enter a valid email address.');
           } else {
-            this.successMessage = false;
-            this.isLoading = false;
+            const response = await this.$axios.post('/api/users/contact', data);
+            if (response.data.success) {
+              this.successMessage = true;
+              this.isLoading = false;
+              // clear form
+              this.name = '';
+              this.email = '';
+              this.phone = '';
+              this.tradingType = '';
+              this.iniInvestment = '';
+            } else {
+              this.successMessage = false;
+              this.alertError = true;
+              this.isLoading = false;
+            }
           }
         } else {
-          this.successMessage = false;
           this.isLoading = false;
           this.alertValidation = true;
           this.errors.push('Please provide at least your name and email address or your name and phone number.');

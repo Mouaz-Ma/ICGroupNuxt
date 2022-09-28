@@ -68,6 +68,7 @@ export default {
   'plugins': [
     '~/plugins/direction-control',
     '~/plugins/TiptapVuetify',
+    '~/plugins/vue-phone-number-input.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

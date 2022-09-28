@@ -5,7 +5,7 @@
     <div class="intro bg-primary">
     <div class="container">
         <div class="row justify-content-between align-items-center mt-5">
-            <div class="col-xl-6 col-lg-6 col-12">
+            <div class="col-xl-4 col-lg-4 col-12">
                 <div class="intro-content container">
                     <h1 class="text-white">{{ $t('Trade with')}}<strong class="text-white"> ICGroupsFx</strong> <br> {{ $t('Buy and sell and Make Profit')}}
                     </h1>
@@ -17,7 +17,7 @@
                     </div>
                 </div>
             </div>
-                <div class="col-xxl-6 col-xl-6 col-lg-6 col-12 d-flex justify-content-end">
+                <div class="col-xxl-8 col-xl-8 col-lg-8 col-12 d-flex justify-content-end">
                <div class="row justify-content-center">
                     <div class="col-xl-8">
                         <div class="section-title text-center">

@@ -4,7 +4,7 @@
       <div class="icg-user-welcome-card__user__image__container">
         <img v-if="$store.getters.getUserImageUrl" class="icg-user-welcome-card__user__image" :src="$store.getters.getUserImageUrl" alt="" />
         <img v-else class="icg-user-welcome-card__user__image" src="~/assets/images/profile/2.png" alt="" />
-        <div @click="userSelectImage()" class="icg-user-welcome-card__user__image__upload"><i class="fa fa-camera"></i></div>
+        <div v-if="$auth.$state.user.strategy == 'local'" @click="userSelectImage()" class="icg-user-welcome-card__user__image__upload"><i class="fa fa-camera"></i></div>
         <form id="avatar-form" style="display: none;">
           <input type="file" accept="image/jpeg" id="avatar-upload" @change="uploadAvatar()" />
         </form>

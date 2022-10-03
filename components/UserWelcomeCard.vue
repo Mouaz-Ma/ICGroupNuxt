@@ -4,7 +4,14 @@
       <div class="icg-user-welcome-card__user__image__container">
         <img v-if="$store.getters.getUserImageUrl" class="icg-user-welcome-card__user__image" :src="$store.getters.getUserImageUrl" alt="" />
         <img v-else class="icg-user-welcome-card__user__image" src="~/assets/images/profile/2.png" alt="" />
-        <div v-if="$auth.$state.user.strategy == 'local'" @click="userSelectImage()" class="icg-user-welcome-card__user__image__upload"><i class="fa fa-camera"></i></div>
+        <div v-if="$auth.$state.user.strategy == 'local' && loading == false" @click="userSelectImage()" class="icg-user-welcome-card__user__image__upload">
+          <i class="fa fa-camera"></i>
+        </div>
+        <div v-if="$auth.$state.user.strategy == 'local' && loading == true" class="icg-user-welcome-card__user__image__upload__loading">
+          <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
         <form id="avatar-form" style="display: none;">
           <input type="file" accept="image/jpeg" id="avatar-upload" @change="uploadAvatar()" />
         </form>
@@ -51,11 +58,13 @@ export default {
       if (!validExtensions.includes(fileExtension)) {
         this.avatarErrors.push('Image must have one of the following extensions: jpg, png, jpeg.');
         this.isAvatarError = true;
+        this.loading = false;
         return;
       }
       if ( !(avatar.size <= maxSize) ) {
         this.avatarErrors.push(`Image size must be below ${maxSize / 1000} kb`);
         this.isAvatarError = true;
+        this.loading = false;
         return;
       }
       const formData = new FormData();
@@ -124,6 +133,23 @@ export default {
   opacity: 0;
   transition: 0.15s all ease-in;
   cursor: pointer;
+}
+
+.icg-user-welcome-card__user__image__upload__loading {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  color: white;
+  opacity: 0.75;
+  /* transition: 0.15s all ease-in; */
+  /* cursor: pointer; */
 }
 
 .icg-user-welcome-card__user__image__upload:hover,

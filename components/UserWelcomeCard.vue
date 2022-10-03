@@ -38,10 +38,10 @@ export default {
       const formData = new FormData();
       formData.append('avatar', avatarImage.files[0]);
       this.loading = true;
-      this.$axios.post('/api/users/uploadAvatar', formData, {credentials: true}).then((res) => {
+      this.$axios.put('/api/users/uploadAvatar', formData, {credentials: true}).then((res) => {
         this.loading = false;
         console.log(res);
-        this.$nuxt.refresh();
+        this.$store.commit('setUserAvatar', {imgUrl: res.data.foundUser.image.url, obj: this});
       }).catch((err) => {
         console.log(err);
         this.loading = false;

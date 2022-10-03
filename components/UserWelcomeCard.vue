@@ -4,6 +4,10 @@
       <div class="icg-user-welcome-card__user__image__container">
         <img v-if="$store.getters.getUserImageUrl" class="icg-user-welcome-card__user__image" :src="$store.getters.getUserImageUrl" alt="" />
         <img v-else class="icg-user-welcome-card__user__image" src="~/assets/images/profile/2.png" alt="" />
+        <div @click="userSelectImage()" class="icg-user-welcome-card__user__image__upload"><i class="fa fa-camera"></i></div>
+        <form id="avatar-form" style="display: none;">
+          <input type="file" accept="image/jpeg" id="avatar-upload" @change="uploadAvatar()" />
+        </form>
       </div>
       <div class="icg-user-welcome-card__header__title">{{$t("Welcome")}}, {{$store.getters.getUserName}}!</div>
     </div>
@@ -20,8 +24,29 @@
 export default {
   data() {
     return {
-      //
+      avatar: {},
+      loading: false,
     };
+  },
+  methods: {
+    userSelectImage() {
+      const avatarUpload = document.getElementById('avatar-upload');
+      avatarUpload.click();
+    },
+    uploadAvatar() {
+      const avatarImage = document.getElementById('avatar-upload');
+      const formData = new FormData();
+      formData.append('avatar', avatarImage.files[0]);
+      this.loading = true;
+      this.$axios.post('/api/users/uploadAvatar', formData, {credentials: true}).then((res) => {
+        this.loading = false;
+        console.log(res);
+        this.$nuxt.refresh();
+      }).catch((err) => {
+        console.log(err);
+        this.loading = false;
+      });
+    },
   },
 };
 </script>
@@ -38,6 +63,7 @@ export default {
 }
 
 .icg-user-welcome-card__user__image__container {
+  position: relative;
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
@@ -58,6 +84,30 @@ export default {
   font-size: large;
   font-weight: bolder;
   /* color: #ddd; */
+}
+
+.icg-user-welcome-card__user__image__upload {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  color: white;
+  opacity: 0;
+  transition: 0.15s all ease-in;
+  cursor: pointer;
+}
+
+.icg-user-welcome-card__user__image__upload:hover,
+.icg-user-welcome-card__user__image__upload:active,
+.icg-user-welcome-card__user__image__upload:focus {
+  margin: auto;
+  opacity: 0.75;
 }
 
 /* .icg-user-welcome-card__text {

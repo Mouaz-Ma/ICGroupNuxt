@@ -11,7 +11,7 @@
                   <li
                     v-for="user in foundUsers.slice(0,5)"
                     :key="user.id"
-                    class="searchResults form-control"
+                    class="searchResults"
                   >
                     <nuxt-link
                       :to="'/users/profile/'+user._id"
@@ -50,15 +50,31 @@ export default {
 </script>
 <style>
 .searchResults{
-  height: 25px;
+  /* height: 25px; */
+  position: relative;
+  padding: 1rem;
+  width: 100%;
+  border-bottom: 0.5px solid #ccc;
+  background-color: white;
 }
+
+.searchResults:hover {
+  /* height: 25px; */
+  background-color: #fbcc31
+}
+
 .searchResults a{
   color: var(--icg-light-theme-color);
   text-decoration: none;
-  height: auto;
 }
 .searchDropDown{
+  width: 100%;
+  max-width: 244px;
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .profileLink{
   margin-top: 10px !important;

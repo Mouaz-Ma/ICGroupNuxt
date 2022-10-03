@@ -9,6 +9,9 @@
           <input type="file" accept="image/jpeg" id="avatar-upload" @change="uploadAvatar()" />
         </form>
       </div>
+      <div v-if="isAvatarError" class="w-100 my-3">
+        <v-alert v-model="isAvatarError" border="bottom" color="red" dense dismissible outlined prominent shaped text type="error">{{avatarErrors[0]}}</v-alert>
+      </div>
       <div class="icg-user-welcome-card__header__title">{{$t("Welcome")}}, {{$store.getters.getUserName}}!</div>
     </div>
     <div v-if="!$store.getters.getUserIsVerified" class="icg-user-welcome-card__body">
@@ -26,6 +29,8 @@ export default {
     return {
       avatar: {},
       loading: false,
+      avatarErrors: [],
+      isAvatarError: null,
     };
   },
   methods: {
@@ -34,13 +39,31 @@ export default {
       avatarUpload.click();
     },
     uploadAvatar() {
+      this.avatarErrors = [];
+      this.loading = true;
       const avatarImage = document.getElementById('avatar-upload');
+      const validExtensions = ['jpg', 'png', 'jpeg'];
+      const maxSize = 6e5; // 600 kb
+      const avatar = avatarImage.files[0];
+      const fileExtension = avatar.name.substring(avatar.name.lastIndexOf('.')+1).toLowerCase();
+      // console.log(avatar);
+      // console.log(fileExtension);
+      if (!validExtensions.includes(fileExtension)) {
+        this.avatarErrors.push('Image must have one of the following extensions: jpg, png, jpeg.');
+        this.isAvatarError = true;
+        return;
+      }
+      if ( !(avatar.size <= maxSize) ) {
+        this.avatarErrors.push(`Image size must be below ${maxSize / 1000} kb`);
+        this.isAvatarError = true;
+        return;
+      }
       const formData = new FormData();
       formData.append('avatar', avatarImage.files[0]);
       this.loading = true;
       this.$axios.put('/api/users/uploadAvatar', formData, {credentials: true}).then((res) => {
         this.loading = false;
-        console.log(res);
+        // console.log(res);
         this.$store.commit('setUserAvatar', {imgUrl: res.data.foundUser.image.url, obj: this});
       }).catch((err) => {
         console.log(err);

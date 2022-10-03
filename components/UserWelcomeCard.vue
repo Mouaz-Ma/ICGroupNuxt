@@ -43,7 +43,7 @@ export default {
       this.loading = true;
       const avatarImage = document.getElementById('avatar-upload');
       const validExtensions = ['jpg', 'png', 'jpeg'];
-      const maxSize = 6e5; // 600 kb
+      const maxSize = 1e5; // 600 kb
       const avatar = avatarImage.files[0];
       const fileExtension = avatar.name.substring(avatar.name.lastIndexOf('.')+1).toLowerCase();
       // console.log(avatar);

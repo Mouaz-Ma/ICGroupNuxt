@@ -290,6 +290,8 @@ export default {
     "Please check your email to recover your password.": "رجاءً تفقد بريدك الﻹلكتروني لاستعادة كلمة المرور الخاصة بك.",
     /* FORGOT PAGE END */
     /* PROFILE PAGE BEGIN */
+    "Image must have one of the following extensions: jpg, png, jpeg.": "يجب أن تحتوي الصورة على أحد الامتدادات التالية: jpg ، png ، jpeg.",
+    "Image size must be below ": "ينبغي أن يكون حجم الصورة أصغر من ",
     "An email was sent please check your inbox or spam box!": "تم إرسال بريد إلكتروني ، يرجى التحقق من صندوق الوارد الخاص بك أو صندوق البريد العشوائي!",
     "Bank Transfer Numbers": "أرقام التحويل المصرفي",
     "Welcome": "مرحبًا",

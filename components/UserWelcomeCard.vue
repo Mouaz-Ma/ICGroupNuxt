@@ -56,13 +56,13 @@ export default {
       // console.log(avatar);
       // console.log(fileExtension);
       if (!validExtensions.includes(fileExtension)) {
-        this.avatarErrors.push('Image must have one of the following extensions: jpg, png, jpeg.');
+        this.avatarErrors.push(this.$i18n.t('Image must have one of the following extensions: jpg, png, jpeg.'));
         this.isAvatarError = true;
         this.loading = false;
         return;
       }
       if ( !(avatar.size <= maxSize) ) {
-        this.avatarErrors.push(`Image size must be below ${maxSize / 1000} kb`);
+        this.avatarErrors.push(this.$i18n.t('Image size must be below ') + (maxSize / 1000) + ' KB.');
         this.isAvatarError = true;
         this.loading = false;
         return;

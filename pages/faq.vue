@@ -1,107 +1,132 @@
 <template>
-    <div id="main-wrapper show">
+  <div id="main-wrapper show">
     <Banner title="Frequently Asked Questions" />
     <div class="terms_condition">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-9">
-                    <div id="faq" class="terms_condition-content">
-                        <div class="terms_condition-text">
-                            <h3>{{ $t('Frequently Asked Questions')}} </h3>
-                            <!-- <p>Tradix is an instant cryptocurrency exchange that allows you to exchange crypto
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <div id="faq" class="terms_condition-content">
+
+              <div class="terms_condition-text">
+                <h3>{{ $t('faq account opening')}}</h3>
+                <p>{{ $t('faq account opening p1') }}</p>
+                <p>{{ $t('faq account opening p2') }}</p>
+                <p>{{ $t('faq account opening p3') }}</p>
+                <p>{{ $t('faq account opening p4') }}</p>
+                <p><a href="https://drive.google.com/file/d/1pvsIXu_Jgy3mKBLQo88QxvDtRUUje_id/view?usp=sharing" target="_blank">{{ $t('Read more') }}</a></p>
+              </div>
+
+              <div class="terms_condition-text">
+                <h3>{{ $t('faq withdrawal paper')}}</h3>
+                <p>{{ $t('faq withdrawal paper p1') }}</p>
+                <p>{{ $t('faq withdrawal paper p2') }}</p>
+                <p>{{ $t('faq withdrawal paper p3') }}</p>
+                <p><a href="https://drive.google.com/file/d/1pvsIXu_Jgy3mKBLQo88QxvDtRUUje_id/view?usp=sharing" target="_blank">{{ $t('Read more') }}</a></p>
+              </div>
+
+              <div class="terms_condition-text">
+                <h3>{{ $t('faq ib contract')}}</h3>
+                <p>{{ $t('faq ib contract p1') }}</p>
+                <p><a href="https://drive.google.com/file/d/1GuUnV8Kp4L88smd3ePdW4LlONphG67el/view?usp=sharing" target="_blank">{{ $t('Read more') }}</a></p>
+              </div>
+
+              <div class="terms_condition-text">
+                <h3>{{ $t('Frequently Asked Questions')}} </h3>
+                <!-- <p>Tradix is an instant cryptocurrency exchange that allows you to exchange crypto
                                 fast and buy it with a bank card. The service provides the best crypto-to-crypto
                                 rates and supports over 140 cryptocurrencies available for exchange
                             </p> -->
-                        </div>
+              </div>
 
 
-                        <div class="terms_condition-text">
-                            <h3>{{ $t('What is online trading?')}} </h3>
-                            <p>
-                                {{ $t('What is online trading? paragraph')}}
-                            </p>
-                        </div>
+              <div class="terms_condition-text">
+                <h3>{{ $t('What is online trading?')}} </h3>
+                <p>
+                  {{ $t('What is online trading? paragraph')}}
+                </p>
+              </div>
 
-                        <div class="terms_condition-text">
-                            <h3>{{ $t('Is trading only for professional traders?')}} </h3>
-                            <p>
-                                {{ $t('Is trading only for professional traders? paragraph')}}
-                            </p>
-                        </div>
-
-
-                        <div class="terms_condition-text">
-                            <h3>{{ $t('How can I make the most profit?')}} </h3>
-                            <p>
-                                {{ $t('How can I make the most profit? paragraph')}}
-                            </p>
-                        </div>
-
-                        <div class="terms_condition-text">
-                            <h3>{{ $t('What are spreads?')}} </h3>
-                            <p>
-                                {{ $t('What are spreads? paragraph')}}
-                            </p>
-                        </div>
-
-                        <div class="terms_condition-text">
-                            <h3>{{ $t('what is a trading ‘lot’?')}} </h3>
-                            <p>
-                                {{ $t('What is a trading ‘lot’? paragrpah')}}
-                            </p>
-                        </div>
-
-                        <div class="terms_condition-text">
-                            <h3>{{ $t('What is Leverage?')}} </h3>
-                            <p>
-                                {{ $t('What is Leverage? paragraph')}}
-                            </p>
-                        </div>
-
-                        <div class="terms_condition-text">
-                            <h3>{{ $t('What is Swap?')}} </h3>
-                            <p>
-                                {{ $t('What is Swap? paragraph')}}
-                            </p>
-                        </div>
-
-                        <div class="terms_condition-text">
-                            <h3>{{ $t('How to open a personal account with ICGroup brokerage firm?')}} </h3>
-                                {{ $t('How to open a personal account with ICGroup brokerage firm? paragrpah')}}
-                            <p><nuxt-link to="/contact">{{$t('contact')}}</nuxt-link>
-                            </p>
-                        </div>
-
-                         <div class="terms_condition-text">
-                            <h3>{{ $t('demo account open')}} </h3>
-                            <p>
-                                {{ $t('demo account open paragraph')}}
-                            </p>
-                        </div>
-
-                        <div class="terms_condition-text">
-                            <h3>{{ $t('Are there fees to be paid to open or close an account?')}} </h3>
-                            <p>
-                                {{ $t('Are there fees to be paid to open or close an account? paragraph')}}
-                            </p>
-                        </div>
-
-                        <div class="terms_condition-text">
-                            <h3>{{ $t('What is the difference between a trial account and a real account?')}} </h3>
-                            <p>
-                                {{ $t('What is the difference between a trial account and a real account? paragraph')}}
-                            </p>
-                        </div>
-
-                        <div class="terms_condition-text">
-                            <h3>{{ $t('Is there a fee or commission on money withdrawal?')}} </h3>
-                            <p>
-                                {{ $t('Is there a fee or commission on money withdrawal? paragraph')}}
-                            </p>
-                        </div>
+              <div class="terms_condition-text">
+                <h3>{{ $t('Is trading only for professional traders?')}} </h3>
+                <p>
+                  {{ $t('Is trading only for professional traders? paragraph')}}
+                </p>
+              </div>
 
 
-                        <!-- <div class="terms_condition-text">
+              <div class="terms_condition-text">
+                <h3>{{ $t('How can I make the most profit?')}} </h3>
+                <p>
+                  {{ $t('How can I make the most profit? paragraph')}}
+                </p>
+              </div>
+
+              <div class="terms_condition-text">
+                <h3>{{ $t('What are spreads?')}} </h3>
+                <p>
+                  {{ $t('What are spreads? paragraph')}}
+                </p>
+              </div>
+
+              <div class="terms_condition-text">
+                <h3>{{ $t('what is a trading ‘lot’?')}} </h3>
+                <p>
+                  {{ $t('What is a trading ‘lot’? paragrpah')}}
+                </p>
+              </div>
+
+              <div class="terms_condition-text">
+                <h3>{{ $t('What is Leverage?')}} </h3>
+                <p>
+                  {{ $t('What is Leverage? paragraph')}}
+                </p>
+              </div>
+
+              <div class="terms_condition-text">
+                <h3>{{ $t('What is Swap?')}} </h3>
+                <p>
+                  {{ $t('What is Swap? paragraph')}}
+                </p>
+              </div>
+
+              <div class="terms_condition-text">
+                <h3>{{ $t('How to open a personal account with ICGroup brokerage firm?')}} </h3>
+                {{ $t('How to open a personal account with ICGroup brokerage firm? paragrpah')}}
+                <p>
+                  <nuxt-link to="/contact">{{$t('contact')}}</nuxt-link>
+                </p>
+              </div>
+
+              <div class="terms_condition-text">
+                <h3>{{ $t('demo account open')}} </h3>
+                <p>
+                  {{ $t('demo account open paragraph')}}
+                </p>
+              </div>
+
+              <div class="terms_condition-text">
+                <h3>{{ $t('Are there fees to be paid to open or close an account?')}} </h3>
+                <p>
+                  {{ $t('Are there fees to be paid to open or close an account? paragraph')}}
+                </p>
+              </div>
+
+              <div class="terms_condition-text">
+                <h3>{{ $t('What is the difference between a trial account and a real account?')}} </h3>
+                <p>
+                  {{ $t('What is the difference between a trial account and a real account? paragraph')}}
+                </p>
+              </div>
+
+              <div class="terms_condition-text">
+                <h3>{{ $t('Is there a fee or commission on money withdrawal?')}} </h3>
+                <p>
+                  {{ $t('Is there a fee or commission on money withdrawal? paragraph')}}
+                </p>
+              </div>
+
+
+              <!-- <div class="terms_condition-text">
                             <h3>Why should I trust you? </h3>
                             <p>Tradix is one of the most prominent instant cryptocurrency exchanges that has
                                 gained the trust of more than 2M users from all over the world. The service provides
@@ -190,40 +215,40 @@
                         </div>
 
                         <div class="terms_condition-text">
-                            <h3>Breaches of these terms and conditions: </h3>
-                            <ul>
-                                <li>
-                                    <i class="fa fa-circle"></i>
-                                    <p>Elaenia.com reserves the rights under these terms and conditions to take
-                                        action if you breach these terms and conditions in any way. </p>
-                                </li>
-                                <li>
-                                    <i class="fa fa-circle"></i>
-                                    <p>Elaenia.com may take such action as seems appropriate to deal with the
-                                        breach, including suspending your access to the website, suspending your
-                                        earnings made trough Elaenia.com,prohibiting you from accessing the
-                                        website, or bringing court proceedings against you.</p>
-                                </li>
-                            </ul>
+                          <h3>Breaches of these terms and conditions: </h3>
+                          <ul>
+                            <li>
+                              <i class="fa fa-circle"></i>
+                              <p>Elaenia.com reserves the rights under these terms and conditions to take
+                                action if you breach these terms and conditions in any way. </p>
+                            </li>
+                            <li>
+                              <i class="fa fa-circle"></i>
+                              <p>Elaenia.com may take such action as seems appropriate to deal with the
+                                breach, including suspending your access to the website, suspending your
+                                earnings made trough Elaenia.com,prohibiting you from accessing the
+                                website, or bringing court proceedings against you.</p>
+                            </li>
+                          </ul>
                         </div> -->
-                    </div>
-                </div>
-            </div>
+                        </div>
+          </div>
         </div>
+      </div>
     </div>
 
-</div>
+  </div>
 </template>
 <script>
-import Banner from "@/components/pageBanner";
+import Banner from '@/components/pageBanner';
 export default {
-      auth: false,
-            scrollToTop: true,
-              layout: 'index',
-              components: {
-                Banner
-              },
-  }
+  auth: false,
+  scrollToTop: true,
+  layout: 'index',
+  components: {
+    Banner,
+  },
+};
 </script>
 
 <style>
@@ -233,11 +258,11 @@ export default {
 
 html:lang(en) #faq h3::before {
   content: '';
-  margin-right: 0.5rem;
+  margin-right: 0;
 }
 
 html:lang(ar) #faq h3::before {
   content: '';
-  margin-left: 0.5rem;
+  margin-left: 0;
 }
 </style>

@@ -292,4 +292,18 @@ export default {
     /* RESET PAGE BEGIN */
     "Passwords didn't match, please enter again!": "Passwords didn't match, please enter again!",
     /* RESET PAGE END */
+    /* FAQ PAGE BEGIN */
+    "faq account opening": "Open Your Account",
+    "faq account opening p1": "Register now a real account with IC GROUP FX and trade on more than 150 instruments on the MT5 platform.",
+    "faq account opening p2": "You can start trading with International Captial Group over the internet and get profit.",
+    "faq account opening p3": "Our specialists provide you with a technical analysis service where we study the past and current price movement and help you predict the price movement of the forex market, trading stocks, commodities, indices and even cryptocurrencies.",
+    "faq account opening p4": "And to make sure you are on the right track for professional traders, we hold free training courses before you start trading and our economic advisors provide you with everything you need to start trading and profiting together.",
+    "faq withdrawal paper": "Withdrawal Paper",
+    "faq withdrawal paper p1": "Choose the most convenient and easiest way for you.",
+    "faq withdrawal paper p2": "Among many options, we make it easy for you to start trading.",
+    "faq withdrawal paper p3": "Once you fill out the form for withdrawing from your account with us, you will have the option to withdraw either from one of the exchange companies in any country around the world or by bank transfers or USDT and through the Perfect Money application.",
+    "faq ib contract": "IB Contract",
+    "faq ib contract p1": "The Introducing Broker (IB) program is one of the partnership programs that can be benefited from with the financial brokerage company. If you have a client base that you can rely on to enter the world of financial brokerage by being an IB with IC GROUP FX, once you register as an IB, you can benefit from all the services offered by our company to its clients.",
+    "Read more": "Read more",
+    /* FAQ PAGE END*/
 };

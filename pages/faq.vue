@@ -21,7 +21,7 @@
                 <p>{{ $t('faq withdrawal paper p1') }}</p>
                 <p>{{ $t('faq withdrawal paper p2') }}</p>
                 <p>{{ $t('faq withdrawal paper p3') }}</p>
-                <p><a href="https://drive.google.com/file/d/1pvsIXu_Jgy3mKBLQo88QxvDtRUUje_id/view?usp=sharing" target="_blank">{{ $t('Read more') }}</a></p>
+                <p><a href="https://drive.google.com/file/d/1VDKJbL04qQK8NzUs0s5vycPpdItSZ0zJ/view?usp=sharing" target="_blank">{{ $t('Read more') }}</a></p>
               </div>
 
               <div class="terms_condition-text">

@@ -41,7 +41,9 @@ export default {
     } );`;
     }
     webTerminalContainer.appendChild(webTerminalScript);
-    webTerminalContainer.appendChild(webTerminalConfigScript);
+    webTerminalScript.onload = function() {
+      webTerminalContainer.appendChild(webTerminalConfigScript);
+    };
   },
   head: {
     script: [

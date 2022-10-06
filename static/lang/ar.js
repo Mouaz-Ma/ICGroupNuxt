@@ -17,6 +17,7 @@ export default {
     "Sign Out": " تسجيل الخروج",
     "ٌRegister": "التسجيل",
     "about": "من نحن",
+    "Web Trader": "مداول الويب",
     "copy Rights": "كل الحقوق محفوظة",
     "Open Account": "افتح حسابك الحقيقي",
     "Trade with": "ابدأ التداول مع",

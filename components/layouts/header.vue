@@ -73,8 +73,12 @@
                       <NuxtLink class="nav-link" to="/blogs/">{{ $t('Blogs')}}</NuxtLink>
                     </li>
 
+                    <li v-if="$auth.$state.loggedIn" class="nav-item">
+                      <NuxtLink class="nav-link" to="/webtrader">{{ $t('Web Trader')}}</NuxtLink>
+                    </li>
 
                     <li class="nav-item" v-if="$auth.$state.loggedIn">
+
 
                     <!-- here we having the username we need to style it  -->
                       <NuxtLink to="/users/profile">

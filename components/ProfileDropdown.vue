@@ -29,7 +29,7 @@
                                     </div>
                                 </div> -->
       <NuxtLink to="/users/profile" class="dropdown-item"><i class="icofont-ui-user"></i> {{$t("Profile")}}</NuxtLink>
-
+      <NuxtLink to="/webtrader" class="dropdown-item"><i class="icofont-money"></i> {{$t("Web Trader")}}</NuxtLink>
       <NuxtLink class="dropdown-item" to="/users/profileUpdate"><i class="icofont-ui-settings"></i> {{$t("Settings")}}</NuxtLink>
       <!-- wallet -->
       <!-- <a href="accounts.html" class="dropdown-item">

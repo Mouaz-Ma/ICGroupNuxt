@@ -14,8 +14,9 @@ export default {
     }
   },
   mounted() {
-    let tradingWidgetContainer = document.getElementById("tradingview-ticker");
-    let tradingWidgetScript = document.createElement("script");
+    const tradingWidgetContainer = document.getElementById("tradingview-ticker");
+    const tradingWidgetScript = document.createElement("script");
+    tradingWidgetContainer.innerHTML = '';
     tradingWidgetScript.src = "https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js";
     tradingWidgetScript.type = "text/javascript";
     tradingWidgetScript.text = JSON.stringify({
